@@ -1,0 +1,193 @@
+##ads.txt for supporters. Created by Massarius script.
+massarius.com, 00044, DIRECT
+#lines specifically for this publisher: 
+33across.com, 0010b00002MptHCAAZ, DIRECT, bbea06d9c4d2853c
+adform.com, 183, RESELLER
+adform.com, 1889, RESELLER, 9f5210a2f0999e32
+adform.com, 1942, DIRECT
+adform.com, 2437, RESELLER, 9f5210a2f0999e32
+adform.com, 2688, RESELLER, 9f5210a2f0999e32
+admanmedia.com, 43, RESELLER
+advertising.com, 29034, DIRECT
+advertising.com, 7574, DIRECT
+adyoulike.com, b4bf4fdd9b0b915f746f6747ff432bde, RESELLER, 4ad745ead2958bf7
+aerserv.com, 2750, DIRECT, 2ce496b9f80eb9fa
+aol.com, 58578, DIRECT, e1a5b5b6e3255540
+aolcloud.net, 4687, DIRECT
+appnexus.com, 12986, RESELLER, f5ab79cb980f11d108
+appnexus.com, 2579, RESELLER, f5ab79cb980f11d1
+appnexus.com, 3663, RESELLER, f5ab79cb980f11d1
+appnexus.com, 4009, DIRECT
+appnexus.com, 7118, RESELLER
+appnexus.com, 7456, DIRECT, f5ab79cb980f11d1
+appnexus.com, 7790, DIRECT, f5ab79cb980f11d1
+axonix.com, 57264, RESELLER
+contextweb.com, 560288, DIRECT, 89ff185a4c4e857c
+districtm.io, 100962, RESELLER, 3fd707be9c4527c3
+districtm.io, 101760, DIRECT, 3fd707be9c4527c3
+districtm.io, 101760, RESELLER, 3fd707be9c4527c3
+facebook.com, 898391816922019, RESELLER, c3e20eee3f780d68
+freewheel.tv, 1214927, RESELLER
+freewheel.tv, 1214943, RESELLER
+freewheel.tv, 33081, RESELLER
+freewheel.tv, 33601, RESELLER
+google.com, pub-1807126059844281, DIRECT, f08c47fec0942fa0
+google.com, pub-2051007210431666, RESELLER, f08c47fec0942fa0
+google.com, pub-8172268348509349, RESELLER, f08c47fec0942fa0
+gumgum.com, 13391, DIRECT, ffdef49475d318a9
+gumgum.com, 14141, RESELLER, ffdef49475d318a9
+improvedigital.com, 115, DIRECT
+improvedigital.com, 1220, RESELLER
+improvedigital.com, 1680, RESELLER
+indexexchange.com, 179394, RESELLER, 50b1c356f2c5c8fc
+indexexchange.com, 189872, RESELLER
+indexexchange.com, 191151, DIRECT, 50b1c356f2c5c8fc
+indexexchange.com, 191730, DIRECT
+indexexchange.com, 192410, RESELLER, 50b1c356f2c5c8fc
+lijit.com, 270620, DIRECT, fafdf38b16bf6b2b
+lijit.com, 270620-eb, DIRECT, fafdf38b16bf6b2b
+loopme.com, 5679, RESELLER, 6c8d5f95897a5a3b
+mobfox.com, 74240, DIRECT
+openx.com, 537149888, DIRECT, 6a698e2ec38604c6
+openx.com, 539518781, RESELLER, 6a698e2ec38604c6
+openx.com, 539592429, DIRECT, 6a698e2ec38604c6
+openx.com, 539620353, DIRECT, 6a698e2ec38604c6
+openx.com, 539625136, DIRECT
+outbrain.com, 0010a6fc68ee05b8670a2de31f7feb5538, DIRECT
+outbrain.com, 002606ebf753112b511027fdd7edd76353, DIRECT
+outbrain.com, 008399bd84d592da05d7a75dd78d076eee, DIRECT
+outbrain.com, 00892a416079946b85a0c516df4095d040, DIRECT
+outbrain.com, 008fe806d726b836d6a8567b91a34de527, DIRECT
+outbrain.com, 009dc722badd1524b2022be65f9281341b, DIRECT
+plista.com, 246727, DIRECT
+pubmatic.com, 154037, RESELLER, 5d62403b186f2ace
+pubmatic.com, 156439, RESELLER, 5d62403b186f2ace
+pubmatic.com, 156546, DIRECT, 5d62403b186f2ace
+pubmatic.com, 157743, DIRECT, 5d62403b186f2ace
+pubmatic.com, 158615, RESELLER, 5d62403b186f2ace
+pubmatic.com, 160006, RESELLER, 5d62403b186f2ace
+pubmatic.com, 160096, RESELLER, 5d62403b186f2ace
+pubnative.net, 1006576, RESELLER, d641df8625486a7b
+quantum-advertising.com, 3741, RESELLER
+rhythmone.com, 2564526802, RESELLER, a670c89d4a324e47
+richaudience.com, ns9qrKJLKD, DIRECT
+rubiconproject.com, 17280, DIRECT, 0bfd66d529a55807
+rubiconproject.com, 18020, RESELLER, 0bfd66d529a55807
+rubiconproject.com, 20736, RESELLER, 0bfd66d529a55807
+rubiconproject.com, 20952, DIRECT, 0bfd66d529a55807
+rubiconproject.com, 20954, DIRECT, 0bfd66d529a55807
+rubiconproject.com, 23434, RESELLER, 0bfd66d529a55807
+seedtag.com, 4373-7677-01, DIRECT
+seedtag.com, 5824-8426-01, DIRECT
+smaato.com, 1100037086, DIRECT
+smaato.com, 1100044045, RESELLER, 07bcf65f187117b4
+smaato.com, 1100044650, RESELLER, 07bcf65f187117b4
+smartadserver.com, 2938, DIRECT
+smartadserver.com, 2938, RESELLER
+smartadserver.com, 3050, DIRECT
+smartadserver.com, 3712, DIRECT
+smartclip.net, 7521, DIRECT
+sovrn.com, 270620, DIRECT, fafdf38b16bf6b2b
+spotx.tv, 108933, RESELLER, 7842df1d2fe2db34
+spotx.tv, 230037, RESELLER, 7842df1d2fe2db34
+spotx.tv, 249286, DIRECT, 7842df1d2fe2db34
+spotxchange.com, 204335, DIRECT, 7842df1d2fe2db34
+spotxchange.com, 230037, RESELLER, 7842df1d2fe2db34
+spotxchange.com, 249286, DIRECT, 7842df1d2fe2db34
+teads.tv, 18250, DIRECT, 15a9c44f6d26cbe1
+tremorhub.com, s2t3y-r3ofd, DIRECT, 1a4e959a1b50034a
+weborama.com, 7, DIRECT
+xad.com, 958, RESELLER, 81cbf0a75a5e0e9a
+yahoo.com, 55029, RESELLER, e1a5b5b6e3255540
+yahoo.com, 58578, DIRECT, e1a5b5b6e3255540
+#lines added to all massarius ads.txt files: 
+ad-generation.jp, 12474, RESELLER
+adtech.com, 12068, RESELLER, e1a5b5b6e3255540
+advertising.com, 26154, RESELLER
+advertising.com, 28038, RESELLER
+adyoulike.com, 83d15ef72d387a1e60e5a1399a2b0c03, DIRECT
+appnexus.com, 11405, DIRECT, f5ab79cb980f11d1
+appnexus.com, 1908, RESELLER, f5ab79cb980f11d1
+appnexus.com, 2579, DIRECT
+appnexus.com, 3703, RESELLER, f5ab79cb980f11d1
+appnexus.com, 6924, RESELLER, f5ab79cb980f11d1
+appnexus.com, 7118, RESELLER, f5ab79cb980f11d1
+appnexus.com, 7597, RESELLER, f5ab79cb980f11d1
+appnexus.com, 12986, RESELLER, f5ab79cb980f11d32
+aps.amazon.com, 34707388-10ee-4cca-8eb7-79dec077f907, DIRECT
+contextweb.com, 560288, RESELLER, 89ff185a4c4e857c
+contextweb.com, 561690, RESELLER
+districtm.io, 100962,RESELLER, 3fd707be9c4527c3
+exponential.com, 145690, RESELLER, afac06385c445926
+exponential.com, 155490, RESELLER, afac06385c445926
+exponential.com, 161770, RESELLER, afac06385c445926
+exponential.com, 174870, RESELLER, afac06385c445926
+freewheel.tv, 1100721, DIRECT
+freewheel.tv, 1100737, RESELLER
+freewheel.tv, 506166, DIRECT
+Freewheel.tv, 741650, RESELLER
+freewheel.tv, 939745, RESELLER
+freewheel.tv, 941377, RESELLER
+google.com, pub-1313834454494130, RESELLER, f08c47fec0942fa0
+google.com, pub-4597105439779983, DIRECT, f08c47fec0942fa0
+google.com, pub-6678849566450770, DIRECT, f08c47fec0942fa0
+improvedigital.com, 1069, RESELLER
+improvedigital.com, 115, RESELLER
+improvedigital.com, 1220, DIRECT
+improvedigital.com, 185, RESELLER
+indexexchange.com, 176280, RESELLER, 50b1c356f2c5c8fc
+indexexchange.com, 179394, RESELLER
+indexexchange.com, 183554, RESELLER, 50b1c356f2c5c8fc
+indexexchange.com, 184665, RESELLER, 50b1c356f2c5c8fc
+indexexchange.com, 191151, DIRECT
+justpremium.com, 8, DIRECT
+lijit.com, 270620, RESELLER, fafdf38b16bf6b2b
+lkqd.net, 450, RESELLER, 59c49fa9598a0117
+openx.com, 537149888, RESELLER, 6a698e2ec38604c6
+openx.com, 539592429, RESELLER, 6a698e2ec38604c6
+openx.com, 539620353, RESELLER, 6a698e2ec38604c6
+openx.com, 540191398, RESELLER, 6a698e2ec38604c6
+openx.com, 540393169, RESELLER, 6a698e2ec38604c6
+openx.com, 540447798, RESELLER, 6a698e2ec38604c6
+plista.com, 235604, DIRECT
+pubmatic.com, 154037, RESELLER
+pubmatic.com, 156439, RESELLER
+pubmatic.com, 156546, RESELLER, 5d62403b186f2ace
+pubmatic.com, 157150, RESELLER, 5d62403b186f2ace
+pubmatic.com, 157885, RESELLER, 5d62403b186f2ace
+pubmatic.com, 158056, RESELLER
+rhythmone.com, 1654642120, RESELLER, a670c89d4a324e47
+rubiconproject.com, 16114, RESELLER, 0bfd66d529a55807
+rubiconproject.com, 17130, RESELLER, 0bfd66d529a55807
+rubiconproject.com, 18194, RESELLER, 0bfd66d529a55807
+rubiconproject.com, 19668, RESELLER, 0bfd66d529a55807
+rubiconproject.com, 20916, RESELLER
+rubiconproject.com, 20952, RESELLER, 0bfd66d529a55807
+rubiconproject.com, 20954, RESELLER, 0bfd66d529a55807
+rubiconproject.com,18020, RESELLER, 0bfd66d529a55807
+smartadserver.com, 2161, RESELLER
+smartclip.net, 7521, RESELLER
+sovrn.com, 257611, RESELLER, fafdf38b16bf6b2b
+sovrn.com, 270620, RESELLER, fafdf38b16bf6b2b
+spotx.tv, 204335, RESELLER, 7842df1d2fe2db34
+spotx.tv, 238936, RESELLER, 7842df1d2fe2db34
+spotxchange.com, 108933, RESELLER, 7842df1d2fe2db34
+spotxchange.com, 204335, RESELLER, 7842df1d2fe2db34
+spotxchange.com, 225721, RESELLER
+spotxchange.com, 238936, RESELLER, 7842df1d2fe2db34
+teads.tv, 15429, RESELLER, 15a9c44f6d26cbe1
+teads.tv, 15514, DIRECT, 15a9c44f6d26cbe1
+themediagrid.com, QVSFK3, DIRECT, 35d5010d7789b49d
+tremorhub.com, q017o-78mlk, RESELLER, 1a4e959a1b50034a
+tribalfusion.com, 145690, RESELLER, afac06385c445926
+tribalfusion.com, 155490, RESELLER, afac06385c445926
+tribalfusion.com, 161770, RESELLER, afac06385c445926
+tribalfusion.com, 174870, RESELLER, afac06385c445926
+video.unrulymedia.com, 4116102010, RESELLER
+weborama.com, 7, RESELLER
+weborama.nl, 10691, DIRECT
+yieldlab.net, 6378054, RESELLER
+yoc.com, 5487, DIRECT
+contact=https://massarius.com
+contact=yieldservice@massarius.com
+##End of ads.txt for supporters.

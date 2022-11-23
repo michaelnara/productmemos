@@ -1,0 +1,666 @@
+<!doctype html>
+<html amp lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<script async src="https://cdn.ampproject.org/v0.js"></script>
+
+	<!-- <script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script> -->
+	<!-- <script async custom-element="amp-addthis" src="https://cdn.ampproject.org/v0/amp-addthis-0.1.js"></script> -->
+	<link rel="canonical" href="https://amp.dev/documentation/guides-and-tutorials/start/create/basic_markup/">
+	
+	<script async custom-element="amp-consent" src="https://cdn.ampproject.org/v0/amp-consent-0.1.js"></script>
+	<script async custom-element="amp-ad" src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"></script>
+	<script async custom-element="amp-geo" src="https://cdn.ampproject.org/v0/amp-geo-0.1.js"></script>
+
+	<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+	<script type="application/ld+json">
+		{
+			"@context": "http://schema.org",
+			"@type": "NewsArticle",
+			"headline": "Open-source framework for publishing content",
+			"datePublished": "2015-10-07T12:02:41Z",
+			"image": [
+				"logo.jpg"
+			]
+		}
+	</script>
+	<meta name="amp-consent-blocking" content="amp-analytics,amp-ad" />
+
+	<style amp-boilerplate>
+		body {
+			-webkit-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+			-moz-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+			-ms-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+			animation: -amp-start 8s steps(1, end) 0s 1 normal both
+		}
+
+		@-webkit-keyframes -amp-start {
+			from {
+				visibility: hidden
+			}
+
+			to {
+				visibility: visible
+			}
+		}
+
+		@-moz-keyframes -amp-start {
+			from {
+				visibility: hidden
+			}
+
+			to {
+				visibility: visible
+			}
+		}
+
+		@-ms-keyframes -amp-start {
+			from {
+				visibility: hidden
+			}
+
+			to {
+				visibility: visible
+			}
+		}
+
+		@-o-keyframes -amp-start {
+			from {
+				visibility: hidden
+			}
+
+			to {
+				visibility: visible
+			}
+		}
+
+		@keyframes -amp-start {
+			from {
+				visibility: hidden
+			}
+
+			to {
+				visibility: visible
+			}
+		}
+	</style>
+	<noscript>
+		<style amp-boilerplate>
+			body {
+				-webkit-animation: none;
+				-moz-animation: none;
+				-ms-animation: none;
+				animation: none
+			}
+		</style>
+	</noscript>
+	<style amp-custom>
+		/* // TODO: Place CSS here \\ */
+		html,
+		body {
+			margin: 0;
+			padding: 0;
+			font-family: Arial, Helvetica, sans-serif;
+		}
+
+		.content-article {
+			padding: 0 15px;
+		}
+
+		.content-article>p {
+			font-size: 1em;
+			margin-bottom: 15px;
+			color: #6f6f6f;
+			text-align: justify;
+			line-height: 1.4em;
+		}
+
+		.content-article>p a {
+			color: #ED7B00;
+			text-decoration: none;
+			transition: all .2s;
+			-moz-transition: all .2s;
+			-webkit-transition: all .2s;
+			-o-transition: all .2s;
+		}
+
+		.content-article-title h2 {
+			font-size: 33px;
+			font-weight: 700;
+			text-transform: uppercase;
+			font-family: Arial, sans-serif;
+			margin-right: 0;
+			line-height: 35px;
+			margin: 0;
+		}
+
+		.content-article-title {
+			display: block;
+			margin-bottom: 15px;
+			margin-top: 15px;
+			padding-bottom: 18px;
+			border-bottom: 4px solid #ED7B00;
+			color: #ED7B00;
+			position: relative;
+		}
+
+		.article-info {
+			color: #5e5e5e;
+			font-size: 13px;
+			border-bottom: 1px solid rgba(0, 0, 0, .2);
+			padding-bottom: 8px;
+		}
+
+		#hamburger {
+			display: inline-block;
+			width: 29px;
+			height: 23px;
+			position: relative;
+			right: 0;
+			cursor: pointer;
+			outline: none;
+
+		}
+
+		#hamburger span {
+			display: block;
+			position: absolute;
+			height: 3px;
+			width: 100%;
+			background: #fff;
+			border-radius: 9px;
+			opacity: 1;
+			right: 0;
+			transform: rotate(0deg);
+			transition: .2s ease-in-out;
+		}
+
+		#hamburger span:nth-child(1) {
+			top: 0px;
+			transform-origin: left center;
+		}
+
+		#hamburger span:nth-child(2) {
+			top: 10px;
+			transform-origin: left center;
+		}
+
+		#hamburger span:nth-child(3) {
+			top: 20px;
+			transform-origin: left center;
+		}
+
+		#hamburger.close span:nth-child(1) {
+			transform: rotate(45deg);
+		}
+
+		#hamburger.close span:nth-child(2) {
+			width: 0%;
+			opacity: 0;
+			transition: .1s;
+		}
+
+		#hamburger.close span:nth-child(3) {
+			transform: rotate(-45deg);
+		}
+
+		.hamburger-wrapper {
+			background-color: #ED7B00;
+			padding: 13px 15px 10px;
+			text-align: right;
+		}
+
+		#nav-menu {
+			position: fixed;
+			width: 100%;
+			transform: translateX(100vw);
+			opacity: 0;
+			z-index: 10;
+			transition: transform .5s ease, opacity ease .2s;
+		}
+
+		#nav-menu.now-active {
+			transform: translateX(0);
+			transition: transform .5s ease, opacity ease .2s;
+			opacity: 1;
+			background-color: #ED7B00;
+		}
+
+		.nav-list {
+			padding: 0;
+			list-style-type: none;
+			margin: 0;
+			font-size: 1.2em;
+		}
+
+		.nav-list>li {
+			border-top: 1px solid rgba(255, 255, 255, .2);
+		}
+
+		.nav-list>li>a {
+			color: #fff;
+			text-decoration: none;
+			padding: 10px 15px;
+			display: block;
+		}
+
+		h1 {
+			color: #232323;
+			font-size: 22px;
+		}
+
+		.content-panel{
+			display: block;
+			margin-bottom: 10px;
+			border-bottom: 1px dotted #ccc;
+			padding-bottom: 10px;
+		}
+		.content-panel .panel-header {
+			display: block;
+			background: #ececec;
+			height: 29px;
+			overflow: hidden;
+			margin-bottom: 5px;
+		}
+		.content-panel .panel-header b{
+			display: block;
+			background: #ED7B00;
+			color: #fff;
+			padding: 4px 10px;
+			float: left;
+			position: relative;
+			z-index: 0;
+			text-transform: uppercase;
+			font-size: 16px;
+		}
+		.archive-block .content-panel .panel-header b{
+			background: #4b4b4b;
+		}
+		.content-panel .panel-header b:after {
+			display: block;
+			position: absolute;
+			background: inherit;
+			width: 40px;
+			height: 40px;
+			right: -10px;
+			top: -10px;
+			z-index: -1;
+			content: '';
+			transform: rotate(15deg);
+			-ms-transform: rotate(15deg);
+			-webkit-transform: rotate(15deg);
+			-o-transform: rotate(15deg);
+			-moz-transform: rotate(15deg);
+		}
+		.content-panel .panel-header b .icon-text{
+			display: inline-block;
+			padding-right: 8px;
+		}
+		.content-panel .panel-header .top-right{
+			float: right;
+			padding: 4px 10px;
+			text-transform: uppercase;
+		}
+		.content-panel .panel-header .top-right a{
+			font-size: 10px;
+			font-weight: 700;
+			color: #616161;
+			text-decoration: none;
+		}
+		.article-array{
+			padding: 0;
+			margin: 0;
+		}
+		.article-array li{
+			display: block;
+			border-bottom: 1px solid #f2f2f2;
+			padding-bottom: 2px;
+			margin-top: 5px;
+			position: relative;
+		}
+		.article-array li:before {
+			display: block;
+			position: absolute;
+			width: 5px;
+			height: 5px;
+			content: '';
+			padding: 0;
+			top: 7px;
+			left: 0;
+		}
+		.newsoverview-link-time {
+			float: left;
+			width: 40px;
+			color: #999;
+			font-size: 12px;
+			font-weight: 700;
+			margin-top: 3px;
+			
+		}
+		.article-array li a{
+			font-weight: 400;
+    		font-size: 12px;
+			text-decoration: none;
+			color: #232323;
+		}
+		.article-array li a:visited{
+			color: #ccc;
+		}
+		.article-big-block, .article-small-block {
+			display: block;
+			padding-bottom: 0;
+			margin-bottom: 15px;
+			border-bottom: 1px dotted #ccc;
+		}
+		.article-big-block .article-header h2 a, .article-small-block .article-header h2 a {
+			color: #232323;
+			line-height: 120%;
+			text-decoration: none;
+		}
+		.set-image-border:before {
+			position: absolute;
+			display: block;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			z-index: 2;
+			content: '';
+			box-shadow: inset 0 0 0 1px rgba(0,0,0,.15);
+		}
+		.article-big-block .article-photo {
+			display: block;
+			padding-bottom: 12px;
+		}
+		span.image-hover {
+			position: relative;
+			background: #232323;
+			display: block;
+		}
+		span.image-hover img {
+			transition: all .2s;
+			-moz-transition: all .2s;
+			-webkit-transition: all .2s;
+			-o-transition: all .2s;
+		}
+		span.image-hover:hover img {
+			opacity: .5;
+			filter: alpha(opacity=50);
+		}
+		.set-image-border{
+			margin: 0px;
+			padding: 0px;
+			float: none;
+		}
+		.archive-block .content-panel{
+			display: block;
+			margin-bottom: 0;
+			border-bottom: none;
+			padding-bottom: 0;
+		}
+		div{
+			margin: 0;
+			padding: 0;
+		}
+	</style>
+</head>
+
+<body>
+	<amp-geo layout="nodisplay">
+		<script type="application/json">
+			{
+			  "ISOCountryGroups": {
+				"showConsentCountries": ["AT", "BE", "BG", "HR", "CY", "CZ", "DK", "EE", "FI", "FR", "DE", "GR", "HU", "IE", "IT", "LT", "LV", "LU", "MT", "NL", "PL", "PT", "RO", "SK", "SI", "ES", "SE", "GB", "US", "CA", "AU", "BR"],
+				"geoGroupUnknown": ["unknown"]
+			  }
+			}
+		</script>
+	</amp-geo>
+
+	<amp-consent id="consent" layout="nodisplay" type="LiveRamp">
+        <script type="application/json">
+          {
+            "consentInstanceId": "1878f8d7-f768-4d32-9b02-a692a4f1e159",
+            "consentRequired": false,
+            "checkConsentHref": null,
+            "onUpdateHref": "https://amp-logs-prod.privacymanager.io/consent-state",
+            "postPromptUI": "post-consent-ui",
+            "clientConfig": {
+              "appId": "1878f8d7-f768-4d32-9b02-a692a4f1e159"
+            },
+            "exposesTcfApi": true,
+            "uiConfig": {
+              "overlay": true
+            },
+            "geoOverride": {
+              "showConsentCountries": {
+                "consentRequired": true
+              },
+              "geoGroupUnknown": {
+                "consentRequired": false
+              }
+            }
+          }
+        </script>
+        
+      <div id="post-consent-ui" tabindex="0" title="Manage Privacy Settings" role="button" on="tap:consent.prompt()"
+            style="display: flex; width: 40px; height: 40px; justify-content: center; align-items: center; cursor: pointer; margin: 0 10px 10px 0;
+            float: right; border-radius: 25px; background-color: #48484A">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 100 100">
+          <path fill="#fff" d="M68.884 25.318c-6.503-3.34-12.126-4.757-18.867-4.757-6.706 0-13.074 1.586-18.866 4.757-.813.439-1.83.135-2.303-.674-.44-.81-.136-1.856.677-2.295 6.3-3.407 13.21-5.162 20.492-5.162 7.215 0 13.515 1.586 20.425 5.129.847.438 1.152 1.45.711 2.26-.304.607-.88.945-1.49.945-.27 0-.542-.068-.779-.203zm-47.895 16.87c-.341 0-.683-.098-.99-.293-.786-.521-.956-1.53-.41-2.28 3.38-4.556 7.684-8.137 12.806-10.644 10.724-5.273 24.452-5.306 35.21-.032 5.122 2.506 9.425 6.055 12.806 10.58.546.715.376 1.757-.41 2.278-.785.52-1.844.358-2.39-.39-3.074-4.102-6.967-7.325-11.577-9.571-9.802-4.785-22.335-4.785-32.102.033-4.644 2.278-8.537 5.533-11.611 9.635-.273.456-.785.684-1.332.684zm22.028 38.541c-.449 0-.897-.162-1.208-.487-3.002-2.823-4.624-4.64-6.936-8.566-2.38-3.991-3.623-8.858-3.623-14.082 0-9.637 8.765-17.49 19.531-17.49 10.767 0 19.532 7.853 19.532 17.49 0 .908-.76 1.622-1.726 1.622s-1.725-.714-1.725-1.622c0-7.853-7.212-14.245-16.08-14.245-8.87 0-16.081 6.392-16.081 14.245 0 4.672 1.104 8.988 3.209 12.492 2.208 3.732 3.727 5.322 6.384 7.853.655.649.655 1.654 0 2.303-.38.325-.828.487-1.277.487zm23.652-5.208c-4.185 0-7.878-1-10.903-2.967-5.24-3.368-8.37-8.836-8.37-14.637 0-.934.774-1.667 1.758-1.667.985 0 1.759.733 1.759 1.667 0 4.701 2.532 9.135 6.823 11.87 2.497 1.6 5.416 2.366 8.933 2.366.844 0 2.25-.1 3.658-.333.95-.167 1.864.433 2.04 1.367.175.9-.458 1.767-1.442 1.934-2.005.366-3.764.4-4.256.4zm-6.157 7.291c-.137 0-.308-.032-.445-.065-5.44-1.45-8.999-3.393-12.728-6.917-4.79-4.579-7.425-10.672-7.425-17.194 0-5.336 4.722-9.684 10.538-9.684 5.817 0 10.539 4.348 10.539 9.684 0 3.524 3.182 6.39 7.117 6.39 3.934 0 7.116-2.866 7.116-6.39 0-12.418-11.12-22.497-24.806-22.497-9.717 0-18.613 5.204-22.616 13.274-1.335 2.668-2.019 5.797-2.019 9.223 0 2.57.24 6.62 2.293 11.89.342.857-.103 1.812-.993 2.109-.89.329-1.882-.132-2.19-.956-1.676-4.314-2.497-8.596-2.497-13.043 0-3.953.787-7.543 2.326-10.672 4.551-9.19 14.645-15.151 25.696-15.151 15.568 0 28.228 11.56 28.228 25.79 0 5.336-4.722 9.684-10.538 9.684-5.817 0-10.539-4.348-10.539-9.684 0-3.524-3.182-6.39-7.117-6.39-3.934 0-7.116 2.866-7.116 6.39 0 5.632 2.258 10.903 6.398 14.855 3.25 3.096 6.364 4.809 11.188 6.094.924.23 1.437 1.152 1.198 2.009-.171.757-.89 1.251-1.608 1.251z"/>
+        </svg>
+      </div>
+    </amp-consent>
+
+
+	<div class="hamburger-wrapper">
+		<div id="hamburger" tabindex="1" role="button"
+			on="tap:hamburger.toggleClass(class='close'),nav-menu.toggleClass(class='now-active')">
+			<span></span>
+			<span></span>
+			<span></span>
+		</div>
+	</div><!-- // end hamburger wrapper-->
+
+	<div id="nav-menu">
+		<ul class="nav-list">
+			<li><a href="#">Home</a></li>
+			<li><a href="#">Foto's</a></li>
+			<li><a href="#">Racebabes</a></li>
+			<li><a href="#">Contact</a></li>
+			<li><a href="#">Vrienden van raceexpress</a></li>
+			<li><a href="#">Advertising</a></li>
+			<li><a href="#">Archief</a></li>
+		</ul>
+	</div><!-- // end .nav-menu -->
+
+	<div style="text-align: center;">
+		<amp-ad width="320" height="100"
+			type="doubleclick"
+			data-slot="/13436254,21826029391/Ginxtv_AMP_Middle2"
+			data-enable-refresh="30"
+			data-multi-size="320x50,300x250,300x100,300x50"
+			data-multi-size-validation="false"
+			data-loading-strategy="0"
+			rtc-config='{"vendors":{"prebidappnexus":{"PLACEMENT_ID":"22688585"}},"timeoutMillis":500}'>
+		</amp-ad>
+	<div>
+
+	<div class="content-article">
+
+		<div class="content-article-title">
+			<h2>Formule 1</h2>
+		</div><!-- // end of category tag -->
+
+		<h1>Na het vertrek van Rexona en Orlen begint het vele sponsorgeld van Latifi nu richting Williams te stromen...
+		</h1><!-- // end of title -->
+
+		<div class="article-info">
+			<strong>Uitgegeven door Peter Vader • 10 januari 2020 08:07</strong>
+			<small> • </small>
+			<small>Print artikel</small>
+		</div><!-- // end of sub-title -->
+
+		<p>
+			Het sponsorgeld afkomstig van het nieuwe racestoeltje van <a href="https://www.facebook.com/racexpress2/"
+				target="_blank">Nicholas Latifi</a> begint nu te stromen richting het Williams-team.
+			Deze week kwam het bericht dat Williams' grootste geldschieter sinds 2015, Rexona en het moederbedrijf
+			Unilever,
+			zijn vertrokken. Niet zo leuk omdat het in Oxfordshire gevestigde team voor het derde opeenvolgende seizoen
+			helemaal achteraan op de grid lijkt te staan. En dat Rexona-bericht kwam bovenop het vertrek van Robert
+			Kubica
+			en zijn sponsor PKN Orlen, die nu hun 15 miljoen euro nu aan concullega Alfa Romeo geven.
+		</p>
+
+		<div class="image-container">
+			<amp-img src="img/Nicolas_Latifi_Williams_F1_2020.jpg" width="620" height="349" layout="responsive"
+				alt="Nicolas Latifi F1 Williams">
+		</div>
+
+		<p>
+			<b>Sofina en Lavazza</b>
+			<br>
+			Maar door Nicholas Latifi contractueel vast te leggen, de zoon van de rijke mede-eigenaar van McLaren -
+			Michael
+			Latifi - <a href="https://www.youtube.com/racexpress/videos" target="_blank">heeft Williams
+				een nieuwe inkomstenbron gecreëerd</a>. Het meest voor de hand liggende is de vervanging van de
+			Orlen-branding op de achterkant van de achtervleugel door Sofina, het op twee na grootste
+			levensmiddelenbedrijf
+			in Canada. Sofina is opgericht door Michael Latifi, en er wordt gemeld dat de sponsordollars van het
+			Latifi-kamp
+			naar Williams in 2020 oplopen tot ongeveer $ 40 miljoen. Een deel daarvan komt ook van Lavazza, een bekend
+			Italiaans koffiemerk. Sofifi Foods van Latifi is de exclusieve distributeur van Lavazza-koffie in Canada.
+			Lavazza was de afgelopen seizoenen een persoonlijke sponsor van Nicholas Latifi en het logo zal dit jaar
+			zijn
+			debuut maken op de ‘Williams-2020-auto’.
+		</p>
+
+		<p>
+			<b>Lang gelobbyd</b>
+			<br>
+			Na in 2019 een dieptepunt te hebben bereikt, hoopt Williams dit jaar op een beter seizoen. Maar
+			Williams-bazin
+			Claire Williams geeft toe dat de ingrijpende nieuwe regels voor 2021 nog voor complicaties kunnen zorgen.
+			"Echt,
+			we kijken naar 2019 en 2020 als één lang wedstrijdseizoen. Dus dat is best moeilijk, maar we wilden per se
+			dat
+			de 2021-voorschriften bekend werden" zei de dochter van Frank Williams. "We hebben hard voor deze nieuwe
+			regels
+			gelobbyd, dus we gaan gewoon de strijd met dit probleem aan en we gaan daarbij zo goed mogelijk te werk."
+		</p><!-- // end of all content  -->
+
+
+		<!-- // TODO: Uncomment this part -->
+		<!-- <amp-addthis width="320"
+        height="92"
+        data-pub-id="ra-52c82d6b46fb02e7"
+        data-widget-id="mv93"
+        data-widget-type="inline">
+      </amp-addthis> -->
+
+		<div class="content-panel">
+			<div class="panel-header">
+				<b><span class="icon-text">⚏</span>MEER NIEUWS...</b>
+				<div class="top-right"><a href="#"><!-- alles? --></a>
+				</div>
+			</div><!-- // end .panel-header -->
+
+			<div class="panel-content">			
+				<!-- BEGIN .article-array -->
+				<ul class="article-array content-category">
+					<li>
+						<span class="newsoverview-link-time">10-01</span><a href="/index.php?nav=Artikel&amp;nid=103252">Fernando
+							Alonso heeft alle vertrouwen in de auto + VIDEO</a>
+					</li>
+					<li>
+						<span class="newsoverview-link-time">10-01</span><a href="/index.php?nav=Artikel&amp;nid=103184">Toto Wolf
+							snapt het Britse systeem niet! "Ik begrijp niet waarom, omdat ik weet dat als Lewis stopt..."</a>
+					</li>
+					<li>
+						<span class="newsoverview-link-time">10-01</span><a href="/index.php?nav=Artikel&amp;nid=103167">Manager Max
+							Verstappen: "Meerdere gesprekken met elkaar gevoerd: over de korte, middellange en lange termijnvisie"</a>
+					</li>
+					<li>
+						<span class="newsoverview-link-time">10-01</span><a href="/index.php?nav=Artikel&amp;nid=103247">Het echte
+							afzien van Teun Stam in Dakar! Na een dag klussen in de woestijn en een nachtje overslaan, ging het in één
+							rechte streep door</a>
+					</li>
+					<li>
+						<span class="newsoverview-link-time">10-01</span><a href="/index.php?nav=Artikel&amp;nid=103242">LIVESTREAM F3
+							Asian Championship race 3 in Dubai</a>
+					</li>
+					<!-- END .article-array -->
+				</ul>
+			</div><!-- // end .panel-content -->
+		</div><!-- // end content-panel -->
+		<div class="content-article-title">
+			<h2>Xtra</h2>
+		</div>
+		<div class="archive">
+			<div class="archive-row">
+				<div class="archive-block">
+					<!-- BEGIN .content-panel -->
+					<div class="content-panel">
+						<div class="panel-header"> 
+							<b><span class="icon-text">⚏</span>COLUMNS</b>
+							<div class="top-right">
+								<a href=""></a>
+							</div>
+						</div>
+						<div class="panel-content">
+							<div class="article-big-block">
+								<div class="article-photo"> 
+									<span class="image-hover">
+										<a href="http://www.racexpress.nl/index.php?nav=Artikel&amp;nid=62148">
+											<span class="set-image-border">
+												<amp-img src="img/Tim_Coronel_Column.jpg" width="320" height="194" class="setborder" alt="" layout="responsive">
+											</span>
+										</a>
+									</span><!-- // end image-hover -->
+								</div><!-- // end article-photo -->
+								<div class="article-header">
+									<h2><a href="http://www.racexpress.nl/index.php?nav=Artikel&nid=62148"></a></h2>
+								</div> <!-- // end .article-header -->
+							</div><!-- // end .article-big-block -->
+						</div> <!-- // end .panel-header -->
+					</div><!-- // end content-panel  -->
+				</div><!-- // end archive-block -->
+
+				<div class="archive-block">
+					<!-- BEGIN .content-panel -->
+					<div class="content-panel">
+						<div class="panel-header"> <b><span
+									class="icon-text">⚏</span>FOTOGALLERY</b>
+							<div class="top-right"><a href="http://www.racexpress.nl/index.php?nav=Fotos">Alle galleries</a>
+							</div>
+						</div>
+						<div class="panel-content">
+							<!-- BEGIN .article-big-block -->
+							<div class="article-big-block">
+								<div class="article-photo"> <span class="image-hover"> <a
+											href="http://www.racexpress.nl/index.php?nav=Fotos&gallery=258 "><span
+												class="set-image-border" style="margin: 0px; padding: 0px; float: none;"><amp-img width="320" height="194"
+													src="img/Blancpain_Sprintseries_Zolder.jpg" class="setborder"
+													alt=""
+													layout="responsive"
+													></span></a>
+									</span> </div>
+								<div class="article-header">
+									<h2><a href="http://www.racexpress.nl/index.php?nav=Fotos&gallery=258 ">Blancpain
+											Sprint Series </a></h2>
+								</div> <!-- END .article-big-block -->
+							</div>
+						</div> <!-- END .content-panel -->
+					</div>
+				</div>
+
+
+			</div>
+
+			<!-- END .main-content-full -->
+		</div>
+	</div><!-- // end .content-article -->
+</body>
+
+</html>

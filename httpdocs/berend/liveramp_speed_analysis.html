@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liveramp Speed Analysis</title>
+    <script>
+        var bundle = location.search.indexOf("bundle") === -1 ? false : true;
+        const firstScript = document.getElementsByTagName("script")[0];
+        function analyseLoadTime(count) {
+            console.log("bundle:", bundle);
+            const analyseData = new Array(count);
+            var i = -1;
+            var fn = null;
+            var next = null;
+            if (bundle) {
+                fn = loadFaktorAndBundle;
+                var next = function () {
+                    var loadTime_total_bundle = 0;
+                    var loadTime_total_faktor = 0;
+                    var loadTime_smallest_bundle = Infinity;
+                    var loadTime_smallest_faktor = Infinity;
+                    var loadTime_largest_bundle = 0;
+                    var loadTime_largest_faktor = 0;
+                    for (const data of analyseData) {
+                        data.loadTime_bundle = data.timeBundle - data.timeStart;
+                        data.loadTime_faktor = data.timeEnd - data.timeBundle;
+                        loadTime_total_bundle += data.loadTime_bundle;
+                        loadTime_total_faktor += data.loadTime_faktor;
+                        loadTime_smallest_bundle = loadTime_smallest_bundle < data.loadTime_bundle ? loadTime_smallest_bundle : data.loadTime_bundle;
+                        loadTime_smallest_faktor = loadTime_smallest_faktor < data.loadTime_faktor ? loadTime_smallest_faktor : data.loadTime_faktor;
+                        loadTime_largest_bundle = loadTime_largest_bundle > data.loadTime_bundle ? loadTime_largest_bundle : data.loadTime_bundle;
+                        loadTime_largest_faktor = loadTime_largest_faktor > data.loadTime_faktor ? loadTime_largest_faktor : data.loadTime_faktor;
+                    }
+                    var loadTime_avarage_bundle = loadTime_total_bundle / count;
+                    var loadTime_avarage_faktor = loadTime_total_faktor / count;
+                    console.table([
+                        { key: "total", "bundle": loadTime_total_bundle, "faktor": loadTime_total_faktor },
+                        { key: "smallest", "bundle": loadTime_smallest_bundle, "faktor": loadTime_smallest_faktor },
+                        { key: "avarage", "bundle": loadTime_avarage_bundle, "faktor": loadTime_avarage_faktor },
+                        { key: "largest", "bundle": loadTime_largest_bundle, "faktor": loadTime_largest_faktor },
+                    ]);
+                    console.table(analyseData);
+                };
+            } else {
+                fn = loadFaktor;
+                var next = function () {
+                    var loadTime_total_faktor = 0;
+                    var loadTime_smallest_faktor = Infinity;
+                    var loadTime_largest_faktor = 0;
+                    for (const data of analyseData) {
+                        data.loadTime_bundle = data.timeEnd - data.timeStart;
+                        loadTime_total_faktor += data.loadTime_bundle;
+                        loadTime_smallest_faktor = loadTime_smallest_faktor < data.loadTime_bundle ? loadTime_smallest_faktor : data.loadTime_bundle;
+                        loadTime_largest_faktor = loadTime_largest_faktor > data.loadTime_bundle ? loadTime_largest_faktor : data.loadTime_bundle;
+                    }
+                    var loadTime_avarage_faktor = loadTime_total_faktor / count;
+                    console.table([
+                        { key: "total", "faktor": loadTime_total_faktor },
+                        { key: "smallest", "faktor": loadTime_smallest_faktor },
+                        { key: "avarage", "faktor": loadTime_avarage_faktor },
+                        { key: "largest", "faktor": loadTime_largest_faktor },
+                    ]);
+                    console.table(analyseData);
+                };
+            }
+            while (++i < count) {
+                const ix = i;
+                const _next = next;
+                next = function () {
+                    const timeStart = performance.now();
+                    fn(analyseData, ix, _next, timeStart);
+                };
+            }
+            next();
+        }
+        function loadFaktor(data, i, callback, timeStart, timeBundle) {
+            const fakt = document.createElement('script');
+            fakt.toggleAttribute("async");
+            fakt.toggleAttribute("defer");
+            fakt.setAttribute('src', (document.location.protocol === "https:" ? "https:" : "http:") + "//gdpr-wrapper.privacymanager.io/gdpr/5e16a41c-32c1-4ae5-abc2-63b9cc3818ca/gdpr-liveramp.js");
+            fakt.addEventListener("load", function () {
+                window.__tcfapi("addEventListener", 2, checkConsent);
+                const timeEnd = performance.now();
+                if (timeBundle)
+                    data[i] = { i, timeStart, timeBundle, timeEnd };
+                else
+                    data[i] = { i, timeStart, timeEnd };
+                callback();
+            });
+            firstScript.parentNode.insertBefore(fakt, firstScript);
+        }
+        function loadFaktorAndBundle(data, i, callback, timeStart) {
+            const bundle = document.createElement('link');
+            bundle.setAttribute('rel', 'preload');
+            bundle.setAttribute('href', 'https://gdpr.privacymanager.io/1/gdpr.bundle.js');
+            bundle.setAttribute('as', 'script');
+            bundle.addEventListener("load", function () {
+                const timeBundle = performance.now();
+                loadFaktor(data, i, callback, timeStart, timeBundle);
+            });
+            firstScript.parentNode.insertBefore(bundle, firstScript);
+        }
+        function checkConsent() {
+            console.log("checkConsent does not exist");
+        }
+        analyseLoadTime(20);
+    </script>
+</head>
+
+<body></body>
+
+</html>

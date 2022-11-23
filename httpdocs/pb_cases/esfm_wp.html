@@ -1,0 +1,198 @@
+
+<html>
+
+    <head>
+        <link rel="icon" type="image/png" href="/favicon.png">
+        <script async src="//www.googletagservices.com/tag/js/gpt.js"></script>
+        <script async src="//acdn.adnxs.com/prebid/not-for-prod/1/prebid.js"></script>
+        <script>
+            var topSizes = [[728, 90], [1800, 1000]];
+            var mrSizes = [[300, 250], [300,600]];
+            var botSizes = [[728, 90]];
+            //random top placement ID for demo purposes
+            if(Math.random()<.5)var randomId=12067004;else randomId=1219912;
+
+            var PREBID_TIMEOUT = 1000;
+            var FAILSAFE_TIMEOUT = 3000;
+            var adUnits = [
+                {
+                    code: '/87190325/HB_1/HB_1_LB',
+                    mediaTypes: {
+                        banner: {
+                            sizes: topSizes
+                        }
+                    },
+                    bids: [{
+                        bidder: 'improvedigital', 
+                        params: {
+                            //random 728x90/1800x1000 placement ID
+                            placementId: randomId 
+                        }
+                    }]
+                },
+
+                {
+                    code: '/87190325/HB_1/HB_2_LB',
+                    mediaTypes: {
+                        banner: {
+                            sizes: botSizes
+                        }
+                    },
+                    bids: [{
+                        bidder: 'appnexus',
+                        params: {
+                            placementId: 13144370
+                        }
+                    }]
+                },
+
+                {
+                    code: '/87190325/HB_1/HB_1_MR',
+                    mediaTypes: {
+                        banner: {
+                            sizes: mrSizes
+                        }
+                    },
+                    bids: [{
+                        bidder: 'improvedigital',
+                        params: {
+                            placementId: 12067005
+                        }
+                    }]
+                }
+            ];
+
+            var googletag = googletag || {};
+            googletag.cmd = googletag.cmd || [];
+            googletag.cmd.push(function() {
+                googletag.pubads().disableInitialLoad();
+            });
+
+            var pbjs = pbjs || {};
+            pbjs.que = pbjs.que || [];
+
+            pbjs.que.push(function() {
+                pbjs.addAdUnits(adUnits);
+                pbjs.setConfig({ 
+                    priceGranularity: "low" 
+                });
+                pbjs.requestBids({
+                    bidsBackHandler: initAdserver,
+                    timeout: PREBID_TIMEOUT
+                });
+            });
+
+            function initAdserver(bids) {
+                for (let i in bids) {
+                    for(let j in bids[i].bids) {
+                        let bid = bids[i].bids[j];
+                        if (bid.width == 1800 && bid.height == 1000) {
+                            bid.width = 728;
+                            bid.height = 90;
+                            // if 1800x1000 wallpaper is available, wpAvailable = true
+                            var wpAvailable = true;
+                        } else if (bid.width == 970 && bid.height == 1000) {
+                            bid.width = 970;
+                            bid.height = 250;
+                            // if 970x1000 wallpaper is available, wpAvailable = true
+                            var wpAvailable = true;
+                        }
+                    }
+                }
+                if (pbjs.initAdserverSet) return;
+                pbjs.initAdserverSet = true;
+                googletag.cmd.push(function() {
+                    pbjs.que.push(function() {
+                        pbjs.setTargetingForGPTAsync();
+                        // if wpAvailable is true, only the WP slot is refreshed (more slots can be added here)
+                        if (wpAvailable) {
+                            googletag.pubads().refresh([gptadslots[0]]);
+                        } else {
+                        // else all slots are refreshed
+                            googletag.pubads().refresh();
+                        }
+                        
+                    });
+                });
+            }
+            // in case PBJS doesn't load
+            setTimeout(function() {
+                initAdserver();
+            },
+            FAILSAFE_TIMEOUT);
+
+            // define gptadslots 
+            var gptadslots = [];
+            
+            googletag.cmd.push(function() {
+
+            // this slot is always refreshed
+            gptadslots[0] = googletag.defineSlot('/87190325/HB_1/HB_1_LB', topSizes, 'div-1').addService(googletag.pubads());
+            // these slots are not refreshed if a wallpaper is available
+            gptadslots[1] = googletag.defineSlot('/87190325/HB_1/HB_2_LB', botSizes, 'div-2').addService(googletag.pubads());
+            gptadslots[2] = googletag.defineSlot('/87190325/HB_1/HB_1_MR', mrSizes, 'div-3').addService(googletag.pubads());
+
+                googletag.pubads().enableSingleRequest();
+                googletag.pubads().collapseEmptyDivs(true)
+                googletag.pubads().setCentering(true);
+                googletag.enableServices();
+            });
+
+        </script>
+
+    </head>
+
+    <body>
+        <!-- CONTENT TOP -->
+        <div id="parent-div1" style="text-align: center">
+            <div id="div1" style="width:100%; height:200px; background-color:lightgray; display: inline-block; text-align: center">
+            </div>
+        </div> 
+
+            <div id='div-3'>
+                <script type='text/javascript'>
+                    googletag.cmd.push(function() {
+                        googletag.display('div-3');
+                    });
+
+                </script>
+            </div>
+
+        <!-- RICH MEDIA DIV -->
+        <div id='div-1'>
+            <script type='text/javascript'>
+                googletag.cmd.push(function() {
+                    googletag.display('div-1');
+                });
+
+            </script>
+        </div>
+
+        <!-- CONTENT MID -->
+        <div id="parent-div2" style="text-align: center">
+            <div id="div2" style="width:100%; height:200px; background-color:lightgray; display: inline-block; text-align: center">
+            </div>
+        </div> 
+
+        <!-- BOTTOM DIV -->
+        <div id='div-2'>
+            <script type='text/javascript'>
+                googletag.cmd.push(function() {
+                    googletag.display('div-2');
+                });
+
+            </script>
+        </div>
+        <!-- not defined div -->
+        <div id='div-xx'>
+            <script type='text/javascript'>
+                googletag.cmd.push(function() {
+                    googletag.display('div-xx');
+                });
+
+            </script>
+        </div>
+
+    </body>
+
+</html>

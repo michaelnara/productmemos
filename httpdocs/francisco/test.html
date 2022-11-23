@@ -1,0 +1,969 @@
+
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <link rel="stylesheet" href="https://cdn.consentmanager.mgr.consensu.org/delivery/cmp.min.css" />
+    <script>window.gdprAppliesGlobally=true;if(!("cmp_id" in window)){window.cmp_id=25193}if(!("cmp_params" in window)){window.cmp_params=""}if(!("cmp_host" in window)){window.cmp_host="consentmanager.mgr.consensu.org"}if(!("cmp_cdn" in window)){window.cmp_cdn="cdn.consentmanager.mgr.consensu.org"}window.cmp_getsupportedLangs=function(){return["DE","EN","FR","IT","NO","DA","FI","ES","PT","RO","BG","ET","EL","GA","HR","LV","LT","MT","NL","PL","SV","SK","SL","CS","HU","RU","SR","ZH","TR","UK","AR","BS"]};window.cmp_getRTLLangs=function(){return["AR"]};window.cmp_getlang=function(j){if(typeof(j)!="boolean"){j=true}if(j&&typeof(cmp_getlang.usedlang)=="string"&&cmp_getlang.usedlang!==""){return cmp_getlang.usedlang}var g=window.cmp_getsupportedLangs();var c=[];var f=location.hash;var e=location.search;var a="languages" in navigator?navigator.languages:[];if(f.indexOf("cmplang=")!=-1){c.push(f.substr(f.indexOf("cmplang=")+8,2))}else{if(e.indexOf("cmplang=")!=-1){c.push(e.substr(e.indexOf("cmplang=")+8,2))}else{if("cmp_setlang" in window&&window.cmp_setlang!=""){c.push(window.cmp_setlang.toUpperCase())}else{if(a.length>0){for(var d=0;d<a.length;d++){c.push(a[d])}}}}}if("language" in navigator){c.push(navigator.language)}if("userLanguage" in navigator){c.push(navigator.userLanguage)}var h="";for(var d=0;d<c.length;d++){var b=c[d].toUpperCase();if(b.indexOf("-")!=-1){b=b.substr(0,2)}if(g.indexOf(b)!=-1){h=b;break}}if(h==""&&typeof(cmp_getlang.defaultlang)=="string"&&cmp_getlang.defaultlang!==""){return cmp_getlang.defaultlang}else{if(h==""){h="EN"}}h=h.toUpperCase();return h};(function(){var a="";var d="_en";if("cmp_getlang" in window){a=window.cmp_getlang().toLowerCase();d="_"+a}var c=("cmp_proto" in window)?window.cmp_proto:"https:";var g=("cmp_ref" in window)?window.cmp_ref:location.href;var b=document.createElement("script");b.setAttribute("data-cmp-ab","1");b.src=c+"//"+window.cmp_host+"/delivery/cmp.php?id="+window.cmp_id+"&h="+encodeURIComponent(g)+"&"+window.cmp_params+(document.cookie.length>0?"&__cmpfcc=1":"")+"&l="+a+"&o="+(new Date()).getTime();b.type="text/javascript";b.async=true;if(document.body){document.body.appendChild(b)}else{if(document.currentScript){document.currentScript.parentElement.appendChild(b)}else{var f=document.getElementsByTagName("body");if(f.length==0){f=document.getElementsByTagName("div")}if(f.length==0){f=document.getElementsByTagName("span")}if(f.length==0){f=document.getElementsByTagName("ins")}if(f.length>0){f[0].appendChild(b)}}}var b=document.createElement("script");b.src=c+"//"+window.cmp_cdn+"/delivery/cmp"+d+".min.js";b.type="text/javascript";b.setAttribute("data-cmp-ab","1");b.async=true;if(document.body){document.body.appendChild(b)}else{if(document.currentScript){document.currentScript.parentElement.appendChild(b)}else{var f=document.getElementsByTagName("body");if(f.length==0){f=document.getElementsByTagName("div")}if(f.length==0){f=document.getElementsByTagName("span")}if(f.length==0){f=document.getElementsByTagName("ins")}if(f.length>0){f[0].appendChild(b)}}}})();window.cmp_addFrame=function(b){if(!window.frames[b]){if(document.body){var a=document.createElement("iframe");a.style.cssText="display:none";a.name=b;document.body.appendChild(a)}else{window.setTimeout('window.cmp_addFrame("'+b+'")',10)}}};window.cmp_rc=function(h){var b=document.cookie;var f="";var d=0;while(b!=""&&d<100){d++;while(b.substr(0,1)==" "){b=b.substr(1,b.length)}var g=b.substring(0,b.indexOf("="));if(b.indexOf(";")!=-1){var c=b.substring(b.indexOf("=")+1,b.indexOf(";"))}else{var c=b.substr(b.indexOf("=")+1,b.length)}if(h==g){f=c}var e=b.indexOf(";")+1;if(e==0){e=b.length}b=b.substring(e,b.length)}return(f)};window.cmp_stub=function(){var a=arguments;__cmapi.a=__cmapi.a||[];if(!a.length){return __cmapi.a}else{if(a[0]==="ping"){if(a[1]===2){a[2]({gdprApplies:gdprAppliesGlobally,cmpLoaded:false,cmpStatus:"stub",displayStatus:"hidden",apiVersion:"2.0",cmpId:31},true)}else{a[2]({gdprAppliesGlobally:gdprAppliesGlobally,cmpLoaded:false},true)}}else{if(a[0]==="getUSPData"){a[2]({version:1,uspString:window.cmp_rc("")},true)}else{if(a[0]==="getTCData"){__cmapi.a.push([].slice.apply(a))}else{if(a[0]==="addEventListener"||a[0]==="removeEventListener"){__cmapi.a.push([].slice.apply(a))}else{if(a.length==4&&a[3]===false){a[2]({},false)}else{__cmapi.a.push([].slice.apply(a))}}}}}}};window.cmp_msghandler=function(d){var a=typeof d.data==="string";try{var c=a?JSON.parse(d.data):d.data}catch(f){var c=null}if(typeof(c)==="object"&&c!==null&&"__cmpCall" in c){var b=c.__cmpCall;window.__cmp(b.command,b.parameter,function(h,g){var e={__cmpReturn:{returnValue:h,success:g,callId:b.callId}};d.source.postMessage(a?JSON.stringify(e):e,"*")})}if(typeof(c)==="object"&&c!==null&&"__cmapiCall" in c){var b=c.__cmapiCall;window.__cmapi(b.command,b.parameter,function(h,g){var e={__cmapiReturn:{returnValue:h,success:g,callId:b.callId}};d.source.postMessage(a?JSON.stringify(e):e,"*")})}if(typeof(c)==="object"&&c!==null&&"__uspapiCall" in c){var b=c.__uspapiCall;window.__uspapi(b.command,b.version,function(h,g){var e={__uspapiReturn:{returnValue:h,success:g,callId:b.callId}};d.source.postMessage(a?JSON.stringify(e):e,"*")})}if(typeof(c)==="object"&&c!==null&&"__tcfapiCall" in c){var b=c.__tcfapiCall;window.__tcfapi(b.command,b.version,function(h,g){var e={__tcfapiReturn:{returnValue:h,success:g,callId:b.callId}};d.source.postMessage(a?JSON.stringify(e):e,"*")},b.parameter)}};window.cmp_setStub=function(a){if(!(a in window)||(typeof(window[a])!=="function"&&typeof(window[a])!=="object"&&(typeof(window[a])==="undefined"||window[a]!==null))){window[a]=window.cmp_stub;window[a].msgHandler=window.cmp_msghandler;if(window.addEventListener){window.addEventListener("message",window.cmp_msghandler,false)}else{window.attachEvent("onmessage",window.cmp_msghandler)}}};window.cmp_addFrame("__cmapiLocator");window.cmp_addFrame("__cmpLocator");window.cmp_addFrame("__uspapiLocator");window.cmp_addFrame("__tcfapiLocator");window.cmp_setStub("__cmapi");window.cmp_setStub("__cmp");window.cmp_setStub("__tcfapi");window.cmp_setStub("__uspapi");</script>
+    <script async class="cmplazyload" data-cmp-purpose="c52" type="text/plain" data-cmp-src="https://www.googletagmanager.com/gtag/js?id=G-VLP83V245R"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-VLP83V245R');
+    </script>
+    <script async class="cmplazyload" data-cmp-purpose="c52" type="text/plain" data-cmp-src="https://www.googletagmanager.com/gtag/js?id=G-MDVT22SSVY"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-MDVT22SSVY');
+    </script>
+
+    <style>
+        :root {
+            --color-ep-gradient: rgba(0, 182, 179, 0.3);
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="/images/icons/apple-touch/apple-icon-152x152.png">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/images/icons/apple-touch/apple-icon-144x144.png">
+    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="/images/icons/apple-touch/apple-icon-120x120.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/images/icons/apple-touch/apple-icon-114x114.png">
+    <link rel="apple-touch-icon-precomposed" sizes="76x76" href="/images/icons/apple-touch/apple-icon-76x76.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/images/icons/apple-touch/apple-icon-72x72.png">
+    <link rel="apple-touch-icon-precomposed" href="/images/icons/apple-touch/apple-icon.png">
+    <link rel="shortcut icon" href="/images/icons/apple-touch/apple-icon.png" type="x-icon">
+    <link rel="shortcut icon" href="/images/icons/favicon.ico" type="x-icon">
+    <link rel="canonical" href="https://www.esportsprime.be/" />
+
+    <meta name="csrf-param" content="_csrf">
+<meta name="csrf-token" content="3KM_lupS4sy3iZlL4nMA9eGYS7K4G-b4a8ltYevOGsGk5HvB2BuVovXizCWhKlWWh-kMyvpwi6JZ8SI3h59Fsg==">
+    <meta name="user" content="guest">
+    <title>
+        Esports Prime - Home    </title>
+    <script async class="cmplazyload" data-cmp-purpose="c53" data-cmp-src="https://kit.fontawesome.com/74595898d3.js" crossorigin="anonymous" type="text/plain"></script>
+    <meta name="description" content="Alles over CSGO, League of Legends, Rocket League, Rainbow Six Siege, FIFA en andere esportsgetinte games vind je op Esports Prime. Nieuws, artikels, reportages, broadcasts, livestreams staan voor je klaar.">
+<meta property="og:title" content="Esports Prime">
+<meta property="og:description" content="Esports Prime">
+<meta property="og:url" content="https://www.esportsprime.gg/">
+<meta property="og:image" content="/images/default/social.jpg">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Esports Prime">
+<meta name="twitter:description" content="Esports Prime">
+<meta name="twitter:site" content="@gamelux">
+<meta name="twitter:image" content="/images/default/social.jpg">
+<meta name="twitter:creator" content="@gamelux">
+<link href="/css/app.css?v=1624263162" rel="stylesheet"></head>
+<body class="bg-ep-gray-900 relative">
+    <nav x-data="{ open: false }" class="bg-ep-black">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-18">
+                <div class="flex">
+                    <div class="flex-shrink-0 flex items-center">
+                        <a href="/">
+                            <img src="/images/logos/logo_text_for_dark.png" class="block h-6 w-auto" alt="Esports Prime logo">
+                        </a>
+                    </div>
+                    <div class="hidden sm:ml-6 sm:flex">
+                        <a href="/nieuws" id="" class="uppercase px-4 inline-flex items-center text-sm text-white hover:text-ep-black hover:bg-ep-primary focus:outline-none focus:text-ep-black focus:bg-ep-primary transition duration-150 ease-in-out">nieuws</a>
+<a href="/wedstrijden" id="" class="uppercase px-4 inline-flex items-center text-sm text-white hover:text-ep-black hover:bg-ep-primary focus:outline-none focus:text-ep-black focus:bg-ep-primary transition duration-150 ease-in-out">wedstrijden</a>
+<a href="/ranking" id="" class="uppercase px-4 inline-flex items-center text-sm text-white hover:text-ep-black hover:bg-ep-primary focus:outline-none focus:text-ep-black focus:bg-ep-primary transition duration-150 ease-in-out">Ranking</a>                    </div>
+                </div>
+                <div class="hidden sm:ml-6 sm:flex sm:items-center">
+                                            <a class="text-white" href="/site/login">Login</a>
+                                    </div>
+                <div class="-mr-2 flex items-center sm:hidden">
+                    <!-- Mobile menu button -->
+                    <button @click="open = !open" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition duration-150 ease-in-out" x-bind:aria-label="open ? 'Close main menu' : 'Main menu'" x-bind:aria-expanded="open" aria-label="Main menu">
+                        <svg x-state:on="Menu open" x-state:off="Menu closed" :class="{ 'hidden': open, 'block': !open }" class="block h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                        <svg x-state:on="Menu open" x-state:off="Menu closed" :class="{ 'hidden': !open, 'block': open }" class="hidden h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div x-description="Mobile menu, toggle classes based on menu state." x-state:on="Open" x-state:off="closed" :class="{ 'block': open, 'hidden': !open }" class="hidden sm:hidden">
+            <div class="pt-2 pb-3 space-y-1">
+                <a href="/nieuws" id="" class="block px-3 py-2 text-base font-medium text-white hover:text-ep-black hover:bg-ep-primary focus:outline-none focus:text-ep-black focus:bg-ep-primary transition duration-150 ease-in-out">nieuws</a>
+<a href="/wedstrijden" id="" class="block px-3 py-2 text-base font-medium text-white hover:text-ep-black hover:bg-ep-primary focus:outline-none focus:text-ep-black focus:bg-ep-primary transition duration-150 ease-in-out">wedstrijden</a>
+<a href="/ranking" id="" class="block px-3 py-2 text-base font-medium text-white hover:text-ep-black hover:bg-ep-primary focus:outline-none focus:text-ep-black focus:bg-ep-primary transition duration-150 ease-in-out">Ranking</a>            </div>
+            <div class="pt-4 pb-3 border-t border-gray-200">
+                <div class="mt-3 space-y-1" role="menu" aria-orientation="vertical" aria-labelledby="user-menu">
+                                            <a href="/site/login" class="block px-3 py-2 text-base font-medium text-white hover:text-ep-black hover:bg-ep-primary focus:outline-none focus:text-ep-black focus:bg-ep-primary transition duration-150 ease-in-out">
+                            Login                        </a>
+                                    </div>
+            </div>
+        </div>
+    </nav>
+<div class="bg-ep-gray-900">
+    <div class="max-w-7xl px-4 sm:px-6 lg:px-8 mx-auto flex">
+        <a href="/filter/filter?game=off" class="flex-shrink-0 flex items-center mr-3">
+            <span class="uppercase text-xs text-white font-bold mr-2">Filter</span>
+            <img src="/images/logos/icon_color.png" class="h-6 w-auto" alt="Esports Prime icon">
+        </a>
+        <div class="flex overflow-x-scroll lg:overflow-x-auto flex-1">
+                            <a href="/filter/filter?game=1" class="bg-ep-primary text-black h-8 uppercase text-xs px-3 flex items-center hover:bg-ep-primary hover:text-black focus:bg-ep-primary focus:text-black">
+  <img src="https://d2p642huf6e36p.cloudfront.net/game-logo/small/637cd1cc5869d4294eefa2f47343f377.png" class="max-w-none" alt="League of Legends icon">
+  <span class="hidden lg:inline-block ml-2">League of Legends</span>
+</a>                            <a href="/filter/filter?game=2" class="text-white bg-ep-gray-900 h-8 uppercase text-xs px-3 flex items-center hover:bg-ep-primary hover:text-black focus:bg-ep-primary focus:text-black">
+  <img src="https://d2p642huf6e36p.cloudfront.net/game-logo/small/b029afa5dc7b5ef1d582524bfaf0715a.png" class="max-w-none" alt="Fifa icon">
+  <span class="hidden lg:inline-block ml-2">Fifa</span>
+</a>                            <a href="/filter/filter?game=3" class="text-white bg-ep-gray-900 h-8 uppercase text-xs px-3 flex items-center hover:bg-ep-primary hover:text-black focus:bg-ep-primary focus:text-black">
+  <img src="https://d2p642huf6e36p.cloudfront.net/game-logo/small/34502859d6950339c801cfb01c6b6724.png" class="max-w-none" alt="CS:GO icon">
+  <span class="hidden lg:inline-block ml-2">CS:GO</span>
+</a>                            <a href="/filter/filter?game=4" class="text-white bg-ep-gray-900 h-8 uppercase text-xs px-3 flex items-center hover:bg-ep-primary hover:text-black focus:bg-ep-primary focus:text-black">
+  <img src="https://d2p642huf6e36p.cloudfront.net/game-logo/small/c5a3a041fc33f7a689522a9590d7544d.png" class="max-w-none" alt="Valorant icon">
+  <span class="hidden lg:inline-block ml-2">Valorant</span>
+</a>                            <a href="/filter/filter?game=8" class="text-white bg-ep-gray-900 h-8 uppercase text-xs px-3 flex items-center hover:bg-ep-primary hover:text-black focus:bg-ep-primary focus:text-black">
+  <img src="https://d2p642huf6e36p.cloudfront.net/game-logo/small/1710c17d98d86509d747eb77572367dd.png" class="max-w-none" alt="Call of Duty icon">
+  <span class="hidden lg:inline-block ml-2">Call of Duty</span>
+</a>                    </div>
+    </div>
+</div><div id="content">
+    <div class="flex justify-center my-4 md:my-8">
+        
+<div id="_esportsprime.be_-billboard" class="advise-rectangle"></div>        
+<div id="_esportsprime.be_-mobilebanner" class="advise-rectangle"></div>    </div>
+    
+<div class="max-w-7xl mx-auto p-4 sm:p-6 lg:p-8 bg-white">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8">
+    <a href="https://www.esportsprime.gg/artikel/927/1/is-dit-de-nieuwste-league-of-legends-champion" class="block group bg-cover bg-center aspect-w-16 aspect-h-9" style="background-image: url('https://d2p642huf6e36p.cloudfront.net/article-primary/2021/06/22/x-large/is-dit-de-nieuwste-league-of-legends-champion-4c66.webp')">
+    <div class="h-full flex flex-col p-4 justify-end bg-gradient-to-t from-black">
+        <div class="flex">
+            <div class="mr-4">
+                                    <div class="w-16 md:w-24 h-12 md:h-20 bg-ep-gray-900 mb-2 grid place-items-center">
+                            <picture>
+                <source sizes="(min-width: 960px) 540px, 100vw" srcset="https://d2p642huf6e36p.cloudfront.net/game-logo/small/637cd1cc5869d4294eefa2f47343f377.png 100w, https://d2p642huf6e36p.cloudfront.net/game-logo/medium/637cd1cc5869d4294eefa2f47343f377.png 273w, https://d2p642huf6e36p.cloudfront.net/game-logo/large/637cd1cc5869d4294eefa2f47343f377.png 740w" type="image/png">
+        <img src="https://d2p642huf6e36p.cloudfront.net/game-logo/large/637cd1cc5869d4294eefa2f47343f377.png" class="" alt="League of Legends" loading="lazy">
+    </picture>
+                    </div>
+                                <div class="w-16 md:w-24 h-6 md:h-8 grid place-items-center text-xs md:text-sm text-ep-black bg-ep-primary font-medium">
+                    Artikel                </div>
+            </div>
+            <div class="flex-1 flex flex-col justify-between">
+                <p class="text-sm md:text-lg leading-6 font-medium text-white group-hover:text-ep-primary transition duration-150 ease-in-out">
+                    Is dit de nieuwste League of Legends champion?                </p>
+                <div class="flex justify-between">
+                    <!--          <p class="text-xs md:text-base text-ep-primary">LEC Spring Finals</p>-->
+                    <p class="text-xs md:text-base text-white">2 dagen geleden</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</a>    <a href="https://www.esportsprime.gg/artikel/923/1/fnatic-mid-laner-nisqy-ik-kan-elke-speelstijl-aan" class="block group bg-cover bg-center aspect-w-16 aspect-h-9" style="background-image: url('https://d2p642huf6e36p.cloudfront.net/article-primary/2021/06/21/x-large/nisqy-ik-kan-van-alles-wat-spelen-4bd9.webp')">
+    <div class="h-full flex flex-col p-4 justify-end bg-gradient-to-t from-black">
+        <div class="flex">
+            <div class="mr-4">
+                                    <div class="w-16 md:w-24 h-12 md:h-20 bg-ep-gray-900 mb-2 grid place-items-center">
+                            <picture>
+                <source sizes="(min-width: 960px) 540px, 100vw" srcset="https://d2p642huf6e36p.cloudfront.net/game-logo/small/637cd1cc5869d4294eefa2f47343f377.png 100w, https://d2p642huf6e36p.cloudfront.net/game-logo/medium/637cd1cc5869d4294eefa2f47343f377.png 273w, https://d2p642huf6e36p.cloudfront.net/game-logo/large/637cd1cc5869d4294eefa2f47343f377.png 740w" type="image/png">
+        <img src="https://d2p642huf6e36p.cloudfront.net/game-logo/large/637cd1cc5869d4294eefa2f47343f377.png" class="" alt="League of Legends" loading="lazy">
+    </picture>
+                    </div>
+                                <div class="w-16 md:w-24 h-6 md:h-8 grid place-items-center text-xs md:text-sm text-ep-black bg-ep-primary font-medium">
+                    Artikel                </div>
+            </div>
+            <div class="flex-1 flex flex-col justify-between">
+                <p class="text-sm md:text-lg leading-6 font-medium text-white group-hover:text-ep-primary transition duration-150 ease-in-out">
+                    Fnatic mid laner Nisqy: ‘Ik kan elke speelstijl aan’                </p>
+                <div class="flex justify-between">
+                    <!--          <p class="text-xs md:text-base text-ep-primary">LEC Spring Finals</p>-->
+                    <p class="text-xs md:text-base text-white">3 dagen geleden</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</a></div>
+</div>
+<div class="max-w-7xl mx-auto p-4 sm:p-6 lg:p-8 bg-white -mt-4 md:-mt-8">
+    
+<div class="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
+            
+<a href="https://www.esportsprime.gg/artikel/938/1/na-drie-nominaties-eindelijk-dutch-league-mvp-voor-noodle">
+    <article class="relative pb-4 md:pb-0 md:border-none text-ep-black article">
+        <div class="relative flex justify-between md:block">
+                <picture>
+                    <source sizes="(min-width: 960px) 540px, 100vw" srcset="https://d2p642huf6e36p.cloudfront.net/article-primary/2021/06/24/small/na-drie-nominaties-eindelijk-mvp-voor-noodle-4179.webp 100w, https://d2p642huf6e36p.cloudfront.net/article-primary/2021/06/24/medium/na-drie-nominaties-eindelijk-mvp-voor-noodle-4179.webp 273w, https://d2p642huf6e36p.cloudfront.net/article-primary/2021/06/24/large/na-drie-nominaties-eindelijk-mvp-voor-noodle-4179.webp 488w, https://d2p642huf6e36p.cloudfront.net/article-primary/2021/06/24/small/na-drie-nominaties-eindelijk-mvp-voor-noodle-4179.webp 740w" type="image/webp">
+                <source sizes="(min-width: 960px) 540px, 100vw" srcset="https://d2p642huf6e36p.cloudfront.net/article-primary/2021/06/24/small/na-drie-nominaties-eindelijk-mvp-voor-noodle-4179.jpg 100w, https://d2p642huf6e36p.cloudfront.net/article-primary/2021/06/24/medium/na-drie-nominaties-eindelijk-mvp-voor-noodle-4179.jpg 273w, https://d2p642huf6e36p.cloudfront.net/article-primary/2021/06/24/small/na-drie-nominaties-eindelijk-mvp-voor-noodle-4179.jpg 740w" type="image/jpg">
+        <img src="https://d2p642huf6e36p.cloudfront.net/article-primary/2021/06/24/small/na-drie-nominaties-eindelijk-mvp-voor-noodle-4179.jpg" class="w-full" alt="Na drie nominaties eindelijk Dutch League MVP voor Noodle" loading="lazy">
+    </picture>
+            <div class="hidden md:block absolute bottom-4 left-4">
+                                    <div class="w-12 h-12 bg-ep-gray-900 grid place-items-center">
+                            <picture>
+                <source sizes="(min-width: 960px) 540px, 100vw" srcset="https://d2p642huf6e36p.cloudfront.net/game-logo/small/637cd1cc5869d4294eefa2f47343f377.png 100w, https://d2p642huf6e36p.cloudfront.net/game-logo/medium/637cd1cc5869d4294eefa2f47343f377.png 273w, https://d2p642huf6e36p.cloudfront.net/game-logo/large/637cd1cc5869d4294eefa2f47343f377.png 740w" type="image/png">
+        <img src="https://d2p642huf6e36p.cloudfront.net/game-logo/large/637cd1cc5869d4294eefa2f47343f377.png" class="" alt="League of Legends" loading="lazy">
+    </picture>
+                    </div>
+                            </div>
+                    </div>
+        <div class="relative flex flex-col">
+            <div class="flex">
+                <div class="hidden md:block py-1 px-2 bg-ep-primary text-ep-black text-xs font-medium">
+                    Artikel                </div>
+                <div class="text-xs flex-1 flex items-center pl-0 md:pl-2 text-ep-gray-600 md:text-ep-black bg-transparent md:bg-ep-gray-100">
+                    <span class="hidden md:inline">24 juni 2021</span>
+                    <span class="inline md:hidden">&nbsp;</span>
+                </div>
+            </div>
+            <div class="font-bold">
+                Na drie nominaties eindelijk Dutch League MVP voor Noodle            </div>
+        </div>
+    </article>
+</a>                
+<a href="https://www.esportsprime.gg/artikel/937/1/fenz1-scoort-de-burger-king-of-the-week-award">
+    <article class="relative pb-4 md:pb-0 md:border-none text-ep-black article">
+        <div class="relative flex justify-between md:block">
+                <picture>
+                    <source sizes="(min-width: 960px) 540px, 100vw" srcset="https://d2p642huf6e36p.cloudfront.net/article-primary/2021/06/24/small/fenz1-scoort-de-burger-king-of-the-week-award-6157.webp 100w, https://d2p642huf6e36p.cloudfront.net/article-primary/2021/06/24/medium/fenz1-scoort-de-burger-king-of-the-week-award-6157.webp 273w, https://d2p642huf6e36p.cloudfront.net/article-primary/2021/06/24/large/fenz1-scoort-de-burger-king-of-the-week-award-6157.webp 488w, https://d2p642huf6e36p.cloudfront.net/article-primary/2021/06/24/small/fenz1-scoort-de-burger-king-of-the-week-award-6157.webp 740w" type="image/webp">
+                <source sizes="(min-width: 960px) 540px, 100vw" srcset="https://d2p642huf6e36p.cloudfront.net/article-primary/2021/06/24/small/fenz1-scoort-de-burger-king-of-the-week-award-6157.jpg 100w, https://d2p642huf6e36p.cloudfront.net/article-primary/2021/06/24/medium/fenz1-scoort-de-burger-king-of-the-week-award-6157.jpg 273w, https://d2p642huf6e36p.cloudfront.net/article-primary/2021/06/24/small/fenz1-scoort-de-burger-king-of-the-week-award-6157.jpg 740w" type="image/jpg">
+        <img src="https://d2p642huf6e36p.cloudfront.net/article-primary/2021/06/24/small/fenz1-scoort-de-burger-king-of-the-week-award-6157.jpg" class="w-full" alt="FENZ1 scoort de Burger King of the Week award" loading="lazy">
+    </picture>
+            <div class="hidden md:block absolute bottom-4 left-4">
+                                    <div class="w-12 h-12 bg-ep-gray-900 grid place-items-center">
+                            <picture>
+                <source sizes="(min-width: 960px) 540px, 100vw" srcset="https://d2p642huf6e36p.cloudfront.net/game-logo/small/637cd1cc5869d4294eefa2f47343f377.png 100w, https://d2p642huf6e36p.cloudfront.net/game-logo/medium/637cd1cc5869d4294eefa2f47343f377.png 273w, https://d2p642huf6e36p.cloudfront.net/game-logo/large/637cd1cc5869d4294eefa2f47343f377.png 740w" type="image/png">
+        <img src="https://d2p642huf6e36p.cloudfront.net/game-logo/large/637cd1cc5869d4294eefa2f47343f377.png" class="" alt="League of Legends" loading="lazy">
+    </picture>
+                    </div>
+                            </div>
+                    </div>
+        <div class="relative flex flex-col">
+            <div class="flex">
+                <div class="hidden md:block py-1 px-2 bg-ep-primary text-ep-black text-xs font-medium">
+                    Artikel                </div>
+                <div class="text-xs flex-1 flex items-center pl-0 md:pl-2 text-ep-gray-600 md:text-ep-black bg-transparent md:bg-ep-gray-100">
+                    <span class="hidden md:inline">24 juni 2021</span>
+                    <span class="inline md:hidden">&nbsp;</span>
+                </div>
+            </div>
+            <div class="font-bold">
+                FENZ1 scoort de Burger King of the Week award            </div>
+        </div>
+    </article>
+</a>                
+<a href="https://www.esportsprime.gg/artikel/920/1/dardoch-op-de-bank-bij-dignitas">
+    <article class="relative pb-4 md:pb-0 md:border-none text-ep-black article">
+        <div class="relative flex justify-between md:block">
+                <picture>
+                    <source sizes="(min-width: 960px) 540px, 100vw" srcset="https://d2p642huf6e36p.cloudfront.net/article-primary/2021/06/20/small/dardoch-op-de-bank-bij-dignitas-a875.webp 100w, https://d2p642huf6e36p.cloudfront.net/article-primary/2021/06/20/medium/dardoch-op-de-bank-bij-dignitas-a875.webp 273w, https://d2p642huf6e36p.cloudfront.net/article-primary/2021/06/20/large/dardoch-op-de-bank-bij-dignitas-a875.webp 488w, https://d2p642huf6e36p.cloudfront.net/article-primary/2021/06/20/small/dardoch-op-de-bank-bij-dignitas-a875.webp 740w" type="image/webp">
+                <source sizes="(min-width: 960px) 540px, 100vw" srcset="https://d2p642huf6e36p.cloudfront.net/article-primary/2021/06/20/small/dardoch-op-de-bank-bij-dignitas-a875.jpg 100w, https://d2p642huf6e36p.cloudfront.net/article-primary/2021/06/20/medium/dardoch-op-de-bank-bij-dignitas-a875.jpg 273w, https://d2p642huf6e36p.cloudfront.net/article-primary/2021/06/20/small/dardoch-op-de-bank-bij-dignitas-a875.jpg 740w" type="image/jpg">
+        <img src="https://d2p642huf6e36p.cloudfront.net/article-primary/2021/06/20/small/dardoch-op-de-bank-bij-dignitas-a875.jpg" class="w-full" alt="Dardoch op de bank bij Dignitas" loading="lazy">
+    </picture>
+            <div class="hidden md:block absolute bottom-4 left-4">
+                                    <div class="w-12 h-12 bg-ep-gray-900 grid place-items-center">
+                            <picture>
+                <source sizes="(min-width: 960px) 540px, 100vw" srcset="https://d2p642huf6e36p.cloudfront.net/game-logo/small/637cd1cc5869d4294eefa2f47343f377.png 100w, https://d2p642huf6e36p.cloudfront.net/game-logo/medium/637cd1cc5869d4294eefa2f47343f377.png 273w, https://d2p642huf6e36p.cloudfront.net/game-logo/large/637cd1cc5869d4294eefa2f47343f377.png 740w" type="image/png">
+        <img src="https://d2p642huf6e36p.cloudfront.net/game-logo/large/637cd1cc5869d4294eefa2f47343f377.png" class="" alt="League of Legends" loading="lazy">
+    </picture>
+                    </div>
+                            </div>
+                    </div>
+        <div class="relative flex flex-col">
+            <div class="flex">
+                <div class="hidden md:block py-1 px-2 bg-ep-primary text-ep-black text-xs font-medium">
+                    Artikel                </div>
+                <div class="text-xs flex-1 flex items-center pl-0 md:pl-2 text-ep-gray-600 md:text-ep-black bg-transparent md:bg-ep-gray-100">
+                    <span class="hidden md:inline">20 juni 2021</span>
+                    <span class="inline md:hidden">&nbsp;</span>
+                </div>
+            </div>
+            <div class="font-bold">
+                Dardoch op de bank bij Dignitas            </div>
+        </div>
+    </article>
+</a>                
+<a href="https://www.esportsprime.gg/artikel/917/1/lcs-ontkracht-bericht-dat-na-teams-regels-rondom-academieteams-wegstemden">
+    <article class="relative pb-4 md:pb-0 md:border-none text-ep-black article">
+        <div class="relative flex justify-between md:block">
+                <picture>
+                    <source sizes="(min-width: 960px) 540px, 100vw" srcset="https://d2p642huf6e36p.cloudfront.net/article-primary/2021/06/19/small/lcs-ontkracht-bericht-dat-na-teams-regels-rondom-academieteams-wegstemden-4b4f.webp 100w, https://d2p642huf6e36p.cloudfront.net/article-primary/2021/06/19/medium/lcs-ontkracht-bericht-dat-na-teams-regels-rondom-academieteams-wegstemden-4b4f.webp 273w, https://d2p642huf6e36p.cloudfront.net/article-primary/2021/06/19/large/lcs-ontkracht-bericht-dat-na-teams-regels-rondom-academieteams-wegstemden-4b4f.webp 488w, https://d2p642huf6e36p.cloudfront.net/article-primary/2021/06/19/small/lcs-ontkracht-bericht-dat-na-teams-regels-rondom-academieteams-wegstemden-4b4f.webp 740w" type="image/webp">
+                <source sizes="(min-width: 960px) 540px, 100vw" srcset="https://d2p642huf6e36p.cloudfront.net/article-primary/2021/06/19/small/lcs-ontkracht-bericht-dat-na-teams-regels-rondom-academieteams-wegstemden-4b4f.jpg 100w, https://d2p642huf6e36p.cloudfront.net/article-primary/2021/06/19/medium/lcs-ontkracht-bericht-dat-na-teams-regels-rondom-academieteams-wegstemden-4b4f.jpg 273w, https://d2p642huf6e36p.cloudfront.net/article-primary/2021/06/19/small/lcs-ontkracht-bericht-dat-na-teams-regels-rondom-academieteams-wegstemden-4b4f.jpg 740w" type="image/jpg">
+        <img src="https://d2p642huf6e36p.cloudfront.net/article-primary/2021/06/19/small/lcs-ontkracht-bericht-dat-na-teams-regels-rondom-academieteams-wegstemden-4b4f.jpg" class="w-full" alt="LCS ontkracht bericht dat NA-teams regels rondom academieteams wegstemden" loading="lazy">
+    </picture>
+            <div class="hidden md:block absolute bottom-4 left-4">
+                                    <div class="w-12 h-12 bg-ep-gray-900 grid place-items-center">
+                            <picture>
+                <source sizes="(min-width: 960px) 540px, 100vw" srcset="https://d2p642huf6e36p.cloudfront.net/game-logo/small/637cd1cc5869d4294eefa2f47343f377.png 100w, https://d2p642huf6e36p.cloudfront.net/game-logo/medium/637cd1cc5869d4294eefa2f47343f377.png 273w, https://d2p642huf6e36p.cloudfront.net/game-logo/large/637cd1cc5869d4294eefa2f47343f377.png 740w" type="image/png">
+        <img src="https://d2p642huf6e36p.cloudfront.net/game-logo/large/637cd1cc5869d4294eefa2f47343f377.png" class="" alt="League of Legends" loading="lazy">
+    </picture>
+                    </div>
+                            </div>
+                    </div>
+        <div class="relative flex flex-col">
+            <div class="flex">
+                <div class="hidden md:block py-1 px-2 bg-ep-primary text-ep-black text-xs font-medium">
+                    Artikel                </div>
+                <div class="text-xs flex-1 flex items-center pl-0 md:pl-2 text-ep-gray-600 md:text-ep-black bg-transparent md:bg-ep-gray-100">
+                    <span class="hidden md:inline">19 juni 2021</span>
+                    <span class="inline md:hidden">&nbsp;</span>
+                </div>
+            </div>
+            <div class="font-bold">
+                LCS ontkracht bericht dat NA-teams regels rondom academieteams wegstemden            </div>
+        </div>
+    </article>
+</a>        </div></div>
+<div class="max-w-7xl mx-auto p-4 sm:p-6 lg:p-8 bg-ep-black text-white">
+    <div class="grid grid-cols-1 md:grid-cols-1-imu lg:grid-cols-2-1-imu gap-4 sm:gap-6 lg:gap-8 place-items-center">
+    
+    <a href="/wedstrijden" class="h-imu w-full block items-end bg-contain bg-center border-b border-ep-primary" style="background-image: url('/images/default/contest-banner.png')">
+        <div class="h-full flex items-end bg-gradient-to-t from-ep-gradient via-transparent">
+            <div class="m-4 text-white">
+                <i class="text-4xl fas fa-trophy"></i> Er zijn voorlopig geen wedstrijden
+            </div>
+        </div>
+    </a>
+    <div class="hidden lg:block">
+        
+<div class="h-imu border border-ep-primary grid grid-col-1 place-items-center gap-4 p-6">
+  <img class="w-48 h-auto" src="/images/logos/logo_text_with_icon_for_dark.png" alt="Esports Prime Logo">
+  <p class="text-sm text-center">Heb jij nog geen account op Esports prime?</p>
+  <a href="/site/signup">
+      <div class="bg-ep-primary p-4 text-ep-black text-xs font-bold">
+          Maak een account! <i class="fas fa-arrow-right"></i>
+      </div>
+  </a>
+</div>
+    </div>
+    
+<div class="centered">
+    <div id="_esportsprime.be_-rectangle" class="advise-rectangle"></div>
+</div></div></div>
+<div class="max-w-7xl mx-auto p-4 sm:p-6 lg:p-8 bg-white">
+    
+<div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-8">
+            
+<a href="https://www.esportsprime.gg/artikel/912/1/fc-schalke-04-verkoopt-lec-slot-voor-30-miljoen-aan-team-bds" class="group col-span-1 md:col-span-2 row-span-3">
+    <article class="text-ep-black article">
+        <div class="relative">
+                <picture>
+                    <source sizes="(min-width: 960px) 540px, 100vw" srcset="https://d2p642huf6e36p.cloudfront.net/article-primary/2021/06/17/small/fc-schalke-04-verkoopt-lec-slot-voor-30-miljoen-aan-team-bds-4324.webp 100w, https://d2p642huf6e36p.cloudfront.net/article-primary/2021/06/17/medium/fc-schalke-04-verkoopt-lec-slot-voor-30-miljoen-aan-team-bds-4324.webp 273w, https://d2p642huf6e36p.cloudfront.net/article-primary/2021/06/17/large/fc-schalke-04-verkoopt-lec-slot-voor-30-miljoen-aan-team-bds-4324.webp 488w, https://d2p642huf6e36p.cloudfront.net/article-primary/2021/06/17/medium/fc-schalke-04-verkoopt-lec-slot-voor-30-miljoen-aan-team-bds-4324.webp 740w" type="image/webp">
+                <source sizes="(min-width: 960px) 540px, 100vw" srcset="https://d2p642huf6e36p.cloudfront.net/article-primary/2021/06/17/small/fc-schalke-04-verkoopt-lec-slot-voor-30-miljoen-aan-team-bds-4324.jpg 100w, https://d2p642huf6e36p.cloudfront.net/article-primary/2021/06/17/medium/fc-schalke-04-verkoopt-lec-slot-voor-30-miljoen-aan-team-bds-4324.jpg 273w, https://d2p642huf6e36p.cloudfront.net/article-primary/2021/06/17/medium/fc-schalke-04-verkoopt-lec-slot-voor-30-miljoen-aan-team-bds-4324.jpg 740w" type="image/jpg">
+        <img src="https://d2p642huf6e36p.cloudfront.net/article-primary/2021/06/17/medium/fc-schalke-04-verkoopt-lec-slot-voor-30-miljoen-aan-team-bds-4324.jpg" class="w-full" alt="‘FC Schalke 04 verkoopt LEC-slot voor 30 miljoen aan Team BDS’" loading="lazy">
+    </picture>
+            <div class="absolute top-0 h-full w-full flex flex-col p-4 justify-end bg-gradient-to-t from-black">
+                <div class="flex">
+                    <div class="mr-4">
+                                                    <div class="w-16 md:w-24 h-12 md:h-20 bg-ep-gray-900 mb-2 grid place-items-center">
+                                    <picture>
+                <source sizes="(min-width: 960px) 540px, 100vw" srcset="https://d2p642huf6e36p.cloudfront.net/game-logo/small/637cd1cc5869d4294eefa2f47343f377.png 100w, https://d2p642huf6e36p.cloudfront.net/game-logo/medium/637cd1cc5869d4294eefa2f47343f377.png 273w, https://d2p642huf6e36p.cloudfront.net/game-logo/large/637cd1cc5869d4294eefa2f47343f377.png 740w" type="image/png">
+        <img src="https://d2p642huf6e36p.cloudfront.net/game-logo/large/637cd1cc5869d4294eefa2f47343f377.png" class="" alt="League of Legends" loading="lazy">
+    </picture>
+                            </div>
+                                                <div class="w-16 md:w-24 h-6 md:h-8 grid place-items-center text-xs md:text-sm text-ep-black bg-ep-primary font-medium">
+                            Artikel                        </div>
+                    </div>
+                    <div class="flex-1 flex flex-col justify-between">
+                        <div class="text-sm md:text-lg text-white group-hover:text-ep-primary transition duration-150 ease-in-out">
+                            ‘FC Schalke 04 verkoopt LEC-slot voor 30 miljoen aan Team BDS’                        </div>
+                        <div class="flex justify-between">
+                                                                                </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="flex justify-between mb-4 relative">
+            <span class="hidden md:inline font-bold">18 juni 2021, 10:17</span>
+        </div>
+        <div class="relative hidden md:block wysiwyg">
+            <p style="text-align: justify;">Het lijkt erop dat <strong>Schalke 04</strong> een koper heeft gevonden voor zijn <strong>LEC-slot</strong>. Het Zwitserse <strong>Team BDS</strong> zou bereid zijn om de plek van de Duitse voetbalgigant over te kopen voor een slordige 30 miljoen euro. Dat zou tien miljoen euro meer zijn dan dat Schalke in eerste instantie leek te ontvangen. Dat schrijft het Duitse blad BILD.</p><p dir="ltr" lang="de">Schalke spielt Monopoly und muss wegen hoher Mieten die Schlossallee verkaufen#S04 wird die eSports-Lizenz f&uuml;r die #LOL-Liga LEC an einen Investor f&uuml;r 30 Mio verkaufen. Gewinn: 22 Mio. Bitter: Der Wert der Lizenz w&auml;re in Zukunft stark gestiegen.Mehr Infos dazu bei BILD</p>        </div>
+        <div class="relative hidden md:block font-bold mt-4">
+            Lees verder
+        </div>
+    </article>
+</a>
+                
+<a href="https://www.esportsprime.gg/artikel/911/1/bardo-haalt-de-burger-king-king-of-the-week-award-binnen">
+    <article class="relative border-b border-solid border-ep-gray-300 pb-4 md:pb-0 md:border-none text-ep-black article">
+        <div class="absolute w-full md:relative flex justify-between md:block">
+                <picture>
+                    <source sizes="(min-width: 960px) 540px, 100vw" srcset="https://d2p642huf6e36p.cloudfront.net/article-primary/2021/06/21/small/bardo-haalt-de-burger-king-king-of-the-week-award-binnen-2284.webp 100w, https://d2p642huf6e36p.cloudfront.net/article-primary/2021/06/21/medium/bardo-haalt-de-burger-king-king-of-the-week-award-binnen-2284.webp 273w, https://d2p642huf6e36p.cloudfront.net/article-primary/2021/06/21/large/bardo-haalt-de-burger-king-king-of-the-week-award-binnen-2284.webp 488w, https://d2p642huf6e36p.cloudfront.net/article-primary/2021/06/21/small/bardo-haalt-de-burger-king-king-of-the-week-award-binnen-2284.webp 740w" type="image/webp">
+                <source sizes="(min-width: 960px) 540px, 100vw" srcset="https://d2p642huf6e36p.cloudfront.net/article-primary/2021/06/21/small/bardo-haalt-de-burger-king-king-of-the-week-award-binnen-2284.jpg 100w, https://d2p642huf6e36p.cloudfront.net/article-primary/2021/06/21/medium/bardo-haalt-de-burger-king-king-of-the-week-award-binnen-2284.jpg 273w, https://d2p642huf6e36p.cloudfront.net/article-primary/2021/06/21/small/bardo-haalt-de-burger-king-king-of-the-week-award-binnen-2284.jpg 740w" type="image/jpg">
+        <img src="https://d2p642huf6e36p.cloudfront.net/article-primary/2021/06/21/small/bardo-haalt-de-burger-king-king-of-the-week-award-binnen-2284.jpg" class="w-16 md:w-full" alt="Bardo haalt de Burger King, King of the Week award binnen" loading="lazy">
+    </picture>
+            <div class="hidden md:block absolute bottom-4 left-4">
+                                    <div class="w-12 h-12 bg-ep-gray-900 grid place-items-center">
+                            <picture>
+                <source sizes="(min-width: 960px) 540px, 100vw" srcset="https://d2p642huf6e36p.cloudfront.net/game-logo/small/637cd1cc5869d4294eefa2f47343f377.png 100w, https://d2p642huf6e36p.cloudfront.net/game-logo/medium/637cd1cc5869d4294eefa2f47343f377.png 273w, https://d2p642huf6e36p.cloudfront.net/game-logo/medium/637cd1cc5869d4294eefa2f47343f377.png 740w" type="image/png">
+        <img src="https://d2p642huf6e36p.cloudfront.net/game-logo/medium/637cd1cc5869d4294eefa2f47343f377.png" class="" alt="League of Legends" loading="lazy">
+    </picture>
+                    </div>
+                            </div>
+                    </div>
+        <div class="relative mx-20 md:mx-0 flex flex-col-reverse md:flex-col">
+            <div class="flex">
+                <div class="hidden md:block py-1 px-2 bg-ep-primary text-ep-black text-xs font-medium">
+                    Artikel                </div>
+                <div class="text-xs flex-1 flex items-center pl-0 md:pl-2 text-ep-gray-600 md:text-ep-black bg-transparent md:bg-ep-gray-100">
+                    <span class="hidden md:inline">17 juni 2021</span>
+                    <span class="inline md:hidden">&nbsp;</span>
+                </div>
+            </div>
+            <div class="font-bold">
+                Bardo haalt de Burger King, King of the Week award binnen            </div>
+        </div>
+    </article>
+</a>                
+<a href="https://www.esportsprime.gg/artikel/908/1/dit-zijn-de-5-steden-van-worlds-2021">
+    <article class="relative border-b border-solid border-ep-gray-300 pb-4 md:pb-0 md:border-none text-ep-black article">
+        <div class="absolute w-full md:relative flex justify-between md:block">
+                <picture>
+                    <source sizes="(min-width: 960px) 540px, 100vw" srcset="https://d2p642huf6e36p.cloudfront.net/article-primary/2021/06/17/small/riot-games-kondigt-steden-worlds-2021-aan-94ed.webp 100w, https://d2p642huf6e36p.cloudfront.net/article-primary/2021/06/17/medium/riot-games-kondigt-steden-worlds-2021-aan-94ed.webp 273w, https://d2p642huf6e36p.cloudfront.net/article-primary/2021/06/17/large/riot-games-kondigt-steden-worlds-2021-aan-94ed.webp 488w, https://d2p642huf6e36p.cloudfront.net/article-primary/2021/06/17/small/riot-games-kondigt-steden-worlds-2021-aan-94ed.webp 740w" type="image/webp">
+                <source sizes="(min-width: 960px) 540px, 100vw" srcset="https://d2p642huf6e36p.cloudfront.net/article-primary/2021/06/17/small/riot-games-kondigt-steden-worlds-2021-aan-94ed.jpg 100w, https://d2p642huf6e36p.cloudfront.net/article-primary/2021/06/17/medium/riot-games-kondigt-steden-worlds-2021-aan-94ed.jpg 273w, https://d2p642huf6e36p.cloudfront.net/article-primary/2021/06/17/small/riot-games-kondigt-steden-worlds-2021-aan-94ed.jpg 740w" type="image/jpg">
+        <img src="https://d2p642huf6e36p.cloudfront.net/article-primary/2021/06/17/small/riot-games-kondigt-steden-worlds-2021-aan-94ed.jpg" class="w-16 md:w-full" alt="Dit zijn de 5 steden van Worlds 2021" loading="lazy">
+    </picture>
+            <div class="hidden md:block absolute bottom-4 left-4">
+                                    <div class="w-12 h-12 bg-ep-gray-900 grid place-items-center">
+                            <picture>
+                <source sizes="(min-width: 960px) 540px, 100vw" srcset="https://d2p642huf6e36p.cloudfront.net/game-logo/small/637cd1cc5869d4294eefa2f47343f377.png 100w, https://d2p642huf6e36p.cloudfront.net/game-logo/medium/637cd1cc5869d4294eefa2f47343f377.png 273w, https://d2p642huf6e36p.cloudfront.net/game-logo/medium/637cd1cc5869d4294eefa2f47343f377.png 740w" type="image/png">
+        <img src="https://d2p642huf6e36p.cloudfront.net/game-logo/medium/637cd1cc5869d4294eefa2f47343f377.png" class="" alt="League of Legends" loading="lazy">
+    </picture>
+                    </div>
+                            </div>
+                    </div>
+        <div class="relative mx-20 md:mx-0 flex flex-col-reverse md:flex-col">
+            <div class="flex">
+                <div class="hidden md:block py-1 px-2 bg-ep-primary text-ep-black text-xs font-medium">
+                    Artikel                </div>
+                <div class="text-xs flex-1 flex items-center pl-0 md:pl-2 text-ep-gray-600 md:text-ep-black bg-transparent md:bg-ep-gray-100">
+                    <span class="hidden md:inline">17 juni 2021</span>
+                    <span class="inline md:hidden">&nbsp;</span>
+                </div>
+            </div>
+            <div class="font-bold">
+                Dit zijn de 5 steden van Worlds 2021            </div>
+        </div>
+    </article>
+</a>                
+<a href="https://www.esportsprime.gg/artikel/903/1/hexflash-terug-in-week-2-lec-dr-mundo-nog-disabled">
+    <article class="relative border-b border-solid border-ep-gray-300 pb-4 md:pb-0 md:border-none text-ep-black article">
+        <div class="absolute w-full md:relative flex justify-between md:block">
+                <picture>
+                    <source sizes="(min-width: 960px) 540px, 100vw" srcset="https://d2p642huf6e36p.cloudfront.net/article-primary/2021/06/16/small/hexflash-komt-terug-maar-dr-mundo-blijft-weg-in-week-2-lec-21ad.webp 100w, https://d2p642huf6e36p.cloudfront.net/article-primary/2021/06/16/medium/hexflash-komt-terug-maar-dr-mundo-blijft-weg-in-week-2-lec-21ad.webp 273w, https://d2p642huf6e36p.cloudfront.net/article-primary/2021/06/16/large/hexflash-komt-terug-maar-dr-mundo-blijft-weg-in-week-2-lec-21ad.webp 488w, https://d2p642huf6e36p.cloudfront.net/article-primary/2021/06/16/small/hexflash-komt-terug-maar-dr-mundo-blijft-weg-in-week-2-lec-21ad.webp 740w" type="image/webp">
+                <source sizes="(min-width: 960px) 540px, 100vw" srcset="https://d2p642huf6e36p.cloudfront.net/article-primary/2021/06/16/small/hexflash-komt-terug-maar-dr-mundo-blijft-weg-in-week-2-lec-21ad.jpg 100w, https://d2p642huf6e36p.cloudfront.net/article-primary/2021/06/16/medium/hexflash-komt-terug-maar-dr-mundo-blijft-weg-in-week-2-lec-21ad.jpg 273w, https://d2p642huf6e36p.cloudfront.net/article-primary/2021/06/16/small/hexflash-komt-terug-maar-dr-mundo-blijft-weg-in-week-2-lec-21ad.jpg 740w" type="image/jpg">
+        <img src="https://d2p642huf6e36p.cloudfront.net/article-primary/2021/06/16/small/hexflash-komt-terug-maar-dr-mundo-blijft-weg-in-week-2-lec-21ad.jpg" class="w-16 md:w-full" alt="Hexflash terug in week 2 LEC, Dr. Mundo nog disabled" loading="lazy">
+    </picture>
+            <div class="hidden md:block absolute bottom-4 left-4">
+                                    <div class="w-12 h-12 bg-ep-gray-900 grid place-items-center">
+                            <picture>
+                <source sizes="(min-width: 960px) 540px, 100vw" srcset="https://d2p642huf6e36p.cloudfront.net/game-logo/small/637cd1cc5869d4294eefa2f47343f377.png 100w, https://d2p642huf6e36p.cloudfront.net/game-logo/medium/637cd1cc5869d4294eefa2f47343f377.png 273w, https://d2p642huf6e36p.cloudfront.net/game-logo/medium/637cd1cc5869d4294eefa2f47343f377.png 740w" type="image/png">
+        <img src="https://d2p642huf6e36p.cloudfront.net/game-logo/medium/637cd1cc5869d4294eefa2f47343f377.png" class="" alt="League of Legends" loading="lazy">
+    </picture>
+                    </div>
+                            </div>
+                    </div>
+        <div class="relative mx-20 md:mx-0 flex flex-col-reverse md:flex-col">
+            <div class="flex">
+                <div class="hidden md:block py-1 px-2 bg-ep-primary text-ep-black text-xs font-medium">
+                    Artikel                </div>
+                <div class="text-xs flex-1 flex items-center pl-0 md:pl-2 text-ep-gray-600 md:text-ep-black bg-transparent md:bg-ep-gray-100">
+                    <span class="hidden md:inline">16 juni 2021</span>
+                    <span class="inline md:hidden">&nbsp;</span>
+                </div>
+            </div>
+            <div class="font-bold">
+                Hexflash terug in week 2 LEC, Dr. Mundo nog disabled            </div>
+        </div>
+    </article>
+</a>                
+<a href="https://www.esportsprime.gg/artikel/900/1/jungler-yoft-echo-zulu-wij-hebben-heel-veel-potentie">
+    <article class="relative border-b border-solid border-ep-gray-300 pb-4 md:pb-0 md:border-none text-ep-black article">
+        <div class="absolute w-full md:relative flex justify-between md:block">
+                <picture>
+                    <source sizes="(min-width: 960px) 540px, 100vw" srcset="https://d2p642huf6e36p.cloudfront.net/article-primary/2021/06/15/small/jungler-yoft-echo-zulu-wij-hebben-heel-veel-potentie-4e3d.webp 100w, https://d2p642huf6e36p.cloudfront.net/article-primary/2021/06/15/medium/jungler-yoft-echo-zulu-wij-hebben-heel-veel-potentie-4e3d.webp 273w, https://d2p642huf6e36p.cloudfront.net/article-primary/2021/06/15/large/jungler-yoft-echo-zulu-wij-hebben-heel-veel-potentie-4e3d.webp 488w, https://d2p642huf6e36p.cloudfront.net/article-primary/2021/06/15/small/jungler-yoft-echo-zulu-wij-hebben-heel-veel-potentie-4e3d.webp 740w" type="image/webp">
+                <source sizes="(min-width: 960px) 540px, 100vw" srcset="https://d2p642huf6e36p.cloudfront.net/article-primary/2021/06/15/small/jungler-yoft-echo-zulu-wij-hebben-heel-veel-potentie-4e3d.jpg 100w, https://d2p642huf6e36p.cloudfront.net/article-primary/2021/06/15/medium/jungler-yoft-echo-zulu-wij-hebben-heel-veel-potentie-4e3d.jpg 273w, https://d2p642huf6e36p.cloudfront.net/article-primary/2021/06/15/small/jungler-yoft-echo-zulu-wij-hebben-heel-veel-potentie-4e3d.jpg 740w" type="image/jpg">
+        <img src="https://d2p642huf6e36p.cloudfront.net/article-primary/2021/06/15/small/jungler-yoft-echo-zulu-wij-hebben-heel-veel-potentie-4e3d.jpg" class="w-16 md:w-full" alt="Jungler yOFT (Echo Zulu): &quot;Wij hebben heel veel potentie&quot;" loading="lazy">
+    </picture>
+            <div class="hidden md:block absolute bottom-4 left-4">
+                                    <div class="w-12 h-12 bg-ep-gray-900 grid place-items-center">
+                            <picture>
+                <source sizes="(min-width: 960px) 540px, 100vw" srcset="https://d2p642huf6e36p.cloudfront.net/game-logo/small/637cd1cc5869d4294eefa2f47343f377.png 100w, https://d2p642huf6e36p.cloudfront.net/game-logo/medium/637cd1cc5869d4294eefa2f47343f377.png 273w, https://d2p642huf6e36p.cloudfront.net/game-logo/medium/637cd1cc5869d4294eefa2f47343f377.png 740w" type="image/png">
+        <img src="https://d2p642huf6e36p.cloudfront.net/game-logo/medium/637cd1cc5869d4294eefa2f47343f377.png" class="" alt="League of Legends" loading="lazy">
+    </picture>
+                    </div>
+                            </div>
+                    </div>
+        <div class="relative mx-20 md:mx-0 flex flex-col-reverse md:flex-col">
+            <div class="flex">
+                <div class="hidden md:block py-1 px-2 bg-ep-primary text-ep-black text-xs font-medium">
+                    Artikel                </div>
+                <div class="text-xs flex-1 flex items-center pl-0 md:pl-2 text-ep-gray-600 md:text-ep-black bg-transparent md:bg-ep-gray-100">
+                    <span class="hidden md:inline">15 juni 2021</span>
+                    <span class="inline md:hidden">&nbsp;</span>
+                </div>
+            </div>
+            <div class="font-bold">
+                Jungler yOFT (Echo Zulu): "Wij hebben heel veel potentie"            </div>
+        </div>
+    </article>
+</a>                
+<a href="https://www.esportsprime.gg/artikel/896/1/jhinsane-7am-ik-plan-niet-vooruit-op-het-verliezen-van-games">
+    <article class="relative border-b border-solid border-ep-gray-300 pb-4 md:pb-0 md:border-none text-ep-black article">
+        <div class="absolute w-full md:relative flex justify-between md:block">
+                <picture>
+                    <source sizes="(min-width: 960px) 540px, 100vw" srcset="https://d2p642huf6e36p.cloudfront.net/article-primary/2021/06/14/small/jhinsane-7am-ik-plan-niet-vooruit-op-het-verliezen-van-games-1ec0.webp 100w, https://d2p642huf6e36p.cloudfront.net/article-primary/2021/06/14/medium/jhinsane-7am-ik-plan-niet-vooruit-op-het-verliezen-van-games-1ec0.webp 273w, https://d2p642huf6e36p.cloudfront.net/article-primary/2021/06/14/large/jhinsane-7am-ik-plan-niet-vooruit-op-het-verliezen-van-games-1ec0.webp 488w, https://d2p642huf6e36p.cloudfront.net/article-primary/2021/06/14/small/jhinsane-7am-ik-plan-niet-vooruit-op-het-verliezen-van-games-1ec0.webp 740w" type="image/webp">
+                <source sizes="(min-width: 960px) 540px, 100vw" srcset="https://d2p642huf6e36p.cloudfront.net/article-primary/2021/06/14/small/jhinsane-7am-ik-plan-niet-vooruit-op-het-verliezen-van-games-1ec0.jpg 100w, https://d2p642huf6e36p.cloudfront.net/article-primary/2021/06/14/medium/jhinsane-7am-ik-plan-niet-vooruit-op-het-verliezen-van-games-1ec0.jpg 273w, https://d2p642huf6e36p.cloudfront.net/article-primary/2021/06/14/small/jhinsane-7am-ik-plan-niet-vooruit-op-het-verliezen-van-games-1ec0.jpg 740w" type="image/jpg">
+        <img src="https://d2p642huf6e36p.cloudfront.net/article-primary/2021/06/14/small/jhinsane-7am-ik-plan-niet-vooruit-op-het-verliezen-van-games-1ec0.jpg" class="w-16 md:w-full" alt="Jhinsane (7AM): &quot;Ik plan niet vooruit op het verliezen van games&quot;" loading="lazy">
+    </picture>
+            <div class="hidden md:block absolute bottom-4 left-4">
+                                    <div class="w-12 h-12 bg-ep-gray-900 grid place-items-center">
+                            <picture>
+                <source sizes="(min-width: 960px) 540px, 100vw" srcset="https://d2p642huf6e36p.cloudfront.net/game-logo/small/637cd1cc5869d4294eefa2f47343f377.png 100w, https://d2p642huf6e36p.cloudfront.net/game-logo/medium/637cd1cc5869d4294eefa2f47343f377.png 273w, https://d2p642huf6e36p.cloudfront.net/game-logo/medium/637cd1cc5869d4294eefa2f47343f377.png 740w" type="image/png">
+        <img src="https://d2p642huf6e36p.cloudfront.net/game-logo/medium/637cd1cc5869d4294eefa2f47343f377.png" class="" alt="League of Legends" loading="lazy">
+    </picture>
+                    </div>
+                            </div>
+                    </div>
+        <div class="relative mx-20 md:mx-0 flex flex-col-reverse md:flex-col">
+            <div class="flex">
+                <div class="hidden md:block py-1 px-2 bg-ep-primary text-ep-black text-xs font-medium">
+                    Artikel                </div>
+                <div class="text-xs flex-1 flex items-center pl-0 md:pl-2 text-ep-gray-600 md:text-ep-black bg-transparent md:bg-ep-gray-100">
+                    <span class="hidden md:inline">14 juni 2021</span>
+                    <span class="inline md:hidden">&nbsp;</span>
+                </div>
+            </div>
+            <div class="font-bold">
+                Jhinsane (7AM): "Ik plan niet vooruit op het verliezen van games"            </div>
+        </div>
+    </article>
+</a>                
+<a href="https://www.esportsprime.gg/artikel/895/1/misfits-ongeslagen-door-lec-super-weekend-sk-gaming-stelt-teleur">
+    <article class="relative border-b border-solid border-ep-gray-300 pb-4 md:pb-0 md:border-none text-ep-black article">
+        <div class="absolute w-full md:relative flex justify-between md:block">
+                <picture>
+                    <source sizes="(min-width: 960px) 540px, 100vw" srcset="https://d2p642huf6e36p.cloudfront.net/article-primary/2021/06/14/small/misfits-ongeslagen-door-lec-super-weekend-sk-gaming-stelt-teleur-365f.webp 100w, https://d2p642huf6e36p.cloudfront.net/article-primary/2021/06/14/medium/misfits-ongeslagen-door-lec-super-weekend-sk-gaming-stelt-teleur-365f.webp 273w, https://d2p642huf6e36p.cloudfront.net/article-primary/2021/06/14/large/misfits-ongeslagen-door-lec-super-weekend-sk-gaming-stelt-teleur-365f.webp 488w, https://d2p642huf6e36p.cloudfront.net/article-primary/2021/06/14/small/misfits-ongeslagen-door-lec-super-weekend-sk-gaming-stelt-teleur-365f.webp 740w" type="image/webp">
+                <source sizes="(min-width: 960px) 540px, 100vw" srcset="https://d2p642huf6e36p.cloudfront.net/article-primary/2021/06/14/small/misfits-ongeslagen-door-lec-super-weekend-sk-gaming-stelt-teleur-365f.jpg 100w, https://d2p642huf6e36p.cloudfront.net/article-primary/2021/06/14/medium/misfits-ongeslagen-door-lec-super-weekend-sk-gaming-stelt-teleur-365f.jpg 273w, https://d2p642huf6e36p.cloudfront.net/article-primary/2021/06/14/small/misfits-ongeslagen-door-lec-super-weekend-sk-gaming-stelt-teleur-365f.jpg 740w" type="image/jpg">
+        <img src="https://d2p642huf6e36p.cloudfront.net/article-primary/2021/06/14/small/misfits-ongeslagen-door-lec-super-weekend-sk-gaming-stelt-teleur-365f.jpg" class="w-16 md:w-full" alt="Misfits ongeslagen door LEC Super Weekend, SK Gaming stelt teleur" loading="lazy">
+    </picture>
+            <div class="hidden md:block absolute bottom-4 left-4">
+                                    <div class="w-12 h-12 bg-ep-gray-900 grid place-items-center">
+                            <picture>
+                <source sizes="(min-width: 960px) 540px, 100vw" srcset="https://d2p642huf6e36p.cloudfront.net/game-logo/small/637cd1cc5869d4294eefa2f47343f377.png 100w, https://d2p642huf6e36p.cloudfront.net/game-logo/medium/637cd1cc5869d4294eefa2f47343f377.png 273w, https://d2p642huf6e36p.cloudfront.net/game-logo/medium/637cd1cc5869d4294eefa2f47343f377.png 740w" type="image/png">
+        <img src="https://d2p642huf6e36p.cloudfront.net/game-logo/medium/637cd1cc5869d4294eefa2f47343f377.png" class="" alt="League of Legends" loading="lazy">
+    </picture>
+                    </div>
+                            </div>
+                    </div>
+        <div class="relative mx-20 md:mx-0 flex flex-col-reverse md:flex-col">
+            <div class="flex">
+                <div class="hidden md:block py-1 px-2 bg-ep-primary text-ep-black text-xs font-medium">
+                    Artikel                </div>
+                <div class="text-xs flex-1 flex items-center pl-0 md:pl-2 text-ep-gray-600 md:text-ep-black bg-transparent md:bg-ep-gray-100">
+                    <span class="hidden md:inline">14 juni 2021</span>
+                    <span class="inline md:hidden">&nbsp;</span>
+                </div>
+            </div>
+            <div class="font-bold">
+                Misfits ongeslagen door LEC Super Weekend, SK Gaming stelt teleur            </div>
+        </div>
+    </article>
+</a>        </div></div>
+<div class="max-w-7xl mx-auto p-4 sm:p-6 lg:p-8 bg-ep-black text-white">
+    <div class="grid grid-cols-1 md:grid-cols-imu-1 lg:grid-cols-imu-2-1 gap-4 sm:gap-6 lg:gap-8 place-items-center">
+    
+<div class="centered">
+    <div id="_esportsprime.be_imu2-rectangle" class="advise-rectangle"></div>
+</div>  
+    <a href="/wedstrijden" class="h-imu w-full block items-end bg-contain bg-center border-b border-ep-primary" style="background-image: url('/images/default/contest-banner.png')">
+        <div class="h-full flex items-end bg-gradient-to-t from-ep-gradient via-transparent">
+            <div class="m-4 text-white">
+                <i class="text-4xl fas fa-trophy"></i> Er zijn voorlopig geen wedstrijden
+            </div>
+        </div>
+    </a>
+  <div class="block md:hidden lg:block">
+    
+<div class="h-imu border border-ep-primary grid grid-col-1 place-items-center gap-4 p-6">
+  <img class="w-48 h-auto" src="/images/logos/logo_text_with_icon_for_dark.png" alt="Esports Prime Logo">
+  <p class="text-sm text-center">Heb jij nog geen account op Esports prime?</p>
+  <a href="/site/signup">
+      <div class="bg-ep-primary p-4 text-ep-black text-xs font-bold">
+          Maak een account! <i class="fas fa-arrow-right"></i>
+      </div>
+  </a>
+</div>
+  </div>
+</div></div>
+<div class="max-w-7xl mx-auto p-4 sm:p-6 lg:p-8 bg-white">
+        
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8">
+            
+<a href="https://www.esportsprime.gg/artikel/887/1/mad-lions-heeft-lid-met-covid-19">
+    <article class="relative border-b border-solid border-ep-gray-300 pb-4 md:pb-0 md:border-none text-ep-black article">
+        <div class="absolute w-full md:relative flex justify-between md:block">
+                <picture>
+                    <source sizes="(min-width: 960px) 540px, 100vw" srcset="https://d2p642huf6e36p.cloudfront.net/article-primary/2021/06/13/small/mad-lions-heeft-lid-met-corona-00ba.webp 100w, https://d2p642huf6e36p.cloudfront.net/article-primary/2021/06/13/medium/mad-lions-heeft-lid-met-corona-00ba.webp 273w, https://d2p642huf6e36p.cloudfront.net/article-primary/2021/06/13/large/mad-lions-heeft-lid-met-corona-00ba.webp 488w, https://d2p642huf6e36p.cloudfront.net/article-primary/2021/06/13/small/mad-lions-heeft-lid-met-corona-00ba.webp 740w" type="image/webp">
+                <source sizes="(min-width: 960px) 540px, 100vw" srcset="https://d2p642huf6e36p.cloudfront.net/article-primary/2021/06/13/small/mad-lions-heeft-lid-met-corona-00ba.jpg 100w, https://d2p642huf6e36p.cloudfront.net/article-primary/2021/06/13/medium/mad-lions-heeft-lid-met-corona-00ba.jpg 273w, https://d2p642huf6e36p.cloudfront.net/article-primary/2021/06/13/small/mad-lions-heeft-lid-met-corona-00ba.jpg 740w" type="image/jpg">
+        <img src="https://d2p642huf6e36p.cloudfront.net/article-primary/2021/06/13/small/mad-lions-heeft-lid-met-corona-00ba.jpg" class="w-16 md:w-full" alt="MAD Lions heeft lid met COVID-19" loading="lazy">
+    </picture>
+            <div class="hidden md:block absolute bottom-4 left-4">
+                                    <div class="w-12 h-12 bg-ep-gray-900 grid place-items-center">
+                            <picture>
+                <source sizes="(min-width: 960px) 540px, 100vw" srcset="https://d2p642huf6e36p.cloudfront.net/game-logo/small/637cd1cc5869d4294eefa2f47343f377.png 100w, https://d2p642huf6e36p.cloudfront.net/game-logo/medium/637cd1cc5869d4294eefa2f47343f377.png 273w, https://d2p642huf6e36p.cloudfront.net/game-logo/medium/637cd1cc5869d4294eefa2f47343f377.png 740w" type="image/png">
+        <img src="https://d2p642huf6e36p.cloudfront.net/game-logo/medium/637cd1cc5869d4294eefa2f47343f377.png" class="" alt="League of Legends" loading="lazy">
+    </picture>
+                    </div>
+                            </div>
+                    </div>
+        <div class="relative mx-20 md:mx-0 flex flex-col-reverse md:flex-col">
+            <div class="flex">
+                <div class="hidden md:block py-1 px-2 bg-ep-primary text-ep-black text-xs font-medium">
+                    Artikel                </div>
+                <div class="text-xs flex-1 flex items-center pl-0 md:pl-2 text-ep-gray-600 md:text-ep-black bg-transparent md:bg-ep-gray-100">
+                    <span class="hidden md:inline">13 juni 2021</span>
+                    <span class="inline md:hidden">&nbsp;</span>
+                </div>
+            </div>
+            <div class="font-bold">
+                MAD Lions heeft lid met COVID-19            </div>
+        </div>
+    </article>
+</a>                
+<a href="https://www.esportsprime.gg/artikel/889/1/liquid-geeft-tekst-en-uitleg-over-wisselen-alphari">
+    <article class="relative border-b border-solid border-ep-gray-300 pb-4 md:pb-0 md:border-none text-ep-black article">
+        <div class="absolute w-full md:relative flex justify-between md:block">
+                <picture>
+                    <source sizes="(min-width: 960px) 540px, 100vw" srcset="https://d2p642huf6e36p.cloudfront.net/article-primary/2021/06/13/small/liquid-geeft-tekst-en-uitleg-over-wisselen-alphari-e9e1.webp 100w, https://d2p642huf6e36p.cloudfront.net/article-primary/2021/06/13/medium/liquid-geeft-tekst-en-uitleg-over-wisselen-alphari-e9e1.webp 273w, https://d2p642huf6e36p.cloudfront.net/article-primary/2021/06/13/large/liquid-geeft-tekst-en-uitleg-over-wisselen-alphari-e9e1.webp 488w, https://d2p642huf6e36p.cloudfront.net/article-primary/2021/06/13/small/liquid-geeft-tekst-en-uitleg-over-wisselen-alphari-e9e1.webp 740w" type="image/webp">
+                <source sizes="(min-width: 960px) 540px, 100vw" srcset="https://d2p642huf6e36p.cloudfront.net/article-primary/2021/06/13/small/liquid-geeft-tekst-en-uitleg-over-wisselen-alphari-e9e1.jpg 100w, https://d2p642huf6e36p.cloudfront.net/article-primary/2021/06/13/medium/liquid-geeft-tekst-en-uitleg-over-wisselen-alphari-e9e1.jpg 273w, https://d2p642huf6e36p.cloudfront.net/article-primary/2021/06/13/small/liquid-geeft-tekst-en-uitleg-over-wisselen-alphari-e9e1.jpg 740w" type="image/jpg">
+        <img src="https://d2p642huf6e36p.cloudfront.net/article-primary/2021/06/13/small/liquid-geeft-tekst-en-uitleg-over-wisselen-alphari-e9e1.jpg" class="w-16 md:w-full" alt="Liquid geeft tekst en uitleg over wisselen Alphari" loading="lazy">
+    </picture>
+            <div class="hidden md:block absolute bottom-4 left-4">
+                                    <div class="w-12 h-12 bg-ep-gray-900 grid place-items-center">
+                            <picture>
+                <source sizes="(min-width: 960px) 540px, 100vw" srcset="https://d2p642huf6e36p.cloudfront.net/game-logo/small/637cd1cc5869d4294eefa2f47343f377.png 100w, https://d2p642huf6e36p.cloudfront.net/game-logo/medium/637cd1cc5869d4294eefa2f47343f377.png 273w, https://d2p642huf6e36p.cloudfront.net/game-logo/medium/637cd1cc5869d4294eefa2f47343f377.png 740w" type="image/png">
+        <img src="https://d2p642huf6e36p.cloudfront.net/game-logo/medium/637cd1cc5869d4294eefa2f47343f377.png" class="" alt="League of Legends" loading="lazy">
+    </picture>
+                    </div>
+                            </div>
+                    </div>
+        <div class="relative mx-20 md:mx-0 flex flex-col-reverse md:flex-col">
+            <div class="flex">
+                <div class="hidden md:block py-1 px-2 bg-ep-primary text-ep-black text-xs font-medium">
+                    Artikel                </div>
+                <div class="text-xs flex-1 flex items-center pl-0 md:pl-2 text-ep-gray-600 md:text-ep-black bg-transparent md:bg-ep-gray-100">
+                    <span class="hidden md:inline">13 juni 2021</span>
+                    <span class="inline md:hidden">&nbsp;</span>
+                </div>
+            </div>
+            <div class="font-bold">
+                Liquid geeft tekst en uitleg over wisselen Alphari            </div>
+        </div>
+    </article>
+</a>                
+<a href="https://www.esportsprime.gg/artikel/886/1/de-5-favorieten-van-slyv3r">
+    <article class="relative border-b border-solid border-ep-gray-300 pb-4 md:pb-0 md:border-none text-ep-black article">
+        <div class="absolute w-full md:relative flex justify-between md:block">
+                <picture>
+                    <source sizes="(min-width: 960px) 540px, 100vw" srcset="https://d2p642huf6e36p.cloudfront.net/article-primary/2021/06/12/small/nieuw-artikel-6d6a.webp 100w, https://d2p642huf6e36p.cloudfront.net/article-primary/2021/06/12/medium/nieuw-artikel-6d6a.webp 273w, https://d2p642huf6e36p.cloudfront.net/article-primary/2021/06/12/large/nieuw-artikel-6d6a.webp 488w, https://d2p642huf6e36p.cloudfront.net/article-primary/2021/06/12/small/nieuw-artikel-6d6a.webp 740w" type="image/webp">
+                <source sizes="(min-width: 960px) 540px, 100vw" srcset="https://d2p642huf6e36p.cloudfront.net/article-primary/2021/06/12/small/nieuw-artikel-6d6a.jpg 100w, https://d2p642huf6e36p.cloudfront.net/article-primary/2021/06/12/medium/nieuw-artikel-6d6a.jpg 273w, https://d2p642huf6e36p.cloudfront.net/article-primary/2021/06/12/small/nieuw-artikel-6d6a.jpg 740w" type="image/jpg">
+        <img src="https://d2p642huf6e36p.cloudfront.net/article-primary/2021/06/12/small/nieuw-artikel-6d6a.jpg" class="w-16 md:w-full" alt="De 5 favorieten van...  Slyv3r" loading="lazy">
+    </picture>
+            <div class="hidden md:block absolute bottom-4 left-4">
+                                    <div class="w-12 h-12 bg-ep-gray-900 grid place-items-center">
+                            <picture>
+                <source sizes="(min-width: 960px) 540px, 100vw" srcset="https://d2p642huf6e36p.cloudfront.net/game-logo/small/637cd1cc5869d4294eefa2f47343f377.png 100w, https://d2p642huf6e36p.cloudfront.net/game-logo/medium/637cd1cc5869d4294eefa2f47343f377.png 273w, https://d2p642huf6e36p.cloudfront.net/game-logo/medium/637cd1cc5869d4294eefa2f47343f377.png 740w" type="image/png">
+        <img src="https://d2p642huf6e36p.cloudfront.net/game-logo/medium/637cd1cc5869d4294eefa2f47343f377.png" class="" alt="League of Legends" loading="lazy">
+    </picture>
+                    </div>
+                            </div>
+                    </div>
+        <div class="relative mx-20 md:mx-0 flex flex-col-reverse md:flex-col">
+            <div class="flex">
+                <div class="hidden md:block py-1 px-2 bg-ep-primary text-ep-black text-xs font-medium">
+                    Artikel                </div>
+                <div class="text-xs flex-1 flex items-center pl-0 md:pl-2 text-ep-gray-600 md:text-ep-black bg-transparent md:bg-ep-gray-100">
+                    <span class="hidden md:inline">12 juni 2021</span>
+                    <span class="inline md:hidden">&nbsp;</span>
+                </div>
+            </div>
+            <div class="font-bold">
+                De 5 favorieten van...  Slyv3r            </div>
+        </div>
+    </article>
+</a>                
+<a href="https://www.esportsprime.gg/artikel/881/1/wie-laat-zich-zien-tijdens-eerste-super-weekend-van-lec-summer-split">
+    <article class="relative border-b border-solid border-ep-gray-300 pb-4 md:pb-0 md:border-none text-ep-black article">
+        <div class="absolute w-full md:relative flex justify-between md:block">
+                <picture>
+                    <source sizes="(min-width: 960px) 540px, 100vw" srcset="https://d2p642huf6e36p.cloudfront.net/article-primary/2021/06/11/small/wie-laat-zich-zien-tijdens-eerste-super-weekend-van-lec-summer-split-20ec.webp 100w, https://d2p642huf6e36p.cloudfront.net/article-primary/2021/06/11/medium/wie-laat-zich-zien-tijdens-eerste-super-weekend-van-lec-summer-split-20ec.webp 273w, https://d2p642huf6e36p.cloudfront.net/article-primary/2021/06/11/large/wie-laat-zich-zien-tijdens-eerste-super-weekend-van-lec-summer-split-20ec.webp 488w, https://d2p642huf6e36p.cloudfront.net/article-primary/2021/06/11/small/wie-laat-zich-zien-tijdens-eerste-super-weekend-van-lec-summer-split-20ec.webp 740w" type="image/webp">
+                <source sizes="(min-width: 960px) 540px, 100vw" srcset="https://d2p642huf6e36p.cloudfront.net/article-primary/2021/06/11/small/wie-laat-zich-zien-tijdens-eerste-super-weekend-van-lec-summer-split-20ec.jpg 100w, https://d2p642huf6e36p.cloudfront.net/article-primary/2021/06/11/medium/wie-laat-zich-zien-tijdens-eerste-super-weekend-van-lec-summer-split-20ec.jpg 273w, https://d2p642huf6e36p.cloudfront.net/article-primary/2021/06/11/small/wie-laat-zich-zien-tijdens-eerste-super-weekend-van-lec-summer-split-20ec.jpg 740w" type="image/jpg">
+        <img src="https://d2p642huf6e36p.cloudfront.net/article-primary/2021/06/11/small/wie-laat-zich-zien-tijdens-eerste-super-weekend-van-lec-summer-split-20ec.jpg" class="w-16 md:w-full" alt="Wie laat zich zien tijdens eerste Super Weekend van LEC Summer Split?" loading="lazy">
+    </picture>
+            <div class="hidden md:block absolute bottom-4 left-4">
+                                    <div class="w-12 h-12 bg-ep-gray-900 grid place-items-center">
+                            <picture>
+                <source sizes="(min-width: 960px) 540px, 100vw" srcset="https://d2p642huf6e36p.cloudfront.net/game-logo/small/637cd1cc5869d4294eefa2f47343f377.png 100w, https://d2p642huf6e36p.cloudfront.net/game-logo/medium/637cd1cc5869d4294eefa2f47343f377.png 273w, https://d2p642huf6e36p.cloudfront.net/game-logo/medium/637cd1cc5869d4294eefa2f47343f377.png 740w" type="image/png">
+        <img src="https://d2p642huf6e36p.cloudfront.net/game-logo/medium/637cd1cc5869d4294eefa2f47343f377.png" class="" alt="League of Legends" loading="lazy">
+    </picture>
+                    </div>
+                            </div>
+                    </div>
+        <div class="relative mx-20 md:mx-0 flex flex-col-reverse md:flex-col">
+            <div class="flex">
+                <div class="hidden md:block py-1 px-2 bg-ep-primary text-ep-black text-xs font-medium">
+                    Artikel                </div>
+                <div class="text-xs flex-1 flex items-center pl-0 md:pl-2 text-ep-gray-600 md:text-ep-black bg-transparent md:bg-ep-gray-100">
+                    <span class="hidden md:inline">11 juni 2021</span>
+                    <span class="inline md:hidden">&nbsp;</span>
+                </div>
+            </div>
+            <div class="font-bold">
+                Wie laat zich zien tijdens eerste Super Weekend van LEC Summer Split?            </div>
+        </div>
+    </article>
+</a>                
+<a href="https://www.esportsprime.gg/artikel/877/1/hexflash-uitgeschakeld-in-lec-na-grote-bug-met-sett">
+    <article class="relative border-b border-solid border-ep-gray-300 pb-4 md:pb-0 md:border-none text-ep-black article">
+        <div class="absolute w-full md:relative flex justify-between md:block">
+                <picture>
+                    <source sizes="(min-width: 960px) 540px, 100vw" srcset="https://d2p642huf6e36p.cloudfront.net/article-primary/2021/06/10/small/nieuw-artikel-9b39.webp 100w, https://d2p642huf6e36p.cloudfront.net/article-primary/2021/06/10/medium/nieuw-artikel-9b39.webp 273w, https://d2p642huf6e36p.cloudfront.net/article-primary/2021/06/10/large/nieuw-artikel-9b39.webp 488w, https://d2p642huf6e36p.cloudfront.net/article-primary/2021/06/10/small/nieuw-artikel-9b39.webp 740w" type="image/webp">
+                <source sizes="(min-width: 960px) 540px, 100vw" srcset="https://d2p642huf6e36p.cloudfront.net/article-primary/2021/06/10/small/nieuw-artikel-9b39.jpg 100w, https://d2p642huf6e36p.cloudfront.net/article-primary/2021/06/10/medium/nieuw-artikel-9b39.jpg 273w, https://d2p642huf6e36p.cloudfront.net/article-primary/2021/06/10/small/nieuw-artikel-9b39.jpg 740w" type="image/jpg">
+        <img src="https://d2p642huf6e36p.cloudfront.net/article-primary/2021/06/10/small/nieuw-artikel-9b39.jpg" class="w-16 md:w-full" alt="Hexflash uitgeschakeld in LEC na grote bug met Sett" loading="lazy">
+    </picture>
+            <div class="hidden md:block absolute bottom-4 left-4">
+                                    <div class="w-12 h-12 bg-ep-gray-900 grid place-items-center">
+                            <picture>
+                <source sizes="(min-width: 960px) 540px, 100vw" srcset="https://d2p642huf6e36p.cloudfront.net/game-logo/small/637cd1cc5869d4294eefa2f47343f377.png 100w, https://d2p642huf6e36p.cloudfront.net/game-logo/medium/637cd1cc5869d4294eefa2f47343f377.png 273w, https://d2p642huf6e36p.cloudfront.net/game-logo/medium/637cd1cc5869d4294eefa2f47343f377.png 740w" type="image/png">
+        <img src="https://d2p642huf6e36p.cloudfront.net/game-logo/medium/637cd1cc5869d4294eefa2f47343f377.png" class="" alt="League of Legends" loading="lazy">
+    </picture>
+                    </div>
+                            </div>
+                    </div>
+        <div class="relative mx-20 md:mx-0 flex flex-col-reverse md:flex-col">
+            <div class="flex">
+                <div class="hidden md:block py-1 px-2 bg-ep-primary text-ep-black text-xs font-medium">
+                    Artikel                </div>
+                <div class="text-xs flex-1 flex items-center pl-0 md:pl-2 text-ep-gray-600 md:text-ep-black bg-transparent md:bg-ep-gray-100">
+                    <span class="hidden md:inline">11 juni 2021</span>
+                    <span class="inline md:hidden">&nbsp;</span>
+                </div>
+            </div>
+            <div class="font-bold">
+                Hexflash uitgeschakeld in LEC na grote bug met Sett            </div>
+        </div>
+    </article>
+</a>                
+<a href="https://www.esportsprime.gg/artikel/872/1/dit-is-het-lec-on-air-talent-voor-summer-split-2021">
+    <article class="relative border-b border-solid border-ep-gray-300 pb-4 md:pb-0 md:border-none text-ep-black article">
+        <div class="absolute w-full md:relative flex justify-between md:block">
+                <picture>
+                    <source sizes="(min-width: 960px) 540px, 100vw" srcset="https://d2p642huf6e36p.cloudfront.net/article-primary/2021/06/09/small/dit-is-het-lec-on-air-talent-voor-summer-split-2021-9610.webp 100w, https://d2p642huf6e36p.cloudfront.net/article-primary/2021/06/09/medium/dit-is-het-lec-on-air-talent-voor-summer-split-2021-9610.webp 273w, https://d2p642huf6e36p.cloudfront.net/article-primary/2021/06/09/large/dit-is-het-lec-on-air-talent-voor-summer-split-2021-9610.webp 488w, https://d2p642huf6e36p.cloudfront.net/article-primary/2021/06/09/small/dit-is-het-lec-on-air-talent-voor-summer-split-2021-9610.webp 740w" type="image/webp">
+                <source sizes="(min-width: 960px) 540px, 100vw" srcset="https://d2p642huf6e36p.cloudfront.net/article-primary/2021/06/09/small/dit-is-het-lec-on-air-talent-voor-summer-split-2021-9610.jpg 100w, https://d2p642huf6e36p.cloudfront.net/article-primary/2021/06/09/medium/dit-is-het-lec-on-air-talent-voor-summer-split-2021-9610.jpg 273w, https://d2p642huf6e36p.cloudfront.net/article-primary/2021/06/09/small/dit-is-het-lec-on-air-talent-voor-summer-split-2021-9610.jpg 740w" type="image/jpg">
+        <img src="https://d2p642huf6e36p.cloudfront.net/article-primary/2021/06/09/small/dit-is-het-lec-on-air-talent-voor-summer-split-2021-9610.jpg" class="w-16 md:w-full" alt="Dit is het LEC On-Air Talent voor Summer Split 2021" loading="lazy">
+    </picture>
+            <div class="hidden md:block absolute bottom-4 left-4">
+                                    <div class="w-12 h-12 bg-ep-gray-900 grid place-items-center">
+                            <picture>
+                <source sizes="(min-width: 960px) 540px, 100vw" srcset="https://d2p642huf6e36p.cloudfront.net/game-logo/small/637cd1cc5869d4294eefa2f47343f377.png 100w, https://d2p642huf6e36p.cloudfront.net/game-logo/medium/637cd1cc5869d4294eefa2f47343f377.png 273w, https://d2p642huf6e36p.cloudfront.net/game-logo/medium/637cd1cc5869d4294eefa2f47343f377.png 740w" type="image/png">
+        <img src="https://d2p642huf6e36p.cloudfront.net/game-logo/medium/637cd1cc5869d4294eefa2f47343f377.png" class="" alt="League of Legends" loading="lazy">
+    </picture>
+                    </div>
+                            </div>
+                    </div>
+        <div class="relative mx-20 md:mx-0 flex flex-col-reverse md:flex-col">
+            <div class="flex">
+                <div class="hidden md:block py-1 px-2 bg-ep-primary text-ep-black text-xs font-medium">
+                    Artikel                </div>
+                <div class="text-xs flex-1 flex items-center pl-0 md:pl-2 text-ep-gray-600 md:text-ep-black bg-transparent md:bg-ep-gray-100">
+                    <span class="hidden md:inline">10 juni 2021</span>
+                    <span class="inline md:hidden">&nbsp;</span>
+                </div>
+            </div>
+            <div class="font-bold">
+                Dit is het LEC On-Air Talent voor Summer Split 2021            </div>
+        </div>
+    </article>
+</a>                
+<a href="https://www.esportsprime.gg/artikel/875/1/kehvo-psv-mvp-in-de-tweede-week-dutch-league">
+    <article class="relative border-b border-solid border-ep-gray-300 pb-4 md:pb-0 md:border-none text-ep-black article">
+        <div class="absolute w-full md:relative flex justify-between md:block">
+                <picture>
+                    <source sizes="(min-width: 960px) 540px, 100vw" srcset="https://d2p642huf6e36p.cloudfront.net/article-primary/2021/06/10/small/kehvo-psv-alweer-mvp-in-de-tweede-week-dutch-league-4773.webp 100w, https://d2p642huf6e36p.cloudfront.net/article-primary/2021/06/10/medium/kehvo-psv-alweer-mvp-in-de-tweede-week-dutch-league-4773.webp 273w, https://d2p642huf6e36p.cloudfront.net/article-primary/2021/06/10/large/kehvo-psv-alweer-mvp-in-de-tweede-week-dutch-league-4773.webp 488w, https://d2p642huf6e36p.cloudfront.net/article-primary/2021/06/10/small/kehvo-psv-alweer-mvp-in-de-tweede-week-dutch-league-4773.webp 740w" type="image/webp">
+                <source sizes="(min-width: 960px) 540px, 100vw" srcset="https://d2p642huf6e36p.cloudfront.net/article-primary/2021/06/10/small/kehvo-psv-alweer-mvp-in-de-tweede-week-dutch-league-4773.jpg 100w, https://d2p642huf6e36p.cloudfront.net/article-primary/2021/06/10/medium/kehvo-psv-alweer-mvp-in-de-tweede-week-dutch-league-4773.jpg 273w, https://d2p642huf6e36p.cloudfront.net/article-primary/2021/06/10/small/kehvo-psv-alweer-mvp-in-de-tweede-week-dutch-league-4773.jpg 740w" type="image/jpg">
+        <img src="https://d2p642huf6e36p.cloudfront.net/article-primary/2021/06/10/small/kehvo-psv-alweer-mvp-in-de-tweede-week-dutch-league-4773.jpg" class="w-16 md:w-full" alt="Kehvo (PSV) MVP in de tweede week Dutch League" loading="lazy">
+    </picture>
+            <div class="hidden md:block absolute bottom-4 left-4">
+                                    <div class="w-12 h-12 bg-ep-gray-900 grid place-items-center">
+                            <picture>
+                <source sizes="(min-width: 960px) 540px, 100vw" srcset="https://d2p642huf6e36p.cloudfront.net/game-logo/small/637cd1cc5869d4294eefa2f47343f377.png 100w, https://d2p642huf6e36p.cloudfront.net/game-logo/medium/637cd1cc5869d4294eefa2f47343f377.png 273w, https://d2p642huf6e36p.cloudfront.net/game-logo/medium/637cd1cc5869d4294eefa2f47343f377.png 740w" type="image/png">
+        <img src="https://d2p642huf6e36p.cloudfront.net/game-logo/medium/637cd1cc5869d4294eefa2f47343f377.png" class="" alt="League of Legends" loading="lazy">
+    </picture>
+                    </div>
+                            </div>
+                    </div>
+        <div class="relative mx-20 md:mx-0 flex flex-col-reverse md:flex-col">
+            <div class="flex">
+                <div class="hidden md:block py-1 px-2 bg-ep-primary text-ep-black text-xs font-medium">
+                    Artikel                </div>
+                <div class="text-xs flex-1 flex items-center pl-0 md:pl-2 text-ep-gray-600 md:text-ep-black bg-transparent md:bg-ep-gray-100">
+                    <span class="hidden md:inline">10 juni 2021</span>
+                    <span class="inline md:hidden">&nbsp;</span>
+                </div>
+            </div>
+            <div class="font-bold">
+                Kehvo (PSV) MVP in de tweede week Dutch League            </div>
+        </div>
+    </article>
+</a>                
+<a href="https://www.esportsprime.gg/artikel/874/1/bengi-niet-covid-positief-lck-gaat-normaal-door">
+    <article class="relative border-b border-solid border-ep-gray-300 pb-4 md:pb-0 md:border-none text-ep-black article">
+        <div class="absolute w-full md:relative flex justify-between md:block">
+                <picture>
+                    <source sizes="(min-width: 960px) 540px, 100vw" srcset="https://d2p642huf6e36p.cloudfront.net/article-primary/2021/06/10/small/bengi-niet-covid-positief-lck-gaat-normaal-door-3c71.webp 100w, https://d2p642huf6e36p.cloudfront.net/article-primary/2021/06/10/medium/bengi-niet-covid-positief-lck-gaat-normaal-door-3c71.webp 273w, https://d2p642huf6e36p.cloudfront.net/article-primary/2021/06/10/large/bengi-niet-covid-positief-lck-gaat-normaal-door-3c71.webp 488w, https://d2p642huf6e36p.cloudfront.net/article-primary/2021/06/10/small/bengi-niet-covid-positief-lck-gaat-normaal-door-3c71.webp 740w" type="image/webp">
+                <source sizes="(min-width: 960px) 540px, 100vw" srcset="https://d2p642huf6e36p.cloudfront.net/article-primary/2021/06/10/small/bengi-niet-covid-positief-lck-gaat-normaal-door-3c71.jpg 100w, https://d2p642huf6e36p.cloudfront.net/article-primary/2021/06/10/medium/bengi-niet-covid-positief-lck-gaat-normaal-door-3c71.jpg 273w, https://d2p642huf6e36p.cloudfront.net/article-primary/2021/06/10/small/bengi-niet-covid-positief-lck-gaat-normaal-door-3c71.jpg 740w" type="image/jpg">
+        <img src="https://d2p642huf6e36p.cloudfront.net/article-primary/2021/06/10/small/bengi-niet-covid-positief-lck-gaat-normaal-door-3c71.jpg" class="w-16 md:w-full" alt="Bengi niet COVID-positief, LCK gaat normaal door" loading="lazy">
+    </picture>
+            <div class="hidden md:block absolute bottom-4 left-4">
+                                    <div class="w-12 h-12 bg-ep-gray-900 grid place-items-center">
+                            <picture>
+                <source sizes="(min-width: 960px) 540px, 100vw" srcset="https://d2p642huf6e36p.cloudfront.net/game-logo/small/637cd1cc5869d4294eefa2f47343f377.png 100w, https://d2p642huf6e36p.cloudfront.net/game-logo/medium/637cd1cc5869d4294eefa2f47343f377.png 273w, https://d2p642huf6e36p.cloudfront.net/game-logo/medium/637cd1cc5869d4294eefa2f47343f377.png 740w" type="image/png">
+        <img src="https://d2p642huf6e36p.cloudfront.net/game-logo/medium/637cd1cc5869d4294eefa2f47343f377.png" class="" alt="League of Legends" loading="lazy">
+    </picture>
+                    </div>
+                            </div>
+                    </div>
+        <div class="relative mx-20 md:mx-0 flex flex-col-reverse md:flex-col">
+            <div class="flex">
+                <div class="hidden md:block py-1 px-2 bg-ep-primary text-ep-black text-xs font-medium">
+                    Artikel                </div>
+                <div class="text-xs flex-1 flex items-center pl-0 md:pl-2 text-ep-gray-600 md:text-ep-black bg-transparent md:bg-ep-gray-100">
+                    <span class="hidden md:inline">10 juni 2021</span>
+                    <span class="inline md:hidden">&nbsp;</span>
+                </div>
+            </div>
+            <div class="font-bold">
+                Bengi niet COVID-positief, LCK gaat normaal door            </div>
+        </div>
+    </article>
+</a>                
+<a href="https://www.esportsprime.gg/artikel/871/1/albetrayber-is-burger-king-king-of-the-week">
+    <article class="relative border-b border-solid border-ep-gray-300 pb-4 md:pb-0 md:border-none text-ep-black article">
+        <div class="absolute w-full md:relative flex justify-between md:block">
+                <picture>
+                    <source sizes="(min-width: 960px) 540px, 100vw" srcset="https://d2p642huf6e36p.cloudfront.net/article-primary/2021/06/09/small/albetrayber-maakt-de-belgian-league-onveilig-en-wordt-burger-king-king-of-the-week-4012.webp 100w, https://d2p642huf6e36p.cloudfront.net/article-primary/2021/06/09/medium/albetrayber-maakt-de-belgian-league-onveilig-en-wordt-burger-king-king-of-the-week-4012.webp 273w, https://d2p642huf6e36p.cloudfront.net/article-primary/2021/06/09/large/albetrayber-maakt-de-belgian-league-onveilig-en-wordt-burger-king-king-of-the-week-4012.webp 488w, https://d2p642huf6e36p.cloudfront.net/article-primary/2021/06/09/small/albetrayber-maakt-de-belgian-league-onveilig-en-wordt-burger-king-king-of-the-week-4012.webp 740w" type="image/webp">
+                <source sizes="(min-width: 960px) 540px, 100vw" srcset="https://d2p642huf6e36p.cloudfront.net/article-primary/2021/06/09/small/albetrayber-maakt-de-belgian-league-onveilig-en-wordt-burger-king-king-of-the-week-4012.jpg 100w, https://d2p642huf6e36p.cloudfront.net/article-primary/2021/06/09/medium/albetrayber-maakt-de-belgian-league-onveilig-en-wordt-burger-king-king-of-the-week-4012.jpg 273w, https://d2p642huf6e36p.cloudfront.net/article-primary/2021/06/09/small/albetrayber-maakt-de-belgian-league-onveilig-en-wordt-burger-king-king-of-the-week-4012.jpg 740w" type="image/jpg">
+        <img src="https://d2p642huf6e36p.cloudfront.net/article-primary/2021/06/09/small/albetrayber-maakt-de-belgian-league-onveilig-en-wordt-burger-king-king-of-the-week-4012.jpg" class="w-16 md:w-full" alt="Albetrayber is Burger King King of the Week" loading="lazy">
+    </picture>
+            <div class="hidden md:block absolute bottom-4 left-4">
+                                    <div class="w-12 h-12 bg-ep-gray-900 grid place-items-center">
+                            <picture>
+                <source sizes="(min-width: 960px) 540px, 100vw" srcset="https://d2p642huf6e36p.cloudfront.net/game-logo/small/637cd1cc5869d4294eefa2f47343f377.png 100w, https://d2p642huf6e36p.cloudfront.net/game-logo/medium/637cd1cc5869d4294eefa2f47343f377.png 273w, https://d2p642huf6e36p.cloudfront.net/game-logo/medium/637cd1cc5869d4294eefa2f47343f377.png 740w" type="image/png">
+        <img src="https://d2p642huf6e36p.cloudfront.net/game-logo/medium/637cd1cc5869d4294eefa2f47343f377.png" class="" alt="League of Legends" loading="lazy">
+    </picture>
+                    </div>
+                            </div>
+                    </div>
+        <div class="relative mx-20 md:mx-0 flex flex-col-reverse md:flex-col">
+            <div class="flex">
+                <div class="hidden md:block py-1 px-2 bg-ep-primary text-ep-black text-xs font-medium">
+                    Artikel                </div>
+                <div class="text-xs flex-1 flex items-center pl-0 md:pl-2 text-ep-gray-600 md:text-ep-black bg-transparent md:bg-ep-gray-100">
+                    <span class="hidden md:inline"> 9 juni 2021</span>
+                    <span class="inline md:hidden">&nbsp;</span>
+                </div>
+            </div>
+            <div class="font-bold">
+                Albetrayber is Burger King King of the Week            </div>
+        </div>
+    </article>
+</a>        </div>    <div class="extra-content">
+
+    </div>
+            <div class="text-center">
+            <div class="p-3 bg-ep-primary text-white inline-block cursor-pointer" id="load-more-articles" data-offset="871">
+                Meer            </div>
+        </div>
+    </div>
+</div>
+<footer>
+    <div class="bg-ep-black">
+        <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-4 gap-4 lg:gap-8 xl:gap-32">
+                <div>
+                    <ul>
+                        <li class="text-sm border-b bolder-solid border-ep-gray-800 mb-2 pb-2">
+                            <a href="https://docs.gameplay.be/privacy" class="text-white hover:text-ep-primary focus:text-ep-primary">
+                                Privacy Policy
+                            </a>
+                        </li>
+                        <li class="text-sm border-b bolder-solid border-ep-gray-800 mb-2 pb-2">
+                            <a href="https://docs.gameplay.be/cookies" class="text-white hover:text-ep-primary focus:text-ep-primary">
+                                Cookie Policy
+                            </a>
+                        </li>
+                        <li class="text-sm border-b bolder-solid border-ep-gray-800 mb-2 pb-2">
+                            <a href="https://docs.gameplay.be/voorwaarden" class="text-white hover:text-ep-primary focus:text-ep-primary">
+                                Gebruiksvoorwaarden
+                            </a>
+                        </li>
+                        <li class="text-sm border-b bolder-solid border-ep-gray-800 mb-2 pb-2">
+                            <a href="/redactie" class="text-white hover:text-ep-primary focus:text-ep-primary">
+                                Redactie
+                            </a>
+                        </li>
+                        <li class="text-sm">
+                            <a href="/contact" class="text-white hover:text-ep-primary focus:text-ep-primary">
+                                Contact                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-span-1 lg:col-span-2">
+                                    </div>
+                <div class="flex flex-col items-end">
+                    <div class="grid grid-cols-3 gap-2 mb-2">
+                        <a href="https://www.facebook.com/EsportsPrimeGG" target="_blank" class="text-2xl text-white hover:text-ep-primary focus:text-ep-primary">
+                            <i class="fab fa-facebook-square"></i>
+                        </a>
+                        <a href="https://twitter.com/EsportsPrimeGG" target="_blank" class="text-2xl text-white hover:text-ep-primary focus:text-ep-primary">
+                            <i class="fab fa-twitter-square"></i>
+                        </a>
+                        <a href="https://www.youtube.com/channel/UCB21twTnqiulAer3JOdn8rg/featured" target="_blank" class="text-2xl text-white hover:text-ep-primary focus:text-ep-primary">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                        <a href="https://www.twitch.tv/esportsprime" target="_blank" class="text-2xl text-white hover:text-ep-primary focus:text-ep-primary">
+                            <i class="fab fa-twitch"></i>
+                        </a>
+                        <a href="https://www.twitch.tv/esportsprimelol" target="_blank" class="text-2xl text-white hover:text-ep-primary focus:text-ep-primary">
+                            <i class="fab fa-twitch"></i>
+                        </a>
+                        <a href="https://www.twitch.tv/esportsprimecsgo" target="_blank" class="text-2xl text-white hover:text-ep-primary focus:text-ep-primary">
+                            <i class="fab fa-twitch"></i>
+                        </a>
+                    </div>
+                    <img src="/images/logos/logo_text_with_icon_for_dark.png" class="block h-10 w-auto" alt="Esports Prime logo">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="bg-ep-gray-900 py-4 text-center text-white text-sm">
+        Copyright <span class="font-bold">META BV</span> 2021
+    </div>
+</footer><script src="/assets/9f55e876/jquery.min.js?v=1610640331"></script>
+<script src="/assets/d5bd35e7/yii.js?v=1610640331"></script>
+<script src="/js/6dP4O0PXUa8Hm6ld.js?v=1610639612"></script>
+<script src="/js/index.js?v=1624263161"></script>
+<script src="/js/app.js?v=1624263157"></script>
+<script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js"></script>
+<script>FourG.initNewsFeed('#load-more-articles');
+FourG.initAdhese('_esportsprime.be_');
+FourG.adheseHelper.addTag('rectangle', {position: ''});
+FourG.adheseHelper.addTag('rectangle', {position: 'imu2'});
+FourG.adheseHelper.addTag('billboard', {position: ''}, 'desktop');
+FourG.adheseHelper.addTag('mobilebanner', {position: ''}, 'mobile');</script></body>
+<script type="text/javascript">
+    if(window.FourG && window.FourG.adheseHelper){
+        FourG.adheseHelper.showInit();
+    }
+</script>
+</html>

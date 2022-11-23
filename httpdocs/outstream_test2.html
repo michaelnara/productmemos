@@ -1,0 +1,51 @@
+
+<html>
+
+<div id="aniplayer"></div>
+<script type="text/javascript" id="aniviewJS">
+(function()
+{
+  var myPlayer;
+  var adConfig = {
+    publisherId:      '61618a42ecee4d2c79703b47',
+    channelId:        '61618a5050d22371306836f4', 
+    ref1:             '',
+    width:            100,
+    height:           0,
+    autoPlay:         true,
+    loop:             false,
+    logo:             false,
+    vastRetry:        3,
+    errorLimit:       5,
+    soundButton:      true,
+    pauseButton:      true,
+    pauseOnUnseen:    true,
+    preloader: {
+      type:           'Image',
+      link :          'https://productdemos.nl/pxl.png',
+    },     
+    position :        'aniplayer'
+  };
+  
+
+
+  (new Image).src = "https://track1.aniview.com/track?pid="+adConfig.publisherId+"&cid="+adConfig.channelId+"&e=playerLoaded"+"&cb="+Date.now();
+  var PlayerUrl = 'https://player.aniview.com/script/6.1/player.js'+'?v=1&type=s&pid='+adConfig.publisherId;  
+  function downloadScript(src,adData) {
+    var scp = document.createElement('script');
+	scp.src = src;
+	scp.onload = function() {
+      myPlayer= new avPlayer(adConfig);
+      myPlayer.play();
+    };
+	document.getElementsByTagName('head')[0].appendChild(scp);
+  };
+  downloadScript(PlayerUrl,adConfig);  
+})();
+</script>
+
+
+
+
+
+<html>

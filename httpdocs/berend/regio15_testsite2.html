@@ -1,0 +1,1505 @@
+<!doctype html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        @media (min-width: 768px) {
+
+            #div-gpt-ad-regio15_ros_sky,
+            #div-gpt-ad-regio15_ros_right1,
+            #div-gpt-ad-regio15_ros_right2 {
+                height: 600px;
+            }
+
+            #div-gpt-ad-regio15_ros_header {
+                height: 250px;
+            }
+
+            #div-gpt-ad-regio15_ros_inarticle {
+                height: 360px;
+            }
+
+            #div-gpt-ad-regio15_ros_middle,
+            #div-gpt-ad-regio15_ros_middle2 {
+                height: 90px;
+            }
+        }
+
+        @media (max-width: 767px) {
+
+            #div-gpt-ad-regio15_ros_header,
+            #div-gpt-ad-regio15_ros_inarticle {
+                height: 280px;
+            }
+
+            #div-gpt-ad-regio15_ros_middle,
+            #div-gpt-ad-regio15_ros_middle2,
+            #div-gpt-ad-regio15_ros_right1 {
+                height: 600px;
+            }
+        }
+
+        #div-gpt-ad-regio15_ros_header,
+        #div-gpt-ad-regio15_ros_middle,
+        #div-gpt-ad-regio15_ros_sky,
+        #div-gpt-ad-regio15_ros_right2,
+        #div-gpt-ad-regio15_ros_inarticle,
+        #div-gpt-ad-regio15_ros_middle2,
+        #div-gpt-ad-regio15_ros_right1 {
+            display: flex;
+        }
+    </style>
+    <script>
+        var msTag = {
+            data: { nsc: false },
+            site: "regio15",
+            page: "ros"
+        };
+    </script>
+    <script>
+        const BurndMark = {
+            sortedLabels: [],
+            sortedTimes: [],
+            measureTime(label) {
+                this[label] = Math.ceil(performance.now() * 100) / 100;
+                this.sortedLabels.push(label);
+                this.sortedTimes.push(this[label])
+                console.log(this[label], label);
+            },
+            readData() {
+                for (let i = 0; i < this.sortedTimes.length; i++) {
+                    console.log(this.sortedLabels[i] + ":", this.sortedTimes[i], "ms");
+                }
+            }
+        };
+        BurndMark.measureTime("start script");
+        var ms_debug = false;
+        if (window.location.href.indexOf("ms_debug") !== -1) {
+            ms_debug = true;
+        }
+
+        var interstitialSlot;
+        var browserName = navigator.appName;
+        var nAgt = navigator.userAgent;
+        // In MSIE, the true version is after "MSIE" in userAgent
+        if ((verOffset = nAgt.indexOf("MSIE")) != -1) {
+            browserName = "IE";
+        }
+        // In Chrome, the true version is after "Chrome"
+        else if ((verOffset = nAgt.indexOf("Chrome")) != -1) {
+            browserName = "Chrome";
+        }
+        // In Safari, the true version is after "Safari" or after "Version"
+        else if ((verOffset = nAgt.indexOf("Safari")) != -1) {
+            browserName = "Safari";
+        }
+        // In Firefox, the true version is after "Firefox"
+        else if ((verOffset = nAgt.indexOf("Firefox")) != -1) {
+            browserName = "Firefox";
+        }
+        // In most other browsers, "name/version" is at the end of userAgent
+        else {
+            browserName = "N/A";
+        }
+
+        function PositionSizes(desktopSizes, phoneSizes) {
+            this.desktopSizes = desktopSizes;
+            this.phoneSizes = phoneSizes;
+        }
+        PositionSizes.prototype = {
+            get allSizes() {
+                return this.desktopSizes.concat(this.phoneSizes);
+            },
+            get deviceSizesGam() {
+                var filters = [[1800, 1000], [1800, 200], [970, 1000]];
+                return window.screen.availWidth >= 769
+                    ? this.desktopSizes.filter(function (size) {
+                        return JSON.stringify(filters).indexOf(JSON.stringify(size)) == -1;
+                    })
+                    : this.phoneSizes.filter(function (size) {
+                        return JSON.stringify(filters).indexOf(JSON.stringify(size)) == -1;
+                    });
+            },
+            get deviceSizes() {
+                var filters = [["fluid"]];
+                return window.screen.availWidth >= 769
+                    ? this.desktopSizes.filter(function (size) {
+                        return JSON.stringify(filters).indexOf(JSON.stringify(size)) == -1;
+                    })
+                    : this.phoneSizes.filter(function (size) {
+                        return JSON.stringify(filters).indexOf(JSON.stringify(size)) == -1;
+                    });
+            }
+        };
+
+        var massariusData = {
+            rubiconId: 379794,
+            gamId: "13436254",
+            get allDesktopSizes() {
+                const sizesX = [];
+                const sizes = [];
+                for (const positionKey in this.positions) {
+                    var desktopSizes = this.positions[positionKey].sizes.desktopSizes;
+                    for (const size of desktopSizes) {
+                        const sizeX = size.join("x");
+                        if (sizesX.indexOf(sizeX) === -1) {
+                            sizesX.push(sizeX);
+                            sizes.push(size);
+                        }
+                    }
+                }
+                return sizes;
+            },
+            get allPhoneSizes() {
+                const sizesX = [];
+                const sizes = [];
+                for (const positionKey in this.positions) {
+                    var phoneSizes = this.positions[positionKey].sizes.phoneSizes;
+                    for (const size of phoneSizes) {
+                        const sizeX = size.join("x");
+                        if (sizesX.indexOf(sizeX) === -1) {
+                            sizesX.push(sizeX);
+                            sizes.push(size);
+                        }
+                    }
+                }
+                return sizes;
+            },
+            msTagArray: ['ros', 'article', 'reportages'],
+            positions: {
+                _Regio15_ROS_Header: {
+                    id: 'div-gpt-ad-regio15_ros_header',
+                    gamName: "Regio15_ROS_Header",
+                    inPrebid: true,
+                    isInterstitial: false,
+                    isVideo: false,
+                    msTag: {
+                        phone: ['ros', 'article', 'reportages'],
+                        desktop: ['ros', 'article', 'reportages']
+                    },
+                    sizes: new PositionSizes(
+                        [[728, 90], [970, 90], [970, 250], [970, 1000], [1800, 1000]],
+                        [[300, 50], [320, 50], [300, 100], [320, 100], [300, 250], [336, 280]]
+                    ),
+                    placementIds: {
+                        openx: {
+                            desktop: 544301740,
+                            phone: 544301741,
+                        },
+                        improvedigital: {
+                            desktop: 22525421,
+                            phone: 22525422,
+                        },
+                        rubicon: {
+                            desktop: 2103774,
+                            phone: 2103776,
+                        },
+                        appnexus: {
+                            desktop: 21933070,
+                            phone: 21933071,
+                        },
+                        pubmatic: {
+                            desktop: 3909316,
+                            phone: 3909317,
+                        },
+                        tmp: {},
+                        weborama: {},
+                        richaudience: {},
+                        smartadserver: {},
+                        teads: {},
+                        justpremium: {},
+                        invibes: {}
+                    }
+                },
+                _Regio15_ROS_Sky: {
+                    id: 'div-gpt-ad-regio15_ros_sky',
+                    gamName: "Regio15_ROS_Sky",
+                    inPrebid: true,
+                    isInterstitial: false,
+                    isVideo: false,
+                    msTag: {
+                        phone: [''],
+                        desktop: ['article']
+                    },
+                    sizes: new PositionSizes(
+                        [[160, 600]],
+                        []
+                    ),
+                    placementIds: {
+                        openx: {
+                            desktop: 544301742,
+                        },
+                        improvedigital: {
+                            desktop: 22525423,
+                        },
+                        rubicon: {
+                            desktop: 2103778,
+                        },
+                        appnexus: {
+                            desktop: 21933072,
+                        },
+                        pubmatic: {
+                            desktop: 3909318,
+                        },
+                        tmp: {},
+                        weborama: {},
+                        richaudience: {},
+                        smartadserver: {},
+                        teads: {},
+                        justpremium: {},
+                        invibes: {}
+                    }
+                },
+                _Regio15_ROS_Inarticle: {
+                    id: 'div-gpt-ad-regio15_ros_inarticle',
+                    gamName: "Regio15_ROS_Inarticle",
+                    inPrebid: true,
+                    isInterstitial: false,
+                    isVideo: true,
+                    msTag: {
+                        phone: ['article', 'reportages'],
+                        desktop: ['article', 'reportages']
+                    },
+                    sizes: new PositionSizes(
+                        [[1, 1]],
+                        [[1, 1]]
+                    ),
+                    placementIds: {
+                        openx: {
+                            desktop: 544301743,
+                            phone: 544301744,
+                        },
+                        improvedigital: {
+                            desktop: 22525424,
+                            phone: 22527771,
+                        },
+                        rubicon: {
+                            desktop: 2103780,
+                            phone: 2103782,
+                        },
+                        appnexus: {
+                            desktop: 21933073,
+                            phone: 21933074,
+                        },
+                        pubmatic: {
+                            desktop: 3909319,
+                            phone: 3909320,
+                        },
+                        tmp: {},
+                        weborama: {},
+                        richaudience: {},
+                        smartadserver: {},
+                        teads: {},
+                        justpremium: {},
+                        invibes: {}
+                    }
+                },
+                _Regio15_ROS_Native: {
+                    id: 'div-gpt-ad-regio15_ros_native',
+                    gamName: "Regio15_ROS_Native",
+                    inPrebid: true,
+                    isInterstitial: false,
+                    isVideo: false,
+                    msTag: {
+                        phone: ['article'],
+                        desktop: ['article']
+                    },
+                    sizes: new PositionSizes(
+                        [[728, 90], [970, 90], [970, 250], [1, 1]],
+                        [[300, 50], [320, 50], [300, 100], [320, 100], [300, 250], [336, 280], [1, 1]]
+                    ),
+                    placementIds: {
+                        openx: {
+                            desktop: 544301745,
+                            phone: 544301746,
+                        },
+                        improvedigital: {
+                            desktop: 22527772,
+                            phone: 22527773,
+                        },
+                        rubicon: {
+                            desktop: 2103784,
+                            phone: 2103786,
+                        },
+                        appnexus: {
+                            desktop: 21933075,
+                            phone: 21933076,
+                        },
+                        pubmatic: {
+                            desktop: 3909321,
+                            phone: 3909322,
+                        },
+                        tmp: {},
+                        weborama: {},
+                        richaudience: {},
+                        smartadserver: {},
+                        teads: {},
+                        justpremium: {},
+                        invibes: {}
+                    }
+                },
+                _Regio15_ROS_Native2: {
+                    id: 'div-gpt-ad-regio15_ros_native2',
+                    gamName: "Regio15_ROS_Native2",
+                    inPrebid: true,
+                    isInterstitial: false,
+                    isVideo: false,
+                    msTag: {
+                        phone: ['reportages'],
+                        desktop: ['reportages']
+                    },
+                    sizes: new PositionSizes(
+                        [[728, 90], [1, 1]],
+                        [[300, 50], [320, 50], [300, 100], [320, 100], [300, 250], [336, 280], [1, 1]]
+                    ),
+                    placementIds: {
+                        openx: {
+                            desktop: 544301747,
+                            phone: 544301748,
+                        },
+                        improvedigital: {
+                            desktop: 22527774,
+                            phone: 22527775,
+                        },
+                        rubicon: {
+                            desktop: 2103788,
+                            phone: 2103790,
+                        },
+                        appnexus: {
+                            desktop: 21933077,
+                            phone: 21933078,
+                        },
+                        pubmatic: {
+                            desktop: 3909323,
+                            phone: 3909324,
+                        },
+                        tmp: {},
+                        weborama: {},
+                        richaudience: {},
+                        smartadserver: {},
+                        teads: {},
+                        justpremium: {},
+                        invibes: {}
+                    }
+                },
+                _Regio15_ROS_Middle: {
+                    id: 'div-gpt-ad-regio15_ros_middle',
+                    gamName: "Regio15_ROS_Middle",
+                    inPrebid: true,
+                    isInterstitial: false,
+                    isVideo: false,
+                    msTag: {
+                        phone: ['ros'],
+                        desktop: ['ros']
+                    },
+                    sizes: new PositionSizes(
+                        [[728, 90]],
+                        [[300, 50], [320, 50], [300, 100], [320, 240], [300, 250], [320, 400], [320, 500], [300, 600]]
+                    ),
+                    placementIds: {
+                        openx: {
+                            desktop: 544301749,
+                            phone: 544301750,
+                        },
+                        improvedigital: {
+                            desktop: 22527776,
+                            phone: 22527777,
+                        },
+                        rubicon: {
+                            desktop: 2103792,
+                            phone: 2103794,
+                        },
+                        appnexus: {
+                            desktop: 21933079,
+                            phone: 21933080,
+                        },
+                        pubmatic: {
+                            desktop: 3909325,
+                            phone: 3909326,
+                        },
+                        tmp: {},
+                        weborama: {},
+                        richaudience: {},
+                        smartadserver: {},
+                        teads: {},
+                        justpremium: {},
+                        invibes: {}
+                    }
+                },
+                _Regio15_ROS_Middle2: {
+                    id: 'div-gpt-ad-regio15_ros_middle2',
+                    gamName: "Regio15_ROS_Middle2",
+                    inPrebid: true,
+                    isInterstitial: false,
+                    isVideo: false,
+                    msTag: {
+                        phone: ['article'],
+                        desktop: ['article']
+                    },
+                    sizes: new PositionSizes(
+                        [[728, 90]],
+                        [[300, 50], [320, 50], [300, 100], [320, 100], [320, 240], [300, 250], [336, 280], [300, 600]]
+                    ),
+                    placementIds: {
+                        openx: {
+                            desktop: 544301751,
+                            phone: 544301752,
+                        },
+                        improvedigital: {
+                            desktop: 22527778,
+                            phone: 22527779,
+                        },
+                        rubicon: {
+                            desktop: 2103796,
+                            phone: 2103800,
+                        },
+                        appnexus: {
+                            desktop: 21933081,
+                            phone: 21933082,
+                        },
+                        pubmatic: {
+                            desktop: 3909327,
+                            phone: 3909328,
+                        },
+                        tmp: {},
+                        weborama: {},
+                        richaudience: {},
+                        smartadserver: {},
+                        teads: {},
+                        justpremium: {},
+                        invibes: {}
+                    }
+                },
+                _Regio15_ROS_Right1: {
+                    id: 'div-gpt-ad-regio15_ros_right1',
+                    gamName: "Regio15_ROS_Right1",
+                    inPrebid: true,
+                    isInterstitial: false,
+                    isVideo: false,
+                    msTag: {
+                        phone: ['ros', 'reportages'],
+                        desktop: ['ros', 'reportages']
+                    },
+                    sizes: new PositionSizes(
+                        [[300, 250], [336, 280], [300, 600]],
+                        [[300, 50], [320, 50], [300, 100], [320, 240], [300, 250], [300, 600]]
+                    ),
+                    placementIds: {
+                        openx: {
+                            desktop: 544301753,
+                            phone: 544301754,
+                        },
+                        improvedigital: {
+                            desktop: 22527780,
+                            phone: 22527781,
+                        },
+                        rubicon: {
+                            desktop: 2103802,
+                            phone: 2103804,
+                        },
+                        appnexus: {
+                            desktop: 21933083,
+                            phone: 21933086,
+                        },
+                        pubmatic: {
+                            desktop: 3909329,
+                            phone: 3909330,
+                        },
+                        tmp: {},
+                        weborama: {},
+                        richaudience: {},
+                        smartadserver: {},
+                        teads: {},
+                        justpremium: {},
+                        invibes: {}
+                    }
+                },
+                _Regio15_ROS_Right2: {
+                    id: 'div-gpt-ad-regio15_ros_right2',
+                    gamName: "Regio15_ROS_Right2",
+                    inPrebid: true,
+                    isInterstitial: false,
+                    isVideo: false,
+                    msTag: {
+                        phone: [''],
+                        desktop: ['ros']
+                    },
+                    sizes: new PositionSizes(
+                        [[300, 250], [336, 280], [300, 600]],
+                        []
+                    ),
+                    placementIds: {
+                        openx: {
+                            desktop: 544301755,
+                        },
+                        improvedigital: {
+                            desktop: 22527782,
+                        },
+                        rubicon: {
+                            desktop: 2103806,
+                        },
+                        appnexus: {
+                            desktop: 21933088,
+                        },
+                        pubmatic: {
+                            desktop: 3909331,
+                        },
+                        tmp: {},
+                        weborama: {},
+                        richaudience: {},
+                        smartadserver: {},
+                        teads: {},
+                        justpremium: {},
+                        invibes: {}
+                    }
+                },
+                _Regio15_ROS_Interstitial: {
+                    id: 'div-gpt-ad-regio15_ros_interstitial',
+                    gamName: "Regio15_ROS_Interstitial",
+                    inPrebid: false,
+                    isInterstitial: true,
+                    isVideo: false,
+                    msTag: {
+                        phone: ['ros'],
+                        desktop: ['ros']
+                    },
+                    sizes: new PositionSizes(
+                        [[300, 250], [336, 280], [320, 240], [320, 480]],
+                        [[300, 250], [336, 280], [320, 240], [320, 480]]
+                    ),
+                    placementIds: {
+                        openx: {},
+                        improvedigital: {},
+                        rubicon: {},
+                        appnexus: {},
+                        pubmatic: {},
+                        tmp: {},
+                        weborama: {},
+                        richaudience: {},
+                        smartadserver: {},
+                        teads: {},
+                        justpremium: {},
+                        invibes: {}
+                    }
+                },
+                _Regio15_ROS_Sticky: {
+                    id: 'div-gpt-ad-regio15_ros_sticky',
+                    gamName: "Regio15_ROS_Sticky",
+                    inPrebid: true,
+                    isInterstitial: false,
+                    isVideo: false,
+                    msTag: {
+                        phone: ['ros', 'article', 'reportages'],
+                        desktop: ['ros', 'article', 'reportages']
+                    },
+                    sizes: new PositionSizes(
+                        [[728, 90], [970, 90], [970, 250]],
+                        [[300, 50], [320, 50], [300, 100], [320, 100]]
+                    ),
+                    placementIds: {
+                        openx: {
+                            desktop: 544301756,
+                            phone: 544301757,
+                        },
+                        improvedigital: {
+                            desktop: 22527783,
+                            phone: 22527784,
+                        },
+                        rubicon: {
+                            desktop: 2103808,
+                            phone: 2103810,
+                        },
+                        appnexus: {
+                            desktop: 21933089,
+                            phone: 21933090,
+                        },
+                        pubmatic: {
+                            desktop: 3909332,
+                            phone: 3909333,
+                        },
+                        tmp: {},
+                        weborama: {},
+                        richaudience: {},
+                        smartadserver: {},
+                        teads: {},
+                        justpremium: {},
+                        invibes: {}
+                    }
+                }
+            }
+        };
+
+        function deleteStickyAd() {
+            var element = document.getElementById('sticky-container');
+            element.parentNode.removeChild(element);
+        };
+
+        function createStickyPos(id) {
+            var div1 = document.createElement('div');
+            div1.id = "sticky-container";
+            div1.style.display = "none";
+            div1.style.maxWidth = "970px";
+            div1.style.position = "fixed";
+            div1.style.left = "0";
+            div1.style.right = "0";
+            div1.style.bottom = "0";
+            div1.style.marginLeft = "auto";
+            div1.style.marginRight = "auto";
+            div1.style.backgroundColor = "white";
+            div1.style.zIndex = "9999";
+            div1.style.border = "1px solid #e0e0e0";
+            div1.style.borderBottom = "none";
+
+            var closeContainer = document.createElement("button");
+            closeContainer.id = "closeContainer";
+            closeContainer.style.position = "absolute";
+            closeContainer.style.width = "28px";
+            closeContainer.style.height = "28px";
+            closeContainer.style.top = "-28px";
+            closeContainer.style.marginRight = "-1px";
+            closeContainer.style.right = "0";
+            closeContainer.style.background = "url('https://www.massariuscdn.com/prod/close_icon.png') no-repeat center";
+            closeContainer.style.backgroundSize = "13px 13px";
+            closeContainer.style.backgroundPosition = "7.5px";
+            closeContainer.style.backgroundColor = "#fff";
+            closeContainer.style.border = "1px solid rgb(224, 224, 224)";
+            closeContainer.style.borderBottom = "none";
+            closeContainer.style.borderRadius = "12px 0 0 0";
+            closeContainer.onclick = function () { deleteStickyAd(); };
+
+            var styleScript = document.createElement("style");
+            styleScript.innerHTML = "button#closeContainer::before {position:absolute; content: ''; top: -20px; right: 0; left: -20px; bottom: 0;};";
+            var body = window.top.parent.document.getElementsByTagName("body")[0];
+            body.appendChild(styleScript);
+
+            div1.appendChild(closeContainer);
+
+            var div = document.createElement('div');
+            div.id = id;
+            script = document.createElement('script');
+            script.innerHTML = "googletag.cmd.push(function() { googletag.display('" + id + "'); });";
+            div.appendChild(script);
+
+            div1.appendChild(div);
+
+            body.insertBefore(div1, body.firstChild);
+        }
+
+        var readyStateCheckInterval = setInterval(function () {
+            if (document.readyState == "interactive" || document.readyState == "complete") {
+                clearInterval(readyStateCheckInterval);
+                createStickyPos("div-gpt-ad-regio15_ros_sticky");
+            }
+        }, 10);
+        var PREBID_TIMEOUT = 1000;
+        var pbjs = pbjs || {};
+        pbjs.que = pbjs.que || [];
+        var desktopMultiple = 1.25;
+        var phoneMultiple = 1.25;
+
+        if (window.screen.availWidth >= 769) {
+            //Desktop
+            DefM = desktopMultiple;
+        } else {
+            DefM = phoneMultiple;
+        }
+        var bidCap = 20;
+
+        // load Google
+        (function () {
+            var gads = document.createElement("script");
+            gads.async = true;
+            gads.type = "text/javascript";
+            var useSSL = "https:" == document.location.protocol;
+            gads.src =
+                (useSSL ? "https:" : "http:") +
+                "//securepubads.g.doubleclick.net/tag/js/gpt.js";
+            var node = document.getElementsByTagName("script")[0];
+            node.parentNode.insertBefore(gads, node);
+        })();
+
+        function loadQuantum() {
+            BurndMark.measureTime("[loadQuantum]");
+            var quant = document.createElement("script");
+            quant.async = true;
+            quant.type = "text/javascript";
+            var useSSL = "https:" == document.location.protocol;
+            quant.src =
+                (useSSL ? "https:" : "http:") +
+                "//cdn.elasticad.net/native/serve/js/quantx/nativeEmbed.gz.js";
+            quant.id = "quantx-embed-tag";
+            var node = document.getElementsByTagName("script")[0];
+            node.parentNode.insertBefore(quant, node);
+        };
+        var googletag = googletag || {};
+        googletag.cmd = googletag.cmd || [];
+        googletag.cmd.push(function () {
+            googletag.pubads().disableInitialLoad();
+        });
+
+        // load prebid
+        var pbjs = pbjs || {};
+        pbjs.que = pbjs.que || [];
+        gptadslots = [];
+
+        (function () {
+            var mspb = document.createElement("script");
+            mspb.async = true;
+            mspb.type = "text/javascript";
+            var useSSL = "https:" == document.location.protocol;
+            mspb.src =
+                (useSSL ? "https:" : "http:") + "//massariuscdn.com/prod/prebid5.1.0.js";
+            var node = document.getElementsByTagName("script")[0];
+            node.parentNode.insertBefore(mspb, node);
+        })();
+
+        // load neustar
+
+        var gdpr;
+        var iab_string;
+        var iab_category = 'NEWS AND POLITICS';
+
+        loadNeustar = function () {
+            BurndMark.measureTime("[loadNeustar]");
+            setTimeout(function () {
+                BurndMark.measureTime("[loadNeustar, setTimeout 1500]");
+                var nst = document.createElement("script");
+                nst.type = "text/javascript";
+                nst.innerHTML = function setUpAgknTag(tag) {
+                    tag.setBpId("massarius");
+                    tag.setCat(iab_category);
+                    tag.setGdpr(gdpr);
+                    tag.setGdprConsent(iab_string);
+                };
+                var tagjs = document.createElement("script");
+                tagjs.async = true;
+                tagjs.type = "text/javascript";
+                var useSSL = "https:" == document.location.protocol;
+                tagjs.src = (useSSL ? "https:" : "http:") + "//js.agkn.com/prod/v0/tag.js";
+                document.body.appendChild(nst);
+                document.body.appendChild(tagjs);
+            }, 1500);
+        };
+
+        // load faktor (CMP)
+        (function () {
+            var fakt = document.createElement('script');
+            var firstScript = document.getElementsByTagName('script')[0];
+            var useSSL = "https:" == document.location.protocol;
+            fakt.src =
+                (useSSL ? "https:" : "http:") + "//gdpr-wrapper.privacymanager.io/gdpr/e728d4c4-3e66-49b6-9472-cbae1744d309/gdpr-liveramp.js";
+            fakt.onload = function () {
+                window.__tcfapi('addEventListener', 2, checkConsent);
+            };
+            firstScript.parentNode.insertBefore(fakt, firstScript);
+        })();
+
+        function BidderSetting(baseMultiple) {
+            this.baseMultiple = baseMultiple;
+        }
+        BidderSetting.prototype = {
+            bidCpmAdjustment(bidCpm) {
+                if (bidCpm >= bidCap) {
+                    return bidCpm;
+                } else {
+                    return Math.min(bidCpm * DefM * this.baseMultiple, bidCap + (bidCpm / 100));
+                }
+            }
+        };
+        pbjs.bidderSettings = {
+            openx: new BidderSetting(1),
+            improvedigital: new BidderSetting(1),
+            rubicon: new BidderSetting(1),
+            appnexus: new BidderSetting(1),
+            pubmatic: new BidderSetting(1),
+            tmp: new BidderSetting(1.1),
+            weborama: new BidderSetting(1),
+            smartadserver: new BidderSetting(1),
+            richaudience: new BidderSetting(1),
+            justpremium: new BidderSetting(1),
+        };
+
+
+
+        // create bids
+
+        for (const position in massariusData.positions) {
+            const adUnit = massariusData.positions[position];
+            const gamNameUnderscore = "_" + adUnit.gamName.split("//").join("_").replace(".", "_").replace("-", "_");
+            if (adUnit.inPrebid) {
+                if (adUnit.isVideo) {
+                    window[gamNameUnderscore] = {
+                        code: adUnit.id,
+                        mediaTypes: {
+                            video: {
+                                context: "outstream",
+                                playerSize: [1, 1],
+                            },
+                            banner: {
+                                sizes: [[300, 250], [300, 600], [1, 1]],
+                            },
+                        },
+                        bids: [],
+                    };
+                    if (adUnit.placementIds.spotx)
+                        window[gamNameUnderscore].bids.push({
+                            bidder: "spotx",
+                            params: {
+                                channel_id: adUnit.placementIds.spotx,
+                                ad_unit: "outstream",
+                                outstream_options: {
+                                    slot: adUnit.id,
+                                    custom_override: window.screen.width < 768
+                                        ? { content_width: 300, content_height: 250 }
+                                        : { content_width: 640, content_height: 360 },
+                                },
+                            },
+                        });
+                    if (adUnit.placementIds.teads != null && adUnit.placementIds.teads.pageId)
+                        window[gamNameUnderscore].bids.push({
+                            bidder: "teads",
+                            params: {
+                                placementId: adUnit.placementIds.teads.placementId,
+                                pageId: adUnit.placementIds.teads.pageId,
+                            },
+                        });
+                } else {
+                    window[gamNameUnderscore] = {
+                        code: adUnit.hasOwnProperty("overarchingAdunit")
+                            ? massariusData.gamId + "/" + adUnit.overarchingAdunit + "/" + adUnit.gamName
+                            : massariusData.gamId + "/" + adUnit.gamName,
+                        mediaTypes: {
+                            banner: {
+                                sizes: adUnit.sizes.deviceSizes,
+                            },
+                        },
+                        bids: [],
+                    };
+                    if (adUnit.placementIds.openx && adUnit.placementIds.openx.desktop)
+                        window[gamNameUnderscore].bids.push({
+                            bidder: "openx",
+                            labelAny: ["desktop", "tablet"],
+                            params: {
+                                delDomain: "massarius-d.openx.net",
+                                unit: adUnit.placementIds.openx.desktop.toString(),
+                                customParams: { iab_category }
+                            },
+                        });
+                    if (adUnit.placementIds.openx && adUnit.placementIds.openx.phone)
+                        window[gamNameUnderscore].bids.push({
+                            bidder: "openx",
+                            labelAny: ["phone"],
+                            params: {
+                                delDomain: "massarius-d.openx.net",
+                                unit: adUnit.placementIds.openx.phone.toString(),
+                                customParams: { iab_category }
+                            },
+                        });
+                    if (adUnit.placementIds.improvedigital && adUnit.placementIds.improvedigital.desktop)
+                        window[gamNameUnderscore].bids.push({
+                            bidder: "improvedigital",
+                            labelAny: ["desktop", "tablet"],
+                            params: {
+                                placementId: adUnit.placementIds.improvedigital.desktop.toString(),
+                                keyValues: typeof msTag !== "undefined" && msTag.data && msTag.data.nsc == true
+                                    ? {
+                                        hb: ["true"],
+                                        Page: ["NSC"],
+                                        iab_category: [iab_category]
+                                    }
+                                    : {
+                                        hb: ["true"],
+                                        iab_category: [iab_category]
+                                    },
+                            },
+                        });
+                    if (adUnit.placementIds.improvedigital && adUnit.placementIds.improvedigital.phone)
+                        window[gamNameUnderscore].bids.push({
+                            bidder: "improvedigital",
+                            labelAny: ["phone"],
+                            params: {
+                                placementId: adUnit.placementIds.improvedigital.phone.toString(),
+                                keyValues: typeof msTag !== "undefined" && msTag.data && msTag.data.nsc == true
+                                    ? {
+                                        hb: ["true"],
+                                        Page: ["NSC"],
+                                        iab_category: [iab_category]
+                                    }
+                                    : {
+                                        hb: ["true"],
+                                        iab_category: [iab_category]
+                                    },
+                            },
+                        });
+                    if (adUnit.placementIds.rubicon && adUnit.placementIds.rubicon.desktop)
+                        window[gamNameUnderscore].bids.push({
+                            bidder: "rubicon",
+                            labelAny: ["desktop", "tablet"],
+                            params: {
+                                accountId: "20952",
+                                siteId: massariusData.rubiconId.toString(),
+                                zoneId: adUnit.placementIds.rubicon.desktop.toString(),
+                                inventory: { iab_category }
+                            },
+                        });
+                    if (adUnit.placementIds.rubicon && adUnit.placementIds.rubicon.phone)
+                        window[gamNameUnderscore].bids.push({
+                            bidder: "rubicon",
+                            labelAny: ["phone"],
+                            params: {
+                                accountId: "20952",
+                                siteId: massariusData.rubiconId.toString(),
+                                zoneId: adUnit.placementIds.rubicon.phone.toString(),
+                                inventory: { iab_category }
+                            },
+                        });
+                    if (adUnit.placementIds.appnexus && adUnit.placementIds.appnexus.desktop)
+                        window[gamNameUnderscore].bids.push({
+                            bidder: "appnexus",
+                            labelAny: ["desktop", "tablet"],
+                            params: {
+                                placementId: adUnit.placementIds.appnexus.desktop,
+                            },
+                            keywords: { iab_category }
+                        });
+                    if (adUnit.placementIds.appnexus && adUnit.placementIds.appnexus.phone)
+                        window[gamNameUnderscore].bids.push({
+                            bidder: "appnexus",
+                            labelAny: ["phone"],
+                            params: {
+                                placementId: adUnit.placementIds.appnexus.phone,
+                            },
+                            keywords: { iab_category }
+                        });
+                    if (adUnit.placementIds.pubmatic && adUnit.placementIds.pubmatic.desktop)
+                        window[gamNameUnderscore].bids.push({
+                            bidder: "pubmatic",
+                            labelAny: ["desktop", "tablet"],
+                            params: {
+                                publisherId: "156546",
+                                adSlot: adUnit.placementIds.pubmatic.desktop.toString(),
+                                dctr: `iab_category=${iab_category}`
+                            },
+                        });
+                    if (adUnit.placementIds.pubmatic && adUnit.placementIds.pubmatic.phone)
+                        window[gamNameUnderscore].bids.push({
+                            bidder: "pubmatic",
+                            labelAny: ["phone"],
+                            params: {
+                                publisherId: "156546",
+                                adSlot: adUnit.placementIds.pubmatic.phone.toString(),
+                                dctr: `iab_category=${iab_category}`
+                            },
+                        });
+                    if (adUnit.placementIds.tmp && adUnit.placementIds.tmp.desktop)
+                        window[gamNameUnderscore].bids.push({
+                            bidder: "tmp",
+                            labelAny: ["desktop", "tablet"],
+                            params: {
+                                placementId: adUnit.placementIds.tmp.desktop,
+                            },
+                            keywords: { iab_category }
+                        });
+                    if (adUnit.placementIds.tmp && adUnit.placementIds.tmp.phone)
+                        window[gamNameUnderscore].bids.push({
+                            bidder: "tmp",
+                            labelAny: ["phone"],
+                            params: {
+                                placementId: adUnit.placementIds.tmp.phone,
+                            },
+                            keywords: { iab_category }
+                        });
+                    if (adUnit.placementIds.weborama && adUnit.placementIds.weborama.desktop)
+                        window[gamNameUnderscore].bids.push({
+                            bidder: "weborama",
+                            labelAny: ["desktop", "tablet"],
+                            params: {
+                                placementId: adUnit.placementIds.weborama.desktop,
+                            },
+                            keyValues: {
+                                iab_category: [iab_category]
+                            },
+                        });
+                    if (adUnit.placementIds.weborama && adUnit.placementIds.weborama.phone)
+                        window[gamNameUnderscore].bids.push({
+                            bidder: "weborama",
+                            labelAny: ["phone"],
+                            params: {
+                                placementId: adUnit.placementIds.weborama.phone,
+                            },
+                            keyValues: {
+                                iab_category: [iab_category]
+                            },
+                        });
+                    if (adUnit.placementIds.teads && adUnit.placementIds.teads.desktop)
+                        window[gamNameUnderscore].bids.push({
+                            bidder: "teads",
+                            labelAny: ["desktop", "tablet"],
+                            params: {
+                                placementId: adUnit.placementIds.teads.desktop.placementId,
+                                pageId: adUnit.placementIds.teads.desktop.pageId,
+                            },
+                        });
+                    if (adUnit.placementIds.teads && adUnit.placementIds.teads.phone)
+                        window[gamNameUnderscore].bids.push({
+                            bidder: "teads",
+                            labelAny: ["phone"],
+                            params: {
+                                placementId: adUnit.placementIds.teads.phone.placementId,
+                                pageId: adUnit.placementIds.teads.phone.pageId,
+                            },
+                        });
+                    if (adUnit.placementIds.smartadserver && adUnit.placementIds.smartadserver.desktop)
+                        window[gamNameUnderscore].bids.push({
+                            bidder: "smartadserver",
+                            labelAny: ["desktop", "tablet"],
+                            params: {
+                                siteId: massariusData.smartadserverSiteId.toString(),
+                                pageId: massariusData.smartadserverPageId.toString(),
+                                formatId: adUnit.placementIds.smartadserver.desktop.toString(),
+                            },
+                        });
+                    if (adUnit.placementIds.smartadserver && adUnit.placementIds.smartadserver.phone)
+                        window[gamNameUnderscore].bids.push({
+                            bidder: "smartadserver",
+                            labelAny: ["phone"],
+                            params: {
+                                siteId: massariusData.smartadserverSiteId.toString(),
+                                pageId: massariusData.smartadserverPageId.toString(),
+                                formatId: adUnit.placementIds.smartadserver.phone.toString(),
+                            },
+                        });
+                    if (adUnit.placementIds.richaudience && adUnit.placementIds.richaudience.desktop)
+                        window[gamNameUnderscore].bids.push({
+                            bidder: "richaudience",
+                            labelAny: ["desktop", "tablet"],
+                            params: {
+                                pid: adUnit.placementIds.richaudience.desktop,
+                                supplyType: "site",
+                            },
+                        });
+                    if (adUnit.placementIds.richaudience && adUnit.placementIds.richaudience.phone)
+                        window[gamNameUnderscore].bids.push({
+                            bidder: "richaudience",
+                            labelAny: ["phone"],
+                            params: {
+                                pid: adUnit.placementIds.richaudience.phone,
+                                supplyType: "site",
+                            },
+                        });
+                    if (adUnit.placementIds.justpremium && adUnit.placementIds.justpremium.desktop)
+                        window[gamNameUnderscore].bids.push({
+                            bidder: "justpremium",
+                            labelAny: ["desktop", "tablet"],
+                            params: {
+                                zone: adUnit.placementIds.justpremium.desktop.toString(),
+                                allow: ["wp"],
+                            },
+                        });
+                    if (adUnit.placementIds.justpremium && adUnit.placementIds.justpremium.phone)
+                        window[gamNameUnderscore].bids.push({
+                            bidder: "justpremium",
+                            labelAny: ["phone"],
+                            params: {
+                                zone: adUnit.placementIds.justpremium.phone.toString(),
+                                allow: ["is", "mt"],
+                            },
+                        });
+                    if (adUnit.placementIds.invibes && adUnit.placementIds.invibes.desktop)
+                        window[gamNameUnderscore].bids.push({
+                            bidder: "invibes",
+                            labelAny: ["desktop", "tablet"],
+                            params: {
+                                placementId: adUnit.placementIds.invibes.desktop,
+                                adContainerId: adUnit.id,
+                                customEndpoint: "https://bid3.videostep.com/Bid/VideoAdContent",
+                            },
+                        });
+                    if (adUnit.placementIds.invibes && adUnit.placementIds.invibes.phone)
+                        window[gamNameUnderscore].bids.push({
+                            bidder: "invibes",
+                            labelAny: ["phone"],
+                            params: {
+                                placementId: adUnit.placementIds.invibes.phone,
+                                adContainerId: adUnit.id,
+                                customEndpoint: "https://bid3.videostep.com/Bid/VideoAdContent",
+                            },
+                        });
+                }
+            }
+        }
+
+
+        var gamPositions = [];
+        var adUnits = [];
+
+        if (
+            typeof msTag !== "undefined" &&
+            massariusData.msTagArray.indexOf(msTag.page) != -1
+        ) {
+            var device = window.screen.availWidth >= 769 ? "desktop" : "phone";
+            for (const position in massariusData.positions) {
+                const adUnit = massariusData.positions[position];
+                if (adUnit.msTag[device].indexOf(msTag.page) != -1) {
+                    gamPositions.push(adUnit);
+                    if (adUnit.inPrebid) {
+                        adUnits.push(window[position]);
+                    }
+                }
+            }
+        } else {
+            for (const position in massariusData.positions) {
+                const adUnit = massariusData.positions[position];
+                gamPositions.push(adUnit);
+                if (adUnit.inPrebid) {
+                    adUnits.push(window[position]);
+                }
+            }
+        }
+
+        var buckets = {
+            buckets: [
+                {
+                    precision: 2,
+                    min: 0,
+                    max: 2.5,
+                    increment: 0.01
+                },
+                {
+                    precision: 2,
+                    min: 2.5,
+                    max: 10,
+                    increment: 0.1
+                },
+                {
+                    precision: 2,
+                    min: 10,
+                    max: 20,
+                    increment: 0.2
+                },
+                {
+                    precision: 2,
+                    min: 20,
+                    max: 50,
+                    increment: 0.5
+                },
+            ]
+        };
+
+        pbjs.que.push(function () {
+            BurndMark.measureTime("[pbjs.que] > pbjs.setConfig");
+            pbjs.aliasBidder("appnexus", "tmp");
+            pbjs.aliasBidder("improvedigital", "weborama");
+            pbjs.addAdUnits(adUnits);
+            pbjs.setConfig({
+                pubcid: {
+                    enable: true
+                },
+                bidderSequence: "random",
+                bidderTimeout: PREBID_TIMEOUT,
+                userSync: {
+                    userIds: [
+                        {
+                            name: "criteo",
+                        },
+                        {
+                            name: "id5Id",
+                            params: {
+                                partner: 320,
+                            },
+                            storage: {
+                                type: "html5",
+                                name: "id5id",
+                                expires: 90,
+                                refreshInSeconds: 8 * 3600,
+                            },
+                        },
+                        {
+                            name: "unifiedId",
+                            params: {
+                                partner: "gafv5rj",
+                            },
+                            storage: {
+                                type: "cookie",
+                                name: "unifiedid",
+                                expires: 60,
+                            },
+                        },
+                    ],
+                    syncDelay: 3000,
+                    syncEnabled: true,
+                    syncsPerBidder: 5,
+                    iframeEnabled: true
+                },
+                currency: {
+                    adServerCurrency: "EUR"
+                },
+                sizeConfig: [
+                    {
+                        mediaQuery: "(min-width: 1024px) ",
+                        sizesSupported: massariusData.allDesktopSizes,
+                        labels: ["desktop"]
+                    },
+                    {
+                        mediaQuery: "(min-width: 769px) and (max-width: 1024px)",
+                        sizesSupported: massariusData.allDesktopSizes,
+                        labels: ["tablet"]
+                    },
+                    {
+                        mediaQuery: "(min-width: 0px) and (max-width: 768px)",
+                        sizesSupported: massariusData.allPhoneSizes,
+                        labels: ["phone"]
+                    }
+                ],
+                improvedigital: {
+                    usePrebidSizes: true,
+                    singleRequest: false
+                },
+                enableSendAllBids: false,
+                priceGranularity: buckets,
+                schain: {
+                    "config": {
+                        "ver": "1.0",
+                        "complete": 1,
+                        "nodes": [
+                            {
+                                "asi": "massarius.com",
+                                "sid": "00457",
+                                "hp": 1
+                            }
+                        ]
+                    }
+                },
+                consentManagement: {
+                    cmpApi: "iab"
+                }
+            });
+        });
+
+        // init adserver
+        function initAdserver(slots) {
+            BurndMark.measureTime("[initAdserver]");
+            for (const slot in slots) {
+                const slotBids = slots[slot].bids;
+                for (const bid of slotBids) {
+                    bid.adserverTargeting.hbBid = true;
+                    if (bid.width == 1800 && bid.height == 1000) {
+                        bid.width = 728;
+                        bid.height = 90;
+                    } else if (bid.width == 970 && bid.height == 1000) {
+                        bid.width = 970;
+                        bid.height = 250;
+                    }
+                }
+            }
+            if (pbjs.initAdserverSet) return;
+            pbjs.initAdserverSet = true;
+            googletag.cmd.push(function () {
+                BurndMark.measureTime("[initAdserver, googletag.cmd]");
+                pbjs.que.push(function () {
+                    BurndMark.measureTime("[initAdserver, googletag.cmd, pbjs.que] > googletag refresh");
+                    pbjs.setTargetingForGPTAsync();
+                    googletag.pubads().refresh(gptadslots);
+                });
+            });
+        };
+
+        // google tag
+        googletag.cmd.push(function () {
+            BurndMark.measureTime("[googletag.cmd]");
+            googletag.pubads().addEventListener('slotRenderEnded', function (event) {
+                var renderedSlot = event.slot.getSlotElementId();
+                BurndMark.measureTime(`[googletag.cmd, googletag event slotRenderEnded ${renderedSlot}]`);
+                if (renderedSlot == 'div-gpt-ad-regio15_ros_sticky') {
+                    if (!event.isEmpty && event.lineItemId != 22476445092) {
+                        container = document.getElementById('sticky-container');
+                        container.style.display = "block";
+                    }
+                }
+            });
+            for (const position of gamPositions) {
+                var name = position.hasOwnProperty("overarchingAdunit")
+                    ? massariusData.gamId + "/" + position.overarchingAdunit + "/" + position.gamName
+                    : massariusData.gamId + "/" + position.gamName;
+                if (position.isInterstitial == true) {
+                    interstitialSlot = googletag.defineOutOfPageSlot(name, googletag.enums.OutOfPageFormat.INTERSTITIAL);
+                    if (interstitialSlot) {
+                        setTimeout(function () {
+                            BurndMark.measureTime("[googletag.cmd, setTimeout 1000] > googletag.display interstitialSlot & refresh");
+                            interstitialSlot.addService(googletag.pubads());
+                            googletag.display(interstitialSlot);
+                            console.log("interstitial called");
+                            googletag.pubads().refresh([interstitialSlot]);
+                            console.log("interstitial refreshed");
+                        }, 1000);
+                    }
+                } else {
+                    gptadslots.push(googletag
+                        .defineSlot(name, position.sizes.deviceSizesGam, position.id)
+                        .addService(googletag.pubads())
+                    );
+                }
+            }
+
+            googletag.pubads().setTargeting("hb", ["true"]);
+            googletag.pubads().collapseEmptyDivs();
+            googletag.pubads().setCentering(true);
+            googletag.pubads().enableLazyLoad({
+                fetchMarginPercent: 100,
+                renderMarginPercent: 50,
+                mobileScaling: 1.0
+            });
+            if (ms_debug) {
+                googletag.pubads().setTargeting("native", ["true"]);
+            }
+            if (typeof msTag !== "undefined" && msTag.data && msTag.data.nsc && msTag.data.nsc == true) {
+                googletag.pubads().setTargeting("Page", ["NSC"]);
+            }
+            googletag.pubads().setTargeting("iab_category", [iab_category]);
+            googletag.enableServices();
+        });
+
+        // CMP logic
+        var consentForAds;
+        var adsLoaded = false;
+        var limitedAds = false;
+        var checkConsent = function () {
+            BurndMark.measureTime("[checkConsent]");
+            try {
+                window.__tcfapi('getTCData', 2, function (tcData, success) {
+                    BurndMark.measureTime("[checkConsent, __tcfapi(getTCData, 2)]");
+                    if (tcData.eventStatus == "useractioncomplete" || tcData.eventStatus === 'tcloaded') {
+                        if (tcData.vendor.consents["755"] == false && tcData.purpose.consents["1"] == true) {
+                            limitedAds = true;
+                        } else if (tcData.vendor.consents["755"] == false && tcData.purpose.consents["1"] == false) {
+                            limitedAds = true;
+                        }
+                    }
+                }, [755]);
+            } catch (e) { }
+            window.__tcfapi('getTCData', 0, function (tcData, success) {
+                BurndMark.measureTime("[checkConsent, __tcfapi(getTCData, 0)]");
+                if (success) {
+                    if (tcData.eventStatus == "useractioncomplete" || tcData.eventStatus === 'tcloaded') {
+                        var newConsentForAds;
+
+                        newConsentForAds = true;
+                        if (Object.keys(tcData.purpose.consents).length === 0) {
+                            newConsentForAds = false;
+                        }
+                        var i = 0;
+                        for (c in tcData.purpose.consents) {
+                            if (i >= 10) break;
+                            //console.log(c + " = " + tcData.purpose.consents[c]);
+                            newConsentForAds = newConsentForAds && tcData.purpose.consents[c];
+                            i++;
+                        }
+                        console.log("newConsentForAds = " + newConsentForAds);
+
+                        if (consentForAds !== newConsentForAds) {
+                            consentForAds = newConsentForAds;
+                            if (adsLoaded) return;
+                            adsLoaded = true;
+                            if (consentForAds) {
+                                loadQuantum();
+                            };
+                            googletag.cmd.push(function () {
+                                BurndMark.measureTime("[checkConsent, __tcfapi(getTCData, 0), googletag.cmd]");
+                                if (consentForAds == true) {
+                                    gdpr = consentForAds ? "1" : "0";
+                                    iab_string = gdpr == "1" ? tcData.tcString : "";
+                                    loadNeustar();
+                                }
+                                googletag.pubads().setTargeting("iab_string", [tcData.tcString]);
+                                googletag.pubads().setTargeting("consent", [limitedAds ? "0" : "1"]);
+                                googletag.pubads().setTargeting("rev_consent", [limitedAds ? "1" : "0"]);
+                                pbjs.que.push(function () {
+                                    BurndMark.measureTime(`[checkConsent, __tcfapi(getTCData, 0), googletag.cmd, pbjs.que] > pbjs.requestBids({ initAdserver, ${PREBID_TIMEOUT} })`);
+                                    pbjs.requestBids({
+                                        bidsBackHandler: initAdserver,
+                                        timeout: PREBID_TIMEOUT
+                                    });
+                                });
+                            });
+                        }
+                    }
+                }
+            });
+        };
+
+
+
+        BurndMark.measureTime("end script");
+    </script>
+</head>
+
+<body>
+    <!-- 13436254/Regio15_ROS_Header -->
+    <div id="div-gpt-ad-regio15_ros_header" style="display:block" ;>
+        <script>
+            googletag.cmd.push(function () { googletag.display('div-gpt-ad-regio15_ros_header'); });
+        </script>
+    </div>
+    <!-- 13436254/Regio15_ROS_Sky -->
+    <div id="div-gpt-ad-regio15_ros_sky" style="display:block" ;>
+        <script>
+            googletag.cmd.push(function () { googletag.display('div-gpt-ad-regio15_ros_sky'); });
+        </script>
+    </div>
+    <!-- 13436254/Regio15_ROS_Inarticle -->
+    <div id="div-gpt-ad-regio15_ros_inarticle" style="display:block" ;>
+        <script>
+            googletag.cmd.push(function () { googletag.display('div-gpt-ad-regio15_ros_inarticle'); });
+        </script>
+    </div>
+    <!-- 13436254/Regio15_ROS_Native -->
+    <div id="div-gpt-ad-regio15_ros_native" style="display:block" ;>
+        <script>
+            googletag.cmd.push(function () { googletag.display('div-gpt-ad-regio15_ros_native'); });
+        </script>
+    </div>
+    <!-- 13436254/Regio15_ROS_Native2 -->
+    <div id="div-gpt-ad-regio15_ros_native2" style="display:block" ;>
+        <script>
+            googletag.cmd.push(function () { googletag.display('div-gpt-ad-regio15_ros_native2'); });
+        </script>
+    </div>
+    <!-- 13436254/Regio15_ROS_Middle -->
+    <div id="div-gpt-ad-regio15_ros_middle" style="display:block" ;>
+        <script>
+            googletag.cmd.push(function () { googletag.display('div-gpt-ad-regio15_ros_middle'); });
+        </script>
+    </div>
+    <!-- 13436254/Regio15_ROS_Middle2 -->
+    <div id="div-gpt-ad-regio15_ros_middle2" style="display:block" ;>
+        <script>
+            googletag.cmd.push(function () { googletag.display('div-gpt-ad-regio15_ros_middle2'); });
+        </script>
+    </div>
+    <!-- 13436254/Regio15_ROS_Right1 -->
+    <div id="div-gpt-ad-regio15_ros_right1" style="display:block" ;>
+        <script>
+            googletag.cmd.push(function () { googletag.display('div-gpt-ad-regio15_ros_right1'); });
+        </script>
+    </div>
+    <!-- 13436254/Regio15_ROS_Right2 -->
+    <div id="div-gpt-ad-regio15_ros_right2" style="display:block" ;>
+        <script>
+            googletag.cmd.push(function () { googletag.display('div-gpt-ad-regio15_ros_right2'); });
+        </script>
+    </div>
+    <!-- 13436254/Regio15_ROS_Interstitial -->
+    <div id="div-gpt-ad-regio15_ros_interstitial" style="display:block" ;>
+        <script>
+            googletag.cmd.push(function () { googletag.display('div-gpt-ad-regio15_ros_interstitial'); });
+        </script>
+    </div>
+    <!-- 13436254/Regio15_ROS_Sticky -->
+    <div id="div-gpt-ad-regio15_ros_sticky" style="display:block" ;>
+        <script>
+            googletag.cmd.push(function () { googletag.display('div-gpt-ad-regio15_ros_sticky'); });
+        </script>
+    </div>
+</body>
+
+</html>

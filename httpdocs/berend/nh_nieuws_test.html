@@ -1,0 +1,1354 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var ms_debug = false;
+        if (window.location.href.includes("ms_debug")) {
+            ms_debug = true;
+        }
+
+        var googletag = googletag || {};
+        googletag.cmd = googletag.cmd || [];
+        googletag.cmd.push(function () {
+            googletag.pubads().disableInitialLoad();
+        });
+
+        // if (
+        //   typeof msTag !== "undefined" &&
+        //   msTag.page &&
+        //   (msTag.page == "article" || msTag.page == "article_with_header")
+        // ) {
+        var firstTimestamp = Date.now();
+        var iab_targeting = ["Default"];
+        var pub_name = "nhnieuws";
+        fetch(
+            `https://europe-west2-dev-era-184513.cloudfunctions.net/contextual-get-taxonomy?url=${location.pathname}&pub_name=${pub_name}`
+        )
+            .then((response) => response.json())
+            .then((body) => {
+                var results = body;
+                if (results.length > 0) {
+                    iab_targeting = [];
+                    console.log(results);
+                    results.forEach(function (result) {
+                        console.log(result);
+                        let iab_t1 = JSON.parse(result["iab_t1"]);
+                        let iab_t2 = JSON.parse(result["iab_t2"]);
+                        iab_targeting = iab_targeting.concat(iab_t1, iab_t2)
+                    });
+                } else {
+                    iab_targeting = ["N/A"];
+                }
+                console.log("Done fetching contextual results;", iab_targeting);
+                console.log("setting targeting");
+                googletag.cmd.push(function () {
+                    googletag
+                        .pubads()
+                        .setTargeting("contextual_targeting", iab_targeting);
+                });
+                var timer = Date.now() - firstTimestamp;
+                console.log(`It took ${timer} milliseconds to get contextual results`);
+            });
+        // }
+
+        var retryCount = 0;
+        var _seedTagId = "6414-2885-01";
+
+        // Browser targeting
+        let browserName = /^((?!chrome|android|crios|fxios).)*safari/i.test(navigator.userAgent) ? "Safari" : "Other"
+
+
+        var massariusData = {
+            rubiconId: 312824,
+            gamId: 1004405,
+            get allDesktopSizes() {
+                var sizes = [];
+                for (position in Object.keys(this.positions)) {
+                    var adUnit = this.positions[Object.keys(this.positions)[position]];
+                    for (size in adUnit.sizes.desktopSizes) {
+                        var copySize = JSON.stringify(adUnit.sizes.desktopSizes[size]);
+                        var copySizes = JSON.stringify(sizes);
+                        copySizes.indexOf(copySize) == -1
+                            ? sizes.push(adUnit.sizes.desktopSizes[size])
+                            : null;
+                    }
+                }
+                return sizes;
+            },
+            get allPhoneSizes() {
+                var sizes = [];
+                for (position in Object.keys(this.positions)) {
+                    var adUnit = this.positions[Object.keys(this.positions)[position]];
+                    for (size in adUnit.sizes.phoneSizes) {
+                        var copySize = JSON.stringify(adUnit.sizes.phoneSizes[size]);
+                        var copySizes = JSON.stringify(sizes);
+                        copySizes.indexOf(copySize) == -1
+                            ? sizes.push(adUnit.sizes.phoneSizes[size])
+                            : null;
+                    }
+                }
+                return sizes;
+            },
+            msTagArray: ["home", "article", "ros"],
+            positions: {
+                _NHNieuws_MPU_V1: {
+                    id: "div-gpt-ad-1581668295980-0",
+                    gamName: "NHNieuws_MPU_V1",
+                    overarchingAdunit: "nhnieuws",
+                    inPrebid: true,
+                    isVideo: false,
+                    msTag: {
+                        phone: ["home", "ros"],
+                        desktop: ["home", "ros"],
+                    },
+                    sizes: {
+                        desktopSizes: [
+                            [336, 280],
+                            [300, 250],
+                        ],
+                        phoneSizes: [
+                            [320, 50],
+                            [300, 50],
+                            [320, 100],
+                            [300, 100],
+                            [320, 240],
+                            [300, 250],
+                            [320, 320],
+                        ],
+                        get allSizes() {
+                            return this.desktopSizes.concat(this.phoneSizes);
+                        },
+                        get deviceSizesGam() {
+                            var filters = [
+                                [1800, 1000],
+                                [1800, 200],
+                                [970, 1000],
+                            ];
+                            return window.screen.availWidth >= 769
+                                ? this.desktopSizes.filter(
+                                    (size) =>
+                                        JSON.stringify(filters).indexOf(JSON.stringify(size)) == -1
+                                )
+                                : this.phoneSizes.filter(
+                                    (size) =>
+                                        JSON.stringify(filters).indexOf(JSON.stringify(size)) == -1
+                                );
+                        },
+                        get deviceSizes() {
+                            return window.screen.availWidth >= 769
+                                ? this.desktopSizes
+                                : this.phoneSizes;
+                        },
+                    },
+                    placementIds: {
+                        openx: {
+                            desktop: 540994554,
+                            phone: 540994555,
+                        },
+                        improvedigital: {
+                            desktop: 22222169,
+                            phone: 22222163,
+                        },
+                        rubicon: {
+                            desktop: 1935766,
+                            phone: 1935770,
+                        },
+                        appnexus: {
+                            desktop: 18580188,
+                            phone: 18580193,
+                        },
+                        pubmatic: {
+                            desktop: 3425967,
+                            phone: 3425968,
+                        },
+                        tmp: {
+                            desktop: 18593996,
+                            phone: 18594036,
+                        },
+                        weborama: {
+                            phone: 22384305,
+                        },
+                        richaudience: {},
+                        smartadserver: {},
+                        teads: {},
+                        justpremium: {
+                            desktop: 115436,
+                            phone: 115605,
+                        },
+                    },
+                },
+                _NHNieuws_SIDE: {
+                    id: "div-gpt-ad-1581668320118-0",
+                    gamName: "NHNieuws_SIDE",
+                    overarchingAdunit: "nhnieuws",
+                    inPrebid: true,
+                    isVideo: false,
+                    msTag: {
+                        phone: [""],
+                        desktop: ["article"],
+                    },
+                    sizes: {
+                        desktopSizes:
+                            window.innerWidth >= 1370
+                                ? [
+                                    [120, 600],
+                                    [160, 600],
+                                    [300, 600],
+                                ]
+                                : window.innerWidth >= 1100
+                                    ? [
+                                        [120, 600],
+                                        [160, 600],
+                                    ]
+                                    : window.innerWidth >= 1050
+                                        ? [[120, 600]]
+                                        : [[]],
+                        phoneSizes: [],
+                        get allSizes() {
+                            return this.desktopSizes.concat(this.phoneSizes);
+                        },
+                        get deviceSizesGam() {
+                            var filters = [
+                                [1800, 1000],
+                                [1800, 200],
+                                [970, 1000],
+                            ];
+                            return window.screen.availWidth >= 769
+                                ? this.desktopSizes.filter(
+                                    (size) =>
+                                        JSON.stringify(filters).indexOf(JSON.stringify(size)) == -1
+                                )
+                                : this.phoneSizes.filter(
+                                    (size) =>
+                                        JSON.stringify(filters).indexOf(JSON.stringify(size)) == -1
+                                );
+                        },
+                        get deviceSizes() {
+                            return window.screen.availWidth >= 769
+                                ? this.desktopSizes
+                                : this.phoneSizes;
+                        },
+                    },
+                    placementIds: {
+                        openx: {
+                            desktop: 540994556,
+                        },
+                        improvedigital: {
+                            desktop: 22222165,
+                        },
+                        rubicon: {
+                            desktop: 1935774,
+                        },
+                        appnexus: {
+                            desktop: 18580198,
+                        },
+                        pubmatic: {
+                            desktop: 3425969,
+                        },
+                        tmp: {
+                            desktop: 18594012,
+                        },
+                        weborama: {},
+                        richaudience: {},
+                        smartadserver: {},
+                        teads: {},
+                    },
+                },
+                _NHNieuws_BOTTOM: {
+                    id: "div-gpt-ad-1581668347915-0",
+                    gamName: "NHNieuws_BOTTOM",
+                    overarchingAdunit: "nhnieuws",
+                    inPrebid: true,
+                    // isVideo: true,
+                    isVideo: false,
+                    msTag: {
+                        phone: ["home", "article", "ros"],
+                        desktop: ["home", "article", "ros"],
+                    },
+                    sizes: {
+                        desktopSizes: [
+                            [970, 250],
+                            [728, 90],
+                            [1, 1],
+                        ],
+                        phoneSizes: [
+                            [320, 50],
+                            [300, 50],
+                            [320, 100],
+                            [300, 100],
+                            [320, 240],
+                            [300, 250],
+                            [320, 320],
+                            [1, 1],
+                        ],
+                        get allSizes() {
+                            return this.desktopSizes.concat(this.phoneSizes);
+                        },
+                        get deviceSizesGam() {
+                            var filters = [
+                                [1800, 1000],
+                                [1800, 200],
+                                [970, 1000],
+                            ];
+                            return window.screen.availWidth >= 769
+                                ? this.desktopSizes.filter(
+                                    (size) =>
+                                        JSON.stringify(filters).indexOf(JSON.stringify(size)) == -1
+                                )
+                                : this.phoneSizes.filter(
+                                    (size) =>
+                                        JSON.stringify(filters).indexOf(JSON.stringify(size)) == -1
+                                );
+                        },
+                        get deviceSizes() {
+                            return window.screen.availWidth >= 769
+                                ? this.desktopSizes
+                                : this.phoneSizes;
+                        },
+                    },
+                    placementIds: {
+                        openx: {
+                            desktop: 540994558,
+                            phone: 540994559,
+                        },
+                        improvedigital: {
+                            desktop: 22222166,
+                            phone: 22222164,
+                        },
+                        rubicon: {
+                            desktop: 1935778,
+                            phone: 1935780,
+                        },
+                        appnexus: {
+                            desktop: 18580208,
+                            phone: 18580214,
+                        },
+                        pubmatic: {
+                            desktop: 3425971,
+                            phone: 3425972,
+                        },
+                        tmp: {
+                            desktop: 18594024,
+                            phone: 18594057,
+                        },
+                        weborama: {
+                            desktop: 1189174,
+                            phone: 22384307,
+                        },
+                        richaudience: {},
+                        smartadserver: {},
+                        teads: {},
+                        teads: {
+                            placementId: 126293,
+                            pageId: 116397,
+                        },
+                        spotx: 299758,
+                    },
+                },
+            },
+        };
+
+        var PREBID_TIMEOUT = 1300;
+        var pbjs = pbjs || {};
+        pbjs.que = pbjs.que || [];
+        var desktopMultiple = 1.25;
+        var phoneMultiple = 1.25;
+
+        if (window.screen.availWidth >= 769) {
+            //Desktop
+            DefM = desktopMultiple;
+        } else {
+            DefM = phoneMultiple;
+        }
+        var bidCap = 20;
+        var adUnits = [];
+
+        // load Google
+        (function () {
+            var gads = document.createElement("script");
+            gads.async = true;
+            gads.type = "text/javascript";
+            var useSSL = "https:" == document.location.protocol;
+            gads.src =
+                (useSSL ? "https:" : "http:") +
+                "//securepubads.g.doubleclick.net/tag/js/gpt.js";
+            var node = document.getElementsByTagName("script")[0];
+            node.parentNode.insertBefore(gads, node);
+        })();
+
+        //Load quantum
+        function loadQuantum() {
+            var quant = document.createElement("script");
+            quant.async = true;
+            quant.type = "text/javascript";
+            var useSSL = "https:" == document.location.protocol;
+            quant.src =
+                (useSSL ? "https:" : "http:") +
+                "//cdn.elasticad.net/native/serve/js/quantx/nativeEmbed.gz.js";
+            quant.id = "quantx-embed-tag";
+            var node = document.getElementsByTagName("script")[0];
+            node.parentNode.insertBefore(quant, node);
+        }
+
+        // load prebid
+        var pbjs = pbjs || {};
+        pbjs.que = pbjs.que || [];
+        gptadslots = [];
+
+        (function () {
+            var mspb = document.createElement("script");
+            mspb.async = true;
+            mspb.type = "text/javascript";
+            var useSSL = "https:" == document.location.protocol;
+            mspb.src =
+                (useSSL ? "https:" : "http:") + "//massariuscdn.com/prod/prebid4.32.js";
+            var node = document.getElementsByTagName("script")[0];
+            node.parentNode.insertBefore(mspb, node);
+        })();
+
+        var gdpr;
+        var iab_string;
+        var iab_category = "NEWS AND POLITICS";
+
+        // load P&G
+        loadPG = function () {
+            setTimeout(function () {
+                let sdk = document.createElement("script");
+                sdk.type = "text/javascript";
+                sdk.src = "https://pghub.io/js/pandg-sdk.js";
+                sdk.async = false;
+
+                let tagjs = document.createElement("script");
+                tagjs.type = "text/javascript";
+                tagjs.async = true;
+
+                tagjs.innerHTML = `
+        var metadata = {
+          gdpr: 1.0,
+          gdpr_consent: '${iab_string}',
+          ccpa: null,
+          bp_id: "massarius",
+        };
+  
+        var config = {
+          name: "P&G",
+          pixelUrl: "https://pandg.tapad.com/tag"
+        };
+  
+        var tagger = window.Tapad.init(metadata, config);
+        var data = {     
+          category: '${iab_category}',
+        };
+        tagger.sync(data);
+      `;
+                document.body.appendChild(sdk);
+
+                function appendTag() {
+                    if (window.Tapad) {
+                        document.body.appendChild(tagjs);
+                    } else {
+                        setTimeout(appendTag, 100);
+                    }
+                }
+                appendTag();
+            }, 1500);
+        };
+
+        // load faktor (CMP)
+        function loadFaktor() {
+            var fakt = document.createElement("script");
+            var firstScript = document.getElementsByTagName("script")[0];
+            var useSSL = "https:" == document.location.protocol;
+            fakt.src =
+                (useSSL ? "https:" : "http:") +
+                "//gdpr-wrapper.privacymanager.io/gdpr/41bde89c-1764-49fe-90a5-797b1d27729b/gdpr-liveramp.js";
+            fakt.onload = function () {
+                window.__tcfapi("addEventListener", 2, checkConsent);
+            };
+            firstScript.parentNode.insertBefore(fakt, firstScript);
+        }
+
+        if (typeof msTag !== "undefined") {
+            if (typeof msTag.data !== "undefined") {
+                if (msTag.data.isApp) {
+                    if (msTag.data.isApp == true) {
+                        if (
+                            msTag.isApp &&
+                            msTag.isApp == true &&
+                            msTag.consent &&
+                            msTag.iabString
+                        ) {
+                            googletag.cmd.push(function () {
+                                gdpr = msTag.consent == true ? "1" : "0";
+                                iab_string = msTag.iabString;
+                                if (msTag.consent == true) {
+                                    loadPG();
+                                }
+                                googletag.pubads().setTargeting("iab_string", [iab_string]);
+                                pbjs.que.push(function () {
+                                    pbjs.requestBids({
+                                        bidsBackHandler: initAdserver,
+                                        adUnits: adUnits,
+                                        timeout: PREBID_TIMEOUT,
+                                    });
+                                });
+                            });
+                        } else {
+                            googletag.cmd.push(function () {
+                                googletag.pubads().setRequestNonPersonalizedAds(1);
+                                pbjs.que.push(function () {
+                                    pbjs.requestBids({
+                                        bidsBackHandler: initAdserver,
+                                        timeout: PREBID_TIMEOUT,
+                                    });
+                                });
+                            });
+                        }
+                    } else {
+                        loadFaktor();
+                    }
+                } else {
+                    loadFaktor();
+                }
+            } else {
+                loadFaktor();
+            }
+        } else {
+            loadFaktor();
+        }
+
+        pbjs.bidderSettings = {
+            openx: {
+                bidCpmAdjustment: function (bidCpm) {
+                    if (bidCpm >= bidCap) {
+                        return bidCpm;
+                    } else {
+                        return Math.min(bidCpm * DefM * 1, bidCap + bidCpm / 100);
+                    }
+                },
+            },
+            improvedigital: {
+                bidCpmAdjustment: function (bidCpm) {
+                    if (bidCpm >= bidCap) {
+                        return bidCpm;
+                    } else {
+                        return Math.min(bidCpm * DefM * 1, bidCap + bidCpm / 100);
+                    }
+                },
+            },
+            rubicon: {
+                bidCpmAdjustment: function (bidCpm) {
+                    if (bidCpm >= bidCap) {
+                        return bidCpm;
+                    } else {
+                        return Math.min(bidCpm * DefM * 1, bidCap + bidCpm / 100);
+                    }
+                },
+            },
+            appnexus: {
+                bidCpmAdjustment: function (bidCpm) {
+                    if (bidCpm >= bidCap) {
+                        return bidCpm;
+                    } else {
+                        return Math.min(bidCpm * DefM * 1, bidCap + bidCpm / 100);
+                    }
+                },
+            },
+            pubmatic: {
+                bidCpmAdjustment: function (bidCpm) {
+                    if (bidCpm >= bidCap) {
+                        return bidCpm;
+                    } else {
+                        return Math.min(bidCpm * DefM * 1, bidCap + bidCpm / 100);
+                    }
+                },
+            },
+            tmp: {
+                bidCpmAdjustment: function (bidCpm) {
+                    if (bidCpm >= bidCap) {
+                        return bidCpm;
+                    } else {
+                        return Math.min(bidCpm * DefM * 1.1, bidCap + bidCpm / 100);
+                    }
+                },
+            },
+            weborama: {
+                bidCpmAdjustment: function (bidCpm) {
+                    if (bidCpm >= bidCap) {
+                        return bidCpm;
+                    } else {
+                        return Math.min(bidCpm * DefM * 1, bidCap + bidCpm / 100);
+                    }
+                },
+            },
+            smartadserver: {
+                bidCpmAdjustment: function (bidCpm) {
+                    if (bidCpm >= bidCap) {
+                        return bidCpm;
+                    } else {
+                        return Math.min(bidCpm * DefM * 1, bidCap + bidCpm / 100);
+                    }
+                },
+            },
+            richaudience: {
+                bidCpmAdjustment: function (bidCpm) {
+                    if (bidCpm >= bidCap) {
+                        return bidCpm;
+                    } else {
+                        return Math.min(bidCpm * DefM * 1, bidCap + bidCpm / 100);
+                    }
+                },
+            },
+            justpremium: {
+                bidCpmAdjustment: function (bidCpm) {
+                    if (bidCpm >= bidCap) {
+                        return bidCpm;
+                    } else {
+                        return Math.min(bidCpm * DefM * 1, bidCap + bidCpm / 100);
+                    }
+                },
+            },
+        };
+
+        // create bids
+
+        for (position in Object.keys(massariusData.positions)) {
+            adUnit =
+                massariusData.positions[Object.keys(massariusData.positions)[position]];
+            if (adUnit.inPrebid) {
+                if (adUnit.isVideo) {
+                    window["_" + adUnit.gamName.split("//").join("_")] = {
+                        code: adUnit.id,
+                        mediaTypes: {
+                            video: {
+                                context: "outstream",
+                                playerSize: [1, 1],
+                            },
+                            banner: {
+                                sizes: [
+                                    [300, 250],
+                                    [300, 600],
+                                    [1, 1],
+                                ],
+                            },
+                        },
+                        bids: [],
+                    };
+                    adUnit.placementIds.spotx &&
+                        window["_" + adUnit.gamName.split("//").join("_")].bids.push({
+                            bidder: "spotx",
+                            params: {
+                                channel_id: adUnit.placementIds.spotx,
+                                ad_unit: "outstream",
+                                outstream_options: {
+                                    slot: adUnit.id,
+                                    custom_override:
+                                        window.screen.width < 768
+                                            ? {
+                                                content_width: 300,
+                                                content_height: 250,
+                                            }
+                                            : {
+                                                content_width: 640,
+                                                content_height: 360,
+                                            },
+                                },
+                            },
+                        });
+                    adUnit.placementIds.teads != null &&
+                        adUnit.placementIds.teads.pageId &&
+                        window["_" + adUnit.gamName.split("//").join("_")].bids.push({
+                            bidder: "teads",
+                            params: {
+                                placementId: adUnit.placementIds.teads.placementId,
+                                pageId: adUnit.placementIds.teads.pageId,
+                            },
+                        });
+                } else {
+                    window["_" + adUnit.gamName.split("//").join("_")] = {
+                        code: adUnit.hasOwnProperty("overarchingAdunit")
+                            ? massariusData.gamId +
+                            "/" +
+                            adUnit.overarchingAdunit +
+                            "/" +
+                            adUnit.gamName
+                            : massariusData.gamId + "/" + adUnit.gamName,
+                        mediaTypes: {
+                            banner: {
+                                sizes: adUnit.sizes.deviceSizes,
+                            },
+                        },
+                        bids: [],
+                    };
+                    adUnit.placementIds.openx &&
+                        adUnit.placementIds.openx.desktop &&
+                        window["_" + adUnit.gamName.split("//").join("_")].bids.push({
+                            bidder: "openx",
+                            labelAny: ["desktop", "tablet"],
+                            params: {
+                                delDomain: "massarius-d.openx.net",
+                                unit: adUnit.placementIds.openx.desktop.toString(),
+                                customParams: {
+                                    iab_category: iab_category,
+                                },
+                            },
+                        });
+                    adUnit.placementIds.openx &&
+                        adUnit.placementIds.openx.phone &&
+                        window["_" + adUnit.gamName.split("//").join("_")].bids.push({
+                            bidder: "openx",
+                            labelAny: ["phone"],
+                            params: {
+                                delDomain: "massarius-d.openx.net",
+                                unit: adUnit.placementIds.openx.phone.toString(),
+                                customParams: {
+                                    iab_category: iab_category,
+                                },
+                            },
+                        });
+                    adUnit.placementIds.improvedigital &&
+                        adUnit.placementIds.improvedigital.desktop &&
+                        window["_" + adUnit.gamName.split("//").join("_")].bids.push({
+                            bidder: "improvedigital",
+                            labelAny: ["desktop", "tablet"],
+                            params: {
+                                placementId: adUnit.placementIds.improvedigital.desktop.toString(),
+                                keyValues:
+                                    typeof msTag !== "undefined" &&
+                                        msTag.data &&
+                                        msTag.data.page &&
+                                        msTag.data.page == "NSC"
+                                        ? {
+                                            hb: ["true"],
+                                            Page: ["NSC"],
+                                            iab_category: [iab_category.split(" ").join("_")],
+                                        }
+                                        : {
+                                            hb: ["true"],
+                                            iab_category: [iab_category.split(" ").join("_")],
+                                        },
+                            },
+                        });
+                    adUnit.placementIds.improvedigital &&
+                        adUnit.placementIds.improvedigital.phone &&
+                        window["_" + adUnit.gamName.split("//").join("_")].bids.push({
+                            bidder: "improvedigital",
+                            labelAny: ["phone"],
+                            params: {
+                                placementId: adUnit.placementIds.improvedigital.phone.toString(),
+                                keyValues:
+                                    (typeof msTag !== "undefined" &&
+                                        msTag.data &&
+                                        msTag.data.page &&
+                                        msTag.data.page) == "NSC"
+                                        ? {
+                                            hb: ["true"],
+                                            Page: ["NSC"],
+                                            iab_category: [iab_category.split(" ").join("_")],
+                                        }
+                                        : {
+                                            hb: ["true"],
+                                            iab_category: [iab_category.split(" ").join("_")],
+                                        },
+                            },
+                        });
+                    adUnit.placementIds.rubicon &&
+                        adUnit.placementIds.rubicon.desktop &&
+                        window["_" + adUnit.gamName.split("//").join("_")].bids.push({
+                            bidder: "rubicon",
+                            labelAny: ["desktop", "tablet"],
+                            params: {
+                                accountId: "20952",
+                                siteId: massariusData.rubiconId.toString(),
+                                zoneId: adUnit.placementIds.rubicon.desktop.toString(),
+                                inventory: {
+                                    iab_category: iab_category,
+                                },
+                            },
+                        });
+                    adUnit.placementIds.rubicon &&
+                        adUnit.placementIds.rubicon.phone &&
+                        window["_" + adUnit.gamName.split("//").join("_")].bids.push({
+                            bidder: "rubicon",
+                            labelAny: ["phone"],
+                            params: {
+                                accountId: "20952",
+                                siteId: massariusData.rubiconId.toString(),
+                                zoneId: adUnit.placementIds.rubicon.phone.toString(),
+                                inventory: {
+                                    iab_category: iab_category,
+                                },
+                            },
+                        });
+                    adUnit.placementIds.appnexus &&
+                        adUnit.placementIds.appnexus.desktop &&
+                        window["_" + adUnit.gamName.split("//").join("_")].bids.push({
+                            bidder: "appnexus",
+                            keywords: {
+                                iab_category: iab_category,
+                            },
+                            labelAny: ["desktop", "tablet"],
+                            params: {
+                                placementId: adUnit.placementIds.appnexus.desktop,
+                            },
+                        });
+                    adUnit.placementIds.appnexus &&
+                        adUnit.placementIds.appnexus.phone &&
+                        window["_" + adUnit.gamName.split("//").join("_")].bids.push({
+                            bidder: "appnexus",
+                            keywords: {
+                                iab_category: iab_category,
+                            },
+                            labelAny: ["phone"],
+                            params: {
+                                placementId: adUnit.placementIds.appnexus.phone,
+                            },
+                        });
+                    adUnit.placementIds.pubmatic &&
+                        adUnit.placementIds.pubmatic.desktop &&
+                        window["_" + adUnit.gamName.split("//").join("_")].bids.push({
+                            bidder: "pubmatic",
+                            labelAny: ["desktop", "tablet"],
+                            params: {
+                                publisherId: "156546",
+                                adSlot: adUnit.placementIds.pubmatic.desktop.toString(),
+                                dctr: `iab_category=${iab_category}`,
+                            },
+                        });
+                    adUnit.placementIds.pubmatic &&
+                        adUnit.placementIds.pubmatic.phone &&
+                        window["_" + adUnit.gamName.split("//").join("_")].bids.push({
+                            bidder: "pubmatic",
+                            labelAny: ["phone"],
+                            params: {
+                                publisherId: "156546",
+                                adSlot: adUnit.placementIds.pubmatic.phone.toString(),
+                                dctr: `iab_category=${iab_category}`,
+                            },
+                        });
+                    adUnit.placementIds.tmp &&
+                        adUnit.placementIds.tmp.desktop &&
+                        window["_" + adUnit.gamName.split("//").join("_")].bids.push({
+                            bidder: "tmp",
+                            labelAny: ["desktop", "tablet"],
+                            params: {
+                                placementId: adUnit.placementIds.tmp.desktop,
+                            },
+                        });
+                    adUnit.placementIds.tmp &&
+                        adUnit.placementIds.tmp.phone &&
+                        window["_" + adUnit.gamName.split("//").join("_")].bids.push({
+                            bidder: "tmp",
+                            labelAny: ["phone"],
+                            params: {
+                                placementId: adUnit.placementIds.tmp.phone,
+                            },
+                        });
+                    adUnit.placementIds.weborama &&
+                        adUnit.placementIds.weborama.desktop &&
+                        window["_" + adUnit.gamName.split("//").join("_")].bids.push({
+                            bidder: "weborama",
+                            labelAny: ["desktop", "tablet"],
+                            params: {
+                                placementId: adUnit.placementIds.weborama.desktop,
+                            },
+                        });
+                    adUnit.placementIds.weborama &&
+                        adUnit.placementIds.weborama.phone &&
+                        window["_" + adUnit.gamName.split("//").join("_")].bids.push({
+                            bidder: "weborama",
+                            labelAny: ["phone"],
+                            params: {
+                                placementId: adUnit.placementIds.weborama.phone,
+                            },
+                        });
+                    adUnit.placementIds.teads != null &&
+                        adUnit.placementIds.teads.pageId &&
+                        window["_" + adUnit.gamName.split("//").join("_")].bids.push({
+                            bidder: "teads",
+                            labelAny: ["desktop", "tablet"],
+                            params: {
+                                placementId: adUnit.placementIds.teads.placementId,
+                                pageId: adUnit.placementIds.teads.pageId,
+                            },
+                        });
+                    adUnit.placementIds.teads != null &&
+                        adUnit.placementIds.teads.pageId &&
+                        window["_" + adUnit.gamName.split("//").join("_")].bids.push({
+                            bidder: "teads",
+                            labelAny: ["phone"],
+                            params: {
+                                placementId: adUnit.placementIds.teads.placementId,
+                                pageId: adUnit.placementIds.teads.pageId,
+                            },
+                        });
+                    adUnit.placementIds.justpremium &&
+                        adUnit.placementIds.justpremium.desktop &&
+                        window["_" + adUnit.gamName.split("//").join("_")].bids.push({
+                            bidder: "justpremium",
+                            labelAny: ["desktop", "tablet"],
+                            params: {
+                                zone: adUnit.placementIds.justpremium.desktop.toString(),
+                                allow: ["wp"],
+                            },
+                        });
+                    // adUnit.placementIds.justpremium &&
+                    //   adUnit.placementIds.justpremium.phone &&
+                    //   window["_" + adUnit.gamName.split("//").join("_")].bids.push({
+                    //     bidder: "justpremium",
+                    //     labelAny: ["phone"],
+                    //     params: {
+                    //       zone: adUnit.placementIds.justpremium.phone.toString(),
+                    //       allow: ["is", "mt"],
+                    //     },
+                    //   });
+                }
+            }
+        }
+
+        var gamPositions = [];
+
+        if (
+            typeof msTag !== "undefined" &&
+            massariusData.msTagArray.indexOf(msTag.page) != -1
+        ) {
+            var device = window.screen.availWidth >= 769 ? "desktop" : "phone";
+            for (position in Object.keys(massariusData.positions)) {
+                var adUnit =
+                    massariusData.positions[Object.keys(massariusData.positions)[position]];
+                if (adUnit.msTag[device].indexOf(msTag.page) != -1) {
+                    gamPositions.push(adUnit);
+                    if (adUnit.inPrebid) {
+                        adUnits.push(window[Object.keys(massariusData.positions)[position]]);
+                    }
+                }
+            }
+        } else {
+            for (position in Object.keys(massariusData.positions)) {
+                var adUnit =
+                    massariusData.positions[Object.keys(massariusData.positions)[position]];
+                gamPositions.push(adUnit);
+                if (adUnit.inPrebid) {
+                    adUnits.push(window[Object.keys(massariusData.positions)[position]]);
+                }
+            }
+        }
+
+        var buckets = {
+            buckets: [
+                {
+                    precision: 2,
+                    min: 0,
+                    max: 2.5,
+                    increment: 0.01,
+                },
+                {
+                    precision: 2,
+                    min: 2.5,
+                    max: 10,
+                    increment: 0.1,
+                },
+                {
+                    precision: 2,
+                    min: 10,
+                    max: 20,
+                    increment: 0.2,
+                },
+                {
+                    precision: 2,
+                    min: 20,
+                    max: 50,
+                    increment: 0.5,
+                },
+            ],
+        };
+
+        pbjs.que.push(function () {
+            pbjs.aliasBidder("appnexus", "tmp");
+            pbjs.aliasBidder("improvedigital", "weborama");
+            pbjs.addAdUnits(adUnits);
+            pbjs.setConfig({
+                pubcid: {
+                    enable: true,
+                },
+                bidderSequence: "random",
+                bidderTimeout: PREBID_TIMEOUT,
+                userSync: {
+                    userIds: [
+                        {
+                            name: "criteo",
+                        },
+                        {
+                            name: "id5Id",
+                            params: {
+                                partner: 320,
+                            },
+                            storage: {
+                                type: "html5",
+                                name: "id5id",
+                                expires: 90,
+                                refreshInSeconds: 8 * 3600,
+                            },
+                        },
+                        {
+                            name: "unifiedId",
+                            params: {
+                                partner: "gafv5rj",
+                            },
+                            storage: {
+                                type: "cookie",
+                                name: "unifiedid",
+                                expires: 60,
+                            },
+                        },
+                    ],
+                    syncDelay: 3000,
+                    syncEnabled: true,
+                    syncsPerBidder: 5,
+                    iframeEnabled: true,
+                },
+                currency: {
+                    adServerCurrency: "EUR",
+                },
+                sizeConfig: [
+                    {
+                        mediaQuery: "(min-width: 1024px) ",
+                        sizesSupported: massariusData.allDesktopSizes,
+                        labels: ["desktop"],
+                    },
+                    {
+                        mediaQuery: "(min-width: 769px) and (max-width: 1024px)",
+                        sizesSupported: massariusData.allDesktopSizes,
+                        labels: ["tablet"],
+                    },
+                    {
+                        mediaQuery: "(min-width: 0px) and (max-width: 768px)",
+                        sizesSupported: massariusData.allPhoneSizes,
+                        labels: ["phone"],
+                    },
+                ],
+                improvedigital: {
+                    usePrebidSizes: true,
+                    singleRequest: false,
+                },
+                enableSendAllBids: false,
+                priceGranularity: buckets,
+                schain: {
+                    config: {
+                        ver: "1.0",
+                        complete: 1,
+                        nodes: [
+                            {
+                                asi: "massarius.com",
+                                sid: "00004",
+                                hp: 1,
+                            },
+                        ],
+                    },
+                },
+                consentManagement: {
+                    cmpApi: "iab",
+                },
+            });
+        });
+
+        // init adserver
+        function initAdserver(bids) {
+            var slots = Object.keys(bids);
+            slots.forEach(function (slot) {
+                var slotbids = bids[slot].bids;
+                slotbids.forEach(function (bid) {
+                    bid.adserverTargeting.hbBid = true;
+                    if (bid.width == 1800 && bid.height == 1000) {
+                        bid.width = 728;
+                        bid.height = 90;
+                    } else if (bid.width == 970 && bid.height == 1000) {
+                        bid.width = 970;
+                        bid.height = 250;
+                    }
+                });
+            });
+            if (pbjs.initAdserverSet) return;
+            pbjs.initAdserverSet = true;
+            googletag.cmd.push(function () {
+                pbjs.que.push(function () {
+                    pbjs.setTargetingForGPTAsync();
+                    googletag.pubads().setTargeting("browser", [browserName]);
+                    googletag.pubads().refresh(gptadslots);
+                });
+            });
+        }
+
+        function defineGptadSlots(first) {
+            // google tag
+            googletag.cmd.push(function () {
+                for (position in gamPositions) {
+                    var name = gamPositions[position].hasOwnProperty("overarchingAdunit")
+                        ? massariusData.gamId +
+                        "/" +
+                        gamPositions[position].overarchingAdunit +
+                        "/" +
+                        gamPositions[position].gamName
+                        : massariusData.gamId + "/" + gamPositions[position].gamName;
+                    gptadslots.push(
+                        googletag
+                            .defineSlot(
+                                name,
+                                gamPositions[position].sizes.deviceSizesGam,
+                                gamPositions[position].id
+                            )
+                            .addService(googletag.pubads())
+                    );
+                }
+                try {
+                    if (window.msTag.data) {
+                        const keys = Object.entries(window.msTag.data);
+                        for (let i = 0; i < keys.length; i++) {
+                            if (
+                                typeof keys[i][1] == "object" ||
+                                (typeof keys[i][1] == "string" && keys[i][1].length > 0)
+                            ) {
+                                googletag.pubads().setTargeting(keys[i][0], keys[i][1]);
+                            } else if (typeof keys[i][1] == "boolean") {
+                                googletag
+                                    .pubads()
+                                    .setTargeting(keys[i][0], JSON.stringify(keys[i][1]));
+                            }
+                        }
+                    }
+                } catch (err) {
+                    console.log("Massarius: Error - keyvalues not added");
+                    console.log(err);
+                }
+
+                googletag.pubads().setTargeting("msTag", [msTag.page]);
+
+                if (first) {
+                    googletag.pubads().setTargeting("hb", ["true"]);
+                    googletag.pubads().collapseEmptyDivs();
+                    googletag.pubads().setCentering(true);
+                    googletag.pubads().enableLazyLoad({
+                        fetchMarginPercent: 100,
+                        renderMarginPercent: 50,
+                        mobileScaling: 1.0,
+                    });
+                    if (ms_debug) {
+                        googletag.pubads().setTargeting("native", ["true"]);
+                    } else {
+                        googletag.pubads().setTargeting("native", ["false"]);
+                    }
+                    googletag.pubads().setTargeting("iab_category", [iab_category]);
+                    googletag.enableServices();
+                } else {
+                    if (window.location.href.includes("ms_debug")) {
+                        googletag.pubads().setTargeting("native", ["true"]);
+                    } else {
+                        googletag.pubads().setTargeting("native", ["false"]);
+                    }
+                }
+            });
+        }
+
+        defineGptadSlots(true);
+
+        // CMP logic
+        var consentForAds;
+        var adsLoaded = false;
+        var limitedAds = false;
+        var checkConsent = function () {
+            try {
+                window.__tcfapi(
+                    "getTCData",
+                    2,
+                    (tcData, success) => {
+                        if (
+                            tcData.eventStatus == "useractioncomplete" ||
+                            tcData.eventStatus === "tcloaded"
+                        ) {
+                            if (
+                                tcData.vendor.consents["755"] == false &&
+                                tcData.purpose.consents["1"] == true
+                            ) {
+                                limitedAds = true;
+                            } else if (
+                                tcData.vendor.consents["755"] == false &&
+                                tcData.purpose.consents["1"] == false
+                            ) {
+                                limitedAds = true;
+                            }
+                        }
+                    },
+                    [755]
+                );
+            } catch (e) { }
+            window.__tcfapi("getTCData", 0, (tcData, success) => {
+                if (success) {
+                    if (
+                        tcData.eventStatus == "useractioncomplete" ||
+                        tcData.eventStatus === "tcloaded"
+                    ) {
+                        var newConsentForAds;
+
+                        newConsentForAds = true;
+                        if (Object.keys(tcData.purpose.consents).length === 0) {
+                            newConsentForAds = false;
+                        }
+                        var i = 0;
+                        for (c in tcData.purpose.consents) {
+                            if (i >= 10) break;
+                            //console.log(c + " = " + tcData.purpose.consents[c]);
+                            newConsentForAds = newConsentForAds && tcData.purpose.consents[c];
+                            i++;
+                        }
+                        console.log("newConsentForAds = " + newConsentForAds);
+
+                        if (consentForAds !== newConsentForAds) {
+                            consentForAds = newConsentForAds;
+                            if (adsLoaded) return;
+                            adsLoaded = true;
+                            if (consentForAds) {
+                                loadQuantum();
+                            }
+                            googletag.cmd.push(function () {
+                                gdpr = consentForAds ? "1" : "0";
+                                iab_string = gdpr == "1" ? tcData.tcString : "";
+                                if (consentForAds == true) {
+                                    loadPG();
+                                }
+                                googletag.pubads().setTargeting("iab_string", [tcData.tcString]);
+                                googletag
+                                    .pubads()
+                                    .setTargeting("consent", [limitedAds ? "0" : "1"]);
+                                googletag
+                                    .pubads()
+                                    .setTargeting("rev_consent", [limitedAds ? "1" : "0"]);
+                                pbjs.que.push(function () {
+                                    pbjs.requestBids({
+                                        bidsBackHandler: initAdserver,
+                                        timeout: PREBID_TIMEOUT,
+                                    });
+                                });
+                            });
+                        }
+                    }
+                }
+            });
+        };
+
+        window.addEventListener("newPageLoaded", function (e) {
+            // if (
+            //   typeof msTag !== "undefined" &&
+            //   // msTag.page &&
+            //   // (msTag.page == "article" || msTag.page == "article_with_header")
+            // ) {
+            var firstTimestamp = Date.now();
+            var iab_targeting = ["Default"];
+            var pub_name = "nhnieuws";
+            fetch(
+                `https://europe-west2-dev-era-184513.cloudfunctions.net/contextual-get-taxonomy?url=${location.pathname}&pub_name=${pub_name}`
+            )
+                .then((response) => response.json())
+                .then((body) => {
+                    var results = body;
+                    if (results.length > 0) {
+                        iab_targeting = [];
+                        console.log(results);
+                        results.forEach(function (result) {
+                            console.log(result);
+                            let iab_t1 = JSON.parse(result["iab_t1"]);
+                            let iab_t2 = JSON.parse(result["iab_t2"]);
+                            iab_targeting = iab_targeting.concat(iab_t1, iab_t2)
+                        });
+                    } else {
+                        iab_targeting = ["N/A"];
+                    }
+                    console.log("Done fetching contextual results;", iab_targeting);
+                    console.log("setting targeting");
+                    googletag.cmd.push(function () {
+                        googletag
+                            .pubads()
+                            .setTargeting("contextual_targeting", iab_targeting);
+                    });
+                    var timer = Date.now() - firstTimestamp;
+                    console.log(`It took ${timer} milliseconds to get contextual results`);
+                });
+            // }
+
+            retryCount = 0;
+            pbjs.initAdserverSet = false;
+
+            msTag = e.detail["msTag"];
+            console.log(msTag);
+            adUnits = [];
+            gamPositions = [];
+            if (
+                typeof msTag !== "undefined" &&
+                massariusData.msTagArray.indexOf(msTag.page) != -1
+            ) {
+                var device = window.screen.availWidth >= 769 ? "desktop" : "phone";
+                for (position in Object.keys(massariusData.positions)) {
+                    var adUnit =
+                        massariusData.positions[Object.keys(massariusData.positions)[position]];
+                    if (adUnit.msTag[device].indexOf(msTag.page) != -1) {
+                        gamPositions.push(adUnit);
+                        if (adUnit.inPrebid) {
+                            adUnits.push(window[Object.keys(massariusData.positions)[position]]);
+                        }
+                    }
+                }
+            } else {
+                for (position in Object.keys(massariusData.positions)) {
+                    var adUnit =
+                        massariusData.positions[Object.keys(massariusData.positions)[position]];
+                    gamPositions.push(adUnit);
+                    if (adUnit.inPrebid) {
+                        adUnits.push(window[Object.keys(massariusData.positions)[position]]);
+                    }
+                }
+            }
+
+            googletag.cmd.push(function () {
+                googletag.pubads().setTargeting("msTag", [msTag.page]);
+                try {
+                    if (window.msTag.data) {
+                        const keys = Object.entries(window.msTag.data);
+                        for (let i = 0; i < keys.length; i++) {
+                            if (
+                                typeof keys[i][1] == "object" ||
+                                (typeof keys[i][1] == "string" && keys[i][1].length > 0)
+                            ) {
+                                googletag.pubads().setTargeting(keys[i][0], keys[i][1]);
+                            } else if (typeof keys[i][1] == "boolean") {
+                                googletag
+                                    .pubads()
+                                    .setTargeting(keys[i][0], JSON.stringify(keys[i][1]));
+                            }
+                        }
+                    }
+                } catch (err) {
+                    console.log("Massarius: Error - keyvalues not added");
+                    console.log(err);
+                }
+                googletag.destroySlots();
+                defineGptadSlots();
+                pbjs.que.push(function () {
+                    pbjs.requestBids({
+                        bidsBackHandler: initAdserver,
+                        adUnits: adUnits,
+                        timeout: PREBID_TIMEOUT,
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

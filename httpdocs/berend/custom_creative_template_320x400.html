@@ -1,0 +1,192 @@
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+</head>
+<style>
+    body {
+        font-family: sans-serif;
+        background-color: unset
+    }
+
+    .advertiser-logo {
+        max-height: 40px;
+        max-width: 40px;
+        border-radius: 50%;
+        border: 1px solid #e6e6e6;
+        margin-left: 5px
+    }
+
+    .advertiser-logo-container {
+        height: 40px;
+        width: 40px;
+        float: left
+    }
+
+    .social-media-platform-logo img {
+        max-height: 24px;
+        max-width: 24px
+    }
+
+    .advertiser-name-container {
+        margin-left: 55px;
+        font-weight: 700
+    }
+
+    .body-text {
+        overflow: hidden;
+        position: relative;
+        line-height: 1.2em;
+        max-height: 3.6em;
+        text-align: justify;
+        font-family: sans-serif;
+        padding-bottom: 10px;
+        padding-left: 5px;
+        padding-right: 12px;
+        font-size: 15px
+    }
+
+    .bodytext:before {
+        content: '...';
+        position: absolute;
+        right: 0;
+        bottom: 0
+    }
+
+    .body-text:after {
+        content: '';
+        position: absolute;
+        right: 0;
+        width: 1em;
+        height: 1em;
+        margin-top: .2em;
+        background: #fff
+    }
+
+    .post-footer {
+        background-color: #fff;
+        margin-top: -5px;
+        align-items: center;
+        display: flex;
+        border: 1px solid lightgray;
+        border-top: none;
+        border-radius: 5px;
+        margin-bottom: 5px;
+    }
+
+    .post-footer-option {
+        padding-top: 14px
+    }
+
+    .post-footer-option li {
+        float: left;
+        margin-right: 30px;
+        padding-bottom: 10px
+    }
+
+    .post-footer-option li a {
+        color: #AFB4BD;
+        font-weight: 500;
+    }
+
+    .date-box {
+        color: gray;
+        font-size: 12px;
+        margin-left: 55px
+    }
+
+    .post-image {
+        width: 100%;
+        height: auto;
+        max-height: 340px
+    }
+</style>
+
+<a id="clickOverlay" style="position: absolute; width: 100%; height:100%;" href='%%CLICK_URL_UNESC%%[%landing_page%]' ;
+    target="_blank" ;></a>
+
+<div class="nativeElement" id="sponsored-title" style="width: 100%; text-align: center;position: relative;top: 8px;">
+    <span class="backgroundColor"
+        style="font-family: Helvetica, Arial, sans-serif; font-size: 14px; color: #BEC3C9; padding: 5px; margin: 5px">
+        sponsored
+    </span>
+</div>
+
+<div class="nativeElement" id="social-media"
+    style="position: relative;top: 0;border: 1px solid lightgrey; border-bottom: none; border-radius: 5px 5px 0 0 ; background-color: white; z-index: -1;">
+
+    <div class="social-media-platform-logo">
+        <img src="[%socialmediaplatformlogo%]" class="facebook-logo" style="position: absolute;right: 5px; top: 5px">
+    </div>
+
+    <header style="padding-top:10px; margin-bottom: 10px;">
+        <div class="advertiser-logo-container">
+            <img class="advertiser-logo" src="[%advertiser_logo%]">
+        </div>
+
+        <div class="advertiser-name-container">
+            [%advertisername%]
+            <img src="https://tpc.googlesyndication.com/simgad/11682998239357822754?" height="20"
+                style="vertical-align: top;">
+        </div>
+
+        <div class="date-box">[%postdate%]</div>
+    </header>
+
+    <img src="[%post_image_or_gif%]" class="post-image">
+
+
+    <input id="extraButton"
+        style="-webkit-appearance: none;width: 100%; background-color: #3b5998; color: white; border-radius: 10px; padding: 9px;margin-bottom: 10px;"
+        type="button" onclick="location.href='%%CLICK_URL_UNESC%%[%landing_page%]';" value="[%calltoaction%]" />
+
+
+    <img width='1' height='1' src=[%impression_tracker_1%] />
+    <img width='1' height='1' src=[%impression_tracker_2%] />
+
+
+    <script>
+        var img = document.createElement('img')
+        img.src = "https://ad.doubleclick.net/ddm/trackimp/N479001.1122595MASSARIUS.COM/B10757124.278567741;dc_trk_aid=472902483;dc_trk_cid=135613889;ord=" + Date.now() + ";dc_lat=;dc_rdid=;tag_for_child_directed_treatment=;tfua=?"
+        img.border = "0"
+        img.height = "1"
+        img.width = "1"
+        img.alt = "Advertisement"
+        aElement = document.getElementsByTagName('a')[0]
+        aElement.parentNode.insertBefore(img, aElement.nextSibling);
+        font = getComputedStyle(window.top.document.body).font
+        backgroundColor = window.top.document.getElementsByClassName('detail').length > 0 ? window.getComputedStyle(window.top.document.getElementsByClassName('detail')[0]).backgroundColor : getComputedStyle(window.frameElement.parentElement.parentElement).backgroundColor
+        if (window.location.href.includes('deaandeelhouder.nl')) {
+            backgroundColor = "#EEF2EB"
+        }
+        if (window.location.href.includes('ajaxshowtime.com')) {
+            backgroundColor = "#FFF"
+        }
+        if (backgroundColor == "rgba(0, 0, 0, 0)" && !window.location.href.includes('gratisaftehalen.nl') && !window.location.href.includes('songteksten.nl') && !window.location.href.includes('loonwijzer.nl')) {
+            backgroundColor = getComputedStyle(window.top.document.body).backgroundColor
+        }
+        if (backgroundColor == "rgba(0, 0, 0, 0)") {
+            backgroundColor = "white"
+        }
+        lineHeight = "20px"
+        styleElement = document.createElement('style')
+        styleElement.innerHTML = ".nativeElement {font: " + font + "; line-height: " + lineHeight + ";} .backgroundColor {background-color: " + backgroundColor + ";}"
+        document.head.appendChild(styleElement);
+
+        if (window.location.href.includes('nhnieuws.nl') || window.location.href.includes('at5.nl')) {
+            let sponsoredTitle = document.getElementById('sponsored-title');
+            sponsoredTitle.style.display = "none";
+        }
+
+        var window = window;
+
+        function resizeIframe() {
+            if (window.frameElement.name.includes("google_ads_iframe")) {
+                nativeElement = document.querySelectorAll('a.native_element')[0]
+                window.frameElement.width = "320px"
+                window.frameElement.height = nativeElement.offsetHeight + 50
+                window.frameElement.font = getComputedStyle(window.top.document.body).font;
+            }
+        }
+        window.onload = resizeIframe()
+        window.addEventListener('resize', resizeIframe);
+
+    </script>

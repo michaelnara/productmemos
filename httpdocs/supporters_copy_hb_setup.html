@@ -1,0 +1,537 @@
+<html>
+    <head>
+        <link rel="icon" type="image/png" href="/favicon.png">
+        <script async src="//www.googletagservices.com/tag/js/gpt.js"></script>
+        <script async src="//acdn.adnxs.com/prebid/not-for-prod/1/prebid.js"></script>
+        <script src="//cmp-loader.choice.faktor.io/O1TI0E.js"></script>
+
+        <script>
+
+const Header_tag = true; const Inarticlevideo_tag = true; const MPU_ATF_tag = true; const MPU_BTF_tag = true; 
+const MPU_BTFV1_tag = true;    
+const MPU_Native_BTF_tag = true;
+
+// Define sizes per screen
+var HeaderDesktopSizes = [[728, 90],[970, 250],[970,500],[970,90],[1800,1000],[970,1000]];
+var MPU_BTF_Desktop = [[300,250],[300,600]];
+var NativeDesktop = [300,250];
+var MPU_ATF_Desktop = [[300,250],[300,600]];
+var MPU_BTFV1_Desktop = [[300,250],[300,600]];
+var MobileSizes = [[300,50],[320,50],[320,100],[320,240],[300,250]];
+
+//call the right sizes based on viewport
+if (window.screen.availWidth > 768) {
+    HeaderSizes = HeaderDesktopSizes
+    MPU_ATF_Sizes = MPU_ATF_Desktop
+    MPU_BTF_Sizes = MPU_BTF_Desktop
+    MPU_BTFV1_Sizes = MPU_BTFV1_Desktop
+    Native_BTF_Sizes = NativeDesktop;
+} else {
+    HeaderSizes = MobileSizes
+    MPU_ATF_Sizes = MobileSizes
+    MPU_BTF_Sizes = MobileSizes
+    MPU_BTFV1_Sizes = MobileSizes
+    Native_BTF_Sizes = MobileSizes;
+}
+            var PREBID_TIMEOUT = 3000;
+            var FAILSAFE_TIMEOUT = 5000;
+            var prebidReady = false;
+            var cmpReady = false;
+
+var adUnits = []
+
+if(Header_tag){
+    adUnits.push(
+        {
+    code: '/13436254/Supporters_Header',
+    mediaTypes: {
+        banner: {
+            sizes: HeaderSizes //HeaderSizes differs per viewport
+        }
+    },
+    bids: [{
+            bidder: 'improvedigital', //define bidder or alias name
+            labelAny: ['desktop', 'tablet'],    //this placement should only be called if it meets criteria 
+                                                //for tablet or desktop as defined in pbjs.setConfig.SizeConfig()
+            params: {
+                placementId: '1155793', //improve placement id
+                keyValues: {
+                    hb: ['true'] //add a keyvalue - this will be used to exclude tag-based and other campaings that should not run over HB
+                }
+            }
+        },
+        {
+            bidder: 'improvedigital',
+            labelAny: ['phone'], //This placement ID will be called when it meets criteria for phone
+            params: {
+                placementId: '1155809',
+                keyValues: {
+                    hb: ['true']
+                }
+            }
+        },
+        {
+            bidder: 'pubmatic',
+            labelAny: ['desktop', 'tablet'],
+            params: {
+                publisherId: '156546',
+                adSlot: '1636279'
+            }
+        },
+        {
+            bidder: 'pubmatic',
+            labelAny: ['phone'],
+            params: {
+                publisherId: '156546',
+                adSlot: '1637044'
+            }
+        },
+        {
+            bidder: 'tmp1',
+            labelAny: ['desktop','tablet'],
+            params: {
+                placementId: '13894926'
+            }
+        },
+        {
+            bidder: 'tmp1',
+            labelAny: ['phone'],
+            params: {
+                placementId: '13896329'
+            }
+        }
+    ]
+})};
+if(MPU_ATF_tag){
+    adUnits.push(
+{
+    code: '/13436254/Supporters_MPU_ATF',
+    mediaTypes: {
+        banner: {
+            sizes: MPU_ATF_Sizes //HeaderSizes differs per viewport
+        }
+    },
+    bids: [{
+            bidder: 'improvedigital', //define bidder or alias name
+            labelAny: ['desktop', 'tablet'],    //this placement should only be called if it meets criteria 
+                                                //for tablet or desktop as defined in pbjs.setConfig.SizeConfig()
+            params: {
+                placementId: '1155794', //improve placement id
+                keyValues: {
+                    hb: ['true'] //add a keyvalue - this will be used to exclude tag-based and other campaings that should not run over HB
+                }
+            }
+        },
+        {
+            bidder: 'improvedigital',
+            labelAny: ['phone'], //This placement ID will be called when it meets criteria for phone
+            params: {
+                placementId: '1155809',
+                keyValues: {
+                    hb: ['true']
+                }
+            }
+        },
+        {
+            bidder: 'pubmatic',
+            labelAny: ['desktop', 'tablet'],
+            params: {
+                publisherId: '156546',
+                adSlot: '1636279'
+            }
+        },
+        {
+            bidder: 'pubmatic',
+            labelAny: ['phone'],
+            params: {
+                publisherId: '156546',
+                adSlot: '1637044'
+            }
+        },
+                {
+            bidder: 'tmp1',
+            labelAny: ['desktop','tablet'],
+            params: {
+                placementId: '13894926'
+            }
+        },
+        {
+            bidder: 'tmp1',
+            labelAny: ['phone'],
+            params: {
+                placementId: '13896329'
+            }
+        }
+    ]
+}
+        )
+};
+
+if(MPU_BTF_tag){
+    adUnits.push(
+{
+    code: '/13436254/Supporters_MPU_BTF',
+    mediaTypes: {
+        banner: {
+            sizes: MPU_BTF_Sizes //HeaderSizes differs per viewport
+        }
+    },
+    bids: [{
+            bidder: 'improvedigital', 
+            labelAny: ['desktop', 'tablet'],   
+            params: {
+                placementId: '1155795', //improve placement id
+                keyValues: {
+                    hb: ['true'] 
+                }
+            }
+        },
+        {
+            bidder: 'improvedigital',
+            labelAny: ['phone'], 
+            params: {
+                placementId: '1155813',
+                keyValues: {
+                    hb: ['true']
+                }
+            }
+        },
+        {
+            bidder: 'pubmatic',
+            labelAny: ['desktop', 'tablet'],
+            params: {
+                publisherId: '156546',
+                adSlot: '1636279'
+            }
+        },
+        {
+            bidder: 'pubmatic',
+            labelAny: ['desktop', 'tablet'],
+            params: {
+                publisherId: '156546',
+                adSlot: '1636279'
+            }
+        },
+        {
+            bidder: 'pubmatic',
+            labelAny: ['phone'],
+            params: {
+                publisherId: '156546',
+                adSlot: '1637044'
+            }
+        },
+                {
+            bidder: 'tmp1',
+            labelAny: ['desktop','tablet'],
+            params: {
+                placementId: '13894926'
+            }
+        },
+        {
+            bidder: 'tmp1',
+            labelAny: ['phone'],
+            params: {
+                placementId: '13896329'
+            }
+        }
+    ]
+}
+        )
+};
+
+if(MPU_BTFV1_tag){
+    adUnits.push(
+{
+    code: '/13436254/Supporters_MPU_BTFV1',
+    mediaTypes: {
+        banner: {
+            sizes: MPU_BTFV1_Sizes //HeaderSizes differs per viewport
+        }
+    },
+    bids: [{
+            bidder: 'improvedigital', 
+            labelAny: ['desktop', 'tablet'],    
+            params: {
+                placementId: '1155803', 
+                keyValues: {
+                    hb: ['true'] 
+                }
+            }
+        },
+                {
+            bidder: 'improvedigital',
+            labelAny: ['phone'], 
+            params: {
+                placementId: '1155811',
+                keyValues: {
+                    hb: ['true']
+                }
+            }
+        },
+        {
+            bidder: 'pubmatic',
+            labelAny: ['desktop', 'tablet'],
+            params: {
+                publisherId: '156546',
+                adSlot: '1636279'
+            }
+        },
+        {
+            bidder: 'pubmatic',
+            labelAny: ['phone'],
+            params: {
+                publisherId: '156546',
+                adSlot: '1637044'
+            }
+        },
+                {
+            bidder: 'tmp1',
+            labelAny: ['desktop','tablet'],
+            params: {
+                placementId: '13894926'
+            }
+        },
+        {
+            bidder: 'tmp1',
+            labelAny: ['phone'],
+            params: {
+                placementId: '13896329'
+            }
+        }
+    ]
+}
+        )
+};
+
+if(MPU_Native_BTF_tag){
+    adUnits.push(
+{
+    code: '/13436254/Supporters_Native_BTF',
+    mediaTypes: {
+        banner: {
+            sizes: Native_BTF_Sizes //HeaderSizes differs per viewport
+        }
+    },
+    bids: [{
+            bidder: 'improvedigital',
+            labelAny: ['desktop', 'tablet'],
+            params: {
+                placementId: '1155806', //improve placement id
+                keyValues: {
+                    hb: ['true']
+                }
+            }
+        },
+        {
+            bidder: 'improvedigital',
+            labelAny: ['phone'], 
+            params: {
+                placementId: '1155811',
+                keyValues: {
+                    hb: ['true']
+                }
+            }
+        },
+        {
+            bidder: 'pubmatic',
+            labelAny: ['desktop', 'tablet'],
+            params: {
+                publisherId: '156546',
+                adSlot: '1636279'
+            }
+        },
+        {
+            bidder: 'pubmatic',
+            labelAny: ['phone'],
+            params: {
+                publisherId: '156546',
+                adSlot: '1637044'
+            }
+        },
+                {
+            bidder: 'tmp1',
+            labelAny: ['desktop','tablet'],
+            params: {
+                placementId: '13894926'
+            }
+        },
+        {
+            bidder: 'tmp1',
+            labelAny: ['phone'],
+            params: {
+                placementId: '13896329'
+            }
+        }
+    ]
+}
+    )
+};
+
+const customConfigObject = { //price buckets as set up in Massarius Ad Manager
+  "buckets" : [{
+      "precision": 2, 
+      "min" : 0,
+      "max" : 2.50,
+      "increment" : 0.01  
+    },
+    {
+      "precision": 2,
+      "min" : 2.50,
+      "max" : 10,
+      "increment" : 0.10  
+    },
+    {
+      "precision": 2,
+      "min" : 10,
+      "max" : 20,
+      "increment" : 0.2  
+    },
+    {
+      "precision": 2,
+      "min" : 20,
+      "max" : 50,
+      "increment" : 0.5   
+    }]
+};
+
+            // ======== DO NOT EDIT BELOW THIS LINE =========== //
+            var googletag = googletag || {};
+            googletag.cmd = googletag.cmd || [];
+            googletag.cmd.push(function() {
+                googletag.pubads().disableInitialLoad();
+            });
+            var pbjs = pbjs || {};
+            pbjs.que = pbjs.que || [];
+        pbjs.que.push(function() {
+            pbjs.addAdUnits(adUnits);
+            pbjs.setConfig({
+                consentManagement: {
+                    cmpApi: 'iab',
+                    allowAuctionWithoutConsent: false
+                }
+            });
+
+            pbjs.requestBids({
+                bidsBackHandler: initAdserver,
+                timeout: PREBID_TIMEOUT
+            });
+        });
+
+                
+            function initAdserver() {
+                if (pbjs.initAdserverSet) return;
+                pbjs.initAdserverSet = true;
+                googletag.cmd.push(function() {
+                    pbjs.que.push(function() {
+                    pbjs.setTargetingForGPTAsync && pbjs.setTargetingForGPTAsync();
+                        //mark prebid as ready for refresh
+                        prebidReady = true
+                        prebidFunction();
+                    });
+                });
+            }
+            
+            var consentForAds;
+            var checkConsent = function() {
+                console.log('Faktor.io CMP: checkConsent');
+                window.__cmp('getVendorConsents', undefined, function(data) {
+                    var newConsentForAds = (data.purposeConsents[1] && data.purposeConsents[2] && data.purposeConsents[3] && data.purposeConsents[4] && data.purposeConsents[5])
+                    console.log('consentForAds: ' + newConsentForAds);
+                    if (consentForAds !== newConsentForAds) {
+                        consentForAds = newConsentForAds;
+                        googletag.cmd.push(function() {
+                            googletag.pubads().setRequestNonPersonalizedAds(consentForAds ? 0 : 1); //request non-personalized ads for no consent
+                        });
+                        window.__cmp('getConsentData', undefined, function(data) {
+                            googletag.cmd.push(function() {
+                                googletag.pubads().setTargeting('iab_string', [data.consentData]); //send IAB string KV to DFP
+                                googletag.pubads().setTargeting('consent', [consentForAds ? 1 : 0]); //send consent 1/0 KV to DFP
+                                googletag.pubads().setTargeting('rev_consent', [consentForAds ? 0 : 1]); //send rev_consent (equal to NPA) KV to DFP
+                                
+                                //mark CMP as ready for refresh    
+                                cmpReady = true
+                                cmpFunction()
+                            });
+                        });
+                    }
+                });
+            }
+            // refresh ads on pressing accept button (also after changing via fingerprint)
+            window.__cmp('addEventListener', 'acceptAllButtonClicked', function(data) {
+                checkConsent();                 
+            });
+            // refresh ads on pressing exit button (also after changing via fingerprint)
+            window.__cmp('addEventListener', 'exitButtonClicked', function(data) {
+                checkConsent();
+            });
+            //listener for CMP ready - refresh ads when consent is found
+            window.__cmp('addEventListener', 'cmpReady', function(data) {
+                checkConsent();
+            });
+        
+            // in case PBJS doesn't load
+            setTimeout(function() {
+                initAdserver();
+            }, FAILSAFE_TIMEOUT);
+            googletag.cmd.push(function() {
+                googletag.defineSlot('/19968336/header-bid-tag-1', sizes, 'div-1')
+                	.addService(googletag.pubads());
+                googletag.pubads().enableSingleRequest();
+                googletag.enableServices();
+            });
+            var timeStampInMs1;
+            var timeStampInMs2;
+            function prebidFunction () {
+                if (cmpReady) {
+                    console.log("Prebid: CMP was faster (A)")
+                    googletag.cmd.push(function() {
+                        googletag.pubads().refresh();
+                        console.log("prebid + cmp ready: ads refreshed (A)")
+                        //log timestamp
+/*                        var timeStampInMs1 = window.performance && window.performance.now && window.performance.timing && window.performance.timing.navigationStart ? window.performance.now() + window.performance.timing.navigationStart : Date.now();
+                        console.log("A: " + timeStampInMs1, Date.now());
+                        console.log("Page head till prebidReady: " + (timeStampInMs1 - timeStampInMs3));*/
+                    });
+                } else {
+                    console.log("Prebid: Waiting for CMP (A)")
+                    //log timestamp
+/*                    var timeStampInMs1 = window.performance && window.performance.now && window.performance.timing && window.performance.timing.navigationStart ? window.performance.now() + window.performance.timing.navigationStart : Date.now();
+                    console.log("A: " + timeStampInMs1, Date.now());
+                    console.log("Page head till prebidReady: " + (timeStampInMs1 - timeStampInMs3));*/
+                }
+            }
+            function cmpFunction () {
+                if (prebidReady) {
+                    console.log("CMP: Prebid was faster(B)")
+                    googletag.cmd.push(function() {
+                        googletag.pubads().refresh();
+                        console.log("prebid + cmp ready: ads refreshed (B)")
+                    //log timestamp
+/*                    var timeStampInMs2 = window.performance && window.performance.now && window.performance.timing && window.performance.timing.navigationStart ? window.performance.now() + window.performance.timing.navigationStart : Date.now();
+                        console.log("B: " + timeStampInMs2, Date.now());
+                        console.log("Page head till cmpReady: " + (timeStampInMs2 - timeStampInMs3));*/
+                    });
+                } else {
+                    console.log("CMP: Waiting for Prebid (B)")
+                    //log timestamp
+/*                    var timeStampInMs2 = window.performance && window.performance.now && window.performance.timing && window.performance.timing.navigationStart ? window.performance.now() + window.performance.timing.navigationStart : Date.now();
+                        console.log("B: " + timeStampInMs2, Date.now());
+                        console.log("Page head till cmpReady: " + (timeStampInMs2 - timeStampInMs3));*/
+                }
+            }
+        </script>
+
+    </head>
+
+    <body>
+        <h2>CMP</h2>
+        <div id='div-1'>
+            <script type='text/javascript'>
+                googletag.cmd.push(function() {
+                    googletag.display('div-1');
+                });
+            </script>
+        </div>
+    </body>
+
+</html>

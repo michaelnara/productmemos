@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>supporters test</title>
+
+<script async='async' src='https://www.googletagservices.com/tag/js/gpt.js'></script>
+<script async src="//massariuscdn.com/prod/prebid.js"></script>
+<script src="//cmp-loader.choice.faktor.io/O1TI0E.js"></script>
+
+<script>
+  var googletag = googletag || {};
+  googletag.cmd = googletag.cmd || [];
+</script>
+
+<script>
+var top_desktop = [[970, 250], [728, 90]];
+var top_tablet = [728, 90]
+var top_phone = [300, 250]
+var bottom_desktop = [[300, 600], [300, 250]];
+var bottom_phone = [300, 250]
+
+if (window.screen.availWidth > 768) {
+    top_sizes = top_desktop
+    bottom_sizes = bottom_desktop
+    top_improve_id = 12067003
+    bottom_improve_id = 12067005
+} else if (window.screen.availWidth > 660) {
+    top_sizes = top_tablet
+    bottom_sizes = bottom_desktop
+    top_improve_id = 12067004
+    bottom_improve_id = 12067005
+} else {
+    top_sizes = top_phone
+    bottom_sizes = bottom_phone
+    top_improve_id = 12067006
+    bottom_improve_id = 12067006
+}
+
+var PREBID_TIMEOUT = 1500;
+var FAILSAFE_TIMEOUT = 3000;
+
+const customConfigObject = { 
+  "buckets" : [{
+      "precision": 2, 
+      "min" : 0,
+      "max" : 10,
+      "increment" : 0.50  
+    }]
+};
+
+  var adUnits = [{
+      code: '/87190325/HB_1/HB_1_LB',
+      mediaTypes: {
+          banner: {
+              sizes: top_sizes
+          }
+      },
+      bids: [
+      {
+          bidder: 'improvedigital',
+          params: {
+              placementId: top_improve_id,
+              keyValues: { hb: ['true']}
+          }
+      },
+      {
+          bidder: 'appnexus',
+          params: {
+              placementId: 13144370
+          }
+      }]
+  },
+  {
+      code: '/87190325/HB_1/HB_4_MR',
+      mediaTypes: {
+          banner: {
+              sizes: bottom_sizes
+          }
+      },
+      bids: [
+      {
+          bidder: 'improvedigital',
+          params: {
+              placementId: bottom_improve_id,
+              keyValues: { hb: ['true']}
+          }
+      },
+      {
+          bidder: 'appnexus',
+          params: {
+              placementId: 13144370,
+          }
+      }]
+  }];
+
+
+  var googletag = googletag || {};
+  googletag.cmd = googletag.cmd || [];
+  googletag.cmd.push(function() {
+      googletag.pubads().disableInitialLoad();
+  });
+
+      var pbjs = pbjs || {};
+      pbjs.que = pbjs.que || [];
+      pbjs.que.push(function() {
+          pbjs.addAdUnits(adUnits);
+          pbjs.requestBids({
+              bidsBackHandler: initAdserver,
+              timeout: PREBID_TIMEOUT
+          });
+      });
+
+      pbjs.bidderSettings = {
+    improvedigital: {
+        bidCpmAdjustment: function(bidCpm) {
+            return bidCpm * 0.9;
+        }
+    },
+    appnexus: {
+        bidCpmAdjustment: function(bidCpm) { 
+            return bidCpm * 0.8;
+        }
+    }
+};
+
+pbjs.que.push(function() {
+    pbjs.addAdUnits(adUnits);
+    pbjs.setConfig({
+        currency: {
+            "adServerCurrency": "EUR"
+        },
+        consentManagement: {
+            cmpApi: 'iab',
+            timeout: 8000,
+            allowAuctionWithoutConsent: true
+          }, 
+        debug: false, // Previously `logging`
+        priceGranularity: customConfigObject,
+        bidderSequence: "random", // Default is random
+        bidderTimeout: 700, // Default for all requests.
+        enableSendAllBids: true,
+        userSync: {
+            syncDelay: 3000, //user syncs will be dropped 3s after page load (not instantly, to avoid interfering with loading important stuff )
+            syncEnabled: true, //user syncs enabled
+            syncsPerBidder: 5, //5 syncs per bidder
+            iframeEnabled: true //serve user syncs in separate iframes
+        },
+        });
+        });
+
+      function initAdserver() {
+          if (pbjs.initAdserverSet) return;
+          pbjs.initAdserverSet = true;
+          googletag.cmd.push(function() {
+              pbjs.que.push(function() {
+                  pbjs.setTargetingForGPTAsync();
+                  googletag.pubads().refresh();
+              });
+          });
+      }
+
+      // in case PBJS doesn't load -> send request to DfP for tag-based/IO/Direct campaings
+      setTimeout(function() {
+          initAdserver();
+      }, FAILSAFE_TIMEOUT);
+
+      googletag.cmd.push(function() {
+          googletag.defineSlot('/87190325/HB_1/HB_1_LB', top_sizes, 'div-ad-HB-1').addService(googletag.pubads());
+          googletag.defineSlot('/87190325/HB_1/HB_4_MR', bottom_sizes, 'div-ad-HB-2').addService(googletag.pubads());            
+          googletag.pubads().enableSingleRequest();
+          googletag.enableServices();
+      });
+
+        var timeStampInMs1;
+        var timeStampInMs2;
+
+        function prebidFunction () {
+            if (cmpReady) {
+                console.log("Prebid: CMP was faster (A)")
+                googletag.cmd.push(function() {
+                    googletag.pubads().refresh();
+                    console.log("prebid + cmp ready: ads refreshed (A)")
+                    //log timestamp
+                    var timeStampInMs1 = window.performance && window.performance.now && window.performance.timing && window.performance.timing.navigationStart ? window.performance.now() + window.performance.timing.navigationStart : Date.now();
+                    console.log("A: " + timeStampInMs1, Date.now());
+                    //return timeStampInMs1
+                    //TimeDifference()
+                });
+            } else {
+                console.log("Prebid: Waiting for CMP (A)")
+                //log timestamp
+                var timeStampInMs1 = window.performance && window.performance.now && window.performance.timing && window.performance.timing.navigationStart ? window.performance.now() + window.performance.timing.navigationStart : Date.now();
+                console.log("A: " + timeStampInMs1, Date.now());
+                //return timeStampInMs1
+                //TimeDifference()
+            }
+        }
+
+          function cmpFunction () {
+              if (prebidReady) {
+                  console.log("CMP: Prebid was faster(B)")
+                  googletag.cmd.push(function() {
+                      googletag.pubads().refresh();
+                      console.log("prebid + cmp ready: ads refreshed (B)")
+                  //log timestamp
+                  var timeStampInMs2 = window.performance && window.performance.now && window.performance.timing && window.performance.timing.navigationStart ? window.performance.now() + window.performance.timing.navigationStart : Date.now();
+                    console.log("B: " + timeStampInMs2, Date.now());
+                    //return timeStampInMs2
+                    //TimeDifference()
+
+                });
+            } else {
+                console.log("CMP: Waiting for Prebid (B)")
+                //log timestamp
+                var timeStampInMs2 = window.performance && window.performance.now && window.performance.timing && window.performance.timing.navigationStart ? window.performance.now() + window.performance.timing.navigationStart : Date.now();
+                    console.log("B: " + timeStampInMs2, Date.now());
+                    //return timeStampInMs2
+                    //TimeDifference()
+            }
+        }
+
+  </script>
+
+</head>
+
+<body>
+  <h1> Whats'up? </h1>
+
+  <!-- /87190325/HB_1/HB_1_LB -->
+<div id='div-ad-HB-1'>
+       <script>
+              googletag.cmd.push(function() { googletag.display('div-ad-HB-1'); });
+       </script>
+</div>
+
+<p></p>
+
+<!-- /87190325/HB_1/HB_4_MR -->
+<div id='div-ad-HB-2'>
+       <script>
+              googletag.cmd.push(function() { googletag.display('div-ad-HB-2'); });
+       </script>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,1486 @@
+
+
+<!DOCTYPE html>
+<html lang="nl-NL"><head>
+<!-- <meta http-equiv="X-UA-Compatible" content="requiresActiveX=true" /> -->
+<link rel="preconnect" href="https://cmp.choice.faktor.io">
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
+<link rel="preconnect" href="https://www.google-analytics.com">
+<link rel="preconnect" href="https://ib.adnxs.com">
+<script>
+    var ms_debug = false;
+if (window.location.href.includes("ms_debug")) {
+    ms_debug = true;
+}
+
+var headerSlotPresent = false;
+var bottomSlotPresent = false;
+var PREBID_TIMEOUT = 1300;
+var FAILSAFE_TIMEOUT = 3000;
+var pbjs = pbjs || {};
+pbjs.que = pbjs.que || [];
+var DefM = 1.75;
+
+if (window.screen.availWidth >= 768) {
+    //Desktop
+    DefM = 1.75;
+} else {
+    DefM = 1.75;
+}
+var bidCap = 20;
+var adUnits = [];
+
+// load Google
+(function () {
+    var gads = document.createElement("script");
+    gads.async = true;
+    gads.type = "text/javascript";
+    var useSSL = "https:" == document.location.protocol;
+    gads.src =
+        (useSSL ? "https:" : "http:") +
+        "//securepubads.g.doubleclick.net/tag/js/gpt.js";
+    var node = document.getElementsByTagName("script")[0];
+    node.parentNode.insertBefore(gads, node);
+})();
+
+var googletag = googletag || {};
+googletag.cmd = googletag.cmd || [];
+googletag.cmd.push(function () {
+    googletag.pubads().disableInitialLoad();
+});
+
+// load prebid
+var pbjs = pbjs || {};
+pbjs.que = pbjs.que || [];
+var wpAvaillable = false;
+var skyBidsRight = [0];
+var skyBidsLeft = [0];
+var wpBids = [0];
+var bbBids = [0];
+gptadslots = [];
+
+(function () {
+    var mspb = document.createElement("script");
+    mspb.async = true;
+    mspb.type = "text/javascript";
+    var useSSL = "https:" == document.location.protocol;
+    mspb.src =
+        (useSSL ? "https:" : "http:") + "//massariuscdn.com/prod/prebid3.18-sChain.js";
+    var node = document.getElementsByTagName("script")[0];
+    node.parentNode.insertBefore(mspb, node);
+})();
+
+// load neustar
+
+var gdpr;
+var iab_string;
+
+loadNeustar = function () {
+    setTimeout(function () {
+        var nst = document.createElement("script");
+        nst.type = "text/javascript";
+        nst.innerHTML = function setUpAgknTag(tag) {
+            tag.setBpId("massarius");
+            tag.setCat("Entertainment");
+            tag.setGdpr(gdpr);
+            tag.setGdprConsent(iab_string);
+        };
+        var tagjs = document.createElement("script");
+        tagjs.async = true;
+        tagjs.type = "text/javascript";
+        var useSSL = "https:" == document.location.protocol;
+        tagjs.src = (useSSL ? "https:" : "http:") + "//js.agkn.com/prod/v0/tag.js";
+        document.body.appendChild(nst);
+        document.body.appendChild(tagjs);
+    }, 1500);
+};
+
+function loadChoices() {
+        (function () {
+    'use strict'; var g = function (a) { var b = 0; return function () { return b < a.length ? { done: !1, value: a[b++] } : { done: !0 } } }, l = this || self, m = /^[\w+/_-]+[=]{0,2}$/, p = null, q = function () { }, r = function (a) {
+        var b = typeof a; if ('object' == b) if (a) {
+            if (a instanceof Array) return 'array'; if (a instanceof Object) return b; var c = Object.prototype.toString.call(a); if ('[object Window]' == c) return 'object'; if ('[object Array]' == c || 'number' == typeof a.length && 'undefined' != typeof a.splice && 'undefined' != typeof a.propertyIsEnumerable && !a.propertyIsEnumerable('splice')) return 'array';
+            if ('[object Function]' == c || 'undefined' != typeof a.call && 'undefined' != typeof a.propertyIsEnumerable && !a.propertyIsEnumerable('call')) return 'function'
+        } else return 'null'; else if ('function' == b && 'undefined' == typeof a.call) return 'object'; return b
+    }, u = function (a, b) { function c() { } c.prototype = b.prototype; a.prototype = new c; a.prototype.constructor = a }; var v = function (a, b) { Object.defineProperty(l, a, { configurable: !1, get: function () { return b }, set: q }) }; var y = function (a, b) { this.b = a === w && b || ''; this.a = x }, x = {}, w = {}; var aa = function (a, b) { a.src = b instanceof y && b.constructor === y && b.a === x ? b.b : 'type_error:TrustedResourceUrl'; if (null === p) b: { b = l.document; if ((b = b.querySelector && b.querySelector('script[nonce]')) && (b = b.nonce || b.getAttribute('nonce')) && m.test(b)) { p = b; break b } p = '' } b = p; b && a.setAttribute('nonce', b) }; var z = function () { return Math.floor(2147483648 * Math.random()).toString(36) + Math.abs(Math.floor(2147483648 * Math.random()) ^ +new Date).toString(36) }; var A = function (a, b) { b = String(b); 'application/xhtml+xml' === a.contentType && (b = b.toLowerCase()); return a.createElement(b) }, B = function (a) { this.a = a || l.document || document }; B.prototype.appendChild = function (a, b) { a.appendChild(b) }; var C = function (a, b, c, d, e, f) { try { var k = a.a, h = A(a.a, 'SCRIPT'); h.async = !0; aa(h, b); k.head.appendChild(h); h.addEventListener('load', function () { e(); d && k.head.removeChild(h) }); h.addEventListener('error', function () { 0 < c ? C(a, b, c - 1, d, e, f) : (d && k.head.removeChild(h), f()) }) } catch (n) { f() } }; var ba = l.atob('aHR0cHM6Ly93d3cuZ3N0YXRpYy5jb20vaW1hZ2VzL2ljb25zL21hdGVyaWFsL3N5c3RlbS8xeC93YXJuaW5nX2FtYmVyXzI0ZHAucG5n'), ca = l.atob('WW91IGFyZSBzZWVpbmcgdGhpcyBtZXNzYWdlIGJlY2F1c2UgYWQgb3Igc2NyaXB0IGJsb2NraW5nIHNvZnR3YXJlIGlzIGludGVyZmVyaW5nIHdpdGggdGhpcyBwYWdlLg=='), da = l.atob('RGlzYWJsZSBhbnkgYWQgb3Igc2NyaXB0IGJsb2NraW5nIHNvZnR3YXJlLCB0aGVuIHJlbG9hZCB0aGlzIHBhZ2Uu'), ea = function (a, b, c) { this.b = a; this.f = new B(this.b); this.a = null; this.c = []; this.g = !1; this.i = b; this.h = c }, F = function (a) {
+        if (a.b.body && !a.g) {
+            var b =
+                function () { D(a); l.setTimeout(function () { return E(a, 3) }, 50) }; C(a.f, a.i, 2, !0, function () { l[a.h] || b() }, b); a.g = !0
+        }
+    }, D = function (a) {
+        for (var b = G(1, 5), c = 0; c < b; c++) { var d = H(a); a.b.body.appendChild(d); a.c.push(d) } b = H(a); b.style.bottom = '0'; b.style.left = '0'; b.style.position = 'fixed'; b.style.width = G(100, 110).toString() + '%'; b.style.zIndex = G(2147483544, 2147483644).toString(); b.style['background-color'] = I(249, 259, 242, 252, 219, 229); b.style['box-shadow'] = '0 0 12px #888'; b.style.color = I(0, 10, 0, 10, 0, 10); b.style.display =
+            'flex'; b.style['justify-content'] = 'center'; b.style['font-family'] = 'Roboto, Arial'; c = H(a); c.style.width = G(80, 85).toString() + '%'; c.style.maxWidth = G(750, 775).toString() + 'px'; c.style.margin = '24px'; c.style.display = 'flex'; c.style['align-items'] = 'flex-start'; c.style['justify-content'] = 'center'; d = A(a.f.a, 'IMG'); d.className = z(); d.src = ba; d.style.height = '24px'; d.style.width = '24px'; d.style['padding-right'] = '16px'; var e = H(a), f = H(a); f.style['font-weight'] = 'bold'; f.textContent = ca; var k = H(a); k.textContent = da; J(a,
+                e, f); J(a, e, k); J(a, c, d); J(a, c, e); J(a, b, c); a.a = b; a.b.body.appendChild(a.a); b = G(1, 5); for (c = 0; c < b; c++)d = H(a), a.b.body.appendChild(d), a.c.push(d)
+    }, J = function (a, b, c) { for (var d = G(1, 5), e = 0; e < d; e++) { var f = H(a); b.appendChild(f) } b.appendChild(c); c = G(1, 5); for (d = 0; d < c; d++)e = H(a), b.appendChild(e) }, G = function (a, b) { return Math.floor(a + Math.random() * (b - a)) }, I = function (a, b, c, d, e, f) {
+        return 'rgb(' + G(Math.max(a, 0), Math.min(b, 255)).toString() + ',' + G(Math.max(c, 0), Math.min(d, 255)).toString() + ',' + G(Math.max(e, 0), Math.min(f,
+            255)).toString() + ')'
+    }, H = function (a) { a = A(a.f.a, 'DIV'); a.className = z(); return a }, E = function (a, b) { 0 >= b || null != a.a && 0 != a.a.offsetHeight && 0 != a.a.offsetWidth || (fa(a), D(a), l.setTimeout(function () { return E(a, b - 1) }, 50)) }, fa = function (a) { var b = a.c; var c = 'undefined' != typeof Symbol && Symbol.iterator && b[Symbol.iterator]; b = c ? c.call(b) : { next: g(b) }; for (c = b.next(); !c.done; c = b.next())(c = c.value) && c.parentNode && c.parentNode.removeChild(c); a.c = []; (b = a.a) && b.parentNode && b.parentNode.removeChild(b); a.a = null }; var ia = function (a, b, c, d, e) { var f = ha(c), k = function (n) { n.appendChild(f); l.setTimeout(function () { f ? (0 !== f.offsetHeight && 0 !== f.offsetWidth ? b() : a(), f.parentNode && f.parentNode.removeChild(f)) : a() }, d) }, h = function (n) { document.body ? k(document.body) : 0 < n ? l.setTimeout(function () { h(n - 1) }, e) : b() }; h(3) }, ha = function (a) { var b = document.createElement('div'); b.className = a; b.style.width = '1px'; b.style.height = '1px'; b.style.position = 'absolute'; b.style.left = '-10000px'; b.style.top = '-10000px'; b.style.zIndex = '-10000'; return b }; var K = {}, L = null; var M = function () { }, N = 'function' == typeof Uint8Array, O = function (a, b) { a.b = null; b || (b = []); a.j = void 0; a.f = -1; a.a = b; a: { if (b = a.a.length) { --b; var c = a.a[b]; if (!(null === c || 'object' != typeof c || Array.isArray(c) || N && c instanceof Uint8Array)) { a.g = b - a.f; a.c = c; break a } } a.g = Number.MAX_VALUE } a.i = {} }, P = [], Q = function (a, b) { if (b < a.g) { b += a.f; var c = a.a[b]; return c === P ? a.a[b] = [] : c } if (a.c) return c = a.c[b], c === P ? a.c[b] = [] : c }, R = function (a, b, c) { a.b || (a.b = {}); if (!a.b[c]) { var d = Q(a, c); d && (a.b[c] = new b(d)) } return a.b[c] };
+    M.prototype.h = N ? function () {
+        var a = Uint8Array.prototype.toJSON; Uint8Array.prototype.toJSON = function () {
+            var b; void 0 === b && (b = 0); if (!L) { L = {}; for (var c = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'.split(''), d = ['+/=', '+/', '-_=', '-_.', '-_'], e = 0; 5 > e; e++) { var f = c.concat(d[e].split('')); K[e] = f; for (var k = 0; k < f.length; k++) { var h = f[k]; void 0 === L[h] && (L[h] = k) } } } b = K[b]; c = []; for (d = 0; d < this.length; d += 3) {
+                var n = this[d], t = (e = d + 1 < this.length) ? this[d + 1] : 0; h = (f = d + 2 < this.length) ? this[d + 2] : 0; k = n >> 2; n = (n &
+                    3) << 4 | t >> 4; t = (t & 15) << 2 | h >> 6; h &= 63; f || (h = 64, e || (t = 64)); c.push(b[k], b[n], b[t] || '', b[h] || '')
+            } return c.join('')
+        }; try { return JSON.stringify(this.a && this.a, S) } finally { Uint8Array.prototype.toJSON = a }
+    } : function () { return JSON.stringify(this.a && this.a, S) }; var S = function (a, b) { return 'number' !== typeof b || !isNaN(b) && Infinity !== b && -Infinity !== b ? b : String(b) }; M.prototype.toString = function () { return this.a.toString() }; var T = function (a) { O(this, a) }; u(T, M); var U = function (a) { O(this, a) }; u(U, M); var ja = function (a, b) { this.c = new B(a); var c = R(b, T, 5); c = new y(w, Q(c, 4) || ''); this.b = new ea(a, c, Q(b, 4)); this.a = b }, ka = function (a, b, c, d) { b = new T(b ? JSON.parse(b) : null); b = new y(w, Q(b, 4) || ''); C(a.c, b, 3, !1, c, function () { ia(function () { F(a.b); d(!1) }, function () { d(!0) }, Q(a.a, 2), Q(a.a, 3), Q(a.a, 1)) }) }; var la = function (a, b) { V(a, 'internal_api_load_with_sb', function (c, d, e) { ka(b, c, d, e) }); V(a, 'internal_api_sb', function () { F(b.b) }) }, V = function (a, b, c) { a = l.btoa(a + b); v(a, c) }, W = function (a, b, c) { for (var d = [], e = 2; e < arguments.length; ++e)d[e - 2] = arguments[e]; e = l.btoa(a + b); e = l[e]; if ('function' == r(e)) e.apply(null, d); else throw Error('API not exported.'); }; var X = function (a) { O(this, a) }; u(X, M); var Y = function (a) { this.h = window; this.a = a; this.b = Q(this.a, 1); this.f = R(this.a, T, 2); this.g = R(this.a, U, 3); this.c = !1 }; Y.prototype.start = function () { ma(); var a = new ja(this.h.document, this.g); la(this.b, a); na(this) };
+    var ma = function () { var a = function () { if (!l.frames.googlefcPresent) if (document.body) { var b = document.createElement('iframe'); b.style.display = 'none'; b.style.width = '0px'; b.style.height = '0px'; b.style.border = 'none'; b.style.zIndex = '-1000'; b.style.left = '-1000px'; b.style.top = '-1000px'; b.name = 'googlefcPresent'; document.body.appendChild(b) } else l.setTimeout(a, 5) }; a() }, na = function (a) {
+        var b = Date.now(); W(a.b, 'internal_api_load_with_sb', a.f.h(), function () {
+            var c; var d = a.b, e = l[l.btoa(d + 'loader_js')]; if (e) {
+                e = l.atob(e);
+                e = parseInt(e, 10); d = l.btoa(d + 'loader_js').split('.'); var f = l; d[0] in f || 'undefined' == typeof f.execScript || f.execScript('var ' + d[0]); for (; d.length && (c = d.shift());)d.length ? f[c] && f[c] !== Object.prototype[c] ? f = f[c] : f = f[c] = {} : f[c] = null; c = Math.abs(b - e); c = 1728E5 > c ? 0 : c
+            } else c = -1; 0 != c && (W(a.b, 'internal_api_sb'), Z(a, Q(a.a, 6)))
+        }, function (c) { Z(a, c ? Q(a.a, 4) : Q(a.a, 5)) })
+    }, Z = function (a, b) { a.c || (a.c = !0, a = new l.XMLHttpRequest, a.open('GET', b, !0), a.send()) }; (function (a, b) { l[a] = function (c) { for (var d = [], e = 0; e < arguments.length; ++e)d[e - 0] = arguments[e]; l[a] = q; b.apply(null, d) } })('__d3lUW8vwsKlB__', function (a) { 'function' == typeof window.atob && (a = window.atob(a), a = new X(a ? JSON.parse(a) : null), (new Y(a)).start()) });
+}).call(this);
+
+window.__d3lUW8vwsKlB__('WyI4YzJhNjY2ZWFjYzgyNmNkIixbbnVsbCxudWxsLG51bGwsImh0dHBzOi8vZnVuZGluZ2Nob2ljZXNtZXNzYWdlcy5nb29nbGUuY29tL2YvQUdTS1d4WHF6dno5S1pnbUhIT1pKektFYk9zcE1DTFFZR29SMlJjd0RET0xmMjRvN2QteWwycS1yR0xjSVRMRGZyQTJTaFBkN2dvZWtTRHNPS05aUUVMVjRpOFx1MDAzZCJdCixbMjAsImRpdi1ncHQtYWQiLDEwMCwiT0dNeVlUWTJObVZoWTJNNE1qWmpaQVx1MDAzZFx1MDAzZCIsW251bGwsbnVsbCxudWxsLCJodHRwczovL3d3dy5nc3RhdGljLmNvbS8wZW1uL2YvcC84YzJhNjY2ZWFjYzgyNmNkLmpzP3VzcXBcdTAwM2RDQVEiXQpdCiwiaHR0cHM6Ly9mdW5kaW5nY2hvaWNlc21lc3NhZ2VzLmdvb2dsZS5jb20vbC9BR1NLV3hVLUZ6RUVDTUEwbW5jX2lJMTE5UXdmcG5wU0NBc09DeHVXLTVMOHlieFV1eWg3THFuaDk1Z0VfdkhoSGMtZ21FbkRpaTRZNExEcWZwV204WkhmP2FiXHUwMDNkMSIsImh0dHBzOi8vZnVuZGluZ2Nob2ljZXNtZXNzYWdlcy5nb29nbGUuY29tL2wvQUdTS1d4V3Z6b3FpSnEtSWxMSC1jMVN1NlpBUXpEZklBWHVLUzA0cE5GMUpqQy1xa19GQnRyY0R4dFZnWnBDZjZHZjcySzNON2xVY0pJMEczeTU5cUFsdj9hYlx1MDAzZDJcdTAwMjZzYmZcdTAwM2QxIiwiaHR0cHM6Ly9mdW5kaW5nY2hvaWNlc21lc3NhZ2VzLmdvb2dsZS5jb20vbC9BR1NLV3hYUC1ZbkNlS2N2Y24zbDhDY3NpNG1PdVFTa1I1WXN0NFQtWUljY0JZcmZCcFZkMmU4NHJ4Y1JmaDluREs4SDBPZldwN1hBZTRqV29NUHRTZXMzP3NiZlx1MDAzZDIiXQo=')
+}
+
+loadChoices()
+
+function addEventlisterenToTcfApi() {
+    try{
+        window.__tcfapi('addEventListener', 2, checkConsent);
+    } catch (e) {
+        setTimeout(() => {
+            addEventlisterenToTcfApi()
+        }, 50);
+    }
+}
+
+addEventlisterenToTcfApi()
+
+pbjs.bidderSettings = {
+    openx: {
+        bidCpmAdjustment: function (bidCpm) {
+            if (bidCpm >= bidCap) {
+                return bidCpm;
+            } else {
+                return Math.min(bidCpm * DefM * 1, bidCap);
+            }
+        }
+    },
+    improvedigital: {
+        bidCpmAdjustment: function (bidCpm) {
+            if (bidCpm >= bidCap) {
+                return bidCpm;
+            } else {
+                return Math.min(bidCpm * DefM * 1, bidCap);
+            }
+        }
+    },
+    rubicon: {
+        bidCpmAdjustment: function (bidCpm) {
+            if (bidCpm >= bidCap) {
+                return bidCpm;
+            } else {
+                return Math.min(bidCpm * DefM * 1, bidCap);
+            }
+        }
+    },
+    appnexus: {
+        bidCpmAdjustment: function (bidCpm) {
+            if (bidCpm >= bidCap) {
+                return bidCpm;
+            } else {
+                return Math.min(bidCpm * DefM * 1, bidCap);
+            }
+        }
+    },
+    pubmatic: {
+        bidCpmAdjustment: function (bidCpm) {
+            if (bidCpm >= bidCap) {
+                return bidCpm;
+            } else {
+                return Math.min(bidCpm * DefM * 1, bidCap);
+            }
+        }
+    },
+    tmp: {
+        bidCpmAdjustment: function (bidCpm) {
+            if (bidCpm >= bidCap) {
+                return bidCpm;
+            } else {
+                return Math.min(bidCpm * DefM * 1.1, bidCap);
+            }
+        }
+    },
+    weborama: {
+        bidCpmAdjustment: function (bidCpm) {
+            if (bidCpm >= bidCap) {
+                return bidCpm;
+            } else {
+                return Math.min(bidCpm * DefM * 1, bidCap);
+            }
+        }
+    }
+};
+
+// prebid mapping
+var NLFM_ROS_LEFT_1280_1600px_ATF_Desktop_Sizes = [
+    [970, 1000],
+    [1800, 1000]
+];
+
+if (window.screen.availWidth >= 1600) {
+    var _NLFM_ROS_LEFT_HIGH_ATF_Desktop_Sizes = [
+        [120, 600],
+        [300, 600],
+        [160, 600]
+    ];
+    var _NLFM_ROS_RIGHT_HIGH_ATF_Desktop_Sizes = [
+        [120, 600],
+        [300, 600],
+        [160, 600]
+    ];
+} else if (window.screen.availWidth >= 1320) {
+    var _NLFM_ROS_LEFT_HIGH_ATF_Desktop_Sizes = [
+        [120, 600],
+        [160, 600]
+    ];
+    var _NLFM_ROS_RIGHT_HIGH_ATF_Desktop_Sizes = [
+        [120, 600],
+        [160, 600]
+    ];
+} else if (window.screen.availWidth >= 1240) {
+    var _NLFM_ROS_LEFT_HIGH_ATF_Desktop_Sizes = [
+        [120, 600],
+    ];
+    var _NLFM_ROS_RIGHT_HIGH_ATF_Desktop_Sizes = [
+        [120, 600],
+    ];
+} else {
+    var _NLFM_ROS_LEFT_HIGH_ATF_Desktop_Sizes = [];
+    var _NLFM_ROS_RIGHT_HIGH_ATF_Desktop_Sizes = [];
+}
+
+var _NLFM_ROS_TOP_ATF_Desktop_Sizes = [
+    [728, 90]
+];
+
+var _NLFM_ROS_BOTTOM_ATF_Desktop_Sizes = [
+    [468, 60]
+];
+
+// define sizes for desktop/mobile
+if (window.screen.availWidth > 768) {
+    NLFM_ROS_LEFT_1280_1600px_ATF_Sizes = NLFM_ROS_LEFT_1280_1600px_ATF_Desktop_Sizes;
+    _NLFM_ROS_LEFT_HIGH_ATF_Sizes = _NLFM_ROS_LEFT_HIGH_ATF_Desktop_Sizes;
+    _NLFM_ROS_RIGHT_HIGH_ATF_Sizes = _NLFM_ROS_RIGHT_HIGH_ATF_Desktop_Sizes;
+    _NLFM_ROS_TOP_ATF_Sizes = _NLFM_ROS_TOP_ATF_Desktop_Sizes;
+    _NLFM_ROS_BOTTOM_ATF_Sizes = _NLFM_ROS_BOTTOM_ATF_Desktop_Sizes;
+} else {
+    NLFM_ROS_LEFT_1280_1600px_ATF_Sizes = [];
+    _NLFM_ROS_LEFT_HIGH_ATF_Sizes = [];
+    _NLFM_ROS_RIGHT_HIGH_ATF_Sizes = [];
+    _NLFM_ROS_TOP_ATF_Sizes = [];
+    _NLFM_ROS_BOTTOM_ATF_Sizes = [];
+}
+
+// create bids
+var NLFM_ROS_LEFT_1280_1600px_ATF = {
+    code: "/13436254/NLFM_ROS_LEFT_1280-1600px_ATF",
+    mediaTypes: {
+        banner: {
+            sizes: NLFM_ROS_LEFT_1280_1600px_ATF_Sizes
+        }
+    },
+    bids: [
+        {
+            bidder: "openx",
+            labelAny: ["desktop", "tablet"],
+            params: {
+                delDomain: "massarius-d.openx.net",
+                unit: "541017788"
+            }
+        },
+        {
+            bidder: "improvedigital",
+            labelAny: ["desktop", "tablet"],
+            params: {
+                placementId: "22245555",
+                keyValues: {
+                    hb: ["true"]
+                }
+            }
+        },
+        {
+            bidder: "rubicon",
+            labelAny: ["desktop", "tablet"],
+            params: {
+                accountId: "20952",
+                siteId: "316512",
+                zoneId: "1619156"
+            }
+        },
+        {
+            bidder: "appnexus",
+            labelAny: ["desktop", "tablet"],
+            params: {
+                placementId: 18786510
+            }
+        },
+        {
+            bidder: "pubmatic",
+            labelAny: ["desktop", "tablet"],
+            params: {
+                publisherId: "156546",
+                adSlot: "2556055"
+            }
+        },
+        {
+            bidder: "tmp",
+            labelAny: ["desktop", "tablet"],
+            params: {
+                placementId: 18292482
+            }
+        },
+        {
+            bidder: "weborama",
+            labelAny: ["desktop", "tablet"],
+            params: {
+                placementId: 1189162
+            }
+        }
+    ]
+};
+var _NLFM_ROS_LEFT_HIGH_ATF = {
+    code: "/13436254/NLFM_ROS_LEFT_HIGH_ATF",
+    mediaTypes: {
+        banner: {
+            sizes: _NLFM_ROS_LEFT_HIGH_ATF_Sizes
+        }
+    },
+    bids: [
+        {
+            bidder: "openx",
+            labelAny: ["desktop", "tablet"],
+            params: {
+                delDomain: "massarius-d.openx.net",
+                unit: "541017789"
+            }
+        },
+        {
+            bidder: "improvedigital",
+            labelAny: ["desktop", "tablet"],
+            params: {
+                placementId: "22245557",
+                keyValues: {
+                    hb: ["true"]
+                }
+            }
+        },
+        {
+            bidder: "rubicon",
+            labelAny: ["desktop", "tablet"],
+            params: {
+                accountId: "20952",
+                siteId: "316512",
+                zoneId: "1619156"
+            }
+        },
+        {
+            bidder: "appnexus",
+            labelAny: ["desktop", "tablet"],
+            params: {
+                placementId: 18786516
+            }
+        },
+        {
+            bidder: "pubmatic",
+            labelAny: ["desktop", "tablet"],
+            params: {
+                publisherId: "156546",
+                adSlot: "2556056"
+            }
+        },
+        {
+            bidder: "tmp",
+            labelAny: ["desktop", "tablet"],
+            params: {
+                placementId: 18292486
+            }
+        }
+    ]
+};
+var _NLFM_ROS_TOP_ATF = {
+    code: "/13436254/NLFM_ROS_TOP_ATF",
+    mediaTypes: {
+        banner: {
+            sizes: _NLFM_ROS_TOP_ATF_Sizes
+        }
+    },
+    bids: [
+        {
+            bidder: "openx",
+            labelAny: ["desktop", "tablet"],
+            params: {
+                delDomain: "massarius-d.openx.net",
+                unit: "541017790"
+            }
+        },
+        {
+            bidder: "improvedigital",
+            labelAny: ["desktop", "tablet"],
+            params: {
+                placementId: "22245558",
+                keyValues: {
+                    hb: ["true"]
+                }
+            }
+        },
+        {
+            bidder: "rubicon",
+            labelAny: ["desktop", "tablet"],
+            params: {
+                accountId: "20952",
+                siteId: "316512",
+                zoneId: "1619156"
+            }
+        },
+        {
+            bidder: "appnexus",
+            labelAny: ["desktop", "tablet"],
+            params: {
+                placementId: 18786522
+            }
+        },
+        {
+            bidder: "pubmatic",
+            labelAny: ["desktop", "tablet"],
+            params: {
+                publisherId: "156546",
+                adSlot: "2690744"
+            }
+        },
+        {
+            bidder: "tmp",
+            labelAny: ["desktop", "tablet"],
+            params: {
+                placementId: 18803599
+            }
+        }
+    ]
+};
+
+var _NLFM_ROS_BOTTOM_ATF = {
+    code: "/13436254/NLFM_ROS_BOTTOM_ATF",
+    mediaTypes: {
+        banner: {
+            sizes: _NLFM_ROS_BOTTOM_ATF_Sizes
+        }
+    },
+    bids: [
+        {
+            bidder: "openx",
+            labelAny: ["desktop", "tablet"],
+            params: {
+                delDomain: "massarius-d.openx.net",
+                unit: "541070994  "
+            }
+        },
+        {
+            bidder: "improvedigital",
+            labelAny: ["desktop", "tablet"],
+            params: {
+                placementId: "22283051",
+                keyValues: {
+                    hb: ["true"]
+                }
+            }
+        },
+        {
+            bidder: "rubicon",
+            labelAny: ["desktop", "tablet"],
+            params: {
+                accountId: "20952",
+                siteId: "316512",
+                zoneId: "1619156"
+            }
+        },
+        {
+            bidder: "appnexus",
+            labelAny: ["desktop", "tablet"],
+            params: {
+                placementId: 19244847
+            }
+        },
+        {
+            bidder: "pubmatic",
+            labelAny: ["desktop", "tablet"],
+            params: {
+                publisherId: "156546",
+                adSlot: "2910133"
+            }
+        }
+    ]
+};
+
+var _NLFM_ROS_RIGHT_HIGH_ATF = {
+    code: "/13436254/NLFM_ROS_RIGHT_HIGH_ATF",
+    mediaTypes: {
+        banner: {
+            sizes: _NLFM_ROS_RIGHT_HIGH_ATF_Sizes
+        }
+    },
+    bids: [
+        {
+            bidder: "openx",
+            labelAny: ["desktop", "tablet"],
+            params: {
+                delDomain: "massarius-d.openx.net",
+                unit: "541017791"
+            }
+        },
+        {
+            bidder: "improvedigital",
+            labelAny: ["desktop", "tablet"],
+            params: {
+                placementId: "22245559",
+                keyValues: {
+                    hb: ["true"]
+                }
+            }
+        },
+        {
+            bidder: "rubicon",
+            labelAny: ["desktop", "tablet"],
+            params: {
+                accountId: "20952",
+                siteId: "316512",
+                zoneId: "1619156"
+            }
+        },
+        {
+            bidder: "appnexus",
+            labelAny: ["desktop", "tablet"],
+            params: {
+                placementId: 18786527
+            }
+        },
+        {
+            bidder: "pubmatic",
+            labelAny: ["desktop", "tablet"],
+            params: {
+                publisherId: "156546",
+                adSlot: "2556057"
+            }
+        },
+        {
+            bidder: "tmp",
+            labelAny: ["desktop", "tablet"],
+            params: {
+                placementId: 18292489
+            }
+        }
+    ]
+};
+
+adUnits.push(NLFM_ROS_LEFT_1280_1600px_ATF, _NLFM_ROS_LEFT_HIGH_ATF, _NLFM_ROS_RIGHT_HIGH_ATF);
+
+var buckets = {
+    buckets: [{
+        precision: 2,
+        min: 0,
+        max: 2.5,
+        increment: 0.01
+    },
+    {
+        precision: 2,
+        min: 2.5,
+        max: 10,
+        increment: 0.1
+    },
+    {
+        precision: 2,
+        min: 10,
+        max: 20,
+        increment: 0.2
+    },
+    {
+        precision: 2,
+        min: 20,
+        max: 50,
+        increment: 0.5
+    },
+    ]
+};
+
+pbjs.que.push(function () {
+    pbjs.aliasBidder("appnexus", "tmp");
+    pbjs.aliasBidder("improvedigital", "weborama");
+    pbjs.addAdUnits(adUnits);
+    pbjs.setConfig({
+        pubcid: {
+            enable: true
+        },
+        userSync: {
+            syncDelay: 3000,
+            syncEnabled: true,
+            syncsPerBidder: 5,
+            iframeEnabled: true
+        },
+        currency: {
+            adServerCurrency: "EUR"
+        },
+        sizeConfig: [{
+            mediaQuery: "(min-width: 1024px) ",
+            sizesSupported: [
+                [970, 1000],
+                [1800, 1000],
+                [120, 600],
+                [300, 600],
+                [160, 600],
+                [728, 90],
+                [468, 60]
+            ],
+            labels: ["desktop"]
+        },
+        {
+            mediaQuery: "(min-width: 769px) and (max-width: 1024px)",
+            sizesSupported: [
+                [970, 1000],
+                [1800, 1000],
+                [120, 600],
+                [300, 600],
+                [160, 600],
+                [728, 90]
+            ],
+            labels: ["tablet"]
+        }
+        ],
+        improvedigital: {
+            usePrebidSizes: true,
+            singleRequest: false
+        },
+        enableSendAllBids: false,
+        priceGranularity: buckets,
+        schain: {
+            "config": {
+              "ver": "1.0",
+              "complete": 1,
+              "nodes": [
+                {
+                  "asi": "massarius.com",
+                  "sid": "00043",
+                  "hp": 1
+                }
+              ]
+            }
+          },
+        consentManagement: {
+            cmpApi: "iab",
+            allowAuctionWithoutConsent: true
+        }
+    });
+});
+
+// init adserver
+function initAdserver(bids) {
+    var slots = Object.keys(bids);
+    slots.forEach(slot => {
+        let slotbids = bids[slot].bids;
+        bidsCopy = slotbids.slice();
+        slotbids.forEach(bid => {
+            bid.adserverTargeting.hbBid = true;
+            if (bid.width == 970 && bid.height == 250) {
+                bbBids.push(bid.cpm);
+            } else if (bid.width == 1800 && bid.height == 1000) {
+                wpBids.push(bid.cpm);
+                wpAvaillable = true;
+            } else if (bid.width == 970 && bid.height == 1000) {
+                wpBids.push(bid.cpm);
+                wpAvaillable = true;
+            } else if (bid.adUnitCode == "/13436254/NLFM_ROS_LEFT_HIGH_ATF") {
+                skyBidsLeft.push(bid.cpm);
+            } else if (bid.adUnitCode == "/13436254/NLFM_ROS_RIGHT_HIGH_ATF") {
+                skyBidsRight.push(bid.cpm);
+            }
+        });
+    });
+    if (pbjs.initAdserverSet) return;
+    pbjs.initAdserverSet = true;
+    googletag.cmd.push(function () {
+        pbjs.que.push(function () {
+            pbjs.setTargetingForGPTAsync();
+            var maxBidLeft = skyBidsLeft.reduce(function (a, b) {
+                return Math.max(a, b);
+            });
+
+            var maxBidRight = skyBidsRight.reduce(function (a, b) {
+                return Math.max(a, b);
+            });
+
+            var maxBidBB = bbBids.reduce(function (a, b) {
+                return Math.max(a, b);
+            });
+
+            var sumSkyBb = maxBidLeft + maxBidRight + maxBidBB;
+
+            var maxBidWp = wpBids.reduce(function (a, b) {
+                return Math.max(a, b);
+            });
+            if(!ms_debug) {
+            if (window.innerWidth > 1280) {
+                if (wpAvaillable) {
+                    if (maxBidWp > sumSkyBb) {
+                        slot1 = document.getElementById("div-gpt-ad-1512037844968-2");
+                        if (slot1) {
+                            slot1.innerHTML = "";
+                        }
+                        slot2 = document.getElementById("div-gpt-ad-1512037844968-0");
+                        if (slot2) {
+                            slot2.innerHTML = "";
+                        }
+                        header = document.getElementById('div-gpt-ad-1510675016342-2');
+                        if (header) {
+                            header.removeAttribute("style", "width:0px; height: 0px;");
+                        }
+                        if (headerSlotPresent) {
+                            googletag
+                                .pubads()
+                                .refresh([
+                                    gptadslots[0],
+                                    gptadslots[3]
+                                ]);
+                        } else {
+                            googletag
+                                .pubads()
+                                .refresh([
+                                    gptadslots[0]
+                                ]);
+                        }
+                    } else {
+                        header = document.getElementById('div-gpt-ad-1510675016342-2');
+                        if (header) {
+                            header.innerHTML = "";
+                            header.setAttribute("style", "width:0px; height: 0px;");
+                        }
+                        if (headerSlotPresent) {
+                            googletag
+                                .pubads()
+                                .refresh([
+                                    gptadslots[1],
+                                    gptadslots[2],
+                                    gptadslots[3]
+                                ]);
+                        } else {
+                            googletag
+                                .pubads()
+                                .refresh([
+                                    gptadslots[1],
+                                    gptadslots[2]
+                                ]);
+                        }
+                    }
+                } else {
+                    if (headerSlotPresent) {
+                        googletag
+                            .pubads()
+                            .refresh([
+                                gptadslots[1],
+                                gptadslots[2],
+                                gptadslots[3]
+                            ]);
+                    } else {
+                        googletag
+                            .pubads()
+                            .refresh([
+                                gptadslots[1],
+                                gptadslots[2]
+                            ]);
+                    }
+                }
+            } else {
+                slot1 = document.getElementById("div-gpt-ad-1512037844968-2");
+                if (slot1) {
+                    slot1.innerHTML = "";
+                }
+                slot2 = document.getElementById("div-gpt-ad-1512037844968-0");
+                if (slot2) {
+                    slot2.innerHTML = "";
+                }
+                header = document.getElementById('div-gpt-ad-1510675016342-2');
+                if (header) {
+                    header.removeAttribute("style", "width:0px; height: 0px;");
+                }
+                if (headerSlotPresent) {
+                    googletag
+                        .pubads()
+                        .refresh([
+                            gptadslots[3]
+                        ]);
+                }
+            }
+        } else {
+                googletag
+                    .pubads()
+                    .refresh([
+                        gptadslots[0]
+                    ]);
+        }
+        });
+    });
+}
+
+// google tag
+googletag.cmd.push(function () {
+    // google mapping
+    var skyscraper_mapping = googletag
+        .sizeMapping()
+        .addSize(
+            [1600, 0],
+            [
+                [120, 600],
+                [160, 600],
+                [300, 600],
+                [1, 1]
+            ]
+        )
+        .addSize(
+            [1320, 0],
+            [
+                [120, 600],
+                [160, 600],
+                [1, 1]
+            ]
+        )
+        .addSize([1240, 0], [
+            [120, 600],
+            [1, 1]
+        ])
+        .addSize([0, 0], [])
+        .build();
+
+    var mapping_richmedia = googletag
+        .sizeMapping()
+        .addSize([1280, 0],
+            [
+                [1, 1]
+            ])
+        // .addSize([980, 900],
+        //   [
+        //     [970, 250],
+        //     [728, 90],
+        //     [970, 90],
+        //     [980, 90],
+        //     [980, 250]
+        //   ])
+        // .addSize([970, 900],
+        //   [
+        //     [970, 250],
+        //     [728, 90],
+        //     [970, 90]
+        //   ])
+        // .addSize([768, 0],
+        //   [
+        //     [728, 90]
+        //   ])
+        .addSize([0, 0], [])
+        .build();
+
+    gptadslots[0] = googletag
+        .defineSlot(
+            "/13436254/NLFM_ROS_LEFT_1280-1600px_ATF",
+            [
+                [1, 1]
+            ],
+            "div-gpt-ad-1510675016342-2"
+        )
+        .defineSizeMapping(mapping_richmedia)
+        .addService(googletag.pubads());
+
+    gptadslots[1] = googletag
+        .defineSlot(
+            "/13436254/NLFM_ROS_LEFT_HIGH_ATF",
+            [
+                [120, 600],
+                [300, 600],
+                [160, 600]
+            ],
+            "div-gpt-ad-1512037844968-0"
+        )
+        .defineSizeMapping(skyscraper_mapping)
+        .addService(googletag.pubads());
+
+    gptadslots[2] = googletag
+        .defineSlot(
+            "/13436254/NLFM_ROS_RIGHT_HIGH_ATF",
+            [
+                [120, 600],
+                [300, 600],
+                [160, 600],
+                [1, 1]
+            ],
+            "div-gpt-ad-1512037844968-2"
+        )
+        .defineSizeMapping(skyscraper_mapping)
+        .addService(googletag.pubads());
+
+    if (typeof radio !== "undefined") {
+        console.log("zender targeting");
+        googletag.pubads().setTargeting('zender', radio._zender.replace("-", ""));
+    }
+    if(ms_debug) {
+        googletag.pubads().setTargeting("native", ["true"]);
+    }
+    googletag.pubads().setTargeting("hb", ["true"]);
+    googletag.pubads().collapseEmptyDivs();
+    googletag.pubads().setCentering(true);
+    googletag.enableServices();
+});
+
+// CMP logic
+var consentForAds;
+var adsLoaded;
+var checkConsent = function () {
+    console.log("Checking consent")
+    window.__tcfapi('getTCData', 0, (tcData, success) => {
+        console.log(tcData, "data")
+        console.log(success, "success")
+        if (success) {
+            if (tcData.cmpStatus == "loaded" && typeof tcData.tcString != "undefined") {
+                var newConsentForAds;
+
+                newConsentForAds = true;
+                if (Object.keys(tcData.purpose.consents).length === 0) {
+                    newConsentForAds = false;
+                }
+                var i = 0;
+                for (c in tcData.purpose.consents) {
+                    if (i >= 10) break;
+                    //console.log(c + " = " + tcData.purpose.consents[c]);
+                    newConsentForAds = newConsentForAds && tcData.purpose.consents[c];
+                    i++;
+                }
+                console.log("newConsentForAds = " + newConsentForAds);
+
+                if (consentForAds !== newConsentForAds) {
+                    consentForAds = newConsentForAds;
+                    googletag.cmd.push(function () {
+                        googletag.pubads().setRequestNonPersonalizedAds(consentForAds ? 0 : 1);
+                    });
+                    if (adsLoaded) return;
+                    adsLoaded = true;
+                    googletag.cmd.push(function () {
+                        gdpr = consentForAds ? "1" : "0";
+                        iab_string = gdpr == "1" ? tcData.tcString : "";
+                        loadNeustar();
+                        googletag.pubads().setTargeting("iab_string", [tcData.tcString]);
+                        googletag
+                            .pubads()
+                            .setTargeting("consent", [consentForAds ? "1" : "0"]);
+                        googletag
+                            .pubads()
+                            .setTargeting("rev_consent", [consentForAds ? "0" : "1"]);
+                        pbjs.que.push(function () {
+                            pbjs.requestBids({
+                                bidsBackHandler: initAdserver,
+                                timeout: PREBID_TIMEOUT
+                            });
+                        });
+                    });
+                }
+            }
+        }
+    });
+};
+
+// var refresh_count = 0;
+// var auto_refresh = setInterval(function () {
+//   if (!document.hidden) {
+//     wpAvaillable = false;
+//     skyBidsRight = [0];
+//     skyBidsLeft = [0];
+//     wpBids = [0];
+//     bbBids = [0];
+//     pbjs.que.push(function () {
+//       pbjs.initAdserverSet = false;
+//       pbjs.requestBids({
+//         bidsBackHandler: initAdserver,
+//         timeout: PREBID_TIMEOUT
+//       });
+//     });
+//   }
+//   refresh_count++;
+//   if (refresh_count >= 5) {
+//     clearInterval(auto_refresh);
+//   }
+// }, 120000);
+
+function getWindowWidth() {
+    var winWidth = 0;
+    if (document.documentElement && (document.documentElement.clientWidth || document.documentElement.clientHeight)) {
+        winWidth = document.documentElement.clientWidth;
+    } else if (document.body && (document.body.clientWidth || document.body.clientHeight)) {
+        winWidth = document.body.clientWidth;
+    } else if (typeof (window.innerWidth) == 'number') {
+        winWidth = window.innerWidth;
+    } return winWidth;
+}
+
+var ww = 0;
+var takeoverWidth = 300;
+
+function showTakeover() {
+    var ww = getWindowWidth();
+    var nederlandfmWidth = 971; var space = 8;
+    var leftPos = ((ww - nederlandfmWidth) / 2) - takeoverWidth - space;
+    var rightPos = ((ww - nederlandfmWidth) / 2) + nederlandfmWidth + space;
+    document.getElementById('takeoverleft').style.setProperty('width', takeoverWidth + 'px', 'important');
+    document.getElementById('takeoverright').style.setProperty('width', takeoverWidth + 'px', 'important');
+    document.getElementById('takeoverleft').style.setProperty('left', leftPos + 'px', 'important');
+    document.getElementById('takeoverright').style.setProperty('left', rightPos + 'px', 'important');
+    document.getElementById('div-gpt-ad-1512037844968-0').style.setProperty('float', 'right');
+};
+
+var resized = false;
+
+var existing = window.onresize;
+window.onresize = function () {
+    if (existing) { existing; } showTakeover();
+};
+
+var resizeSkyscrapers = setInterval(function () {
+    try {
+        showTakeover();
+        resized = true;
+    }
+    catch (err) {
+        console.log(err);
+    }
+    if (resized) {
+        clearInterval(resizeSkyscrapers);
+    }
+}, 10);
+
+window.addEventListener("zenderWissel", function () {
+    headerSlotPresent = true;
+    bottomSlotPresent = true;
+    googletag.cmd.push(function () {
+        if (typeof (headerSlot) == "undefined") {
+            headerSlot = googletag
+                .defineSlot(
+                    "/13436254/NLFM_ROS_TOP_ATF",
+                    [[728, 90]],
+                    "div-gpt-ad-1584614643143-0"
+                )
+                .addService(googletag.pubads());
+            gptadslots[3] = headerSlot;
+        }
+        googletag.pubads().setTargeting('zender', radio._zender.replace("-", ""));
+        wpAvaillable = false;
+        skyBidsRight = [0];
+        skyBidsLeft = [0];
+        wpBids = [0];
+        bbBids = [0];
+        pbjs.que.push(function () {
+            pbjs.addAdUnits(_NLFM_ROS_TOP_ATF);
+            pbjs.initAdserverSet = false;
+            pbjs.requestBids({
+                bidsBackHandler: initAdserver,
+                timeout: PREBID_TIMEOUT
+            });
+        });
+    });
+});
+</script>
+<meta name="msvalidate.01" content="85DE95499808A99687D5AA7168A51747">
+<meta name="googlebot" content="NOODP">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
+<meta name="google" content="notranslate">
+<meta name="apple-itunes-app" content="app-id=520828337">
+<link rel="apple-touch-icon" href="/i/mobiellogo.png">
+<link rel="canonical" href="https://www.nederland.fm">
+<title>Nederland.FM => Online luisteren naar de beste radio stations uit NL !</title><script type="text/javascript">var url_z = "";</script><meta name="keywords" content="nederland, fm, radio, online, gratis, muziek, luisteren, webradio, horen, frequentie, zender, radiostation, hits">
+<meta name="description" content="Online, live en gratis luisteren naar onder andere Radio 538, Qmusic, Sky Radio, Radio 1, Radio 2, 3FM, Radio 10, Veronica, Slam en BNR">
+<meta property="og:url" content="https://www.nederland.fm" />
+<meta property="og:type" content="website"/>
+<meta property="og:title" content="Nederland.FM - Online luisteren naar de beste radio stations uit NL !" />
+<meta property="og:description" content="Online, live en gratis luisteren naar onder andere Radio 538, Qmusic, Sky Radio, Radio 1, Radio 2, 3FM, Radio 10, Veronica, Slam en BNR" />
+<meta property="og:image" content="https://www.nederland.fm/i/nlfm_ogimage_300x300.gif" />
+<LINK REL="SHORTCUT ICON" HREF="/favicon.ico">
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-2192704-6"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-2192704-6',{'anonymize_ip': true});
+</script>
+<script>var do_ilo = 0;var preroll=0;</script><link type="text/css" rel="stylesheet" href="//www.nederland.fm/common/dojo-1.8/release-fm/dojo/fm/css/fm2.css" /><script  type="text/javascript" src="//www.nederland.fm/common/radio/zenders/nederland.js"></script><script type="text/javascript" src="//www.nederland.fm/common/dojo-1.8/release-fm/dojo/dojo/dojo.js" djConfig="parseOnLoad: false,locale:'nl'"></script><script  type="text/javascript" src="//www.nederland.fm/common/dojo-1.8/release-fm/dojo/dojo/dojo-nederlandfm2.js" ></script><script type="text/javascript">
+OpFM=0;
+window.google_analytics_uacct="UA-2192704-6";
+preroll=1;livebanners=1;livefb=0;livelb=1;livezijb=0;livelb_id='div-gpt-ad-1584614643143-0';
+banner_timer=0;
+banner_time=15*60*1000;
+html5=0;checkChrome=0;
+var _gaq=_gaq||[];
+/*var do_ilo=1;*/
+/*
+    require(["dojo"], function(dojo){
+		dojo.ready(function(){  
+			dojo.require("fm.baseNL");
+			//alert('dojo');
+		});
+	});
+*/
+function loadDojo(){
+ dojo.require("fm.baseNL");
+}
+function PreloaderCallbackAfter(ad, id){
+radio.prerollFinished();
+}
+function qmusic(){
+radio.play('q-music');
+dojo.publish('/analytics/banner', ['QMusic_Leaderboard_Kliks']);
+//setTimeout('window.open("https://qmusic.nl/acties/extra-lang-feest-de-foute-1500?utm_source=nederlandfm&utm_medium=banner&utm_campaign=foute1500", "_blank")'
+//,3000);
+}
+function qmusicfb(){
+radio.play('q-music');
+dojo.publish('/analytics/banner', ['QMusic_Banner_Kliks']);
+//setTimeout('window.open("https://qmusic.nl/acties/extra-lang-feest-de-foute-1500?utm_source=nederlandfm&utm_medium=banner&utm_campaign=foute1500", "_blank")'
+//,3000);
+
+}
+function veronica(){
+radio.play('veronicafm');
+dojo.publish('/analytics/banner', ['RadioVeronica_Banner_Kliks']);
+}
+function veronicalb(){
+radio.play('veronicafm');
+dojo.publish('/analytics/banner', ['RadioVeronica_Leaderboard_Kliks']);
+}
+function skyradio(){
+radio.play('skyradio');
+dojo.publish('/analytics/banner', ['SkyRadio_Banner_Kliks']);
+}
+function skysummerhits(){
+radio.play('skysummerhits');
+dojo.publish('/analytics/banner', ['SkySummerHits_Banner_Kliks']);
+}
+function skyradiolb(){
+radio.play('skyradio');
+dojo.publish('/analytics/banner', ['SkyRadio_Leaderboard_Kliks']);
+}
+function radio10(){
+radio.play('radio10');
+dojo.publish('/analytics/banner', ['radio10_Banner_Kliks']);
+}
+function radio10lb(){
+radio.play('radio10');
+dojo.publish('/analytics/banner', ['radio10_Leaderboard_Kliks']);
+//window.open("http://fbcdn.livewall.nl/hpnlwens", "Q-Music");
+}
+function classicfmlb(){
+radio.play('classicfm');
+dojo.publish('/analytics/banner', ['ClassicFM_Leaderboard_Kliks']);
+}
+function pnl(){
+radio.play('100pnl');
+dojo.publish('/analytics/banner', ['100pnl_Banner_Kliks']);
+
+}
+function pnllb(){
+radio.play('100pnl');
+dojo.publish('/analytics/banner', ['100pnl_Leaderboard_Kliks']);
+}
+function pnlo(){//Lars
+radio.play('100pnl');
+dojo.publish('/analytics/banner', ['100pnl_Lars_Banner_Kliks']);
+//document.getElementById("track").src = "http://track.adform.net/C/?bn=19156409;cpdir=https://www.nieuwelandingspagina.nl";
+var fclimg = new Image();
+//fclimg.src = "http://track.adform.net/C/?bn=19156409;cpdir=https://www.nieuwelandingspagina.nl";
+}
+function pnllbo(){
+radio.play('100pnl');
+dojo.publish('/analytics/banner', ['100pnl_Lars_Leaderboard_Kliks']);
+}
+function pnlm(){//Koen
+radio.play('100pnl');
+dojo.publish('/analytics/banner', ['100pnl_Disney_Banner_Kliks']);
+//document.getElementById("track").src = "http://track.adform.net/C/?bn=19156408;cpdir=https://www.nieuwelandingspagina.nl";
+var fclimg = new Image();
+//fclimg.src = "http://track.adform.net/C/?bn=19156408;cpdir=https://www.nieuwelandingspagina.nl";
+}
+function pnllbm(){
+radio.play('100pnl');
+dojo.publish('/analytics/banner', ['100pnl_Disney_Leaderboard_Kliks']);
+}
+function radio538lb(){
+radio.play('radio538');
+dojo.publish('/analytics/banner', ['Radio538_Leaderboard_Kliks']);
+}function radio538(){
+radio.play('radio538');
+dojo.publish('/analytics/banner', ['Radio538_Banner_Kliks']);
+}
+function slamfm(){
+radio.play('slamfm');
+dojo.publish('/analytics/banner', ['SlamFM_Banner_Kliks']);
+
+}
+function slamfmlb(){
+radio.play('slamfm');
+dojo.publish('/analytics/banner', ['SlamFM_Leaderboard_Kliks']);
+}
+function bnrlb(){
+radio.play('bnr');
+dojo.publish('/analytics/banner', ['BNR_Leaderboard_Kliks']);
+window.open("https://cxg3g.app.goo.gl/7ZPX", "BNR");
+}
+function bnr(){
+radio.play('bnr');
+dojo.publish('/analytics/banner', ['BNR_Banner_Kliks']);
+window.open("https://cxg3g.app.goo.gl/7ZPX", "BNR");
+}
+var eventMethod = window.addEventListener ? "addEventListener" : "attachEvent";
+var eventer = window[eventMethod];
+var messageEvent = eventMethod == "attachEvent" ? "onmessage" : "message";
+eventer(messageEvent,function(e) {
+  //alert(e.data);
+  if (typeof e.data.indexOf != "undefined") {
+
+  if(e.data.indexOf("qmusic") != -1) {
+	  qmusic();
+  }  
+  
+   if(e.data.indexOf("headerBidding") != -1) {
+	  //alert('headerBidding');
+	  var zenderWisselEvent = new CustomEvent("zenderWissel", {});
+	  document.getElementById("div-gpt-ad-1584614643143-0").innerHTML = "";
+//	  document.getElementById("leaderboard").innerHTML = "";
+//	  document.getElementById("leaderboard").setAttribute("id", "div-gpt-ad-1584614643143-0");
+	  googletag.cmd.push(function() {googletag.display('div-gpt-ad-1584614643143-0'); });
+	  window.dispatchEvent(zenderWisselEvent);
+  }  
+  
+  if(e.data.indexOf("veronicafm") != -1) {
+	  veronicafm();
+  }  
+  if(e.data.indexOf("startskyradio") != -1) {
+	  skyradio(); 
+
+	  setTimeout('window.open("https://www.skyradio.nl/duizend-euro-dubbelhit", "_blank")',3000);	
+
+	}
+  if(e.data.indexOf("skysummerhits") != -1) {
+	   skysummerhits(); 
+	}
+  if(e.data.indexOf("startradioveronica") != -1) {
+	  veronicafm();
+  }
+  if(e.data.indexOf("radio538") != -1) {
+	  radio538();
+	 
+ }
+  if(e.data.indexOf("startradio10") != -1) {
+ 	  radio10();  
+ }
+  if(e.data.indexOf("stopmusic") != -1) {
+	 var qplayer = '<div class="playertitle"><img id="titleImg" src="//www.nederland.fm/i/titelplayer.gif" width="300" height="30"></div><img alt="QMusic" src="//www.nederland.fm/i/banners/hetgeluidbanner.gif" id="radioBanner" width="300" height="93" border="0">';
+	 document.getElementById('zender_page').innerHTML = qplayer;
+  }
+	}
+},false);
+window.onbeforeunload=window.onunload=(function(){stats.playerStop()})
+function getWindowWidth(){
+var winWidth=0;
+if(document.documentElement && (document.documentElement.clientWidth||document.documentElement.clientHeight)){
+winWidth=document.documentElement.clientWidth;
+}else if(document.body && (document.body.clientWidth||document.body.clientHeight)){
+winWidth=document.body.clientWidth;
+}else if(typeof(window.innerWidth)=='number'){
+winWidth=window.innerWidth;
+}return winWidth;}
+var ww=getWindowWidth();
+var takeoverWidth=300;
+</script>
+<style>
+#div-gpt-ad-1584614643143-0{
+position:relative;
+left:5px;
+top:-7px;
+width:728px;
+height:90px;
+}
+</style>
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','//connect.facebook.net/en_US/fbevents.js');
+fbq('init', '802158809894645');
+fbq('track', "PageView");
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=802158809894645&ev=PageView&noscript=1"/>
+</noscript>
+<!-- <script type="text/javascript" src="//static.criteo.net/js/ld/publishertag.js"></script> -->
+</head>
+<body  class="tundra" onload="loadDojo()">
+	<img  style="padding:0px;margin-top:8px;display:block;font-szie:1px" src="//www.nederland.fm/i/Nederland-FM-Radio-Luisteren.gif" alt="Nederland.FM => Online luisteren naar de beste radio stations uit NL !" vspace="0" width="900" height="1">
+<div id="takeoverleft" style="cursor: pointer; z-index: 1;position: fixed !important;top: 50px !important;text-align: right !important;left: 158px !important;">
+<!-- /13436254/NLFM_ROS_LEFT_HIGH_ATF -->
+<div id='div-gpt-ad-1512037844968-0'>
+<script>
+googletag.cmd.push(function() {googletag.display('div-gpt-ad-1512037844968-0'); });
+</script>
+</div>
+</div>
+<div id="takeoverright" style="cursor: pointer; border: 0px; z-index: 1; position: fixed !important; top: 50px !important; left: 1445px !important;">
+<!-- /13436254/NLFM_ROS_RIGHT_HIGH_ATF -->
+<div id='div-gpt-ad-1512037844968-2'>
+<script>
+googletag.cmd.push(function() {googletag.display('div-gpt-ad-1512037844968-2'); });
+</script>
+</div>
+</div>
+
+<div id="xfr">
+<div id="xh">
+<div id="xhl"><span style=""><a onClick="dojo.publish('/analytics/banner', ['Leaseweb']);" href="http://www.leaseweb.com" target="_blank"><img  src="//www.nederland.fm/i/leaseweb.gif" width="120" height="20"  rel="noreferrer"  alt="LeaseWeb" title"LeaseWeb biedt hosted infrastructuur oplossingen, waaronder traditionele dedicated servers, cloud, colocatie en maatwerk hybride oplossingen"></a></span></span></div><div id="xhm"><img class="flagLImg"  src="//www.nederland.fm/common/radio/i/v/zwartevlag.gif" width="224" height="20"><a href="http://www.nederland.fm" title="Nederland.FM - Radio luisteren via internet. De beste radiostations bij elkaar!"><img class="flagLImg" alt="Nederland.FM - Radio luisteren via internet. De beste radiostations bij elkaar!" src="//www.nederland.fm/common/radio/i/v/zwartevlag.gif" width="29" height="20"  rel="noreferrer"></a><a  onClick="dojo.publish('/analytics/flag', ['Belgie.FM']);" href="http://www.belgie.fm" target="_blank"  title="Belgie.FM - Radio luisteren via internet, klikken en luisteren"><img class="flagLImg" alt="Belgie.FM - Radio luisteren via internet, klikken en luisteren" src="//www.nederland.fm/common/radio/i/v/flagbelgie.gif" width="29" height="20"></a><a  onClick="dojo.publish('/analytics/flag', ['Deutschland.FM']);" href="http://www.deutschland.fm" target="_blank"  title="Deutschland.FM - Online Radio, Klicken und H&ouml;ren"><img class="flagLImg" alt="Deutschland.FM - Online Radio, Klicken und H&ouml;ren" src="//www.nederland.fm/common/radio/i/v/flagdeutschland.gif" width="29" height="20"></a><a  onClick="dojo.publish('/analytics/flag', ['Italia.FM']);" href="http://www.italia.fm" target="_blank"  title="Italia.FM - Per ascoltare la radio in Internet, fai clic e ascolta..."><img class="flagLImg" alt="Italia.FM - Per ascoltare la radio in Internet, fai clic e ascolta..." src="//www.nederland.fm/common/radio/i/v/flagitalia.gif" width="29" height="20"></a><a  onClick="dojo.publish('/analytics/flag', ['Danmark.FM']);" href="http://www.danmark.fm" target="_blank"  title="Danmark.FM - H&oslash;r radio over Internet, klik og lyt..."><img class="flagLImg" alt="Danmark.FM - H&oslash;r radio over Internet, klik og lyt..." src="//www.nederland.fm/common/radio/i/v/flagdenemarken.gif" width="29" height="20"></a><a  onClick="dojo.publish('/analytics/flag', ['Espana.FM']);" href="http://www.espana.fm" target="_blank"  title="Espana.FM - Escuchar la radio a trav&#233;s de internet, clicar y escuchar..."><img class="flagLImg" alt="Espana.FM - Escuchar la radio a trav&#233;s de internet, clicar y escuchar..." src="//www.nederland.fm/common/radio/i/v/flagespana.gif" width="29" height="20"></a><a  onClick="dojo.publish('/analytics/flag', ['India.FM']);" href="http://www.india.fm" target="_blank"  title="India.FM - Internet Radio, Click and Listen..."><img class="flagLImg" alt="India.FM - Internet Radio, Click and Listen..." src="//www.nederland.fm/common/radio/i/v/flagindia.gif" width="29" height="20"></a></div><div id="xhr">
+<a href="#"  rel="noreferrer"  onClick="window.open('https://www.facebook.com/sharer/sharer.php?u=http%3A//www.nederland.fm', '_blank', 'width=575,height=600'); return false;">
+	<img class="si" src="//www.nederland.fm/i/iconfacebook.gif" alt="Facebook" ></a>
+<a href="#"  rel="noreferrer"  onClick="window.open('https://twitter.com/intent/tweet?text=Ik%20luister%20naar%20mijn%20favoriete%20radiostation%20op%20www.nederland.fm', '_blank', 'width=400,height=520'); return false;">
+<img class="si" src="//www.nederland.fm/i/icontwitter.gif" alt="Twitter"></a>
+</div></div>
+<div id="xfrm" class="darkshadow">
+<div id="xfrl"></div>
+<div id="logoframe">
+<div id="hspace"></div>
+<div id="xt">
+<div id="xtt">
+<div id="xttl">
+<div class="lgrklein" id="lindaradio"><a href="http://www.nederland.fm/lindaradio" title="LINDA.nl - 24/7 herkenbare en verrassende muziek voor elk moment van de dag - Pop/Hits"><img class="lgklein shadow" src="//www.nederland.fm/i/l/lindaradioklein.gif" alt="LINDA.nl - 24/7 herkenbare en verrassende muziek voor elk moment van de dag - Pop/Hits"></a></div>
+<div class="lgr" id="radio538"><a href="http://www.nederland.fm/radio538" title="Radio 538 - The Beat Of The Moment - Pop/Hits"><img class="lg" src="//www.nederland.fm/i/l/radio538.gif" alt="Radio 538 - The Beat Of The Moment - Pop/Hits"></a></div>
+</div>
+<div id="xttm">
+<div id="leaderboardbg"  class="shadow">
+<div class="gl gi"></div>
+<div id="div-gpt-ad-1584614643143-0">
+<a href="#" onclick="radio538lb()" title="Radio 538"><img  src="//www.nederland.fm/i/banners/538_devon_728x90.gif" alt="" width="728" height="90"/></a>
+</div></div></div><div id="xttr">
+<div class="lgrkleinr" id="kink"><a href="http://www.nederland.fm/kink" title="Kink - No alternative - Alternatief"><img class="lgkleinr shadow" src="//www.nederland.fm/i/l/kinkklein.gif" alt="Kink - No alternative - Alternatief"></a></div>
+<div class="lgrrechts" id="radio1"><a href="http://www.nederland.fm/radio1" title="Radio 1 - De zender voor nieuws en sport - Nieuws/Sport"><img class="lg lgrechts shadow" src="//www.nederland.fm/i/l/radio1.gif" alt="Radio 1 - De zender voor nieuws en sport - Nieuws/Sport"></a></div>
+</div></div>
+<div id="xtb">
+<div class="lgr" id="538nonstop"><a href="http://www.nederland.fm/538nonstop" title="538 Non Stop - Een station, alle hits, non stop! - Pop/Hits"><img class="lg" src="//www.nederland.fm/i/l/538nonstop.gif" alt="538 Non Stop - Een station, alle hits, non stop! - Pop/Hits"></a></div>
+<div class="lgr" id="q-music"><a href="http://www.nederland.fm/qmusic" title="Q sounds better with you - Pop/Hits"><img class="lg" src="//www.nederland.fm/i/l/q-music.gif" alt="Q sounds better with you - Pop/Hits"></a></div>
+<div class="lgr" id="skyradio"><a href="http://www.nederland.fm/sky-radio" title="Sky Radio 101 FM – Non Stop Muziek"><img class="lg" src="//www.nederland.fm/i/l/skyradio.gif" alt="Sky Radio 101 FM – Non Stop Muziek"></a></div>
+<div class="lgr" id="bnr"><a href="http://www.nederland.fm/bnr" title="BNR Nieuwsradio - Nieuws"><img class="lg" src="//www.nederland.fm/i/l/bnr.gif" alt="BNR Nieuwsradio - Nieuws"></a></div>
+<div class="lgr" id="decibel"><a href="http://www.nederland.fm/decibel" title="Radio Decibel - De 90's zijn van ons ! - 90's/00's Hits"><img class="lg" src="//www.nederland.fm/i/l/decibel.gif" alt="Radio Decibel - De 90's zijn van ons ! - 90's/00's Hits"></a></div>
+<div class="lgr" id="sublimefm"><a href="http://www.nederland.fm/sublimefm" title="SubLime FM - Fresh Jazzy Sounds! - Jazz/Soul/Funk/Lounge"><img class="lg" src="//www.nederland.fm/i/l/sublimefm.gif" alt="SubLime FM - Fresh Jazzy Sounds! - Jazz/Soul/Funk/Lounge"></a></div>
+<div class="lgr" id="veronicafm"><a href="http://www.nederland.fm/veronica" title="Radio Veronica - Alleen Echte Hits! - Pop/Hits"><img class="lg" src="//www.nederland.fm/i/l/veronicafm.gif" alt="Radio Veronica - Alleen Echte Hits! - Pop/Hits"></a></div>
+<div class="lgr" id="radio10"><a href="http://www.nederland.fm/radio10" title="Radio 10 - De Grootste Hits Aller Tijden"><img class="lg" src="//www.nederland.fm/i/l/radio10.gif" alt="Radio 10 - De Grootste Hits Aller Tijden"></a></div>
+<div class="lgr" id="radio2"><a href="http://www.nederland.fm/radio2" title="Radio 2 - De muziek zegt alles - Pop/Oldies/Nederlandstalig"><img class="lg" src="//www.nederland.fm/i/l/radio2.gif" alt="Radio 2 - De muziek zegt alles - Pop/Oldies/Nederlandstalig"></a></div>
+</div></div>
+<div id="xm">
+<div id="xml">
+<div class="lgr" id="538hitzone"><a href="http://www.nederland.fm/538hitzone" title="538 Hitzone - De nieuwste hits gepresenteerd door 538 DJ talent - Pop/Hits"><img class="lg" src="//www.nederland.fm/i/l/538hitzone.gif" alt="538 Hitzone - De nieuwste hits gepresenteerd door 538 DJ talent - Pop/Hits"></a></div>
+<div class="lgr" id="q-musicnonstop"><a href="http://www.nederland.fm/qmusicnonstop" title="Qmusic Non-Stop - Pop/Hits"><img class="lg" src="//www.nederland.fm/i/l/q-musicnonstop.gif" alt="Qmusic Non-Stop - Pop/Hits"></a></div>
+<div class="lgr" id="skyhits"><a href="http://www.nederland.fm/skyradiohits" title="Sky Radio Hits – Non Stop de beste Hits"><img class="lg" src="//www.nederland.fm/i/l/skyhits.gif" alt="Sky Radio Hits – Non Stop de beste Hits"></a></div>
+<div class="lgr" id="538top50"><a href="http://www.nederland.fm/538top50" title="538 Top 50"><img class="lg" src="//www.nederland.fm/i/l/538top50.gif" alt="538 Top 50"></a></div> 
+<div class="lgr" id="qmusicsummer"><a href="http://www.nederland.fm/qmusicsummer" title="Qmusic Summer - Zomerhits - Pop/Hits"><img class="lg" src="//www.nederland.fm/i/l/qmusicsummer.gif" alt="Qmusic Summer - Zomerhits - Pop/Hits"></a></div>
+<div class="lgr" id="skysummerhits"><a href="http://www.nederland.fm/skysummerhits" title="Sky Radio Summerhits - Zomerhits - Pop/Hits"><img class="lg" src="//www.nederland.fm/i/l/skysummerhits.gif" alt="Sky Radio Summerhits - Zomerhits - Pop/Hits"></a></div>
+<div class="lgr" id="538zomer"><a href="http://www.nederland.fm/538zomer" title="538 Zomer - Zomerhits - Pop/Hits"><img class="lg" src="//www.nederland.fm/i/l/538zomer.gif" alt="538 Zomer - Zomerhits - Pop/Hits"></a></div>
+<div class="lgr" id="qmusictop40"><a href="http://www.nederland.fm/qmusictop40" title="Qmusic Top 40"><img class="lg" src="//www.nederland.fm/i/l/qmusictop40.gif" alt="Qmusic Top 40"></a></div>
+<div class="lgr" id="skywork"><a href="http://www.nederland.fm/skywork" title="Sky Radio Non Stop @ Work"><img class="lg" src="//www.nederland.fm/i/l/skywork.gif" alt="Sky Radio Non Stop @ Work"></a></div>
+<div class="lgr" id="538dancedept"><a href="http://www.nederland.fm/538dancedept" title="538 Dance Department -The best new dance music - Dance"><img class="lg" src="//www.nederland.fm/i/l/538dancedept.gif" alt="538 Dance Department -The best new dance music - Dance"></a></div>
+<div class="lgr" id="q-musicfouteuur"><a href="http://www.nederland.fm/qmusichetfouteuur" title="Qmusic Het Foute Uur - Hits/Classics"><img class="lg" src="//www.nederland.fm/i/l/q-musicfouteuur2.gif" alt="Qmusic Het Foute Uur - Hits/Classics"></a></div>
+<div class="lgr" id="skylovesongs"><a href="http://www.nederland.fm/skyradiolovesongs" title="Sky Radio Lovesongs – Non Stop Lovesongs"><img class="lg" src="//www.nederland.fm/i/l/skylovesongs.gif" alt="Sky Radio Lovesongs – Non Stop Lovesongs"></a></div>
+</div>
+<div id="xmm">
+<div id="xmmt">
+<div id="playerbg" class="shadow">
+<div id="player">
+<div id="nlfm_video" style="display:none"></div>
+<div id="zender_page">
+<img src="//www.nederland.fm/i/a/middengedeeltetitel.gif" alt="Nederland.FM" width="300" height="34">
+<img src="//www.nederland.fm/i/a/middengedeeltemidden.gif" alt="middengedeeltemidden" width="300" height="93">
+<img src="//www.nederland.fm/i/a/playergedeelte.gif" alt="middengedeeltemidden" width="300" height="59">
+</div></div></div></div>
+<div id="xmmb">
+<div class="lgr" id="100pnl"><a href="http://www.nederland.fm/100pnl" title="100% NL - De Muziek van Nederland"><img class="lg" src="//www.nederland.fm/i/l/100pnl.gif" alt="100% NL - De Muziek van Nederland"></a></div>
+<div class="lgr" id="100feest"><a href="http://www.nederland.fm/100feest" title="100% NL FEEST - De leukste feesthits van Nederland"><img class="lg" src="//www.nederland.fm/i/l/100feest.gif" alt="100% NL FEEST - De leukste feesthits van Nederland"></a></div>
+<div class="lgr" id="100nederpop"><a href="http://www.nederland.fm/100nederpop" title="100% NL Nederpop"><img class="lg" src="//www.nederland.fm/i/l/100nederpop.gif" alt="100% NL Nederpop"></a></div>
+</div></div>
+<div id="xmr">
+<div class="lgrrechts" id="veronicanonstop"><a href="http://www.nederland.fm/veronicanonstop" title="Veronica Non-Stop"><img class="lg lgrechts shadow" src="//www.nederland.fm/i/l/veronicanonstop.gif" alt="Veronica Non-Stops"></a></div>
+<div class="lgr" id="radio10nonstop"><a href="http://www.nederland.fm/radio10nonstop" title="Radio 10 Non Stop"><img class="lg" src="//www.nederland.fm/i/l/radio10nonstop.gif" alt="Radio 10 Non Stop"></a></div>
+<div class="lgr" id="3fm"><a href="http://www.nederland.fm/3fm" title="3 FM - Serious Radio - Pop/Hits/(Live) Concerts & Festivals"><img class="lg" src="//www.nederland.fm/i/l/3fm.gif" alt="3 FM - Serious Radio - Pop/Hits/(Live) Concerts & Festivals"></a></div>
+<div class="lgrrechts" id="rockradio"><a href="http://www.nederland.fm/veronicarockradio" title="Veronica Rock Radio  - Rock"><img class="lg lgrechts shadow" src="//www.nederland.fm/i/l/rockradio.gif" alt="Veronica Rock Radio  - Rock"></a></div>
+<div class="lgr" id="6070shits"><a href="http://www.nederland.fm/radio106070shits" title="De Grootste Hits uit de 60's & 70's"><img class="lg" src="//www.nederland.fm/i/l/6070shits.gif" alt="De Grootste Hits uit de 60's & 70's"></a></div>
+<div class="lgr" id="radio4"><a href="http://www.nederland.fm/radio4" title="Radio 4 - Klassiek leeft op 4! - Klassiek/(Live) Concerten"><img class="lg" src="//www.nederland.fm/i/l/radio4.gif" alt="Radio 4 - Klassiek leeft op 4! - Klassiek/(Live) Concerten"></a></div>
+<div class="lgrrechts" id="top1000"><a href="http://www.nederland.fm/veronicatop1000" title="De Top 1000 Allertijden - De 1000 beste platen ooit gemaakt - Hits/Classics"><img class="lg lgrechts shadow" src="//www.nederland.fm/i/l/top1000.gif" alt="De Top 1000 Allertijden - De 1000 beste platen ooit gemaakt - Hits/Classics"></a></div>
+<div class="lgr" id="radio1080shits"><a href="http://www.nederland.fm/radio1080shits" title="De Grootste Hits uit de 80's"><img class="lg" src="//www.nederland.fm/i/l/radio1080shits.gif" alt="De Grootste Hits uit de 80's"></a></div>
+<div class="lgr" id="radio5"><a href="http://www.nederland.fm/radio5" title="Radio 5 - Nostalgia - Oldies/Easy Listening/Middle of the road"><img class="lg" src="//www.nederland.fm/i/l/radio5.gif" alt="Radio 5 - Nostalgia - Oldies/Easy Listening/Middle of the road"></a></div>
+<div class="lgrrechts" id="classicfm"><a href="http://www.nederland.fm/classicfm" title="ClassicNL – Licht klassiek voor iedereen"><img class="lg lgrechts shadow" src="//www.nederland.fm/i/l/classicfm.gif" alt="ClassicNL – Licht klassiek voor iedereen"></a></div>
+<div class="lgr" id="arrow"><a href="http://www.nederland.fm/arrowclassicrock" title="Arrow Classic Rock - Classic Rock"><img class="lg" src="//www.nederland.fm/i/l/arrow.gif" alt="Arrow Classic Rock - Classic Rock"></a></div>
+<div class="lgr" id="funx"><a href="http://www.nederland.fm/funx" title="FunX - Welkom bij jezelf ! - Slow Jamz/Fusion/Dance Classics"><img class="lg" src="//www.nederland.fm/i/l/funx.gif" alt="FunX - Welkom bij jezelf ! - Slow Jamz/Fusion/Dance Classics"></a></div>
+</div></div>
+<div id="xb">
+<div id="xbt">
+<div id="xbtl">
+<div class="lgr xlh" id="538verruckt"><a href="http://www.nederland.fm/538verruckt" title="538 Verr&uuml;ckte Stunden"><img class="lg" src="//www.nederland.fm/i/l/538verruckt.gif" alt="538 Verr&uuml;ckte Stunden"></a></div> 
+</div>
+<div id="xbtm">
+<div id="bannerbg" class="shadow"><div class="gi gf"></div>
+<div id="xbtml">
+<div class="lgrbanner" id="joe"><a href="http://www.nederland.fm/joe" title="Joe"><img src="//www.nederland.fm/i/banners/joe_120x60.gif" alt="Joe" width="120" height="60"/></a></div>
+</div> 
+<div id="xbtmm">
+<div id="fullbanner">
+<a href="#" onclick="radio538()" title="Radio 538"><img  src="//www.nederland.fm/i/banners/538_devon_468x60.gif" alt="" width="468" height="60"/></a>
+</div></div><div id="xbtmr">
+<div class="lgrbanner" id="grandprix"><a href="http://www.nederland.fm/grandprix" title="Grand Prix Radio - Formule 1 Live met Olav Mol en Danceable Hits/Classics">
+	<img  src="//www.nederland.fm/i//banners/grandprixradio_120x60_2.gif" alt="Grand Prix Radio - Formule 1 Live met Olav Mol en Danceable Hits/Classics" width="120" height="60"/>
+</a></div>
+</div></div></div>
+<div id="xbtr">
+<div class="lgrhr xlh" id="candlelight"><a href="http://www.nederland.fm/candlelight" title="Candlelight Radio - Lovesongs"><img class="lghr shadow" src="//www.nederland.fm/i/l/candlelight.gif" alt="Candlelight Radio - Lovesongs"></a></div>
+</div></div><div id="xbb">
+<div class="lgr" id="538ibiza"><a href="http://www.nederland.fm/538ibiza" title="538 Ibiza"><img class="lg" src="//www.nederland.fm/i/l/538ibiza.gif" alt="538 Ibiza"></a></div>
+<div class="lgr" id="soulradio"><a href="http://www.nederland.fm/soulradio" title="Soul Radio - The station that moves you - Soul"><img class="lg"  src="//www.nederland.fm/i/l/soulradio.gif" alt="Soul Radio - The station that moves you - Soul"></a></div>
+<div class="lgr" id="slamfm"><a href="http://www.nederland.fm/slamfm" title="SLAM! - The New Music Station - Dance/Club"><img class="lg" src="//www.nederland.fm/i/l/slamfm.gif" alt="SLAM! - The New Music Station - Dance/Club"></a></div>
+<div class="lgr" id="slamnonstop"><a href="http://www.nederland.fm/slamnonstop" title="Slam! Non Stop"><img class="lg" src="//www.nederland.fm/i/l/slamnonstop.gif" alt="Slam! Non Stop"></a></div>
+<div class="lgr" id="slamsummer"><a href="http://www.nederland.fm/slamsummer" title="Slam Summer - Zomerhits - Pop/Hits"><img class="lg" src="//www.nederland.fm/i/l/slamsummer.gif" alt="Slam Summer - Zomerhits - Pop/Hits"></a></div>
+<div class="lgr" id="slamhousuh"><a href="http://www.nederland.fm/slamhousuh" title="SLAM! Housuh In De Pauzuh"><img class="lg" src="//www.nederland.fm/i/l/slamhousuh.gif" alt="SLAM! Housuh In De Pauzuh"></a></div>
+<div class="lgr" id="slammix"><a href="http://www.nederland.fm/slammix" title="SLAM! Mixmarathon"><img class="lg" src="//www.nederland.fm/i/l/slammix.gif" alt="SLAM! Mixmarathon"></a></div>
+<div class="lgr" id="caz"><a href="http://www.nederland.fm/arrowcaz" title="Arrow CAZ - Your Hits More Music - Pop/Hits"><img class="lg" src="//www.nederland.fm/i/l/caz.gif" alt="Arrow CAZ - Your Hits More Music - Pop/Hits"></a></div>
+<div class="lgr" id="efteling"><a href="http://www.nederland.fm/efteling" title="Efteling Kids Radio - kinderliedjes"><img class="lg" src="//www.nederland.fm/i/l/efteling.gif" alt="Efteling Kids Radio - kinderliedjes"></a></div>
+</div></div></div></div>
+<div id="xf"><style>.footerLink{padding-right: 52px;}</style>
+<div id="xful" style="margin-left:70px;width:998px">
+<a href="https://www.nederland.tv"  rel="noreferrer" title="Nederland.TV: TV kijken via internet" class="footerLink" target="_blank" style="width:80px;">Nederland.TV</a>
+<a href="http://www.onlineradio.nl"  rel="noreferrer"  title="OnlineRadio.nl - Best of the Rest !" class="footerLink" target="_blank" style="width:80px;">OnlineRadio.nl</a>
+<a href="/cookies.php" title="Privacy &amp; Cookies" class="footerLink" target="_blank" style="width:100px;">Privacy &amp; Cookies</a>
+<a id="htmldlg" href="/apps.htm" title="Nederland.FM op je Mobiel" class="footerLink dojoLink" style="width:130px;">Mobiele versies & apps</a>
+<!-- <a id="contact" href="#" title="Stuur bericht naar Nederland.FM" class="footerLink dojoLink" style="width:50px">Mail ons</a> -->
+<a id="htmldlg" href="/overons.htm" title="Over ons" class="footerLink dojoLink" style="width:50px">Contact</a>
+<a href="http://www.facebook.com/nederlandfm"  rel="noreferrer"  target="_blank" title="Volg ons op Facebook" class="footerLink" style="width:130px;">Volg ons op Facebook</a>
+<!-- <a href="http://www.twitter.com/nederlandfm" target="_blank" title="Volg ons op Twitter" class="footerLink" style="width:130px;" >Volg ons op Twitter</a> -->
+</div>
+</div>
+<div style="text-align:center">	
+<!-- /13436254/NLFM_ROS_Left_1280-1600px_ATF -->
+<div id='div-gpt-ad-1510675016342-2'>
+<script>
+googletag.cmd.push(function() {googletag.display('div-gpt-ad-1510675016342-2'); });
+</script>
+</div>
+</div>
+</div>
+<script type="text/javascript">
+var google_conversion_id = 1056687190;
+var google_custom_params = window.google_tag_params;
+var google_remarketing_only = true;
+</script>
+<script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js"></script>
+<iframe width="0" height="0" src="//www.nederland.fm/stats/bezoek_count.php"  style="visibility:hidden;display:none"></iframe> 
+<img src="" border="0" width="1" height="1" id="track"/>
+<script>
+</script>
+<script   src="https://code.jquery.com/jquery-3.2.1.min.js"   integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="   crossorigin="anonymous"></script>
+</body>
+</html>

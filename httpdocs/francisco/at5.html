@@ -1,0 +1,266 @@
+
+<html>
+    <head>
+        <script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
+        <script>
+            var massariusData = {
+                rubiconId: 368100,
+                gamId: 13436254,
+                get allDesktopSizes() {
+                    var sizes = [];
+                    Object.keys(this.positions).forEach(function (position) {
+                    var adUnit = massariusData.positions[position.toString()];
+                    adUnit.sizes.desktopSizes.forEach(function (size) {
+                        var copySize = JSON.stringify(size);
+                        var copySizes = JSON.stringify(sizes);
+                        copySizes.indexOf(copySize) == -1 ? sizes.push(size) : null;
+                    });
+                    });
+                    return sizes;
+                },
+                get allPhoneSizes() {
+                    var sizes = [];
+                    Object.keys(this.positions).forEach(function (position) {
+                    var adUnit = massariusData.positions[position.toString()];
+                    adUnit.sizes.phoneSizes.forEach(function (size) {
+                        var copySize = JSON.stringify(size);
+                        var copySizes = JSON.stringify(sizes);
+                        copySizes.indexOf(copySize) == -1 ? sizes.push(size) : null;
+                    });
+                    });
+                    return sizes;
+                },
+                msTagArray: ["ros", "article"],
+                positions: {
+                    _at5_web_desktop_home_leaderboard_atf: {
+                    id: "at5_web_desktop_home_leaderboard_atf",
+                    gamName: "at5_web_desktop_home_leaderboard_atf",
+                    inPrebid: true,
+                    isVideo: false,
+                    msTag: {
+                        phone: ["ros", "article"],
+                        desktop: ["ros", "article"],
+                    },
+                    sizes: {
+                        desktopSizes:
+                        window.screen.availWidth > 1520
+                            ? [
+                                [728, 90],
+                                [970, 250],
+                                [970, 90],
+                                [1800, 1000],
+                                [970, 1000],
+                            ]
+                            : [
+                                [728, 90],
+                                [970, 250],
+                                [970, 90],
+                            ],
+                        phoneSizes: [
+                        [300, 50],
+                        [320, 100],
+                        [320, 50],
+                        [300, 100],
+                        ],
+                        get allSizes() {
+                        return this.desktopSizes.concat(this.phoneSizes);
+                        },
+                        get deviceSizesGam() {
+                        var filters = [
+                            [1800, 1000],
+                            [1800, 200],
+                            [970, 1000],
+                        ];
+                        return window.screen.availWidth >= 769
+                            ? this.desktopSizes.filter(
+                                (size) =>
+                                JSON.stringify(filters).indexOf(JSON.stringify(size)) == -1
+                            )
+                            : this.phoneSizes.filter(
+                                (size) =>
+                                JSON.stringify(filters).indexOf(JSON.stringify(size)) == -1
+                            );
+                        },
+                        get deviceSizes() {
+                        return window.screen.availWidth >= 768
+                            ? this.desktopSizes
+                            : this.phoneSizes;
+                        },
+                    },
+                    placementIds: {
+                        openx: {
+                        desktop: 543992989,
+                        phone: 543992990,
+                        },
+                        improvedigital: {
+                        desktop: 22462658,
+                        phone: 22462659,
+                        },
+                        rubicon: {
+                        desktop: 2003746,
+                        phone: 2003748,
+                        },
+                        appnexus: {
+                        desktop: 21229826,
+                        phone: 21229827,
+                        },
+                        pubmatic: {
+                        desktop: 3525255,
+                        phone: 3525256,
+                        },
+                        tmp: {
+                        desktop: 21344589,
+                        phone: 21345493,
+                        },
+                        weborama: {
+                        desktop: 22472708,
+                        phone: 22472715,
+                        },
+                        richaudience: {},
+                        smartadserver: {},
+                        teads: {},
+                        justpremium: {
+                        desktop: 119261,
+                        phone: 119264
+                        },
+                        invibes: {},
+                    },
+                    },
+                    _Mamaliefde_nl_ROS_Side: {
+                    id: "div-gpt-ad-mamaliefde.nl_ros_side",
+                    gamName: "Mamaliefde.nl_ROS_Side",
+                    inPrebid: true,
+                    isVideo: false,
+                    msTag: {
+                        phone: ["ros", "article"],
+                        desktop: ["ros", "article"],
+                    },
+                    sizes: {
+                        desktopSizes: [
+                        [300, 250],
+                        [300, 600],
+                        ],
+                        phoneSizes: [
+                        [300, 50],
+                        [320, 100],
+                        [320, 50],
+                        [300, 100],
+                        [300, 250],
+                        [300, 600],
+                        [336, 280],
+                        ],
+                        get allSizes() {
+                        return this.desktopSizes.concat(this.phoneSizes);
+                        },
+                        get deviceSizesGam() {
+                        var filters = [
+                            [1800, 1000],
+                            [1800, 200],
+                            [970, 1000],
+                        ];
+                        return window.screen.availWidth >= 769
+                            ? this.desktopSizes.filter(
+                                (size) =>
+                                JSON.stringify(filters).indexOf(JSON.stringify(size)) == -1
+                            )
+                            : this.phoneSizes.filter(
+                                (size) =>
+                                JSON.stringify(filters).indexOf(JSON.stringify(size)) == -1
+                            );
+                        },
+                        get deviceSizes() {
+                        return window.screen.availWidth >= 768
+                            ? this.desktopSizes
+                            : this.phoneSizes;
+                        },
+                    },
+                    placementIds: {
+                        openx: {
+                        desktop: 543992991,
+                        phone: 543992992,
+                        },
+                        improvedigital: {
+                        desktop: 22462660,
+                        phone: 22462661,
+                        },
+                        rubicon: {
+                        desktop: 2003750,
+                        phone: 2003752,
+                        },
+                        appnexus: {
+                        desktop: 21229830,
+                        phone: 21229831,
+                        },
+                        pubmatic: {
+                        desktop: 3525258,
+                        phone: 3525259,
+                        },
+                        tmp: {
+                        desktop: 21345485,
+                        phone: 21345555,
+                        },
+                        weborama: {
+                        desktop: 22472709,
+                        phone: 22472716,
+                        },
+                        richaudience: {},
+                        smartadserver: {},
+                        teads: {},
+                        justpremium: {},
+                        invibes: {},
+                    },
+                    },
+                },
+            };
+    
+            window.document.addEventListener("backfillPosition", function (e) {
+                let detail = e.detail;
+                let positionName = detail.positionName
+                let divID = detail.divID
+
+                console.log(`Received name '${positionName}' from creative`);
+                console.log(`Received divID '${divID}' from creative`);
+    
+                for (const position of Object.values(massariusData.positions)) {
+                    let divId = position.id;
+                    let gamName = position.gamName;
+    
+                    if (position.gamName == positionName){
+                        console.log("Processed event accordingly.")
+    
+                        document.querySelector(`#${divID}`).setAttribute('data-google-query-id', '')
+                        document.querySelector(`#${divID}`).innerHTML = ''
+                        googletag.cmd.push(function() {
+                            googletag.destroySlots();
+                            myAddSlot = googletag.defineSlot(`/13436254/${positionName}`, position.deviceSizesGam, `${divID}`).addService(googletag.pubads());
+                            googletag.enableServices();
+                            googletag.display(`${divID}`);
+                            googletag.pubads().refresh() 
+                        });
+                    }
+                }
+            })
+        </script>
+
+        <script>
+        window.googletag = window.googletag || {cmd: []};
+        googletag.cmd.push(function() {
+            googletag.defineSlot('/21832092231/at5/at5_web_desktop_home_leaderboard_atf', [[728, 90], [970, 90], [970, 250]], 'div-gpt-at5_web_desktop_home_leaderboard_atf').addService(googletag.pubads());
+            googletag.pubads().enableSingleRequest();
+            googletag.enableServices();
+        });
+        </script>
+    </head>
+    <body>
+    
+        ------------------------------------------------------------
+        <!-- /21832092231/at5/at5_web_desktop_home_leaderboard_atf -->
+        <div id='div-gpt-at5_web_desktop_home_leaderboard_atf' style='min-width: 728px; min-height: 90px;'>
+            <script>
+            googletag.cmd.push(function() { googletag.display('div-gpt-at5_web_desktop_home_leaderboard_atf'); });
+            </script>
+        </div>
+        ------------------------------------------------------------
+            
+    </body>
+    </html>

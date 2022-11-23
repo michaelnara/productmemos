@@ -1,0 +1,8 @@
+2019/02/04 05:15:57 [crit] 15779#0: *18608 SSL_do_handshake() failed (SSL: error:1408A0A0:SSL routines:ssl3_get_client_hello:length too short) while SSL handshaking, client: 108.178.16.154, server: 145.131.32.178:443
+2019/02/10 14:42:49 [crit] 15779#0: *77961 SSL_do_handshake() failed (SSL: error:1408A0A0:SSL routines:ssl3_get_client_hello:length too short) while SSL handshaking, client: 108.178.16.154, server: 145.131.32.178:443
+2019/02/17 01:26:26 [crit] 15779#0: *134817 SSL_do_handshake() failed (SSL: error:1408A0A0:SSL routines:ssl3_get_client_hello:length too short) while SSL handshaking, client: 108.178.16.154, server: 145.131.32.178:443
+2019/02/20 04:48:48 [crit] 15779#0: *149721 SSL_do_handshake() failed (SSL: error:14094085:SSL routines:ssl3_read_bytes:ccs received early) while SSL handshaking, client: 212.71.245.103, server: 145.131.32.178:443
+2019/02/21 19:41:21 [crit] 15779#0: *161941 SSL_do_handshake() failed (SSL: error:1408A0A0:SSL routines:ssl3_get_client_hello:length too short) while SSL handshaking, client: 108.178.16.154, server: 145.131.32.178:443
+2019/02/26 04:07:22 [crit] 15779#0: *180763 SSL_do_handshake() failed (SSL: error:1408A0A0:SSL routines:ssl3_get_client_hello:length too short) while SSL handshaking, client: 108.178.16.154, server: 145.131.32.178:443
+2019/02/28 22:57:32 [crit] 15779#0: *194662 SSL_do_handshake() failed (SSL: error:1408A0A0:SSL routines:ssl3_get_client_hello:length too short) while SSL handshaking, client: 108.178.16.154, server: 145.131.32.178:443
+2019/03/04 11:59:19 [crit] 15779#0: *207907 SSL_do_handshake() failed (SSL: error:1408A0A0:SSL routines:ssl3_get_client_hello:length too short) while SSL handshaking, client: 108.178.16.154, server: 145.131.32.178:443

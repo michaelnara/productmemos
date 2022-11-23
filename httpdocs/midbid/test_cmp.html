@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Test-page</title>
+<script>
+//Load Faktor
+
+(function() {
+        var fakt = document.createElement('script');
+        fakt.async = true;
+        fakt.type = 'text/javascript';
+        var useSSL = 'https:' == document.location.protocol;
+        fakt.src = (useSSL ? 'https:' : 'http:') + '//config-prod.choice.faktor.io/8c970794-65fd-47af-94f8-f3ffea5e2a00/faktor.js';
+        fakt.onload = function() {
+            window.__cmp('addEventListener', 'acceptAllButtonClicked', function() {
+                checkConsent();
+            });
+            window.__cmp('addEventListener', 'exitButtonClicked', function() {
+                checkConsent();
+            });
+            window.__cmp('addEventListener', 'cmpReady', function() {
+                checkConsent();
+            });
+        };
+        var node = document.getElementsByTagName('script')[0];
+        node.parentNode.insertBefore(fakt, node);
+    })();
+
+ //CMP Logic
+
+    var consentForAds;
+    var checkConsent = function() {
+        console.log('Faktor.io CMP: checkConsent');
+        window.__cmp('getVendorConsents', undefined, function(data) {
+            var newConsentForAds = (data.purposeConsents[1] && data.purposeConsents[2] && data.purposeConsents[3] && data.purposeConsents[4] && data.purposeConsents[5]);
+            console.log('consentForAds: ' + newConsentForAds);
+            if (consentForAds !== newConsentForAds) {
+                consentForAds = newConsentForAds;
+                googletag.cmd.push(function() {
+                    googletag.pubads().setRequestNonPersonalizedAds(consentForAds ? 0 : 1);
+                });
+                window.__cmp('getConsentData', undefined, function(data) {
+                    // pbjs.que.push(function() {pbjs.setConfig({consentManagement:{allowAuctionWithoutConsent = true}});});
+
+                    googletag.cmd.push(function() {
+                        googletag.pubads().setTargeting('iab_string', [data.consentData]);
+                        googletag.pubads().setTargeting('consent', [consentForAds ? 1 : 0]);
+                        googletag.pubads().setTargeting('rev_consent', [consentForAds ? 0 : 1]);
+                        googletag.pubads().refresh();
+
+                        //if (!pbjs.initAdserverSet) {
+                        //    initAdserver();
+                        });
+                    });
+                }
+        });
+    }
+
+
+</script>
+
+<script async='async' src='https://www.googletagservices.com/tag/js/gpt.js'></script>
+<script>
+  var googletag = googletag || {};
+  googletag.cmd = googletag.cmd || [];
+</script>
+
+<script>
+  googletag.cmd.push(function() {
+    googletag.defineSlot('/87190325/midbid_test_unit', [[728, 90], [300, 250]], 'div-gpt-ad-1551696090183-0').addService(googletag.pubads());
+    googletag.pubads().enableSingleRequest();
+    googletag.enableServices();
+  });
+</script>
+</head>
+
+<body>
+<p>
+Lorem ipsum dolor sit amet, oportere sapientem referrentur per no, sumo affert discere eu vel, id sit esse atomorum partiendo. Ne qui prima graece feugiat, at usu graeco luptatum. Atomorum vulputate scripserit ne sed, per ei verterem consequat persequeris. Dicit quaestio usu no, pri ei eripuit vulputate. Novum voluptaria intellegebat eu est, quidam melius abhorreant no sea.
+
+Ex affert detracto usu. Ut moderatius comprehensam nam, te vis graeci pertinax. Pri eu putant efficiantur, ullum appareat principes vel in. Ut insolens patrioque disputationi pro, in reque utamur quo, ei posse mazim pro.
+
+Vix vidisse feugiat delicatissimi ne. Populo omnesque te pro, idque dolore has ne. Liber graece semper no sit, ad mea tale clita reformidans. Vim cu aperiri maiestatis, sea probo iracundia ad. Nihil scriptorem accommodare duo ex. Pri debet impetus ex, est wisi autem vidisse te, per eu soluta epicurei quaestio. Sit ea probo necessitatibus, vis id putent pertinacia.
+
+Sed cu impetus electram. Stet novum no has. Ei nonumes maiorum dissentiet sed, nostro vivendum quo ei. Velit dicant concludaturque quo eu, cu eam nihil mucius recteque. Pro et soluta graecis splendide, putent impedit in mel.
+
+Ea bonorum intellegat nam, populo oblique officiis vim eu. Te mel ludus dicam utamur, porro graece te vim. Eos ad utamur vocibus inciderint, pri feugiat denique pertinax at. Ex duo idque graece, nemore facilisi an usu. Quod augue scaevola est ad, nullam quaerendum ius eu. Ut liber mandamus suavitate eos, ex per omnium suavitate reprimique, ea sint ponderum qui. Dico impetus suscipiantur at vel.
+
+Erant movet legere ei est, sed aeque delectus an, eam ex alii timeam ullamcorper. Eos choro civibus eu. Suas atqui utamur vis ex, cum elit ridens at. In aeque quaeque ius, ut ceteros offendit scriptorem mea. Usu maluisset consulatu in, cetero copiosae mei cu. Ea mea veri deterruisset, eam et omittam facilisis. Usu ei suavitate gloriatur complectitur, te cum discere concludaturque.</p>
+
+<!-- /87190325/midbid_test_unit -->
+<div id='div-gpt-ad-1551696090183-0'>
+<script>
+googletag.cmd.push(function() { googletag.display('div-gpt-ad-1551696090183-0'); });
+</script>
+</div>
+
+<p>
+Eos id blandit referrentur, cum ne prompta signiferumque. Te est atqui maluisset, has ne patrioque inciderint, quando tacimates ius ne. Per populo pericula et, ad quo doctus scriptorem. Ex per labore debitis.
+
+Ius brute dolor accommodare cu, simul quaestio eloquentiam te duo. Eu vis omnis novum principes. Cum an nostro audire labitur, vide inermis appetere nec ad, stet harum eripuit ea pro. Pri minim urbanitas forensibus in, id sit putant adipiscing disputando. In vix quas dicat volumus.
+
+An possit alterum mea, ea postea regione pri, te novum platonem sed. Ut sed debitis praesent adversarium. Fastidii principes consulatu per ne. Repudiare deseruisse expetendis eam ad.
+
+Ad sit mucius audiam, sed no sint feugiat intellegat. Id porro sapientem has, duo ut debet nemore eloquentiam. Nulla nobis te est, ut cum malorum erroribus similique, mutat verterem duo cu. Ea sed labitur perpetua, sed no denique pertinacia. Noster ceteros persecuti duo id, eos no vide vidit detracto.
+
+Cu quo solum recusabo quaerendum. Ut quot voluptaria est, an duo quis sanctus constituam, tale wisi ne quo. Labore commodo eu mei. Ad has omnesque ocurreret, ad albucius similique pri. Homero ponderum quaestio eu mea.
+
+At vis modus libris, ne habeo putent reformidans sea. Aperiri feugiat eu per, quo hinc discere erroribus eu. Cum in elitr meliore, eripuit luptatum no duo. Id equidem constituam ius. No habeo euismod suavitate mea, ne quo sonet eruditi sanctus.
+
+Tota explicari vis an. Eam vivendo tincidunt in, mel labore commodo invidunt ea. At latine singulis vel, cu nihil habemus est. Est ea decore scaevola, in usu etiam viderer, vix ea postea impetus. Nam cu soluta efficiendi, atqui zril explicari ei vim.
+
+Eloquentiam mediocritatem ius at. Dicat falli eu ius. Quem magna mazim ei eam, eum putent placerat ne, sed tempor vocent te. Id vis dicat ullum molestie. Per id homero iudicabit. Incorrupte complectitur vim ei. No sed nulla omnium, in has salutatus mnesarchum omittantur.
+
+An usu nostro viderer, te ius sumo ludus accusamus. Maiestatis appellantur id nam. Partiendo mnesarchum definitionem no nec, erant bonorum delicata cum an. Eam erant graece reformidans no, et accusata persequeris vel.
+
+At elit ponderum nec, et percipit tractatos sapientem sea. No quo partem ceteros patrioque, mea no modus nullam. Qui duis primis ut, cu eam iuvaret euripidis. Sumo minim id sea.
+
+</p>
+
+</body>
+</html>

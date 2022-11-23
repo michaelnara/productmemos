@@ -1,0 +1,7 @@
+66.249.79.189 - - [06/Mar/2019:04:21:32 +0000] "GET /robots.txt HTTP/1.0" 404 1954 "-" "Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)"
+66.249.79.185 - - [06/Mar/2019:04:21:33 +0000] "GET /ads.txt HTTP/1.0" 200 389 "-" "Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)"
+66.249.79.153 - - [06/Mar/2019:04:41:23 +0000] "GET /robots.txt HTTP/1.0" 404 572 "-" "Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)"
+66.249.79.155 - - [06/Mar/2019:04:41:24 +0000] "GET /ads.txt HTTP/1.0" 200 389 "-" "Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)"
+184.105.247.195 - - [06/Mar/2019:18:00:12 +0000] "GET / HTTP/1.0" 200 1773 "-" "-"
+107.6.150.242 - - [06/Mar/2019:18:49:35 +0000] "GET /cgi-bin/config.exp HTTP/1.0" 404 1962 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36"
+178.73.215.171 - - [06/Mar/2019:19:24:37 +0000] "GET / HTTP/1.0" 200 5971 "-" "-"

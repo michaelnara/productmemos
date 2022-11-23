@@ -1,0 +1,17 @@
+* {
+  padding:0;
+  margin:0;
+}
+
+.outer {
+height: 1800px;
+}
+.container {
+height: 1800px;
+}
+.header{
+height: 400px;
+}
+.body{
+height: 1800px;
+}

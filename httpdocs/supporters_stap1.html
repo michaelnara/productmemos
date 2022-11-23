@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>supporters test</title>
+  <script async='async' src='https://www.googletagservices.com/tag/js/gpt.js'></script>
+<script>
+  var googletag = googletag || {};
+  googletag.cmd = googletag.cmd || [];
+</script>
+
+<script>
+// variable size mapping, top position
+// var mapping1 = googletag.sizeMapping().
+//   addSize([1024, 768], [[970, 250], [728, 90]]).
+//   addSize([880, 660], [728, 90]).
+//   addSize([0, 0], [300, 250]).
+//   build();
+
+// variable size mapping, bottom position
+// var mapping2 = googletag.sizeMapping().
+//   addSize([880, 660], [[300, 600], [300, 250]]).
+//   addSize([0, 0], [300, 250]).
+//   build();
+// adSlot.defineSizeMapping(mapping2);
+
+// // GPT slots
+//  var gptAdSlots = [];
+ 
+// gptAdSlots[0] = googletag.defineSlot('/87190325/HB_1/HB_1_LB', [1024, 120], 'div-ad-HB-1').
+//   defineSizeMapping(mapping1).
+//   setCollapseEmptyDiv(true).
+//   addService(googletag.pubads());
+ 
+// gptAdSlots[1] = googletag.defineSlot('/87190325/HB_1/HB_4_MR', [300, 250], 'div-ad-HB-2').
+//   defineSizeMapping(mapping2).
+//   setCollapseEmptyDiv(true).
+//   addService(googletag.pubads());
+ 
+// // Start ad fetching
+// googletag.enableServices();
+//call the right sizes based on viewport
+
+var top_desktop = [[970, 250], [728, 90]];
+var top_tablet = [728, 90]
+var top_phone = [300, 250]
+var bottom_desktop = [[300, 600], [300, 250]];
+var bottom_phone = [300, 250]
+
+
+if (window.screen.availWidth > 768) {
+    top_sizes = top_desktop
+    bottom_sizes = bottom_desktop
+} else if (window.screen.availWidth > 660) {
+    top_sizes = top_tablet
+    bottom_sizes = bottom_desktop            
+} else {
+    top_sizes = top_phone
+    bottom_sizes = bottom_phone 
+}
+
+  googletag.cmd.push(function() {
+    googletag.defineSlot('/87190325/HB_1/HB_1_LB', top_sizes, 'div-ad-HB-1').addService(googletag.pubads());
+    googletag.defineSlot('/87190325/HB_1/HB_4_MR', bottom_sizes, 'div-ad-HB-2').addService(googletag.pubads());
+    googletag.pubads().enableSingleRequest();
+    googletag.enableServices();
+  });
+</script>
+</head>
+
+<body>
+  <h1> Whats'up? </h1>
+
+  <!-- /87190325/HB_1/HB_1_LB -->
+<div id='div-ad-HB-1'; align="center">
+       <script>
+              googletag.cmd.push(function() { googletag.display('div-ad-HB-1'); });
+       </script>
+</div>
+
+<!-- /87190325/HB_1/HB_4_MR -->
+<div id='div-ad-HB-2' align="center">
+       <script>
+              googletag.cmd.push(function() { googletag.display('div-ad-HB-2'); });
+       </script>
+</div>
+
+</body>
+</html>

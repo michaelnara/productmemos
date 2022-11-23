@@ -1,0 +1,101 @@
+<html>
+
+    <head>
+        <link rel="icon" type="image/png" href="/favicon.png">
+        <script async src="//www.googletagservices.com/tag/js/gpt.js"></script>
+       <!--  <script async src="//acdn.adnxs.com/prebid/not-for-prod/1/prebid.js"></script> -->
+        <script async src="//ws-labs.nl/prod/prebid.js"></script>
+        <script>
+            var PREBID_TIMEOUT = 2000;
+            var FAILSAFE_TIMEOUT = 3000;
+
+            var adUnits = [{
+                code: 'div-1',
+
+                mediaTypes: {
+                    video: {
+                        context: 'outstream',
+                        playerSize: [640, 480]
+                    }
+                },
+                bids: [
+
+                    {
+                        bidder: 'teads',
+                        params: {
+                            pageId: 92241,
+                            placementId: 99956
+                        }
+                    }
+
+                ]
+            }];
+
+
+            var googletag = googletag || {};
+            googletag.cmd = googletag.cmd || [];
+            googletag.cmd.push(function() {
+                googletag.pubads().disableInitialLoad();
+            });
+
+            var pbjs = pbjs || {};
+            pbjs.que = pbjs.que || [];
+            pbjs.que.push(function() {
+                pbjs.addAdUnits(adUnits);
+                pbjs.requestBids({
+                    bidsBackHandler: initAdserver,
+                    timeout: PREBID_TIMEOUT
+                });
+            });
+
+            function initAdserver() {
+                if (pbjs.initAdserverSet) return;
+                pbjs.initAdserverSet = true;
+                googletag.cmd.push(function() {
+                    pbjs.que.push(function() {
+                        pbjs.setTargetingForGPTAsync();
+                        googletag.pubads().refresh();
+                    });
+                });
+            }
+            
+            setTimeout(function() {
+                initAdserver();
+            }, FAILSAFE_TIMEOUT);
+
+            googletag.cmd.push(function() {
+                googletag.defineSlot('/87190325/HB_1', [[1, 1], [970, 250], [728, 90]], 'div-1').addService(googletag.pubads());
+                googletag.pubads().enableSingleRequest();
+                googletag.enableServices();
+            });
+
+        </script>
+
+    </head>
+
+    <body>
+        <div style="width:50%;margin-left:auto;margin-right:auto">
+            <p>
+                In scelerisque sem sed tortor posuere sagittis. Fusce scelerisque odio at tincidunt ultricies. Fusce egestas, erat non finibus dictum, nulla arcu viverra nibh, at bibendum ligula nisi egestas magna. Nulla eu finibus nulla. Pellentesque at mi eget turpis
+                consequat scelerisque. Sed lacinia, nisi sit amet egestas vestibulum, elit odio iaculis leo, et lacinia risus enim non lacus. Cras nec neque eget nunc gravida maximus. Ut hendrerit convallis sollicitudin. Donec cursus erat vel metus gravida,
+                et pretium justo iaculis. Curabitur condimentum blandit augue, quis interdum leo. Vivamus dapibus est nec dui efficitur, eu imperdiet nulla sollicitudin. Suspendisse laoreet velit vitae arcu mollis, ac interdum lorem venenatis. Aenean
+                nec purus varius, accumsan ex at, luctus arcu. Quisque consectetur tortor eros, placerat lacinia eros aliquam a. Proin non porttitor libero.
+            </p>
+
+        <h5>Outstream div</h5>
+        <div id='div-1'>
+            <script type='text/javascript'>
+                googletag.cmd.push(function() {
+                    googletag.display('div-1');
+                });
+
+            </script>
+        </div>
+
+                <p>
+                Maecenas iaculis pellentesque quam at fringilla. Donec dui elit, suscipit eget varius id, suscipit efficitur metus. Nulla rutrum ultrices tempor. Vivamus hendrerit justo ac fermentum euismod. Vestibulum tempus pulvinar tempus. Curabitur congue neque luctus
+                dolor vehicula, non efficitur metus fringilla. Nam a imperdiet ex. Integer at est hendrerit, rutrum justo eu, ornare odio. Etiam convallis sapien a purus vehicula, eget gravida purus semper. Fusce ex enim, volutpat ac feugiat et, rhoncus
+                vel tortor. Aenean ultrices libero sed neque fermentum tempor. Morbi tincidunt dui turpis, non mollis est dignissim at. Suspendisse molestie convallis interdum. Donec sit amet fermentum purus.
+            </p>
+        </div>
+    </body>

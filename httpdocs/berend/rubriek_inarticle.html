@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script>
+        window.frameElement.style.width = '100%'
+        window.frameElement.style.height = '360px'
+        window.frameElement.style.display = 'none'
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- videojs -->
+    <!-- use recent version of videojs to ensure proper functioning with the iOS devices -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/video.js/6.4.0/video-js.css">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/video.js/6.4.0/video.js"></script>
+    <link rel="stylesheet" href="//googleads.github.io/videojs-ima/node_modules/video.js/dist/video-js.min.css" />
+    <link rel="stylesheet"
+        href="//googleads.github.io/videojs-ima/node_modules/videojs-contrib-ads/dist/videojs.ads.css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/videojs-vast-vpaid/2.0.2/videojs.vast.vpaid.min.css"
+        rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/videojs-vast-vpaid/2.0.2/videojs_5.vast.vpaid.min.js"></script>
+    <link rel="stylesheet" href="//googleads.github.io/videojs-ima/dist/videojs.ima.css" />
+    <script src="//googleads.github.io/videojs-ima/node_modules/video.js/dist/video.min.js"></script>
+    <script src="//imasdk.googleapis.com/js/sdkloader/ima3.js"></script>
+    <script src="//googleads.github.io/videojs-ima/node_modules/videojs-contrib-ads/dist/videojs.ads.min.js"></script>
+    <script src="//googleads.github.io/videojs-ima/dist/videojs.ima.js"></script>
+</head>
+
+<body>
+    <div style="width: 100%;height: 13px; text-align: center; height:20px;">
+        <span id="ad-label" style="color: #E0E0E0; padding: 5px">Advertentie</span>
+    </div>
+    <video id="vid1" class="video-js vjs-default-skin vjs-big-play-centered" controls
+        data-setup='{"aspectRatio":"16:9", "fluid": true}' width='640' height='480'>
+        <source src="https://massariuscdn.com/creatives/video_placeholder/oceans.mp4" type='video/mp4' />
+        <source src="https://massariuscdn.com/creatives/video_placeholder/oceans.webm" type='video/webm' />
+        <source src="https://massariuscdn.com/creatives/video_placeholder/oceans.ogv" type='video/ogg' />
+    </video>
+    <script>
+        window.top.retryCount = window.top.retryCount || 0;
+
+        function resizeIframe() {
+            console.log('resizing')
+            try {
+                var videoElement = document.getElementById('vid1')
+                videoElement.addEventListener('resize', resizeIframe);
+            } catch (e) {
+                setTimeout(() => {
+                    console.log("resizing after 100ms again")
+                    resizeIframe()
+                }, 100)
+            }
+            setTimeout(() => {
+                console.log('resized height to ' + (videoElement.offsetHeight + 20) + 'px')
+                window.frameElement.style.height = (videoElement.offsetHeight + 20) + 'px'
+            }, 100);
+        }
+        videoElement = document.getElementById('vid1')
+        window.top.addEventListener('resize', resizeIframe);
+        videoElement.addEventListener('resize', resizeIframe);
+
+        var page_load_time;
+
+        page_load_time = new Date().getTime() - performance.timing.navigationStart;
+        console.log(page_load_time + "ms -- Player loading!");
+
+        var player = videojs('vid1');
+
+        if (window.top.retryCount < 1) {
+            var adTagUrl = 'https://pubads.g.doubleclick.net/gampad/ads?iu=/13436254/ca-video-pub-6678849566450770-tag/Viafora_Inarticle_Adxx&description_url=' + location.href + '&tfcd=0&npa=0&sz=400x300%7C640x480&gdfp_req=1&output=vast&unviewed_position_start=1&env=vp&impl=s&correlator='
+        } else {
+            var adTagUrl = 'https://pubads.g.doubleclick.net/gampad/ads?iu=/13436254/ca-video-pub-6678849566450770-tag/Viafora_Inarticle_Adxx&description_url=' + location.href + '&tfcd=0&npa=0&sz=400x300%7C640x480&gdfp_req=1&output=vast&unviewed_position_start=1&env=vp&impl=s&correlator=&cust_params=retryCount=' + window.top.retryCount
+        }
+
+        var options = {
+            id: 'vid1',
+            adTagUrl: adTagUrl,
+            numRedirects: 1
+            // adTagUrl: 'http://pubads.g.doubleclick.net/gampad/ads?sz=640x480&iu=/124319096/external/ad_rule_samples&ciu_szs=300x250&ad_rule=1&impl=s&gdfp_req=1&env=vp&output=xml_vmap1&unviewed_position_start=1&cust_params=sample_ar%3Dpremidpostpod%26deployment%3Dgmf-js&cmsid=496&vid=short_onecue&correlator='
+        };
+
+        player.ima(options);
+
+        player.muted(true);
+
+        player.on("adsready", function () {
+            player.ima.addEventListener(google.ima.AdEvent.Type.SKIPPED, function () {
+                console.log(">>> ad Skipped");
+                console.log('Removing')
+                window.frameElement.remove()
+            });
+            player.ima.addEventListener(google.ima.AdEvent.Type.COMPLETE, function () {
+                console.log(">>> ad Completed");
+                console.log('Removing')
+                window.frameElement.remove()
+            });
+            player.ima.addEventListener(google.ima.AdEvent.Type.USER_CLOSE, function () {
+                console.log(">>> ad closed");
+                console.log('Removing')
+                window.frameElement.remove()
+            });
+        });
+        player.on('adserror', function (err) {
+
+            var massariusData = window.top.massariusData
+            videoSlot = window.top.pbjs.adUnits.find(function (slot) {
+                return slot.code == massariusData.positions._Viafora_ROS_InArticle.id;
+            });
+            googleVideoSlot = window.top.gptadslots.find(function (slot) {
+                return slot.getSlotElementId() == massariusData.positions._Viafora_ROS_InArticle.id;
+            });
+            console.log(">>> ad error");
+            if (window.top.retryCount < 3) {
+                if (window.top.retryCount == 2) {
+                    window.top.googletag.cmd.push(function () {
+                        videoSlotMapping = window.top.googletag
+                            .sizeMapping()
+                            .addSize([768, 0], [[300, 250], [336, 280]])
+                            .addSize([0, 0], [[300, 50], [320, 100], [320, 50], [300, 100], [300, 250], [336, 280]])
+                            .build();
+                        googleVideoSlot.defineSizeMapping(videoSlotMapping)
+                        window.top.pbjs.removeAdUnit("div-gpt-ad-viafora_ros_inarticle")
+
+                        videoSlot = {
+                            code: "div-gpt-ad-viafora_ros_inarticle",
+                            mediaTypes: {
+                                banner: {
+                                    sizes: window.top.screen.availWidth >= 768 ? [[300, 250], [336, 280]] : [[300, 50], [320, 100], [320, 50], [300, 100], [300, 250], [336, 280]]
+                                }
+                            },
+                            bids: [
+                                {
+                                    bidder: "openx",
+                                    labelAny: ["desktop", "tablet"],
+                                    params: {
+                                        delDomain: "massarius-d.openx.net",
+                                        unit: massariusData.positions._Viafora_ROS_InArticle.placementIds.openx.desktop.toString()
+                                    }
+                                },
+                                {
+                                    bidder: "openx",
+                                    labelAny: ["phone"],
+                                    params: {
+                                        delDomain: "massarius-d.openx.net",
+                                        unit: massariusData.positions._Viafora_ROS_InArticle.placementIds.openx.phone.toString()
+                                    }
+                                },
+                                {
+                                    bidder: "improvedigital",
+                                    labelAny: ["desktop", "tablet"],
+                                    params: {
+                                        placementId: massariusData.positions._Viafora_ROS_InArticle.placementIds.improvedigital.desktop.toString(),
+                                        keyValues: (typeof msTag !== "undefined" && msTag.data && msTag.data.nsc == true) ? {
+                                            hb: ["true"],
+                                            Page: ["NSC"]
+                                        } : {
+                                            hb: ["true"]
+                                        }
+                                    }
+                                },
+                                {
+                                    bidder: "improvedigital",
+                                    labelAny: ["phone"],
+                                    params: {
+                                        placementId: massariusData.positions._Viafora_ROS_InArticle.placementIds.improvedigital.phone.toString(),
+                                        keyValues: (typeof msTag !== "undefined" && msTag.data && msTag.data.nsc == true) ? {
+                                            hb: ["true"],
+                                            Page: ["NSC"]
+                                        } : {
+                                            hb: ["true"]
+                                        }
+                                    }
+                                },
+                                {
+                                    bidder: "rubicon",
+                                    labelAny: ["desktop", "tablet"],
+                                    params: {
+                                        accountId: "20952",
+                                        siteId: massariusData.rubiconId.toString(),
+                                        zoneId: massariusData.positions._Viafora_ROS_InArticle.placementIds.rubicon.desktop.toString()
+                                    }
+                                },
+                                {
+                                    bidder: "rubicon",
+                                    labelAny: ["phone"],
+                                    params: {
+                                        accountId: "20952",
+                                        siteId: massariusData.rubiconId.toString(),
+                                        zoneId: massariusData.positions._Viafora_ROS_InArticle.placementIds.rubicon.phone.toString()
+                                    }
+                                },
+                                {
+                                    bidder: "appnexus",
+                                    labelAny: ["desktop", "tablet"],
+                                    params: {
+                                        placementId: massariusData.positions._Viafora_ROS_InArticle.placementIds.appnexus.desktop
+                                    }
+                                },
+                                {
+                                    bidder: "appnexus",
+                                    labelAny: ["phone"],
+                                    params: {
+                                        placementId: massariusData.positions._Viafora_ROS_InArticle.placementIds.appnexus.phone
+                                    }
+                                },
+                                {
+                                    bidder: "pubmatic",
+                                    labelAny: ["desktop", "tablet"],
+                                    params: {
+                                        publisherId: "156546",
+                                        adSlot: massariusData.positions._Viafora_ROS_InArticle.placementIds.pubmatic.desktop.toString()
+                                    }
+                                },
+                                {
+                                    bidder: "pubmatic",
+                                    labelAny: ["phone"],
+                                    params: {
+                                        publisherId: "156546",
+                                        adSlot: massariusData.positions._Viafora_ROS_InArticle.placementIds.pubmatic.phone.toString()
+                                    }
+                                },
+                                {
+                                    bidder: "weborama",
+                                    labelAny: ["desktop", "tablet"],
+                                    params: {
+                                        placementId: massariusData.positions._Viafora_ROS_InArticle.placementIds.weborama.desktop.toString(),
+                                        keyValues: (typeof msTag !== "undefined" && msTag.data && msTag.data.nsc == true) ? {
+                                            hb: ["true"],
+                                            Page: ["NSC"]
+                                        } : {
+                                            hb: ["true"]
+                                        }
+                                    }
+                                },
+                                {
+                                    bidder: "weborama",
+                                    labelAny: ["phone"],
+                                    params: {
+                                        placementId: massariusData.positions._Viafora_ROS_InArticle.placementIds.weborama.phone.toString(),
+                                        keyValues: (typeof msTag !== "undefined" && msTag.data && msTag.data.nsc == true) ? {
+                                            hb: ["true"],
+                                            Page: ["NSC"]
+                                        } : {
+                                            hb: ["true"]
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                        window.top.pbjs.addAdUnits([videoSlot])
+                    });
+                }
+                window.top.pbjs.que.push(function () {
+                    window.top.pbjs.requestBids({
+                        bidsBackHandler: function (bids) {
+                            var slots = Object.keys(bids);
+                            slots.forEach(function (slot) {
+                                var slotbids = bids[slot].bids;
+                                slotbids.forEach(function (bid) {
+                                    bid.adserverTargeting.hbBid = true;
+                                });
+                            });
+                            window.top.googletag.cmd.push(function () {
+                                window.top.pbjs.que.push(function () {
+                                    window.top.pbjs.setTargetingForGPTAsync([massariusData.positions._Viafora_ROS_InArticle.id]);
+                                    googleVideoSlot.setTargeting("retryCount", [window.top.retryCount])
+                                    window.top.googletag.pubads().refresh([googleVideoSlot]);
+                                });
+                            });
+                        },
+                        adUnits: [videoSlot]
+                    });
+                });
+                window.top.retryCount++
+            } else {
+                console.log('Closing')
+                window.frameElement.remove()
+            }
+        });
+
+        player.on('ads-ad-started', function (response) {
+            window.frameElement.style.display = 'block'
+            resizeIframe()
+        });
+
+        player.on('ads-request', function (response) {
+            console.log(response, 'ads-request')
+        });
+
+        player.on('ads-loader', function (response) {
+            console.log(response.adsLoader, 'ads-loader')
+        });
+
+        player.load();
+        fetchVideoAndPlay();
+
+        function fetchVideoAndPlay() {
+            fetch(adTagUrl)
+                .then(response => response.blob())
+                .then(blob => {
+                    player.srcObject = blob;
+                    return player.play();
+                })
+                .then(_ => {
+                    // Video playback started ;)
+                })
+                .catch(e => {
+                    // Video playback failed ;(
+                })
+        }
+
+
+    </script>
+</body>
+
+</html>

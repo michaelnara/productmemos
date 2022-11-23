@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>CMP - DFP Test</title>
+
+
+    <!-- CMP STUB -->
+    <script type="text/javascript">
+        if (!window.__cmp || typeof window.__cmp !== 'function') {
+            var start = window.__cmp ? window.__cmp.start : {};
+            window.__cmp = function() {
+                var listen = window.attachEvent || window.addEventListener;
+                listen('message', function(event) {
+                    window.__cmp.receiveMessage(event);
+                });
+                function addLocatorFrame() {
+                    if (!window.frames['__cmpLocator']) {
+                        if (document.body) {
+                            const frame = document.createElement('iframe');
+                            frame.style.display = 'none';
+                            frame.name = '__cmpLocator';
+                            document.body.appendChild(frame);
+                        } else {
+                            setTimeout(addLocatorFrame, 5);
+                        }
+                    }
+                }
+                addLocatorFrame();
+                var commandQueue = [];
+                var cmp = function(command, parameter, callback) {
+                    if (command === 'ping') {
+                        if (callback) {
+                            callback({
+                                gdprAppliesGlobally: !!(window.__cmp && window.__cmp.config && window.__cmp.config.storeConsentGlobally),
+                                cmpLoaded: false
+                            });
+                        }
+                    } else {
+                        commandQueue.push({
+                            command: command,
+                            parameter: parameter,
+                            callback: callback
+                        });
+                    }
+                }
+                cmp.commandQueue = commandQueue;
+                cmp.receiveMessage = function(event) {
+                    var data = event && event.data && event.data.__cmpCall;
+                    if (data) {
+                        commandQueue.push({
+                            callId: data.callId,
+                            command: data.command,
+                            parameter: data.parameter,
+                            event: event
+                        });
+                    }
+                };
+                return cmp;
+            }();
+            window.__cmp.start = start;
+        }
+    </script>
+
+    <!-- load CMP UI configuration -->
+    <script src="//cmp-loader.choice.faktor.io/O1TI0E.js"></script>
+
+
+    <!-- Google tag setup -->
+
+    <script async='async' src='https://www.googletagservices.com/tag/js/gpt.js'></script>
+    <script>
+        var googletag = googletag || {};
+        googletag.cmd = googletag.cmd || [];
+    </script>
+
+    <script>
+        sizes = [
+                [728, 90]
+            ]
+        googletag.cmd.push(function() {
+            googletag.defineSlot('/87190325/30sept_multisize',
+            sizes , 'div-gpt-ad-1539075982803-0').addService(googletag.pubads());
+            googletag.pubads().enableSingleRequest();
+            // disableInitialLoad to stop Google from fetching the ads before consent is given
+            googletag.pubads().disableInitialLoad();
+            googletag.enableServices();
+        });
+    </script>
+
+    <!-- CMP LOGIC -->
+<script>
+    var consentForAds;
+    var checkConsent = function() {
+        console.log('Faktor.io CMP: checkConsent');
+        window.__cmp('getVendorConsents', undefined, function(data) {
+            var newConsentForAds = (data.purposeConsents[1] && data.purposeConsents[2] && data.purposeConsents[3] && data.purposeConsents[4] && data.purposeConsents[5])
+            console.log('consentForAds: ' + newConsentForAds);
+            if (consentForAds !== newConsentForAds) {
+                consentForAds = newConsentForAds;
+                googletag.cmd.push(function() {
+                    googletag.pubads().setRequestNonPersonalizedAds(consentForAds ? 0 : 1); //request non-personalized ads for no consent
+                });
+                window.__cmp('getConsentData', undefined, function(data) {
+                    googletag.cmd.push(function() {
+                        googletag.pubads().setTargeting('iab_string', [data.consentData]); //send IAB string KV to DFP
+                        googletag.pubads().setTargeting('consent', [consentForAds ? 1 : 0]); //send consent 1/0 KV to DFP
+                        googletag.pubads().setTargeting('rev_consent', [consentForAds ? 0 : 1]); //send rev_consent (equal to NPA) KV to DFP
+                        googletag.pubads().refresh(); //fetch the ads
+                    });
+                });
+            }
+        });
+    }
+    // refresh ads on pressing accept button (also after changing via fingerprint)
+    window.__cmp('addEventListener', 'acceptAllButtonClicked', function(data) {
+        checkConsent();
+    });
+    // refresh ads on pressing exit button (also after changing via fingerprint)
+    window.__cmp('addEventListener', 'exitButtonClicked', function(data) {
+        checkConsent();
+    });
+    //listener for CMP ready - refresh ads when consent is found
+    window.__cmp('addEventListener', 'cmpReady', function(data) {
+        checkConsent();
+    });
+</script>
+</head>
+
+<body>
+    <!-- /87190325/30sept_multisize -->
+    <div id='div-gpt-ad-1539075982803-0'>
+        <script>
+            googletag.cmd.push(function() {
+                googletag.display('div-gpt-ad-1539075982803-0');
+            });
+        </script>
+    </div>
+
+</body>
+
+</html>

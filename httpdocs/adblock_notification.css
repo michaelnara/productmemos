@@ -1,0 +1,154 @@
+.adblock {
+    background-color: #f5f5f5;
+    padding: 16px;
+    width: 100%; }
+    @media only screen and (min-width: 750px) {
+      .adblock {
+        display: -ms-flexbox;
+        display: flex; } }
+  
+  .adblock-banner-wrapper {
+    display: block;
+    position: fixed;
+    margin-top: 0 auto;
+    text-align: center;
+    width: 100%; }
+    @media only screen and (min-width: 750px) {
+      .adblock-banner-wrapper {
+        width: 70%; } }
+  
+  .adblock-banner-wrapper img {
+    max-width: 100%; }
+  
+  @media only screen and (min-width: 768px) {
+  .margin-for-vk-banner {
+    margin-top: 56.5px; };
+  };
+
+  .adblock-header {
+    position: relative;
+    background-color: #FF6400;
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: contain;
+    color: #fff;
+    margin-bottom: 16px;
+    width: 100%;
+    height: 100px; }
+    @media only screen and (min-width: 750px) {
+      .adblock-header {
+        height: 200px; } }
+
+  .adblock-title {
+    font-size: 1.35rem;
+    margin: 0; }
+  
+  .adblock-banner-content-wrapper {
+    background-color: #fff;
+    margin: 0;
+    padding: 16px; }
+  
+  .adblock-banner-content-wrapper p {
+    font-size: 1rem;
+    line-height: 1.5em; }
+    .adblock-banner-content-wrapper p:first-child {
+      margin-top: 0; }
+  
+  .adblock-banner-content-wrapper li {
+    list-style-type: disc;
+    margin-left: 16px; }
+  
+  @media only screen and (min-width: 750px) {
+    .adblock-banner-content-wrapper .c-email-subscription,
+    .adblock-banner-content-wrapper .c-whatsapp {
+      max-width: 50%; } }
+  
+  @media only screen and (min-width: 750px) {
+    .adblock-bedankt {
+      background-color: #f5f5f5;
+      max-width: 670px;
+      margin: 0 auto;
+      padding: 0 64px; } }
+  
+  .adblock-banner-wrapper {
+    width: 100%;
+    z-index: 100;
+    background-color: #FF6400; }
+    @media only screen and (max-width: 767px) {
+      .scrolled .adblock-banner-wrapper {
+        display: none; } }
+  
+  .adblock-banner--deactivated {
+    display: none; }
+
+  .wrap {
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    margin: 0 auto; }
+
+    @media only screen and (min-width: 1030px) {
+        .wrap {
+            max-width: 1000px; }
+        }
+
+  .adblock-banner-content-wrapper {
+    background-color: #FF6400;
+    display: -ms-flexbox;
+    position: relative;
+    padding: 12px;
+  }
+
+  .adblock-banner-title {
+    margin: 0;
+    max-width: 100%;
+    line-height: 1;
+    font-size: 1rem;
+    color: #fff; }
+    @media only screen and (min-width: 300px) {
+      .adblock-banner-title {
+        padding-bottom: 0;
+        max-width: 100%; } }
+    @media only screen and (min-width: 600px) {
+      .adblock-banner-title {
+        padding: 0 32px; } }
+  
+  .adblock-banner-signup-button {
+    padding: 3px 10px;
+    border: 2px solid #fff;
+    border-radius: 10px;
+    line-height: 1;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    font-weight: 700;
+    background-color: #FF6400;
+    color: #fff;
+    cursor: pointer; }
+    .adblock-banner-signup-button:hover {
+      background-color: #fff;
+      color: #FF6400; }
+  
+  .adblock-banner-close-button {
+    -ms-flex: 0 0 25px;
+        flex: 0 0 25px;
+    width: 25px;
+    height: 25px;
+    background-image: url("data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJMYXllcl8xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4PSIwcHgiIHk9IjBweCIKCSB2aWV3Qm94PSIwIDAgNTAgNTAiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDUwIDUwOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+CjxnPgoJPGc+CgkJPHBhdGggZmlsbD0iI2ZmZiIgZD0iTTI1LDBDMTEuMTksMCwwLDExLjE5LDAsMjVzMTEuMTksMjUsMjUsMjVzMjUtMTEuMTksMjUtMjVTMzguODEsMCwyNSwweiBNMzguNzksMzUuOTZsLTIuODMsMi44M0wyNSwyNy44MwoJCQlMMTQuMDQsMzguNzlsLTIuODMtMi44M0wyMi4xNywyNUwxMS4yMSwxNC4wNGwyLjgzLTIuODNMMjUsMjIuMTdsMTAuOTYtMTAuOTZsMi44MywyLjgzTDI3LjgzLDI1TDM4Ljc5LDM1Ljk2eiIvPgoJPC9nPgo8L2c+Cjwvc3ZnPg==");
+    cursor: pointer; 
+  }
+    @media only screen and (min-width: 300px) {
+      .adblock-banner-close-button {
+        position: absolute;
+        top: 5px;
+        left: 5px; } }
+    @media only screen and (min-width: 768px) {
+      .adblock-banner-close-button {
+        position: absolute;
+        left: 4px; } }
+    @media only screen and (min-width: 1030px) {
+      .adblock-banner-close-button {
+        position: absolute;
+        left: 12px;
+        top: 45%;
+     } }

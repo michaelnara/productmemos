@@ -1,0 +1,2998 @@
+<!doctype html>
+<html>
+
+<head>
+    <!-- header -->
+    <meta charset="UTF-8">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Ajax Showtime">
+    <meta name="apple-mobile-web-app-title" content="Ajax Showtime">
+    <meta name="application-name" content="Ajax Showtime">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/uploads/touch-icons/mstile-144x144.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="csrf-token" content="5xdChM0P8d9DuVqlrCi611emFNZZ1mzLNtA1F5ma">
+    <title>Ajax Showtime - Nieuws over Ajax, Jong Ajax en Ajax-jeugd</title>
+    <link rel="apple-touch-icon" sizes="57x57"
+        href="https://ajaxshowtime.jentcdn.net/uploads/touch-icons/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="114x114"
+        href="https://ajaxshowtime.jentcdn.net/uploads/touch-icons/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="72x72"
+        href="https://ajaxshowtime.jentcdn.net/uploads/touch-icons/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="144x144"
+        href="https://ajaxshowtime.jentcdn.net/uploads/touch-icons/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="60x60"
+        href="https://ajaxshowtime.jentcdn.net/uploads/touch-icons/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="120x120"
+        href="https://ajaxshowtime.jentcdn.net/uploads/touch-icons/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="76x76"
+        href="https://ajaxshowtime.jentcdn.net/uploads/touch-icons/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="152x152"
+        href="https://ajaxshowtime.jentcdn.net/uploads/touch-icons/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180"
+        href="https://ajaxshowtime.jentcdn.net/uploads/touch-icons/apple-touch-icon-180x180.png">
+
+    <link rel="icon" type="image/png" href="https://ajaxshowtime.jentcdn.net/uploads/touch-icons/favicon-192x192.png"
+        sizes="192x192">
+    <link rel="icon" type="image/png" href="https://ajaxshowtime.jentcdn.net/uploads/touch-icons/favicon-160x160.png"
+        sizes="160x160">
+    <link rel="icon" type="image/png" href="https://ajaxshowtime.jentcdn.net/uploads/touch-icons/favicon-96x96.png"
+        sizes="96x96">
+    <link rel="icon" type="image/png" href="https://ajaxshowtime.jentcdn.net/uploads/touch-icons/favicon-16x16.png"
+        sizes="16x16">
+    <link rel="icon" type="image/png" href="https://ajaxshowtime.jentcdn.net/uploads/touch-icons/favicon-32x32.png"
+        sizes="32x32">
+
+    <link rel="apple-touch-startup-image"
+        media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)"
+        href="https://ajaxshowtime.jentcdn.net/uploads/touch-icons/apple-touch-startup-image-640x1096.png">
+
+
+    <script type="text/javascript" src="//code.jquery.com/jquery-2.1.3.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/ui/1.11.2/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="https://ajaxshowtime.jentcdn.net/js/jquery.global.js?cache=no"></script>
+    <script type="text/javascript" src="https://ajaxshowtime.jentcdn.net/js/jquery.detectmobile.js"></script>
+    <script type="text/javascript" src="https://ajaxshowtime.jentcdn.net/js/showads.js"></script>
+
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="https://ajaxshowtime.jentcdn.net/js/html5shiv/dist/html5shiv.js"></script>
+	  <![endif]-->
+
+
+    <link rel="stylesheet" type="text/css"
+        href="https://ajaxshowtime.jentcdn.net/css/style.minified.css?cache=20171025">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="manifest" href="https://www.ajaxshowtime.com/manifest.json" />
+    <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
+    <script>
+        var OneSignal = window.OneSignal || [];
+        OneSignal.push(function () {
+            OneSignal.init({
+                appId: "16910394-e8ab-4875-b8cf-a7afb4fba1aa",
+            });
+        });
+    </script>
+
+    <script>
+        var msTag = {
+            site: 'ajaxshowtime',
+            page: 'home'
+        }
+    </script>
+    <script src="https://massariuscdn.com/pubs/ajaxshowtime/ajaxshowtime_adtech_setup.js"></script>
+
+    <script>
+        !function (e) { var n = /iPhone/i, t = /iPod/i, r = /iPad/i, a = /\bAndroid(?:.+)Mobile\b/i, p = /Android/i, l = /\bAndroid(?:.+)SD4930UR\b/i, b = /\bAndroid(?:.+)(?:KF[A-Z]{2,4})\b/i, f = /Windows Phone/i, u = /\bWindows(?:.+)ARM\b/i, c = /BlackBerry/i, s = /BB10/i, v = /Opera Mini/i, h = /\b(CriOS|Chrome)(?:.+)Mobile/i, w = /\Mobile(?:.+)Firefox\b/i; function m(e, i) { return e.test(i) } function i(e) { var i = e || ("undefined" != typeof navigator ? navigator.userAgent : ""), o = i.split("[FBAN"); void 0 !== o[1] && (i = o[0]), void 0 !== (o = i.split("Twitter"))[1] && (i = o[0]); var d = { apple: { phone: m(n, i), ipod: m(t, i), tablet: !m(n, i) && m(r, i), device: m(n, i) || m(t, i) || m(r, i) }, amazon: { phone: m(l, i), tablet: !m(l, i) && m(b, i), device: m(l, i) || m(b, i) }, android: { phone: m(l, i) || m(a, i), tablet: !m(l, i) && !m(a, i) && (m(b, i) || m(p, i)), device: m(l, i) || m(b, i) || m(a, i) || m(p, i) }, windows: { phone: m(f, i), tablet: m(u, i), device: m(f, i) || m(u, i) }, other: { blackberry: m(c, i), blackberry10: m(s, i), opera: m(v, i), firefox: m(w, i), chrome: m(h, i), device: m(c, i) || m(s, i) || m(v, i) || m(w, i) || m(h, i) } }; return d.any = d.apple.device || d.android.device || d.windows.device || d.other.device, d.phone = d.apple.phone || d.android.phone || d.windows.phone, d.tablet = d.apple.tablet || d.android.tablet || d.windows.tablet, d } "undefined" != typeof module && module.exports && "undefined" == typeof window ? module.exports = i : "undefined" != typeof module && module.exports && "undefined" != typeof window ? module.exports = i() : "function" == typeof define && define.amd ? define([], e.isMobile = i()) : e.isMobile = i() }(this);
+        (function () {
+            if (isMobile.any) {
+                $(document).ready(function () {
+                    jQuery('.mobile_ads .ad_responsive').show();
+                });
+            } else {
+                $(document).ready(function () {
+                    jQuery('.mobile_ads .ad_responsive').hide();
+                });
+            }
+        })();
+    </script>
+    <style type="text/css">
+        @media screen and (min-width: 683px) {
+            body {
+                background: url(https://ajaxshowtime.jentcdn.net/uploads/background/e63e2b7e334ddbdaf9f0b850f3054f67.jpg) center center fixed #FFF;
+                background-size: 100% auto;
+            }
+        }
+    </style>
+
+</head>
+
+<body class="remodal-bg">
+
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K686WHN" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <div class="leaderboard_ad" style="background:none;">
+        <!-- /1030791/Homepage_Leaderboard -->
+        <div id='div-gpt-ad-1529665429499-1'>
+            <script>
+
+            </script>
+        </div>
+
+
+        <!--
+<div id='div-gpt-ad-1460126810135-0'>
+<script type="text/javascript">
+if(jQuery.browser.mobile) {
+
+} else {
+document.write('<a href="https://www.scorito.com/topcoach/topcoach1617/ajax-showtime?code=d63e2001-c617-4cbd-8fe8-56b30155abf1⁠⁠⁠⁠" target="_blank"><img src="https://www.ajaxshowtime.com/uploads/filemanager/ef873087fd/4303_3692_ef873087fde64023efb94a308e0ff186_original.jpg" /></a>');
+}
+</script>
+</div>
+ -->
+
+
+        <!--
+
+
+
+<div id='div-gpt-ad-1460126810135-0'>
+<script type="text/javascript">
+if(jQuery.browser.mobile) {
+
+} else {
+document.write('<a href="https://www.scorito.com/topcoach/topcoach1617/ajax-showtime?code=d63e2001-c617-4cbd-8fe8-56b30155abf1⁠⁠⁠⁠" target="_blank"><img src="https://www.ajaxshowtime.com/uploads/filemanager/ef873087fd/4303_3692_ef873087fde64023efb94a308e0ff186_original.jpg" /></a>');
+}
+</script>
+</div>
+
+ -->
+    </div>
+
+
+    <!--googleoff: index-->
+    <div class="ablo" style="display:none;">
+        <br><br>
+        <div class="ad_responsive mobile">
+            <p><a href="https://www.ajaxshop.nl/nl/kleding?filter_228=10545&utm_source=ajaxshowtime.com&utm_medium=cpc&utm_campaign=amsterdam"
+                    target="_blank">Check de casual collectie van Ajax!</a></p>
+        </div>
+        <!--
+
+Liefhebber van <a href='http://www.indeleiderstrui.nl' target='_blank'>De Tour de France</a>? Volg de verrichtingen van Dumoulin en Kruijswijk via <a href='http://www.indeleiderstrui.nl' target='_blank'><u>Indeleiderstrui.nl</u></a>.
+
+<p><em>Heb jij dit vette<a href='https://www.ajaxshowtime.com/webshop/product/96/amsterdam-tee-black'  target="_blank">AMS-TER-DAM shirt</a>al in je collectie?</em></p>
+
+<a href="https://www.ajaxshop.nl/nl/wedstrijd/uittenue?utm_source=Ajax%20Showtime&utm_medium=cpc&utm_campaign=Uittenue%2016%2F17" target="_blank" rel="nofollow"><img src="http://www.ajaxshowtime.com/uploads/filemanager/10e69ecda8/3138_393_10e69ecda8020848266a940a5a6a4925_original.jpg" width="728" height="90" border="0" alt="" /></a>
+
+
+50% korting op  <a href=' https://www.ajaxshop.nl/nl?utm_source=Ajax%20Showtime&utm_medium=cpc&utm_campaign=Koploper' target='_blank'><u>Ajax uitshirt + gratis bedrukking</u></a>.
+
+<p><em>Van €20,00 voor nog maar €12,50! De laatste exemplaren van het <a href="https://www.ajaxshowtime.com/webshop/product/50/uitverkoop-wzawzdb-tee-black" target="_blank">originele WZAWZDB-shirt!</a></em></p>
+
+
+<a href="http://www.ajaxshowtime.com/page/adblock">Klik dan hier</a>. Bekijk eens de <a href='https://www.ajaxshop.nl/nl/sale/sale?utm_source=Ajax%20Showtime&utm_medium=cpc&utm_campaign=Sale' target='_blank'><u>sale-pagina van Ajaxshop.nl</u></a>.<br><br>
+<script type="text/javascript">
+if(!jQuery.browser.mobile) {
+ document.write('<a href=https://www.boldking.com/?tap_a=8534-376861&tap_s=36575-106764&utm_source=www.ajaxshowtime.co&utm_medium=banner&utm_term=may&utm_campaign=may+ajax" target="_blank" rel="nofollow"><img src="https://www.ajaxshowtime.com/uploads/filemanager/9858d1b2dc/4040_393_9858d1b2dc1547b59172aa7a6bd50b5d_original.jpg" width="728" height="90" border="0" alt="" /></a>');
+}
+</script>
+-->
+    </div>
+    <!--googleon: index-->
+
+    <!-- HEADER -->
+    <header>
+        <a href="#" class="user_account user_global js-user_global"></a>
+        <a href="/" class="logo"></a>
+        <a href="/Auth/Login" class="user_account" data-remodal-target="modal"></a>
+        <a href="#" class="user_search js-search"></a>
+    </header>
+    <!-- END HEADER -->
+
+
+    <div class="submenus2" style="display:none;">
+        <ul class="parent">
+            <li><a title="Ajax" href="#" class="dark_inactive">Ajax</a>
+                <ul class="child">
+                    <li><a href="/page/organisatie" title="Organisatie">Organisatie</a></li>
+                    <li><a href="/team/ajax" title="Selectie">Selectie</a></li>
+                    <li><a href="/match/" title="Wedstrijden">Wedstrijden</a></li>
+                    <li><a href="/topscorers/" title="Topscorers">Topscorers</a></li>
+                    <li><a href="/team/jong-ajax" title="Jong Ajax">Jong Ajax</a></li>
+                    <li><a href="/team/dames-ajax" title="Dames Ajax">Dames Ajax</a></li>
+                    <li><a href="/team/ajax-o19" title="Ajax O19">Ajax O19</a></li>
+                    <li><a href="/team/ajax-o17" title="Ajax O17">Ajax O17</a></li>
+                    <li><a href="/team/ajax-o16" title="Ajax O16">Ajax O16</a></li>
+                    <li><a href="/team/ajax-o15" title="Ajax O15">Ajax O15</a></li>
+                </ul>
+            </li>
+            <li><a title="Competitie" href="#" class="dark_inactive">Competitie</a>
+                <ul class="child">
+                    <li><a href="/page/eredivisie" title="Eredivisie">Eredivisie</a></li>
+                    <li><a href="/page/champions-league" title="Champions League">Champions League</a></li>
+                    <li><a href="/page/knvb-beker" title="KNVB Beker">KNVB Beker</a></li>
+                    <li><a href="/page/uefa-youth-league" title="UEFA Youth League">UEFA Youth League</a></li>
+                    <li><a href="/page/jupiler-league" title="Jupiler League">Jupiler League</a></li>
+                </ul>
+            </li>
+            <li><a href="/videos" title="Video">Video</a></li>
+            <li><a class="dark_inactive" href="#">Over AS</a>
+                <ul class="child">
+                    <li><a href="/page/over-as" title="Over AS">Over AS</a></li>
+                    <li><a href="/page/privacy-beleid" title="Champions League">Privacy beleid</a></li>
+                    <li><a href="/page/disclaimer" title="KNVB Beker">Disclaimer</a></li>
+                    <li><a href="/page/vacatures" title="UEFA Youth League">Vacatures</a></li>
+                </ul>
+            </li>
+            <li><a class="dark_inactive" href="#">Social Media</a>
+                <ul class="child">
+                    <li><a href="https://nl-nl.facebook.com/ajax.showtime" target="_blank" title="Facebook">Facebook</a>
+                    </li>
+                    <li><a href="https://www.instagram.com/ajaxshowtimeinsta" target="_blank"
+                            title="Instagram">Instagram</a></li>
+                    <li><a href="https://twitter.com/ajaxshowtimecom" target="_blank" title="Twitter">Twitter</a></li>
+                    <li><a href="https://www.youtube.com/channel/UCwVm2FFygXZLV3q5d1LVSBw" target="_blank"
+                            title="Youtube">Youtube</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="//www.ajaxshop.nl/nl?utm_source=Ajax%20Showtime&utm_medium=cpc&utm_campaign=Menu"
+                    rel="nofollow" target="_blank" title="Ajax Shop">Ajax Official Fanshop</a>
+                <ul class="child">
+                    <li><a href="https://www.ajaxshop.nl/nl/nieuw-2/nieuw?utm_source=ajaxshowtime.com&utm_medium=cpc"
+                            target="_blank" title="Nieuw">Nieuw</a></li>
+                    <li><a href="https://www.ajaxshop.nl/nl/wedstrijd?utm_source=ajaxshowtime.com&utm_medium=cpc"
+                            target="_blank" title="Wedstrijd">Wedstrijd</a></li>
+                    <li><a href="https://www.ajaxshop.nl/nl/training?utm_source=ajaxshowtime.com&utm_medium=cpc"
+                            target="_blank" title="Training">Training</a></li>
+                    <li><a href="https://www.ajaxshop.nl/nl/kleding?utm_source=ajaxshowtime.com&utm_medium=cpc"
+                            title="Kleding">Kleding</a></li>
+                    <li><a href="https://www.ajaxshop.nl/nl/voor-thuis-2?utm_source=ajaxshowtime.com&utm_medium=cpc"
+                            title="Voor thuis">Voor thuis</a></li>
+                    <li><a href="https://www.ajaxshop.nl/nl/fan-items-2?utm_source=ajaxshowtime.com&utm_medium=cpc"
+                            target="_blank" title="Fan items">Fan items</a></li>
+                    <li><a href="https://www.ajaxshop.nl/nl/baby?utm_source=ajaxshowtime.com&utm_medium=cpc"
+                            target="_blank" title="Baby">Baby</a></li>
+                    <li><a href="https://www.ajaxshop.nl/nl/sale?utm_source=ajaxshowtime.com&utm_medium=cpc"
+                            target="_blank" title="Sale">Sale</a>
+                        <ul style="padding-left:15px;">
+                            <li><a href="https://www.ajaxshop.nl/nl/ontwerp-zelf?utm_source=Affiliate&utm_medium=Ajax%20Showtime%20%7C%20Ontwerp"
+                                    target="_blank" title="Sale">Ontwerp</a></li>
+                            <li><a href="https://www.ajaxshop.nl/nl/ajax-cadeaus?utm_source=Affiliate&utm_medium=Ajax%20Showtime%20%7C%20Cadeaus"
+                                    target="_blank" title="Sale">Cadeaus</a></li>
+                            <li><a href="https://www.ajaxshop.nl/nl/spelers?utm_source=Affiliate&utm_medium=Ajax%20Showtime%20%7C%20Spelers"
+                                    target="_blank" title="Sale">Spelers</a></li>
+                        </ul>
+
+                    </li>
+
+                </ul>
+            </li>
+            <li><a href="https://sport.eventim.nl/ols/ajax/nl/thuiswedstrijden/channel/shop/index/?utm_source=ajaxshowtime.com&utm_medium=cpc"
+                    title="Ticketshop" target="_blank">Ticketshop</a></li>
+            <li><a href="https://banners.livepartners.com/view.php?z=45746" target="_blank" title="Speel en Win">Speel
+                    en Win</a></li>
+            <li><a href="https://www.awin1.com/cread.php?awinmid=8275&awinaffid=408273&clickref=&p=https%3A%2F%2Fwww.ziggo.nl%2Fpakketten"
+                    target="_blank" rel="nofollow" title="Ziggo">Stap over naar Ziggo</a></li>
+        </ul>
+    </div>
+
+    <!-- SEARCH BLOCK -->
+    <div class="search" style="display: none;">
+        <form name="search" method="get" action="/Search">
+            <input type="text" name="search" id="search_query" placeholder="Zoeken ..">
+            <input type="hidden" value="1" name="search_text">
+        </form>
+    </div>
+    <!-- END SEARCH BLOCK -->
+
+    <!-- NAV -->
+    <nav class="large_menu">
+        <ul class="menu_main">
+            <li><a class="subselector submenu_1" data-submenu="1" title="Ajax">Ajax</a></li>
+            <li><a class="subselector submenu_2" data-submenu="2" title="Competitie">Competitie</a></li>
+            <li><a href="/videos" title="Video">Video</a></li>
+            <li><a class="subselector submenu_3" data-submenu="3">Over AS</a></li>
+            <li><a class="subselector submenu_4" data-submenu="4">Social Media</a></li>
+            <li><a class="subselector submenu_5" data-submenu="5"
+                    href="//www.ajaxshop.nl/nl?utm_source=Ajax%20Showtime&utm_medium=cpc&utm_campaign=Menu"
+                    rel="nofollow" target="_blank" title="Ajax Shop">Ajax Official Fanshop</a></li>
+            <li><a class="subselector"
+                    href="https://sport.eventim.nl/ols/ajax/nl/thuiswedstrijden/channel/shop/index/?utm_source=ajaxshowtime.com&utm_medium=cpc"
+                    title="Tickets" target="_blank">Ticketshop</a></li>
+            <li><a href="https://banners.livepartners.com/view.php?z=45746" target="_blank" title="Speel en Win">Speel
+                    en Win</a></li>
+            <li><a href="https://www.awin1.com/cread.php?awinmid=8275&awinaffid=408273&clickref=&p=https%3A%2F%2Fwww.ziggo.nl%2Fpakketten"
+                    target="_blank" rel="nofollow" title="Ziggo">Stap over naar Ziggo</a></li>
+        </ul>
+    </nav>
+
+    <nav class="small_menu" style="overflow:visible;">
+        <ul class="js_menu_1a submenu" style="display:none;">
+            <li>
+                <a href="/page/organisatie" title="Organisatie">Organisatie</a></li>
+            <li><a href="/team/ajax" title="Selectie">Selectie</a></li>
+            <li><a href="/match/" title="Wedstrijden">Wedstrijden</a></li>
+            <li><a href="/topscorers/" title="Topscorers">Topscorers</a></li>
+            <li><a href="/team/jong-ajax" title="Jong Ajax">Jong Ajax</a></li>
+            <li><a href="/team/dames-ajax" title="Dames Ajax">Dames Ajax</a></li>
+            <li><a href="/team/ajax-o19" title="Ajax O19">Ajax O19</a></li>
+            <li><a href="/team/ajax-o17" title="Ajax O17">Ajax O17</a></li>
+            <li><a href="/team/ajax-o16" title="Ajax O16">Ajax O16</a></li>
+            <li><a href="/team/ajax-o15" title="Ajax O15">Ajax O15</a></li>
+        </ul>
+        <ul class="js_menu_2a submenu" style="display:none;">
+            <li><a href="/page/eredivisie" title="Eredivisie">Eredivisie</a></li>
+            <li><a href="/page/champions-league" title="Champions League">Champions League</a></li>
+            <li><a href="/page/knvb-beker" title="KNVB Beker">KNVB Beker</a></li>
+            <li><a href="/page/uefa-youth-league" title="UEFA Youth League">UEFA Youth League</a></li>
+            <li><a href="/page/jupiler-league" title="Jupiler League">Jupiler League</a></li>
+
+        </ul>
+        <ul class="js_menu_3a submenu" style="display:none;">
+            <li><a href="/page/over-as" title="Over AS">Over AS</a></li>
+            <li><a href="/page/privacy-beleid" title="Champions League">Privacy beleid</a></li>
+            <li><a href="/page/disclaimer" title="KNVB Beker">Disclaimer</a></li>
+            <li><a href="/page/vacatures" title="UEFA Youth League">Vacatures</a></li>
+        </ul>
+        <ul class="js_menu_4a submenu" style="display:none;">
+            <li><a href="https://nl-nl.facebook.com/ajax.showtime" target="_blank" title="Facebook">Facebook</a></li>
+            <li><a href="https://www.instagram.com/ajaxshowtimeinsta" target="_blank" title="Instagram">Instagram</a>
+            </li>
+            <li><a href="https://twitter.com/ajaxshowtimecom" target="_blank" title="Twitter">Twitter</a></li>
+            <li><a href="https://www.youtube.com/channel/UCwVm2FFygXZLV3q5d1LVSBw" target="_blank"
+                    title="Youtube">Youtube</a></li>
+        </ul>
+        <ul class="js_menu_5a submenu" style="display:none;">
+            <li><a href="https://www.ajaxshop.nl/nl/nieuw-2/nieuw?utm_source=Affiliate&utm_medium=Ajax%20Showtime%20%7C%20Nieuw"
+                    target="_blank" title="Nieuw">Nieuw</a></li>
+            <li><a href="https://www.ajaxshop.nl/nl/wedstrijd?utm_source=Affiliate&utm_medium=Ajax%20Showtime%20%7C%20Wedstrijd"
+                    target="_blank" title="Wedstrijd">Wedstrijd</a></li>
+            <li><a href="https://www.ajaxshop.nl/nl/training?utm_source=Affiliate&utm_medium=Ajax%20Showtime%20%7C%20Training"
+                    target="_blank" title="Training">Training</a></li>
+            <li><a href="https://www.ajaxshop.nl/nl/kleding?utm_source=Affiliate&utm_medium=Ajax%20Showtime%20%7C%20Kleding"
+                    title="Kleding">Kleding</a></li>
+            <li><a href="https://www.ajaxshop.nl/nl/voor-thuis-2?utm_source=Affiliate&utm_medium=Ajax%20Showtime%20%7C%20Voor%20thuis"
+                    title="Voor thuis">Voor thuis</a></li>
+            <li><a href="https://www.ajaxshop.nl/nl/fan-items-2?utm_source=Affiliate&utm_medium=Ajax%20Showtime%20%7C%20Fan%20items"
+                    target="_blank" title="Fan items">Fan items</a></li>
+            <li><a href="https://www.ajaxshop.nl/nl/baby?utm_source=Affiliate&utm_medium=Ajax%20Showtime%20%7C%20Baby"
+                    target="_blank" title="Baby">Baby</a></li>
+            <li style="position:relative;" class="submenu-withsubs"><a
+                    href="https://www.ajaxshop.nl/nl/sale/sale?utm_source=Affiliate&utm_medium=Ajax%20Showtime%20%7C%20Sale"
+                    target="_blank" title="Sale">Sale</a>
+                <ul style="position:absolute;top:50px;z-index:2423423;display:none;" class="js-sub-sub">
+                    <li><a href="https://www.ajaxshop.nl/nl/ontwerp-zelf?utm_source=Affiliate&utm_medium=Ajax%20Showtime%20%7C%20Ontwerp"
+                            target="_blank" title="Sale">Ontwerp</a></li>
+                    <li><a href="https://www.ajaxshop.nl/nl/ajax-cadeaus?utm_source=Affiliate&utm_medium=Ajax%20Showtime%20%7C%20Cadeaus"
+                            target="_blank" title="Sale">Cadeaus</a></li>
+                    <li><a href="https://www.ajaxshop.nl/nl/spelers?utm_source=Affiliate&utm_medium=Ajax%20Showtime%20%7C%20Spelers"
+                            target="_blank" title="Sale">Spelers</a></li>
+                </ul>
+            </li>
+
+        </ul>
+
+    </nav>
+    <!-- END NAV -->
+
+
+    <div class="leaderboard_ad" style="background-color:#FFF;">
+        <!-- /1030791/Homepage_billboard -->
+        <div id='div-gpt-ad-1529665429499-2' style="padding-top:12px;">
+            <script>
+
+            </script>
+        </div>
+    </div>
+
+
+    <script>
+
+        $(".submenu-withsubs").on({
+            mouseenter: function () {
+                $(this).find(".js-sub-sub").show();
+            },
+            mouseleave: function () {
+                $(this).find(".js-sub-sub").hide();
+            }
+        });
+
+    </script>
+    <style>
+        .js-sub-sub li {
+            display: block;
+        }
+
+        .js-sub-sub li a {
+            border-bottom: 1px solid #bb0102 !important
+        }
+    </style>
+
+    <!-- MAIN -->
+    <main id="main">
+        <!-- LOAD BREADCRUMBS -->
+        <div class="breadcrumbs">
+        </div>
+        <!-- END BREADCRUMBS -->
+
+        <!-- LOAD MODULE -->
+        <section class="homepage">
+            <div class="resize  photo_item_large ">
+                <a href="https://www.ajaxshowtime.com/article/bijzaken-en-geruchten/127122/freitas-ziet-reinier-niet-naar-ajax-komen"
+                    class="photo_item_helper" style="
+
+              
+                        	background-image:url(https://ajaxshowtime.jentcdn.net/uploads/filemanager/6826d8ee20/21986_2250_6826d8ee20928dad600dbef244047b86_634x357.jpeg);
+                        ">
+
+                    <h1 class="photo_item_link"> Freitas ziet Reinier niet naar Ajax komen</h1>
+                    <div class="photo_item_cat">Bijzaken en geruchten <span>43 reacties</span></div>
+                </a>
+            </div>
+            <div class="ad">
+                <p><a href="https://mijn.ajax.nl/profile/action/?name=black-friday#utm_source=ajaxshowtime.com&amp;utm_medium=cpc&amp;utm_campaign=black_friday_earlyaccess_2019-11-11"
+                        target="_blank">Profiteer eerder van Black Friday in de Ajaxshop!</a></p>
+            </div>
+            <div class="resize  photo_item ">
+                <a href="https://www.ajaxshowtime.com/article/bijzaken-en-geruchten/127130/steeds-minder-politie-inzet-rond-voetbalwedstrijden"
+                    class="photo_item_helper" style="
+
+              
+                        	background-image:url(https://ajaxshowtime.jentcdn.net/uploads/filemanager/a51156dab4/21992_256_a51156dab439695b9a13a47cf8dcd958_634x357.jpg);
+                        ">
+
+                    <h1 class="photo_item_link"> Steeds minder politie-inzet rond voetbalwedstrijden</h1>
+                    <div class="photo_item_cat">Bijzaken en geruchten <span>5 reacties</span></div>
+                </a>
+            </div>
+            <div class="resize  photo_item ">
+                <a href="https://www.ajaxshowtime.com/article/bijzaken-en-geruchten/127129/rondom-hansen-topscorer-wk-onder-17"
+                    class="photo_item_helper" style="
+
+              
+                        	background-image:url(https://ajaxshowtime.jentcdn.net/uploads/filemanager/b7fe6203e7/21991_20938_b7fe6203e76f97eb00b23b6a7f54e09a_634x357.jpg);
+                        ">
+
+                    <h1 class="photo_item_link"> Rondom: Hansen topscorer WK Onder 17</h1>
+                    <div class="photo_item_cat">Bijzaken en geruchten <span>0 reacties</span></div>
+                </a>
+            </div>
+            <div class="hidden"></div>
+            <div style="width:100%;margin-bottom:10px;float:left;">
+                <!-- /13436254/ast_article_inread -->
+                <div id='div-gpt-ad-1569944468955-0' style='width: 1px; height: 1px;'>
+                    <script>
+
+                    </script>
+                </div>
+            </div>
+            <div class="resize  photo_item ">
+                <a href="https://www.ajaxshowtime.com/article/voetbalnieuws/127128/de-ligt-ze-interpreteren-hands-allemaal-anders"
+                    class="photo_item_helper" style="
+
+              
+                        	background-image:url(https://ajaxshowtime.jentcdn.net/uploads/filemanager/59b54b9243/19794_5244_59b54b9243d0f58c44ea8692a038cc73_634x357.jpg);
+                        ">
+
+                    <h1 class="photo_item_link"> De Ligt: 'Ze interpreteren hands allemaal anders'</h1>
+                    <div class="photo_item_cat">Voetbalnieuws <span>0 reacties</span></div>
+                </a>
+            </div>
+            <div class="resize  photo_item ">
+                <a href="https://www.ajaxshowtime.com/article/opinie/127127/promes-meest-actieve-van-onze-aanvallers"
+                    class="photo_item_helper" style="
+
+              
+                        	background-image:url(https://ajaxshowtime.jentcdn.net/uploads/filemanager/db125e8a0d/21990_20008_db125e8a0dc43789d5e968d81a22f854_634x357.jpg);
+                        ">
+
+                    <h1 class="photo_item_link"> 'Promes meest actieve van onze aanvallers'</h1>
+                    <div class="photo_item_cat">Opinie <span>2 reacties</span></div>
+                </a>
+            </div>
+            <div class="resize  photo_item ">
+                <a href="https://www.ajaxshowtime.com/article/bijzaken-en-geruchten/127126/eenhoorn-denk-dat-gat-kleiner-is-dan-men-denkt"
+                    class="photo_item_helper" style="
+
+              
+                        	background-image:url(https://ajaxshowtime.jentcdn.net/uploads/filemanager/34494e9993/21919_1058_34494e999339535292c0e5ca3ced5194_634x357.jpg);
+                        ">
+
+                    <h1 class="photo_item_link"> Eenhoorn: 'Denk dat gat kleiner is dan men denkt'</h1>
+                    <div class="photo_item_cat">Bijzaken en geruchten <span>31 reacties</span></div>
+                </a>
+            </div>
+            <div class="resize  photo_item ">
+                <a href="https://www.ajaxshowtime.com/article/bijzaken-en-geruchten/127125/hansen-hoopt-ondanks-teleurstelling-op-topscorerstitel-wk-o17"
+                    class="photo_item_helper" style="
+
+              
+                        	background-image:url(https://ajaxshowtime.jentcdn.net/uploads/filemanager/6450c5ce47/21982_20938_6450c5ce47f6e7dd9d8e0671bc8f2580_634x357.jpeg);
+                        ">
+
+                    <h1 class="photo_item_link"> Hansen hoopt ondanks teleurstelling op topscorerstitel WK O17</h1>
+                    <div class="photo_item_cat">Bijzaken en geruchten <span>3 reacties</span></div>
+                </a>
+            </div>
+            <div class="resize  photo_item ">
+                <a href="https://www.ajaxshowtime.com/article/bijzaken-en-geruchten/126996/rondom-daily-mail-vergelijkt-taylor-met-supersterren"
+                    class="photo_item_helper" style="
+
+              
+                        	background-image:url(https://ajaxshowtime.jentcdn.net/uploads/filemanager/dbfd050755/21770_20997_dbfd0507550f58008604267028c6ff12_634x357.jpg);
+                        ">
+
+                    <h1 class="photo_item_link"> Rondom: Daily Mail vergelijkt Taylor met supersterren</h1>
+                    <div class="photo_item_cat">Bijzaken en geruchten <span>120 reacties</span></div>
+                </a>
+            </div>
+            <div class="resize  photo_item ">
+                <a href="https://www.ajaxshowtime.com/article/bijzaken-en-geruchten/127114/oranje-o17-verliest-en-loopt-brons-op-wk-mis"
+                    class="photo_item_helper" style="
+
+              
+                        	background-image:url(https://ajaxshowtime.jentcdn.net/uploads/filemanager/1537199914/21972_20938_15371999142fcc24d2a4666140fc34e1_634x357.jpg);
+                        ">
+
+                    <h1 class="photo_item_link"> Oranje O17 verliest en loopt brons op WK mis</h1>
+                    <div class="photo_item_cat">Bijzaken en geruchten <span>33 reacties</span></div>
+                </a>
+            </div>
+            <div class="resize  photo_item ">
+                <a href="https://www.ajaxshowtime.com/article/voetbalnieuws/127124/verhoeven-nog-altijd-enthousiast-over-behalen-ajax-derde-ster"
+                    class="photo_item_helper" style="
+
+              
+                        	background-image:url(https://ajaxshowtime.jentcdn.net/uploads/filemanager/58078f6777/21989_21988_58078f6777ceb9d82148fd44247c0848_634x357.jpg);
+                        ">
+
+                    <h1 class="photo_item_link"> Verhoeven nog altijd enthousiast over behalen Ajax' derde ster</h1>
+                    <div class="photo_item_cat">Voetbalnieuws <span>4 reacties</span></div>
+                </a>
+            </div>
+            <div class="resize  photo_item ">
+                <a href="https://www.ajaxshowtime.com/article/bijzaken-en-geruchten/127117/onana-houdt-de-nul-en-wint-met-kameroen"
+                    class="photo_item_helper" style="
+
+              
+                        	background-image:url(https://ajaxshowtime.jentcdn.net/uploads/filemanager/61c117d506/21870_814_61c117d506c3c50334164b97bb2bff05_634x357.jpg);
+                        ">
+
+                    <h1 class="photo_item_link"> Onana houdt de nul en wint met Kameroen</h1>
+                    <div class="photo_item_cat">Bijzaken en geruchten <span>17 reacties</span></div>
+                </a>
+            </div>
+            <div class="resize  photo_item ">
+                <a href="https://www.ajaxshowtime.com/article/bijzaken-en-geruchten/127121/moeder-schuurs-hoopte-op-transfer-naar-psv"
+                    class="photo_item_helper" style="
+
+              
+                        	background-image:url(https://ajaxshowtime.jentcdn.net/uploads/filemanager/16a7d22316/21151_11483_16a7d22316a172f8135b59c8eac777d5_634x357.jpeg);
+                        ">
+
+                    <h1 class="photo_item_link"> Moeder Schuurs hoopte op transfer naar PSV</h1>
+                    <div class="photo_item_cat">Bijzaken en geruchten <span>30 reacties</span></div>
+                </a>
+            </div>
+            <div class="resize  photo_item ">
+                <a href="https://www.ajaxshowtime.com/article/bijzaken-en-geruchten/127120/schone-helemaal-geen-spijt-van-overstap"
+                    class="photo_item_helper" style="
+
+              
+                        	background-image:url(https://ajaxshowtime.jentcdn.net/uploads/filemanager/7f179b0257/18311_824_7f179b02574d57625e0b30a7967f1576_634x357.jpg);
+                        ">
+
+                    <h1 class="photo_item_link"> Schöne: 'Helemaal geen spijt van overstap'</h1>
+                    <div class="photo_item_cat">Bijzaken en geruchten <span>10 reacties</span></div>
+                </a>
+            </div>
+            <div class="resize  photo_item ">
+                <a href="https://www.ajaxshowtime.com/article/bijzaken-en-geruchten/127119/blind-verbaasd-twee-keer-niet-plaatsen-en-nu-favoriet"
+                    class="photo_item_helper" style="
+
+              
+                        	background-image:url(https://ajaxshowtime.jentcdn.net/uploads/filemanager/7f193d86a5/21550_14777_7f193d86a56a96ef32ba8629271132b5_634x357.jpg);
+                        ">
+
+                    <h1 class="photo_item_link"> Blind verbaasd: 'Twee keer niet plaatsen en nu favoriet'</h1>
+                    <div class="photo_item_cat">Bijzaken en geruchten <span>21 reacties</span></div>
+                </a>
+            </div>
+            <div class="resize  photo_item ">
+                <a href="https://www.ajaxshowtime.com/article/bijzaken-en-geruchten/127118/niet-het-gevoel-dat-ik-dumfries-al-verslagen-heb"
+                    class="photo_item_helper" style="
+
+              
+                        	background-image:url(https://ajaxshowtime.jentcdn.net/uploads/filemanager/63295905c5/21985_817_63295905c5b894b9c2b18fb0a8635122_634x357.jpeg);
+                        ">
+
+                    <h1 class="photo_item_link"> 'Niet het gevoel dat ik Dumfries al verslagen heb'</h1>
+                    <div class="photo_item_cat">Bijzaken en geruchten <span>18 reacties</span></div>
+                </a>
+            </div>
+            <div class="resize  photo_item ">
+                <a href="https://www.ajaxshowtime.com/article/bijzaken-en-geruchten/126998/interlands-tadic-onana-en-traore-in-actie"
+                    class="photo_item_helper" style="
+
+              
+                        	background-image:url(https://ajaxshowtime.jentcdn.net/uploads/filemanager/242f6a7a82/21081_14374_242f6a7a82b22f812b5c713e4996d677_634x357.jpeg);
+                        ">
+
+                    <h1 class="photo_item_link"> Interlands: Tadić, Onana en Traoré in actie</h1>
+                    <div class="photo_item_cat">Bijzaken en geruchten <span>21 reacties</span></div>
+                </a>
+            </div>
+            <div class="resize  photo_item ">
+                <a href="https://www.ajaxshowtime.com/article/bijzaken-en-geruchten/127116/gerucht-ajax-bereidt-bod-van-40-miljoen-voor-op-reinier"
+                    class="photo_item_helper" style="
+
+              
+                        	background-image:url(https://ajaxshowtime.jentcdn.net/uploads/filemanager/35d8757f80/21984_2250_35d8757f805f44ce0cfce5e5abfa53bb_634x357.jpeg);
+                        ">
+
+                    <h1 class="photo_item_link"> Gerucht: 'Ajax bereidt bod van 40 miljoen voor op Reinier'</h1>
+                    <div class="photo_item_cat">Bijzaken en geruchten <span>80 reacties</span></div>
+                </a>
+            </div>
+            <div class="resize  photo_item ">
+                <a href="https://www.ajaxshowtime.com/article/bijzaken-en-geruchten/127115/bondscoach-usa-lovend-over-dest-niet-bij-veel-spelers-gezien"
+                    class="photo_item_helper" style="
+
+              
+                        	background-image:url(https://ajaxshowtime.jentcdn.net/uploads/filemanager/39370df734/21983_20386_39370df7342e8d313075c25831c898e5_634x357.jpeg);
+                        ">
+
+                    <h1 class="photo_item_link"> Bondscoach USA lovend over Dest: 'Niet bij veel spelers gezien'</h1>
+                    <div class="photo_item_cat">Bijzaken en geruchten <span>9 reacties</span></div>
+                </a>
+            </div>
+            <div class="resize  photo_item ">
+                <a href="https://www.ajaxshowtime.com/article/hoofdnieuws/127113/veltman-na-handsbal-neem-bijna-stokje-van-matthijs-over"
+                    class="photo_item_helper" style="
+
+              
+                        	background-image:url(https://ajaxshowtime.jentcdn.net/uploads/filemanager/f0bc79fb66/21981_817_f0bc79fb66d04c865c11960a5b6a66cc_634x357.jpeg);
+                        ">
+
+                    <h1 class="photo_item_link"> Veltman na handsbal: 'Neem bijna stokje van Matthijs over'</h1>
+                    <div class="photo_item_cat">Hoofdnieuws <span>29 reacties</span></div>
+                </a>
+            </div>
+            <div class="resize  photo_item ">
+                <a href="https://www.ajaxshowtime.com/article/hoofdnieuws/127112/blind-gaat-zich-wedstrijd-niet-heel-lang-herinneren"
+                    class="photo_item_helper" style="
+
+              
+                        	background-image:url(https://ajaxshowtime.jentcdn.net/uploads/filemanager/d899077549/21980_14777_d89907754979e765b2ae43b0d35d1147_634x357.jpeg);
+                        ">
+
+                    <h1 class="photo_item_link"> Blind gaat zich wedstrijd 'niet heel lang' herinneren</h1>
+                    <div class="photo_item_cat">Hoofdnieuws <span>6 reacties</span></div>
+                </a>
+            </div>
+            <div class="resize  photo_item ">
+                <a href="https://www.ajaxshowtime.com/article/bijzaken-en-geruchten/127111/koeman-ben-blij-en-trots-op-dit-team"
+                    class="photo_item_helper" style="
+
+              
+                        	background-image:url(https://ajaxshowtime.jentcdn.net/uploads/filemanager/8e212ab86d/21979_21968_8e212ab86d46877b4f682af296d53e7c_634x357.jpg);
+                        ">
+
+                    <h1 class="photo_item_link"> Koeman: 'Ben blij en trots op dit team'</h1>
+                    <div class="photo_item_cat">Bijzaken en geruchten <span>58 reacties</span></div>
+                </a>
+            </div>
+            <div class="resize  photo_item ">
+                <a href="https://www.ajaxshowtime.com/article/voetbalnieuws/127110/de-jong-voor-mijn-gevoel-moeten-we-winnen-hier"
+                    class="photo_item_helper" style="
+
+              
+                        	background-image:url(https://ajaxshowtime.jentcdn.net/uploads/filemanager/3c279d3f0e/21978_21968_3c279d3f0e9167ee919bdfbcd942f5bd_634x357.jpg);
+                        ">
+
+                    <h1 class="photo_item_link"> De Jong: 'Voor mijn gevoel moeten we winnen hier'</h1>
+                    <div class="photo_item_cat">Voetbalnieuws <span>11 reacties</span></div>
+                </a>
+            </div>
+            <div class="resize  photo_item ">
+                <a href="https://www.ajaxshowtime.com/article/bijzaken-en-geruchten/127109/aanvoerder-van-dijk-we-hebben-de-klus-geklaard"
+                    class="photo_item_helper" style="
+
+              
+                        	background-image:url(https://ajaxshowtime.jentcdn.net/uploads/filemanager/73fd9beb42/21977_21968_73fd9beb42c4c944937a6cbf9e43fa51_634x357.jpg);
+                        ">
+
+                    <h1 class="photo_item_link"> Aanvoerder Van Dijk: 'We hebben de klus geklaard'</h1>
+                    <div class="photo_item_cat">Bijzaken en geruchten <span>11 reacties</span></div>
+                </a>
+            </div>
+            <div class="resize  photo_item ">
+                <a href="https://www.ajaxshowtime.com/article/hoofdnieuws/127098/nederland-plaatst-zich-voor-ek-na-doelpuntloos-gelijkspel"
+                    class="photo_item_helper" style="
+
+              
+                        	background-image:url(https://ajaxshowtime.jentcdn.net/uploads/filemanager/cc27c7bc52/21976_21968_cc27c7bc520b98259d2d17a34bc488d5_634x357.jpg);
+                        ">
+
+                    <h1 class="photo_item_link"> Nederland plaatst zich voor EK na doelpuntloos gelijkspel</h1>
+                    <div class="photo_item_cat">Hoofdnieuws <span>946 reacties</span></div>
+                </a>
+            </div>
+            <div class="resize  photo_item ">
+                <a href="https://www.ajaxshowtime.com/article/bijzaken-en-geruchten/127108/koeman-verklaart-keuze-voor-veltman-meer-vastigheid"
+                    class="photo_item_helper" style="
+
+              
+                        	background-image:url(https://ajaxshowtime.jentcdn.net/uploads/filemanager/19b5418537/21974_21968_19b541853725e24b44bcd0f0fef54194_634x357.jpg);
+                        ">
+
+                    <h1 class="photo_item_link"> Koeman verklaart keuze voor Veltman: 'Meer vastigheid'</h1>
+                    <div class="photo_item_cat">Bijzaken en geruchten <span>14 reacties</span></div>
+                </a>
+            </div>
+            <div class="resize  photo_item ">
+                <a href="https://www.ajaxshowtime.com/article/bijzaken-en-geruchten/127107/koeman-kiest-voor-vier-ajacieden-in-oranje-basis"
+                    class="photo_item_helper" style="
+
+              
+                        	background-image:url(https://ajaxshowtime.jentcdn.net/uploads/filemanager/64511531c0/21543_825_64511531c0608b00143c5d9d9edf1aae_634x357.jpeg);
+                        ">
+
+                    <h1 class="photo_item_link"> Koeman kiest voor vier Ajacieden in Oranje-basis</h1>
+                    <div class="photo_item_cat">Bijzaken en geruchten <span>47 reacties</span></div>
+                </a>
+            </div>
+            <div class="resize  photo_item ">
+                <a href="https://www.ajaxshowtime.com/article/hoofdnieuws/127085/ava-overmars-en-van-der-sar-verdienen-standbeeld"
+                    class="photo_item_helper" style="
+
+              
+                        	background-image:url(https://ajaxshowtime.jentcdn.net/uploads/filemanager/4f814531a5/21953_256_4f814531a5e3dd0213fd31136519f7e1_634x357.jpeg);
+                        ">
+
+                    <h1 class="photo_item_link"> AVA: 'Overmars en Van der Sar verdienen standbeeld'</h1>
+                    <div class="photo_item_cat">Hoofdnieuws <span>50 reacties</span></div>
+                </a>
+            </div>
+            <div class="resize  photo_item ">
+                <a href="https://www.ajaxshowtime.com/article/opinie/127106/om-koeman-hangt-een-zweem-van-onaantastbaarheid"
+                    class="photo_item_helper" style="
+
+              
+                        	background-image:url(https://ajaxshowtime.jentcdn.net/uploads/filemanager/7bbff3a7b2/21970_21968_7bbff3a7b2810571523ac278b6eb867b_634x357.jpg);
+                        ">
+
+                    <h1 class="photo_item_link"> 'Om Koeman hangt een zweem van onaantastbaarheid'</h1>
+                    <div class="photo_item_cat">Opinie <span>44 reacties</span></div>
+                </a>
+            </div>
+            <div class="resize  photo_item ">
+                <a href="https://www.ajaxshowtime.com/article/hoofdnieuws/127105/vd-sar-niet-van-de-beurs-en-nemen-arena-niet-over"
+                    class="photo_item_helper" style="
+
+              
+                        	background-image:url(https://ajaxshowtime.jentcdn.net/uploads/filemanager/db8fde11f9/21966_1237_db8fde11f9de635ffc054ee74dd8c3a7_634x357.jpg);
+                        ">
+
+                    <h1 class="photo_item_link"> Vd Sar: 'Niet van de beurs en nemen ArenA niet over'</h1>
+                    <div class="photo_item_cat">Hoofdnieuws <span>32 reacties</span></div>
+                </a>
+            </div>
+            <div class="resize  photo_item ">
+                <a href="https://www.ajaxshowtime.com/article/opinie/127104/veel-meer-dan-ajax-is-er-niet-te-genieten"
+                    class="photo_item_helper" style="
+
+              
+                        	background-image:url(https://ajaxshowtime.jentcdn.net/uploads/filemanager/3e3fe0c9d8/21965_256_3e3fe0c9d808b897710a790366fd5357_634x357.jpg);
+                        ">
+
+                    <h1 class="photo_item_link"> 'Veel meer dan Ajax is er niet te genieten'</h1>
+                    <div class="photo_item_cat">Opinie <span>26 reacties</span></div>
+                </a>
+            </div>
+            <div class="resize  photo_item ">
+                <a href="https://www.ajaxshowtime.com/article/bijzaken-en-geruchten/127102/ajax-o15-en-o16-winnen-doelpuntrijk-bij-sparta"
+                    class="photo_item_helper" style="
+
+              
+                        	background-image:url(https://ajaxshowtime.jentcdn.net/uploads/filemanager/8a58fa7311/2678_1444_8a58fa7311d6ec2619a962cbc18be319_634x357.jpg);
+                        ">
+
+                    <h1 class="photo_item_link"> Ajax O15 en O16 winnen doelpuntrijk bij Sparta</h1>
+                    <div class="photo_item_cat">Bijzaken en geruchten <span>0 reacties</span></div>
+                </a>
+            </div>
+            <div class="resize  photo_item ">
+                <a href="https://www.ajaxshowtime.com/article/voetbalnieuws/127103/de-ligt-winnende-tegen-torino-echt-heel-mooi-moment"
+                    class="photo_item_helper" style="
+
+              
+                        	background-image:url(https://ajaxshowtime.jentcdn.net/uploads/filemanager/76a275bc61/21964_20303_76a275bc61dcac3a0e143fdc4c39b909_634x357.jpg);
+                        ">
+
+                    <h1 class="photo_item_link"> De Ligt: 'Winnende tegen Torino echt heel mooi moment'</h1>
+                    <div class="photo_item_cat">Voetbalnieuws <span>3 reacties</span></div>
+                </a>
+            </div>
+            <div class="resize  photo_item ">
+                <a href="https://www.ajaxshowtime.com/article/bijzaken-en-geruchten/127101/sport1-ten-hag-wunschkandidat-bij-bayern"
+                    class="photo_item_helper" style="
+
+              
+                        	background-image:url(https://ajaxshowtime.jentcdn.net/uploads/filemanager/e1767ed5d4/21842_11753_e1767ed5d4b1417a93a2da9967f8ee31_634x357.jpg);
+                        ">
+
+                    <h1 class="photo_item_link"> Sport1: 'Ten Hag Wunschkandidat bij Bayern'</h1>
+                    <div class="photo_item_cat">Bijzaken en geruchten <span>39 reacties</span></div>
+                </a>
+            </div>
+            <div class="resize  photo_item ">
+                <a href="https://www.ajaxshowtime.com/article/bijzaken-en-geruchten/127100/blind-vooral-laatste-weken-vallen-stukjes-in-elkaar"
+                    class="photo_item_helper" style="
+
+              
+                        	background-image:url(https://ajaxshowtime.jentcdn.net/uploads/filemanager/a49f29a06c/21963_14777_a49f29a06cdc6d2bd5d88735d6ba09ec_634x357.jpg);
+                        ">
+
+                    <h1 class="photo_item_link"> Blind: 'Vooral laatste weken vallen stukjes in elkaar'</h1>
+                    <div class="photo_item_cat">Bijzaken en geruchten <span>14 reacties</span></div>
+                </a>
+            </div>
+            <div class="resize  photo_item ">
+                <a href="https://www.ajaxshowtime.com/article/bijzaken-en-geruchten/127099/ad-verwacht-blind-en-promes-in-basis-oranje"
+                    class="photo_item_helper" style="
+
+              
+                        	background-image:url(https://ajaxshowtime.jentcdn.net/uploads/filemanager/9c5c1c2d57/21962_20008_9c5c1c2d57b09abfcc5749557dbe9976_634x357.jpg);
+                        ">
+
+                    <h1 class="photo_item_link"> AD verwacht Blind en Promes in basis Oranje</h1>
+                    <div class="photo_item_cat">Bijzaken en geruchten <span>24 reacties</span></div>
+                </a>
+            </div>
+
+            <div style="margin-buttom:15px;text-align:center;">
+                <!--
+<a href='http://www.ajaxshowtime.com/webshop/product/39/kolere-wzawzdb-beanie' target='_blank'><img 
+src='http://www.ajaxshowtime.com/uploads/filemanager/5a7dbb6886/1861_393_5a7dbb688665642b95664c0a0f25f3de_634x357.jpg'></a>
+
+<a href='http://www.ajaxshowtime.com/webshop' target='_blank'><img src='http://www.ajaxshowtime.com/uploads/filemanager/f44cf5cea8/556_524_f44cf5cea84a95a9933d5989f45708a1_original.jpg'></a>
+
+<a href='http://www.ajaxshowtime.com/webshop/product/34/dvd-becoming-zlatan' target='_blank'><img src='http://www.ajaxshowtime.com/uploads/filemanager/78aa98f7cf/543_524_78aa98f7cf815dfff9cf438c54e7239f_634x357.jpg'></a>
+
+-->
+
+                <!--
+<a href='http://www.ajaxshowtime.com/webshop/product/35/kolere-wzawzdb-snapback' target='_blank'><img src='http://www.ajaxshowtime.com/uploads/filemanager/e90d0b151d/537_524_e90d0b151d1de5a1a6d27db123a584b4_original.jpg'></a>
+
+-->
+            </div>
+
+        </section>
+        <!-- END LOAD MODULE -->
+
+
+
+
+
+        <!-- LOAD SIDEBAR -->
+        <aside>
+            <!-- MOBILE ADS -->
+            <div class="mobile_ads">
+                <!-- -->
+            </div>
+
+
+
+
+
+            <ul class="block " data-cat-id="1">
+                <li><span>Hoofdnieuws</span></li>
+
+
+                <!-- -->
+                <div class="ablo ablo_article" style="display:none;">
+                    <!-- HERE -->
+                    Pak 30 procent korting <a
+                        href="https://www.ajaxshop.nl/nl/wedstrijd/uittenue?utm_source=ajaxshowtime.com&utm_medium=cpc"
+                        target="_blank">op het uitshirt van dit seizoen</a> . </div>
+
+
+                <li data-date="2019-11-17 09:35:00"><a
+                        title="Veltman na handsbal: 'Neem bijna stokje van Matthijs over'"
+                        href="/article/hoofdnieuws/127113/veltman-na-handsbal-neem-bijna-stokje-van-matthijs-over">Veltman
+                        na handsbal: 'Neem bijna stokje van Matthijs over' </a> <a
+                        title="Veltman na handsbal: 'Neem bijna stokje van Matthijs over'"
+                        href="/article/hoofdnieuws/127113/veltman-na-handsbal-neem-bijna-stokje-van-matthijs-over#reacties"
+                        class="comments">29</a></li>
+                <li data-date="2019-11-17 09:15:00"><a title="Blind gaat zich wedstrijd 'niet heel lang' herinneren"
+                        href="/article/hoofdnieuws/127112/blind-gaat-zich-wedstrijd-niet-heel-lang-herinneren">Blind
+                        gaat zich wedstrijd 'niet heel lang' herinneren </a> <a
+                        title="Blind gaat zich wedstrijd 'niet heel lang' herinneren"
+                        href="/article/hoofdnieuws/127112/blind-gaat-zich-wedstrijd-niet-heel-lang-herinneren#reacties"
+                        class="comments">6</a></li>
+                <li data-date="2019-11-16 22:35:00"><a title="Nederland plaatst zich voor EK na doelpuntloos gelijkspel"
+                        href="/article/hoofdnieuws/127098/nederland-plaatst-zich-voor-ek-na-doelpuntloos-gelijkspel">Nederland
+                        plaatst zich voor EK na doelpuntloos gelijkspel </a> <a
+                        title="Nederland plaatst zich voor EK na doelpuntloos gelijkspel"
+                        href="/article/hoofdnieuws/127098/nederland-plaatst-zich-voor-ek-na-doelpuntloos-gelijkspel#reacties"
+                        class="comments">946</a></li>
+                <li class="bold" data-date="2019-11-16 17:15:00"><a
+                        title="AVA: 'Overmars en Van der Sar verdienen standbeeld'"
+                        href="/article/hoofdnieuws/127085/ava-overmars-en-van-der-sar-verdienen-standbeeld">AVA:
+                        'Overmars en Van der Sar verdienen standbeeld' <img width="12" height="12"
+                            src="https://ajaxshowtime.jentcdn.net/images/icon-logo.svg" alt="Eigen nieuws"> </a> <a
+                        title="AVA: 'Overmars en Van der Sar verdienen standbeeld'"
+                        href="/article/hoofdnieuws/127085/ava-overmars-en-van-der-sar-verdienen-standbeeld#reacties"
+                        class="comments">50</a></li>
+                <li data-date="2019-11-16 14:45:00"><a title="Vd Sar: 'Niet van de beurs en nemen ArenA niet over'"
+                        href="/article/hoofdnieuws/127105/vd-sar-niet-van-de-beurs-en-nemen-arena-niet-over">Vd Sar:
+                        'Niet van de beurs en nemen ArenA niet over' <img width="12" height="12"
+                            src="https://ajaxshowtime.jentcdn.net/images/icon-logo.svg" alt="Eigen nieuws"> </a> <a
+                        title="Vd Sar: 'Niet van de beurs en nemen ArenA niet over'"
+                        href="/article/hoofdnieuws/127105/vd-sar-niet-van-de-beurs-en-nemen-arena-niet-over#reacties"
+                        class="comments">32</a></li>
+                <li data-date="2019-11-16 08:45:00"><a title="Overmars gaat gesprek aan met Blind"
+                        href="/article/hoofdnieuws/127097/overmars-gaat-gesprek-aan-met-blind">Overmars gaat gesprek aan
+                        met Blind </a> <a title="Overmars gaat gesprek aan met Blind"
+                        href="/article/hoofdnieuws/127097/overmars-gaat-gesprek-aan-met-blind#reacties"
+                        class="comments">51</a></li>
+                <li></li>
+            </ul>
+
+            <div class="ad">
+                <!-- /1030791/Homepage_HPA -->
+                <div id='div-gpt-ad-1529665429499-3'>
+                    <script>
+
+                    </script>
+                </div> <!-- MOBILE ADS -->
+                <div class="mobile_ads">
+                    <!---->
+                </div>
+            </div>
+
+            <ul class="block" data-cat-id="1">
+                <li></li>
+                <li data-date="2019-11-16 08:25:00"><a
+                        title="'Eijken beoogd opvolger Henrichs als voorzitter bestuursraad'"
+                        href="/article/hoofdnieuws/127094/eijken-beoogd-opvolger-henrichs-als-voorzitter-bestuursraad">'Eijken
+                        beoogd opvolger Henrichs als voorzitter bestuursraad' </a> <a
+                        title="'Eijken beoogd opvolger Henrichs als voorzitter bestuursraad'"
+                        href="/article/hoofdnieuws/127094/eijken-beoogd-opvolger-henrichs-als-voorzitter-bestuursraad#reacties"
+                        class="comments">66</a></li>
+                <li data-date="2019-11-16 08:10:00"><a title="Dest debuteert met assist voor Team USA"
+                        href="/article/hoofdnieuws/127093/dest-debuteert-met-assist-voor-team-usa">Dest debuteert met
+                        assist voor Team USA </a> <a title="Dest debuteert met assist voor Team USA"
+                        href="/article/hoofdnieuws/127093/dest-debuteert-met-assist-voor-team-usa#reacties"
+                        class="comments">6</a></li>
+                <li data-date="2019-11-15 18:05:00"><a title="Ajax lanceert na volgend seizoen nieuw ticketing-systeem"
+                        href="/article/hoofdnieuws/127081/ajax-lanceert-na-volgend-seizoen-nieuw-ticketing-systeem">Ajax
+                        lanceert na volgend seizoen nieuw ticketing-systeem </a> <a
+                        title="Ajax lanceert na volgend seizoen nieuw ticketing-systeem"
+                        href="/article/hoofdnieuws/127081/ajax-lanceert-na-volgend-seizoen-nieuw-ticketing-systeem#reacties"
+                        class="comments">39</a></li>
+                <li data-date="2019-11-15 17:25:00"><a
+                        title="Overmars en VDS bleven ondanks veel buitenlandse interesse"
+                        href="/article/hoofdnieuws/127080/overmars-en-vds-bleven-ondanks-veel-buitenlandse-interesse">Overmars
+                        en VDS bleven ondanks veel buitenlandse interesse <img width="12" height="12"
+                            src="https://ajaxshowtime.jentcdn.net/images/icon-logo.svg" alt="Eigen nieuws"> </a> <a
+                        title="Overmars en VDS bleven ondanks veel buitenlandse interesse"
+                        href="/article/hoofdnieuws/127080/overmars-en-vds-bleven-ondanks-veel-buitenlandse-interesse#reacties"
+                        class="comments">12</a></li>
+                <li><a href="#" class="js-headline">Toon meer headlines</a></li>
+            </ul>
+
+
+
+
+
+            <div class="mobile_ads">
+                <p><a href="https://mijn.ajax.nl/profile/action/?name=black-friday#utm_source=ajaxshowtime.com&amp;utm_medium=cpc&amp;utm_campaign=black_friday_earlyaccess_2019-11-11"
+                        target="_blank">Profiteer eerder van Black Friday in de Ajaxshop!</a></p>
+            </div>
+
+
+
+
+            <ul class="block " data-cat-id="3">
+                <li><span>Bijzaken en geruchten</span></li>
+
+
+                <li data-date="2019-11-18 07:45:00"><a title="Steeds minder politie-inzet rond voetbalwedstrijden"
+                        href="/article/bijzaken-en-geruchten/127130/steeds-minder-politie-inzet-rond-voetbalwedstrijden">Steeds
+                        minder politie-inzet rond voetbalwedstrijden </a> <a
+                        title="Steeds minder politie-inzet rond voetbalwedstrijden"
+                        href="/article/bijzaken-en-geruchten/127130/steeds-minder-politie-inzet-rond-voetbalwedstrijden#reacties"
+                        class="comments">5</a></li>
+                <li data-date="2019-11-18 07:30:00"><a title="Rondom: Hansen topscorer WK Onder 17"
+                        href="/article/bijzaken-en-geruchten/127129/rondom-hansen-topscorer-wk-onder-17">Rondom: Hansen
+                        topscorer WK Onder 17 </a> <a title="Rondom: Hansen topscorer WK Onder 17"
+                        href="/article/bijzaken-en-geruchten/127129/rondom-hansen-topscorer-wk-onder-17#reacties"
+                        class="comments">0</a></li>
+                <li data-date="2019-11-17 23:15:00"><a title="Eenhoorn: 'Denk dat gat kleiner is dan men denkt'"
+                        href="/article/bijzaken-en-geruchten/127126/eenhoorn-denk-dat-gat-kleiner-is-dan-men-denkt">Eenhoorn:
+                        'Denk dat gat kleiner is dan men denkt' </a> <a
+                        title="Eenhoorn: 'Denk dat gat kleiner is dan men denkt'"
+                        href="/article/bijzaken-en-geruchten/127126/eenhoorn-denk-dat-gat-kleiner-is-dan-men-denkt#reacties"
+                        class="comments">31</a></li>
+                <li data-date="2019-11-17 22:30:00"><a
+                        title="Hansen hoopt ondanks teleurstelling op topscorerstitel WK O17"
+                        href="/article/bijzaken-en-geruchten/127125/hansen-hoopt-ondanks-teleurstelling-op-topscorerstitel-wk-o17">Hansen
+                        hoopt ondanks teleurstelling op topscorerstitel WK O17 </a> <a
+                        title="Hansen hoopt ondanks teleurstelling op topscorerstitel WK O17"
+                        href="/article/bijzaken-en-geruchten/127125/hansen-hoopt-ondanks-teleurstelling-op-topscorerstitel-wk-o17#reacties"
+                        class="comments">3</a></li>
+                <li data-date="2019-11-17 21:35:00"><a title="Rondom: Daily Mail vergelijkt Taylor met supersterren"
+                        href="/article/bijzaken-en-geruchten/126996/rondom-daily-mail-vergelijkt-taylor-met-supersterren">Rondom:
+                        Daily Mail vergelijkt Taylor met supersterren </a> <a
+                        title="Rondom: Daily Mail vergelijkt Taylor met supersterren"
+                        href="/article/bijzaken-en-geruchten/126996/rondom-daily-mail-vergelijkt-taylor-met-supersterren#reacties"
+                        class="comments">120</a></li>
+                <li data-date="2019-11-17 20:50:00"><a title="Oranje O17 verliest en loopt brons op WK mis"
+                        href="/article/bijzaken-en-geruchten/127114/oranje-o17-verliest-en-loopt-brons-op-wk-mis">Oranje
+                        O17 verliest en loopt brons op WK mis </a> <a
+                        title="Oranje O17 verliest en loopt brons op WK mis"
+                        href="/article/bijzaken-en-geruchten/127114/oranje-o17-verliest-en-loopt-brons-op-wk-mis#reacties"
+                        class="comments">33</a></li>
+                <li data-date="2019-11-17 19:00:00"><a title="Onana houdt de nul en wint met Kameroen"
+                        href="/article/bijzaken-en-geruchten/127117/onana-houdt-de-nul-en-wint-met-kameroen">Onana houdt
+                        de nul en wint met Kameroen </a> <a title="Onana houdt de nul en wint met Kameroen"
+                        href="/article/bijzaken-en-geruchten/127117/onana-houdt-de-nul-en-wint-met-kameroen#reacties"
+                        class="comments">17</a></li>
+                <li data-date="2019-11-17 16:35:00"><a title="Freitas ziet Reinier niet naar Ajax komen"
+                        href="/article/bijzaken-en-geruchten/127122/freitas-ziet-reinier-niet-naar-ajax-komen">Freitas
+                        ziet Reinier niet naar Ajax komen <img width="12" height="12"
+                            src="https://ajaxshowtime.jentcdn.net/images/icon-logo.svg" alt="Eigen nieuws"> </a> <a
+                        title="Freitas ziet Reinier niet naar Ajax komen"
+                        href="/article/bijzaken-en-geruchten/127122/freitas-ziet-reinier-niet-naar-ajax-komen#reacties"
+                        class="comments">43</a></li>
+                <li></li>
+            </ul>
+            <div class="mobile_ads">
+                <!-- /1030791/Homepage_rectangle_1 -->
+                <div id='div-gpt-ad-1529665429499-4'>
+                    <script>
+
+                    </script>
+                </div>
+                <!---->
+            </div>
+
+            <ul class="block" data-cat-id="3">
+                <li></li>
+                <li data-date="2019-11-17 14:10:00"><a title="Moeder Schuurs hoopte op transfer naar PSV"
+                        href="/article/bijzaken-en-geruchten/127121/moeder-schuurs-hoopte-op-transfer-naar-psv">Moeder
+                        Schuurs hoopte op transfer naar PSV </a> <a title="Moeder Schuurs hoopte op transfer naar PSV"
+                        href="/article/bijzaken-en-geruchten/127121/moeder-schuurs-hoopte-op-transfer-naar-psv#reacties"
+                        class="comments">30</a></li>
+                <li data-date="2019-11-17 13:25:00"><a title="Schöne: 'Helemaal geen spijt van overstap'"
+                        href="/article/bijzaken-en-geruchten/127120/schone-helemaal-geen-spijt-van-overstap">Schöne:
+                        'Helemaal geen spijt van overstap' </a> <a title="Schöne: 'Helemaal geen spijt van overstap'"
+                        href="/article/bijzaken-en-geruchten/127120/schone-helemaal-geen-spijt-van-overstap#reacties"
+                        class="comments">10</a></li>
+                <li data-date="2019-11-17 12:05:00"><a title="Blind verbaasd: 'Twee keer niet plaatsen en nu favoriet'"
+                        href="/article/bijzaken-en-geruchten/127119/blind-verbaasd-twee-keer-niet-plaatsen-en-nu-favoriet">Blind
+                        verbaasd: 'Twee keer niet plaatsen en nu favoriet' </a> <a
+                        title="Blind verbaasd: 'Twee keer niet plaatsen en nu favoriet'"
+                        href="/article/bijzaken-en-geruchten/127119/blind-verbaasd-twee-keer-niet-plaatsen-en-nu-favoriet#reacties"
+                        class="comments">21</a></li>
+                <li data-date="2019-11-17 11:30:00"><a title="'Niet het gevoel dat ik Dumfries al verslagen heb'"
+                        href="/article/bijzaken-en-geruchten/127118/niet-het-gevoel-dat-ik-dumfries-al-verslagen-heb">'Niet
+                        het gevoel dat ik Dumfries al verslagen heb' </a> <a
+                        title="'Niet het gevoel dat ik Dumfries al verslagen heb'"
+                        href="/article/bijzaken-en-geruchten/127118/niet-het-gevoel-dat-ik-dumfries-al-verslagen-heb#reacties"
+                        class="comments">18</a></li>
+                <li data-date="2019-11-17 10:50:00"><a title="Interlands: Tadić, Onana en Traoré in actie"
+                        href="/article/bijzaken-en-geruchten/126998/interlands-tadic-onana-en-traore-in-actie">Interlands:
+                        Tadić, Onana en Traoré in actie <img width="12" height="12"
+                            src="https://ajaxshowtime.jentcdn.net/images/icon-logo.svg" alt="Eigen nieuws"> </a> <a
+                        title="Interlands: Tadić, Onana en Traoré in actie"
+                        href="/article/bijzaken-en-geruchten/126998/interlands-tadic-onana-en-traore-in-actie#reacties"
+                        class="comments">21</a></li>
+                <li data-date="2019-11-17 10:40:00"><a
+                        title="Gerucht: 'Ajax bereidt bod van 40 miljoen voor op Reinier'"
+                        href="/article/bijzaken-en-geruchten/127116/gerucht-ajax-bereidt-bod-van-40-miljoen-voor-op-reinier">Gerucht:
+                        'Ajax bereidt bod van 40 miljoen voor op Reinier' </a> <a
+                        title="Gerucht: 'Ajax bereidt bod van 40 miljoen voor op Reinier'"
+                        href="/article/bijzaken-en-geruchten/127116/gerucht-ajax-bereidt-bod-van-40-miljoen-voor-op-reinier#reacties"
+                        class="comments">80</a></li>
+                <li data-date="2019-11-17 10:30:00"><a
+                        title="Bondscoach USA lovend over Dest: 'Niet bij veel spelers gezien'"
+                        href="/article/bijzaken-en-geruchten/127115/bondscoach-usa-lovend-over-dest-niet-bij-veel-spelers-gezien">Bondscoach
+                        USA lovend over Dest: 'Niet bij veel spelers gezien' </a> <a
+                        title="Bondscoach USA lovend over Dest: 'Niet bij veel spelers gezien'"
+                        href="/article/bijzaken-en-geruchten/127115/bondscoach-usa-lovend-over-dest-niet-bij-veel-spelers-gezien#reacties"
+                        class="comments">9</a></li>
+                <li data-date="2019-11-16 23:15:00"><a title="Koeman: 'Ben blij en trots op dit team'"
+                        href="/article/bijzaken-en-geruchten/127111/koeman-ben-blij-en-trots-op-dit-team">Koeman: 'Ben
+                        blij en trots op dit team' </a> <a title="Koeman: 'Ben blij en trots op dit team'"
+                        href="/article/bijzaken-en-geruchten/127111/koeman-ben-blij-en-trots-op-dit-team#reacties"
+                        class="comments">58</a></li>
+                <li data-date="2019-11-16 22:45:00"><a title="Aanvoerder Van Dijk: 'We hebben de klus geklaard'"
+                        href="/article/bijzaken-en-geruchten/127109/aanvoerder-van-dijk-we-hebben-de-klus-geklaard">Aanvoerder
+                        Van Dijk: 'We hebben de klus geklaard' </a> <a
+                        title="Aanvoerder Van Dijk: 'We hebben de klus geklaard'"
+                        href="/article/bijzaken-en-geruchten/127109/aanvoerder-van-dijk-we-hebben-de-klus-geklaard#reacties"
+                        class="comments">11</a></li>
+                <li data-date="2019-11-16 20:15:00"><a title="Koeman verklaart keuze voor Veltman: 'Meer vastigheid'"
+                        href="/article/bijzaken-en-geruchten/127108/koeman-verklaart-keuze-voor-veltman-meer-vastigheid">Koeman
+                        verklaart keuze voor Veltman: 'Meer vastigheid' </a> <a
+                        title="Koeman verklaart keuze voor Veltman: 'Meer vastigheid'"
+                        href="/article/bijzaken-en-geruchten/127108/koeman-verklaart-keuze-voor-veltman-meer-vastigheid#reacties"
+                        class="comments">14</a></li>
+                <li><a href="#" class="js-headline">Toon meer headlines</a></li>
+            </ul>
+
+
+            <div class="mobile_ads" data-name="MOBILE_BELOW_ACTIONS" style="margin-bottom:10px;">
+                <!--
+
+<a href='https://www.ajaxshop.nl/nl/nieuw-2/nieuw/ajax-kopenhagen-sjaal-combi-9-16-mrt-2017?utm_source=Affiliate&utm_medium=Ajax%20Showtime' target='_blank'><img src='https://www.ajaxshowtime.com/uploads/filemanager/5bf7e520f6/7720_393_5bf7e520f6bf03abdb9e936c17627304_original.jpg'></a>
+-->
+                <!-- -->
+            </div>
+
+            <div id="ticker_desktop" style="display:none;">
+                <ul class="block">
+                    <li><span>Acties en artikelen</span></li>
+                </ul>
+                <div class="ad">
+                    <a href="https://www.ajaxshowtime.com/article/hoofdnieuws/127085/ava-overmars-en-van-der-sar-verdienen-standbeeld"
+                        target="_blank"><img
+                            src="https://ajaxshowtime.jentcdn.net/uploads/filemanager/4f814531a5/21953_256_4f814531a5e3dd0213fd31136519f7e1_312x176.jpeg" /></a>
+                    <a href="https://www.ajaxshowtime.com/article/hoofdnieuws/127085/ava-overmars-en-van-der-sar-verdienen-standbeeld"
+                        target="_blank" style="text-align:center;padding-top:5px;display:block;">AVA: 'Overmars en Van
+                        der Sar verdienen standbeeld'</a>
+                </div>
+            </div>
+
+
+
+
+
+
+            <ul class="block " data-cat-id="4">
+                <li><span>Opinie</span></li>
+
+
+                <li data-date="2019-11-18 07:10:00"><a title="'Promes meest actieve van onze aanvallers'"
+                        href="/article/opinie/127127/promes-meest-actieve-van-onze-aanvallers">'Promes meest actieve van
+                        onze aanvallers' </a> <a title="'Promes meest actieve van onze aanvallers'"
+                        href="/article/opinie/127127/promes-meest-actieve-van-onze-aanvallers#reacties"
+                        class="comments">2</a></li>
+                <li data-date="2019-11-16 17:00:00"><a title="'Om Koeman hangt een zweem van onaantastbaarheid'"
+                        href="/article/opinie/127106/om-koeman-hangt-een-zweem-van-onaantastbaarheid">'Om Koeman hangt
+                        een zweem van onaantastbaarheid' </a> <a
+                        title="'Om Koeman hangt een zweem van onaantastbaarheid'"
+                        href="/article/opinie/127106/om-koeman-hangt-een-zweem-van-onaantastbaarheid#reacties"
+                        class="comments">44</a></li>
+                <li data-date="2019-11-16 13:55:00"><a title="'Veel meer dan Ajax is er niet te genieten'"
+                        href="/article/opinie/127104/veel-meer-dan-ajax-is-er-niet-te-genieten">'Veel meer dan Ajax is
+                        er niet te genieten' </a> <a title="'Veel meer dan Ajax is er niet te genieten'"
+                        href="/article/opinie/127104/veel-meer-dan-ajax-is-er-niet-te-genieten#reacties"
+                        class="comments">26</a></li>
+                <li data-date="2019-11-15 20:05:00"><a title="De Groot noemt benaderen van AZ-jeugdspeler 'zwaktebod'"
+                        href="/article/opinie/127084/de-groot-noemt-benaderen-van-az-jeugdspeler-zwaktebod">De Groot
+                        noemt benaderen van AZ-jeugdspeler 'zwaktebod' </a> <a
+                        title="De Groot noemt benaderen van AZ-jeugdspeler 'zwaktebod'"
+                        href="/article/opinie/127084/de-groot-noemt-benaderen-van-az-jeugdspeler-zwaktebod#reacties"
+                        class="comments">53</a></li>
+                <li data-date="2019-11-15 16:40:00"><a
+                        title="'Ten Hag in het voetballende gedeelte perfect voor Bayern'"
+                        href="/article/opinie/127079/ten-hag-in-het-voetballende-gedeelte-perfect-voor-bayern">'Ten Hag
+                        in het voetballende gedeelte perfect voor Bayern' </a> <a
+                        title="'Ten Hag in het voetballende gedeelte perfect voor Bayern'"
+                        href="/article/opinie/127079/ten-hag-in-het-voetballende-gedeelte-perfect-voor-bayern#reacties"
+                        class="comments">8</a></li>
+                <li data-date="2019-11-15 12:40:00"><a title="'De Jong zou niet in dit Liverpool passen'"
+                        href="/article/opinie/127070/de-jong-zou-niet-in-dit-liverpool-passen">'De Jong zou niet in dit
+                        Liverpool passen' </a> <a title="'De Jong zou niet in dit Liverpool passen'"
+                        href="/article/opinie/127070/de-jong-zou-niet-in-dit-liverpool-passen#reacties"
+                        class="comments">32</a></li>
+                <li data-date="2019-11-15 08:00:00"><a title="Kweekvijver: Een berichtje van Griezmann"
+                        href="/article/opinie/127048/kweekvijver-een-berichtje-van-griezmann">Kweekvijver: Een berichtje
+                        van Griezmann <img width="12" height="12"
+                            src="https://ajaxshowtime.jentcdn.net/images/icon-logo.svg" alt="Eigen nieuws"> </a> <a
+                        title="Kweekvijver: Een berichtje van Griezmann"
+                        href="/article/opinie/127048/kweekvijver-een-berichtje-van-griezmann#reacties"
+                        class="comments">2</a></li>
+                <li data-date="2019-11-14 19:05:00"><a title="Verweij: 'Hoeveel meerwaarde heeft het?'"
+                        href="/article/opinie/127056/verweij-hoeveel-meerwaarde-heeft-het">Verweij: 'Hoeveel meerwaarde
+                        heeft het?' </a> <a title="Verweij: 'Hoeveel meerwaarde heeft het?'"
+                        href="/article/opinie/127056/verweij-hoeveel-meerwaarde-heeft-het#reacties"
+                        class="comments">57</a></li>
+                <li><a href="#" class="js-headline">Toon meer headlines</a></li>
+            </ul>
+
+
+
+
+
+
+
+            <div class="ad">
+                <!-- /1030791/Homepage_rectangle_V2 -->
+                <div id='div-gpt-ad-1529665429499-5'>
+                    <script>
+
+                    </script>
+                </div>
+            </div>
+
+
+
+            <ul class="block " data-cat-id="5">
+                <li><span>Voetbalnieuws</span></li>
+
+
+                <li data-date="2019-11-18 07:19:08"><a title="De Ligt: 'Ze interpreteren hands allemaal anders'"
+                        href="/article/voetbalnieuws/127128/de-ligt-ze-interpreteren-hands-allemaal-anders">De Ligt: 'Ze
+                        interpreteren hands allemaal anders' </a> <a
+                        title="De Ligt: 'Ze interpreteren hands allemaal anders'"
+                        href="/article/voetbalnieuws/127128/de-ligt-ze-interpreteren-hands-allemaal-anders#reacties"
+                        class="comments">0</a></li>
+                <li data-date="2019-11-17 19:40:00"><a
+                        title="Verhoeven nog altijd enthousiast over behalen Ajax' derde ster"
+                        href="/article/voetbalnieuws/127124/verhoeven-nog-altijd-enthousiast-over-behalen-ajax-derde-ster">Verhoeven
+                        nog altijd enthousiast over behalen Ajax' derde ster </a> <a
+                        title="Verhoeven nog altijd enthousiast over behalen Ajax' derde ster"
+                        href="/article/voetbalnieuws/127124/verhoeven-nog-altijd-enthousiast-over-behalen-ajax-derde-ster#reacties"
+                        class="comments">4</a></li>
+                <li data-date="2019-11-16 23:00:00"><a title="De Jong: 'Voor mijn gevoel moeten we winnen hier'"
+                        href="/article/voetbalnieuws/127110/de-jong-voor-mijn-gevoel-moeten-we-winnen-hier">De Jong:
+                        'Voor mijn gevoel moeten we winnen hier' </a> <a
+                        title="De Jong: 'Voor mijn gevoel moeten we winnen hier'"
+                        href="/article/voetbalnieuws/127110/de-jong-voor-mijn-gevoel-moeten-we-winnen-hier#reacties"
+                        class="comments">11</a></li>
+                <li data-date="2019-11-16 13:25:00"><a title="De Ligt: 'Winnende tegen Torino echt heel mooi moment'"
+                        href="/article/voetbalnieuws/127103/de-ligt-winnende-tegen-torino-echt-heel-mooi-moment">De
+                        Ligt: 'Winnende tegen Torino echt heel mooi moment' </a> <a
+                        title="De Ligt: 'Winnende tegen Torino echt heel mooi moment'"
+                        href="/article/voetbalnieuws/127103/de-ligt-winnende-tegen-torino-echt-heel-mooi-moment#reacties"
+                        class="comments">3</a></li>
+                <li data-date="2019-11-15 20:45:00"><a title="Driessen tot winterstop hoofdtrainer VVV-Venlo"
+                        href="/article/voetbalnieuws/127087/driessen-tot-winterstop-hoofdtrainer-vvv-venlo">Driessen tot
+                        winterstop hoofdtrainer VVV-Venlo </a> <a title="Driessen tot winterstop hoofdtrainer VVV-Venlo"
+                        href="/article/voetbalnieuws/127087/driessen-tot-winterstop-hoofdtrainer-vvv-venlo#reacties"
+                        class="comments">4</a></li>
+                <li data-date="2019-11-15 08:25:00"><a
+                        title="Spurs vreest transfervrij vertrek Alderweireld én Vertonghen"
+                        href="/article/voetbalnieuws/127067/spurs-vreest-transfervrij-vertrek-alderweireld-en-vertonghen">Spurs
+                        vreest transfervrij vertrek Alderweireld én Vertonghen </a> <a
+                        title="Spurs vreest transfervrij vertrek Alderweireld én Vertonghen"
+                        href="/article/voetbalnieuws/127067/spurs-vreest-transfervrij-vertrek-alderweireld-en-vertonghen#reacties"
+                        class="comments">92</a></li>
+                <li data-date="2019-11-14 12:00:00"><a title="Henderson: 'Ajax had ons pijn kunnen doen'"
+                        href="/article/voetbalnieuws/127050/henderson-ajax-had-ons-pijn-kunnen-doen">Henderson: 'Ajax
+                        had ons pijn kunnen doen' </a> <a title="Henderson: 'Ajax had ons pijn kunnen doen'"
+                        href="/article/voetbalnieuws/127050/henderson-ajax-had-ons-pijn-kunnen-doen#reacties"
+                        class="comments">29</a></li>
+                <li data-date="2019-11-14 07:30:00"><a
+                        title="Babel: 'In laatste drie, vier jaar veel constanter geworden'"
+                        href="/article/voetbalnieuws/127042/babel-in-laatste-drie-vier-jaar-veel-constanter-geworden">Babel:
+                        'In laatste drie, vier jaar veel constanter geworden' </a> <a
+                        title="Babel: 'In laatste drie, vier jaar veel constanter geworden'"
+                        href="/article/voetbalnieuws/127042/babel-in-laatste-drie-vier-jaar-veel-constanter-geworden#reacties"
+                        class="comments">10</a></li>
+                <li><a href="#" class="js-headline">Toon meer headlines</a></li>
+            </ul>
+
+
+
+
+
+
+
+
+
+            <ul class="block  video " data-cat-id="8">
+                <li><span>Videoberichten</span></li>
+
+
+                <div class="zoomVideo" style="margin-top:5px;overflow:hidden;">
+                    <div id="videostripcontainer2">
+                        <div id="preload2" style="background-image:url(//i1.ytimg.com/vi/mV7f3g4XAQI/hqdefault.jpg);">
+                            <a id="click2" href="#">
+                                <img id="play2" src="https://ajaxshowtime.jentcdn.net/images/play_button.png"
+                                    width="312" alt="Klik hier om de video te starten." />
+                            </a>
+                        </div>
+                        <div id="moviecontainer2" class="videoSize"
+                            style="display:none;overflow:hidden;height:220px !important;">
+                            <iframe class="videoSize" src="//www.youtube.com/embed/mV7f3g4XAQI"
+                                allowfullscreen></iframe>
+                        </div>
+                    </div>
+                    <div id="mobilemoviecontainer2"></div>
+                </div>
+                <li data-date="2019-11-13 17:05:00"><a title="Highlights oefenduel: Ajax - Willem II (6-1)"
+                        href="/article/videoberichten/127035/highlights-oefenduel-ajax-willem-ii-6-1">Highlights
+                        oefenduel: Ajax - Willem II (6-1) <img width="12" height="9"
+                            src="https://ajaxshowtime.jentcdn.net/images/icon-video.svg" alt="video"> </a> <a
+                        title="Highlights oefenduel: Ajax - Willem II (6-1)"
+                        href="/article/videoberichten/127035/highlights-oefenduel-ajax-willem-ii-6-1#reacties"
+                        class="comments">5</a></li>
+                <li><a href="#" class="js-headline">Toon meer headlines</a></li>
+            </ul>
+
+
+
+
+
+            <!-- BEGIN YOUTUBE -->
+            <!-- <ul class="block youtube">
+    <li><span>AS op Youtube</span></li>
+            <li class="yt" style="">
+            <a target="_blank" href="https://www.youtube.com/watch?v=6p43Gl064To" class="image" style="position:relative;">
+                <img alt="'Opa' Henks balkonscène vanaf de straat" src="https://i.ytimg.com/vi/6p43Gl064To/default.jpg">
+            </a>
+            <div>
+                <a target="_blank" href="https://www.youtube.com/watch?v=6p43Gl064To" class="title">
+                    <span>'Opa' Henks balkonscène vanaf de straat</span>
+                </a>
+            </div>
+        </li>
+            <li class="yt" style=" margin-right:0; ">
+            <a target="_blank" href="https://www.youtube.com/watch?v=1PXFBo4UKUc" class="image" style="position:relative;">
+                <img alt="Opa Henk - Mijn stad" src="https://i.ytimg.com/vi/1PXFBo4UKUc/default.jpg">
+            </a>
+            <div>
+                <a target="_blank" href="https://www.youtube.com/watch?v=1PXFBo4UKUc" class="title">
+                    <span>Opa Henk - Mijn stad</span>
+                </a>
+            </div>
+        </li>
+            <li class="yt" style="">
+            <a target="_blank" href="https://www.youtube.com/watch?v=cqQL0ixuX2M" class="image" style="position:relative;">
+                <img alt="Opa Henk - Juichen" src="https://i.ytimg.com/vi/cqQL0ixuX2M/default.jpg">
+            </a>
+            <div>
+                <a target="_blank" href="https://www.youtube.com/watch?v=cqQL0ixuX2M" class="title">
+                    <span>Opa Henk - Juichen</span>
+                </a>
+            </div>
+        </li>
+            <li class="yt" style=" margin-right:0; ">
+            <a target="_blank" href="https://www.youtube.com/watch?v=ivbiQUyAOQ0" class="image" style="position:relative;">
+                <img alt="Opa Henk - Bedankt" src="https://i.ytimg.com/vi/ivbiQUyAOQ0/default.jpg">
+            </a>
+            <div>
+                <a target="_blank" href="https://www.youtube.com/watch?v=ivbiQUyAOQ0" class="title">
+                    <span>Opa Henk - Bedankt</span>
+                </a>
+            </div>
+        </li>
+        <li><a href="https://www.youtube.com/channel/UCwVm2FFygXZLV3q5d1LVSBw" target="_blank">Bezoek AS op Youtube</a></li>
+</ul> -->
+            <!-- END YOUTUBE -->
+
+            <ul class="block">
+                <li><span>Wedstrijden</span></li>
+                <li class="various">
+                    <span>NAC - Jong Ajax</span>
+                    <span>22/11, 20:00 uur.</span>
+                    <span>Eerste Divisie, Breda.</span>
+                </li>
+                <li class="various">
+                    <span>Ajax - Heracles Almelo</span>
+                    <span>23/11, 19:45 uur.</span>
+                    <span>Eredivisie, Amsterdam.</span>
+                </li>
+                <li><a href="/match">Alle wedstrijden</a></li>
+            </ul>
+
+            <div class="ad">
+            </div>
+            <ul class="block most_valued">
+                <li><span>Meest gewaardeerde reacties</span></li>
+                <li class="comments">
+                    <a
+                        href="https://www.ajaxshowtime.com/article/bijzaken-en-geruchten/127052/cruyff-foundation-overweegt-juridische-stappen-tegen-kok#js-comment-id_4778217"><img
+                            src="
+            https://www.ajaxshowtime.com/uploads/avatars/1d9b92a8246e1dae834a51298e64864817800941.jpg
+                                                " width="50" height="50" alt="" /></a>
+                    <span><a style="width:calc(100% - 60px) !important;height:auto !important;"
+                            href="https://www.ajaxshowtime.com/article/bijzaken-en-geruchten/127052/cruyff-foundation-overweegt-juridische-stappen-tegen-kok#js-comment-id_4778217">Heel
+                            goed, we zijn er bij uitstek in dit land, hee..</a></span>
+                    <span>(17 thumbs up), schreef MisterAFCA</span>
+                </li>
+                <li class="comments">
+                    <a
+                        href="https://www.ajaxshowtime.com/article/hoofdnieuws/127074/van-der-sar-over-qatar-makkelijk-scoren-over-onze-rug#js-comment-id_4779540"><img
+                            src="
+                                                    https://ajaxshowtime.jentcdn.net/images/default-avatar.svg
+                                                " width="50" height="50" alt="" /></a>
+                    <span><a style="width:calc(100% - 60px) !important;height:auto !important;"
+                            href="https://www.ajaxshowtime.com/article/hoofdnieuws/127074/van-der-sar-over-qatar-makkelijk-scoren-over-onze-rug#js-comment-id_4779540">Slap
+                            verhaal. Als je geen politieke partij bent ma..</a></span>
+                    <span>(17 thumbs up), schreef Kuningast</span>
+                </li>
+                <li class="comments">
+                    <a
+                        href="https://www.ajaxshowtime.com/article/bijzaken-en-geruchten/127122/freitas-ziet-reinier-niet-naar-ajax-komen#js-comment-id_4781715"><img
+                            src="
+                                                    https://ajaxshowtime.jentcdn.net/images/default-avatar.svg
+                                                " width="50" height="50" alt="" /></a>
+                    <span><a style="width:calc(100% - 60px) !important;height:auto !important;"
+                            href="https://www.ajaxshowtime.com/article/bijzaken-en-geruchten/127122/freitas-ziet-reinier-niet-naar-ajax-komen#js-comment-id_4781715">Misselijkmakend
+                            om Nouri in dat rijtje te zetten. ..</a></span>
+                    <span>(14 thumbs up), schreef JPM</span>
+                </li>
+                <li></li>
+            </ul>
+            <!-- BEGIN F1 Maximaal -->
+            <ul class="block f1">
+                <li><span>F1 Maximaal</span></li>
+                <li><a href="https://www.f1maximaal.nl/formule-1/260302/update-iii-ferrari-coureurs-moeten-tekst-en-uitleg-geven-in-maranello"
+                        title="Update III | Ferrari-coureurs moeten tekst en uitleg geven in Maranello" target="_blank"
+                        rel="nofollow">Update III | Ferrari-coureurs moeten tekst en uitleg geven in Maranello</a></li>
+                <li><a href="https://www.f1maximaal.nl/formule-1/260352/allison-verrast-door-snelheid-verstappen-in-brazilie-hamilton-had-alles-nodig"
+                        title="Allison verrast door snelheid Verstappen in Brazilië: 'Hamilton had alles nodig'"
+                        target="_blank" rel="nofollow">Allison verrast door snelheid Verstappen in Brazilië: 'Hamilton
+                        had alles nodig'</a></li>
+                <li><a href="https://www.f1maximaal.nl/formule-1/260348/horner-overwinning-is-een-verlossing-voor-verstappen"
+                        title="Horner: 'Overwinning is een verlossing voor Verstappen'" target="_blank"
+                        rel="nofollow">Horner: 'Overwinning is een verlossing voor Verstappen'</a></li>
+                <li><a href="https://www.f1maximaal.nl/max-verstappen/260337/verstappen-na-overwinning-het-ziet-er-veelbelovend-voor-volgend-jaar"
+                        title="Verstappen na overwinning: 'Het ziet er veelbelovend voor volgend jaar'" target="_blank"
+                        rel="nofollow">Verstappen na overwinning: 'Het ziet er veelbelovend voor volgend jaar'</a></li>
+                <li><a href="https://www.f1maximaal.nl/max-verstappen/260332/samenwerking-red-bull-en-honda-zeer-waarschijnlijk-verlengd-tot-2021"
+                        title="Samenwerking Red Bull en Honda zeer waarschijnlijk verlengd tot 2021" target="_blank"
+                        rel="nofollow">Samenwerking Red Bull en Honda zeer waarschijnlijk verlengd tot 2021</a></li>
+                <li><a href="//www.f1maximaal.nl/" target="_blank" rel="nofollow">Bezoek F1 Maximaal</a></li>
+            </ul>
+
+            <!-- END F1 Maximaal -->
+            <!-- BEGIN Indeleiderstrui -->
+            <ul class="block f1">
+                <li><span>Indeleiderstrui</span></li>
+                <li><a href="https://www.indeleiderstrui.nl/algemeen-nieuws/260351/de-marchi-furieus-na-zoveelste-bijna-ongeluk-ik-haat-je-met-heel-mijn-hart"
+                        title="De Marchi furieus na 'zoveelste bijna-ongeluk': 'Ik haat je met heel mijn hart'"
+                        target="_blank" rel="nofollow">De Marchi furieus na 'zoveelste bijna-ongeluk': 'Ik haat je met
+                        heel mijn hart'</a></li>
+                <li><a href="https://www.indeleiderstrui.nl/quizzen-rebussen/259543/in-de-leiderstrui-wielerrebus-2-welke-wielrenner-zoeken-we"
+                        title="In de Leiderstrui wielerrebus #2: Welke wielrenner zoeken we?" target="_blank"
+                        rel="nofollow">In de Leiderstrui wielerrebus #2: Welke wielrenner zoeken we?</a></li>
+                <li><a href="https://www.indeleiderstrui.nl/algemeen-nieuws/260282/vertrek-dumoulin-verrast-kittel-niet-vinden-ze-bij-sunweb-blijkbaar-moeilijk"
+                        title="Vertrek Dumoulin verrast Kittel niet: 'Vinden ze bij Sunweb blijkbaar moeilijk'"
+                        target="_blank" rel="nofollow">Vertrek Dumoulin verrast Kittel niet: 'Vinden ze bij Sunweb
+                        blijkbaar moeilijk'</a></li>
+                <li><a href="https://www.indeleiderstrui.nl/algemeen-nieuws/255439/ondertussen-in-het-peloton-video-gilbert-tourmalet-in-vuelta-van-2020"
+                        title="Ondertussen in het peloton | Video Gilbert, 'Tourmalet in Vuelta van 2020'"
+                        target="_blank" rel="nofollow">Ondertussen in het peloton | Video Gilbert, 'Tourmalet in Vuelta
+                        van 2020'</a></li>
+                <li><a href="https://www.indeleiderstrui.nl/algemeen-nieuws/260279/wuyts-hoop-dat-jumbo-visma-met-dumoulin-roglic-en-kruijswijk-naar-tour-gaat"
+                        title="Wuyts: 'Hoop dat Jumbo-Visma met Dumoulin, Roglic én Kruijswijk naar Tour gaat'"
+                        target="_blank" rel="nofollow">Wuyts: 'Hoop dat Jumbo-Visma met Dumoulin, Roglic én Kruijswijk
+                        naar Tour gaat'</a></li>
+                <li><a href="//www.indeleiderstrui.nl/" target="_blank" rel="nofollow">Bezoek Indeleiderstrui</a></li>
+            </ul>
+
+            <!-- END Indeleiderstrui -->
+        </aside>
+        <!-- END LOAD SIDEBAR -->
+
+        <div class="clearfix"></div>
+
+        <!--
+<a href='https://www.ajaxshop.nl/nl/collectie-2/zomer?utm_source=Ajax%20Showtime&utm_medium=cpc&utm_campaign=Zomercollectie' target='_blank'><img src='https://www.ajaxshowtime.com/uploads/filemanager/2904eb415f/3803_393_2904eb415f69a7b82efd81e672cb2d94_original.jpg'></a>
+-->
+    </main>
+
+    <footer>
+
+        <div class="ad_footer">
+            <div style="width: calc(50% - 500px); height: 600px; position: fixed; top: calc(50% - 300px); left: 0;">
+                <div style="position: relative; width: 100%; height: 100%;">
+                    <!-- /13436254/AST_Homepage_SKY//HPA -->
+                    <div id='div-gpt-ad-1567084735261-0'>
+                        <script>
+
+                        </script>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <ul>
+            <li class="head"><a>ORGANISATIE</a></li>
+            <li><a href="/page/over-as">Contactgegevens</a>, <a href="/page/vacatures">Vacatures</a>, <a
+                    href="/page/privacy-beleid">Privacy beleid</a>, <a href="/page/disclaimer">Disclaimer</a></li>
+        </ul>
+        <ul>
+            <li class="head"><a>TEAMS</a></li>
+            <li><a href="/team/ajax" title="Selectie">Selectie</a>, <a href="/match"
+                    title="Wedstrijden">Wedstrijden</a>, <a href="/topscorers" title="Topscorers">Topscorers</a>, <a
+                    href="/team/jong-ajax" title="Jong Ajax">Jong Ajax</a>, <a href="/team/dames-ajax"
+                    title="Dames Ajax">Dames Ajax</a>, <a href="/team/ajax-o19" title="Ajax O19">Ajax O19</a>, <a
+                    href="/team/ajax-o17" title="Ajax O17">Ajax O17</a>, <a href="/team/ajax-o16" title="Ajax O16">Ajax
+                    O16</a>, <a href="/team/ajax-o15" title="Ajax O15">Ajax O15</a></li>
+        </ul>
+
+        <ul>
+            <li class="head"><a>SOCIAL MEDIA</a></li>
+            <li><a href="https://nl-nl.facebook.com/ajax.showtime" target="_blank" title="Facebook">Facebook</a>, <a
+                    href="https://www.instagram.com/ajaxshowtimeinsta" target="_blank" title="Instagram">Instagram</a>,
+                <a href="https://twitter.com/ajaxshowtimecom" target="_blank" title="Twitter">Twitter</a>, <a
+                    href="https://www.youtube.com/channel/UCwVm2FFygXZLV3q5d1LVSBw" target="_blank"
+                    title="Youtube">Youtube</a>
+        </ul>
+
+        <ul>
+            <li class="head"><a>PARTNERS</a></li>
+            <li><a href="http://www.bruinsmareclame.com" target="_blank">Bruinsma Reclame</a>, <a
+                    href="http://www.proshots.nl" target="_blank">Pro Shots</a>, <a href="//www.jenthosting.com"
+                    target="_blank">JENT Hosting</a></li>
+        </ul>
+        <ul>
+            <li class="head"><a>RSS FEEDS</a></li>
+            <li><a href="/Rss/hoofdnieuws">Hoofdnieuws</a>, <a href="/Rss/bijzaken-en-geruchten">Bijzaken en
+                    geruchten</a>, <a href="/Rss/voetbalnieuws">Voetbalnieuws</a>, <a href="/Rss/opinie">Opinie</a>, <a
+                    href="/Rss/dames-ajax">Dames Ajax</a></li>
+        </ul>
+        <ul>
+            <li class="head"><a>LINKS</a></li>
+            <li><a href="//www.ajax.nl" title="Ajax" target="_blank" rel="nofollow">Ajax.nl (officiële website)</a>, <a
+                    href="//www.f1maximaal.nl" title="Formule 1" target="_blank">Formule 1-nieuws</a>, <a
+                    href="//www.indeleiderstrui.nl" title="Wielernieuws" target="_blank">Wielernieuws</a></li>
+        </ul>
+
+        <div style="margin-top:20px;">
+            <a href="https://itunes.apple.com/nl/app/ajax-showtime/id679786620?mt=8" title="Download App Ajax Showtime"
+                target="_blank"><img src="https://ajaxshowtime.jentcdn.net/images/Apple-App-Store.png"
+                    style="margin-right:2px;" alt="Apple Store Ajax Showtime"></a>
+            <a href="https://play.google.com/store/apps/details?id=com.ajaxshowtime.android"
+                title="Download App Ajax Showtime" target="_blank"><img
+                    src="https://ajaxshowtime.jentcdn.net/images/Google-Play-Store.png"
+                    alt="Google Play Ajax Showtime"></a>
+        </div>
+
+
+        <div class="footer_bottom">Uitgegeven door Valkering Media B.V. - © 2001-2019 Ajaxshowtime.com - Unofficial site
+        </div>
+    </footer>
+
+
+
+
+
+    <div id="fb-root"></div>
+    <script>(function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.net/nl_NL/sdk.js#xfbml=1&appId=282266408615404&version=v2.3";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
+
+    <script>
+        (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-10836441-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+
+    <!-- Google Tag Manager -->
+    <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-W4ZGVL" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+    <script>(function (w, d, s, l, i) {
+        w[l] = w[l] || []; w[l].push({
+            'gtm.start':
+                new Date().getTime(), event: 'gtm.js'
+        }); var f = d.getElementsByTagName(s)[0],
+            j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                '//www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-W4ZGVL');</script>
+    <!-- End Google Tag Manager -->
+
+    <script type="text/javascript" src="https://ajaxshowtime.jentcdn.net/js/jquery.outgoing.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://ajaxshowtime.jentcdn.net/css/addtohomescreen.css">
+    <script src="https://ajaxshowtime.jentcdn.net/js/addtohomescreen.min.js"></script>
+    <script>
+        addToHomescreen({
+            skipFirstVisit: true,
+            maxDisplayCount: 2,
+            lifespan: 0,
+            displayPace: 20160
+        });
+    </script>
+
+
+    <!-- MODAL -->
+    <div class="remodal" data-remodal-id="modal"></div>
+    <!-- END MODAL -->
+    <script type="text/javascript">
+!function(o, e) {
+                function t(o, e) {
+                    var t = X(o);
+                    if (!t)
+                        return t;
+                    if ("" != e)
+                        for (var n = 0; n < e.length; n++)
+                            "^" == e.charAt(n) && (t = t.parentNode),
+                            "<" == e.charAt(n) && (t = t.previousElementSibling),
+                            ">" == e.charAt(n) && (t = t.nextElementSibling),
+                            "y" == e.charAt(n) && (t = t.firstChild);
+                    return t
+                }
+                function n(o, e) {
+                    var t = K(e)
+                      , n = o.clientX - t.left
+                      , a = o.clientY - t.top;
+                    return {
+                        x: n,
+                        y: a
+                    }
+                }
+                function a(o) {
+                    for (var e = 0, t = 0; o; )
+                        e += o.offsetLeft + o.clientLeft,
+                        t += o.offsetTop + o.clientTop,
+                        o = o.offsetParent;
+                    return {
+                        x: e,
+                        y: t
+                    }
+                }
+                function s(o, e) {
+                    var t = 0
+                      , n = 0
+                      , s = a(e);
+                    return (o.pageX || o.pageY) && (t = o.pageX,
+                    n = o.pageY),
+                    (o.clientX || o.clientY) && (t = o.clientX + document.body.scrollLeft + document.documentElement.scrollLeft,
+                    n = o.clientY + document.body.scrollTop + document.documentElement.scrollTop),
+                    t -= s.x,
+                    n -= s.y,
+                    {
+                        x: t,
+                        y: n
+                    }
+                }
+                function i(o, e) {
+                    return I(e) ? n(o, e) : s(o, e)
+                }
+                function l(o, e) {
+                    o.addEventListener ? x(o, "click", e, !0) : o.attachEvent && o.attachEvent("onclick", function() {
+                        return e.call(o, window.event)
+                    })
+                }
+                function r(e, t) {
+                    return o[v("c2V0VGltZW91dA==")](e, t)
+                }
+                function d(o) {
+                    return parseInt(o.toString().split(".")[0], 10)
+                }
+                function f() {
+                    return Ao = (Ho * Ao + No) % Fo
+                }
+                function c() {
+                    return f() / (Fo - 1)
+                }
+                function h() {
+                    return c()
+                }
+                function b(o, e) {
+                    return o > e ? o : e
+                }
+                function g() {
+                    for (var o = "", e = 65; e < 91; e++)
+                        o += u(e);
+                    for (var e = 97; e < 123; e++)
+                        o += u(e);
+                    return o
+                }
+                function u(o) {
+                    var e = '"'
+                      , t = "\\\\".charAt(0)
+                      , n = "#$"
+                      , a = " !" + e + n + "%&'()*+,-./0123456789:;<=>?@A"
+                      , s = "BCDEFGHIJKLMNOPQRSTUVWXYZ[" + t + "]^_`a"
+                      , i = "bcdefghijklmnopqrstuvwxyz{|}"
+                      , l = a + s + i;
+                    return l.charAt(o - 32)
+                }
+                function v(o) {
+                    var e, t, n, a, s, i, l, r = g() + "0123456789+/=", d = "", f = 0;
+                    for (o = o.replace(/[^A-Za-z0-9\+\/\=]/g, ""); f < o.length; )
+                        a = r.indexOf(o.charAt(f++)),
+                        s = r.indexOf(o.charAt(f++)),
+                        i = r.indexOf(o.charAt(f++)),
+                        l = r.indexOf(o.charAt(f++)),
+                        e = a << 2 | s >> 4,
+                        t = (15 & s) << 4 | i >> 2,
+                        n = (3 & i) << 6 | l,
+                        d += u(e),
+                        64 != i && (d += u(t)),
+                        64 != l && (d += u(n));
+                    return d
+                }
+                function p() {
+                    try {
+                        return navigator.userAgent || navigator.vendor || window.opera
+                    } catch (o) {
+                        return "unknown"
+                    }
+                }
+                function x(o, e, t, n) {
+                    n = n || !1;
+                    try {
+                        o.addEventListener(e, t, n)
+                    } catch (n) {
+                        o.attachEvent && o.attachEvent("on" + e, t)
+                    }
+                }
+                function m(o) {
+                    Oo[o] = !1
+                }
+                function q(o, e) {
+                    var t = ko++;
+                    Oo[t] = !0;
+                    var n = function(e) {
+                        return function() {
+                            o.call(null),
+                            Oo[t] && r(n, e)
+                        }
+                    }(e);
+                    return r(n, e),
+                    t
+                }
+                function y(o) {
+                    j(o)
+                }
+                function j(o) {
+                    if (o.sooal3d3sdl && !o.sooal2c2Inject) {
+                        o.sooal2c2Inject = !0,
+                        o.sooal9dePc = {},
+                        o.sooal18fOc = [],
+                        o.uabAm = {},
+                        o.sooal54aAv = {},
+                        o.uabAw = {},
+                        o.uabRqr = {},
+                        o.uabRqq = [],
+                        o.sooal54aAvt = {},
+                        o.uabEv = {};
+                        var t = [];
+                        if (window.sooal5baFlags.forceImp = !0,
+                        no($("main > aside > .ad"), function(o, e) {
+                            e.className = e.className + " aobj" + o
+                        }),
+                        !o.sooal5baFlags.welect.eenabled || ZJNFJWelect()) {
+                            if (sooal5baFlags.pt2eals) {
+                                var n = sooal5baFlags.bab71it
+                                  , a = sooal5baFlags.mbba1el || 10
+                                  , s = sooal5baFlags.ig0c1BP
+                                  , i = function() {
+                                    var o = S("style");
+                                    o.type = "text/css";
+                                    var t = !1
+                                      , n = S("style");
+                                    n.type = "text/css";
+                                    var a = !1;
+                                    return function(i, l) {
+                                        if (l)
+                                            if ("b" !== i || t) {
+                                                if ("r" === i)
+                                                    if (a) {
+                                                        var r = n
+                                                          , d = r.sheet
+                                                          , f = "insert"
+                                                          , c = "Rule";
+                                                        d[f + c](l, 0)
+                                                    } else
+                                                        a = !0,
+                                                        _(n, l),
+                                                        M(e.body, n)
+                                            } else {
+                                                if (t = !0,
+                                                s)
+                                                    for (var h = 0; h < s.length; h++)
+                                                        l = l.replace(new RegExp("([;{])" + s[h] + ": [^;]+;","g"), "$1");
+                                                var b = "}]+"
+                                                  , g = ": [^;]+\\s"
+                                                  , r = "[^:;{"
+                                                  , d = "!important;";
+                                                l = l.replace(new RegExp(r + b + g + d,"g"), ""),
+                                                _(o, l),
+                                                e.head.insertBefore(o, e.head.firstChild)
+                                            }
+                                    }
+                                }();
+                                if (n) {
+                                    if (n.length > a) {
+                                        for (var l = 0, r = [0], f = [n[0]], c = 1; c < a; c++) {
+                                            for (; r.indexOf(l) > -1; )
+                                                l = d(h() * n.length);
+                                            r.push(l),
+                                            f[c] = n[l]
+                                        }
+                                        n = f,
+                                        sooal5baFlags.bab71it = f
+                                    }
+                                    for (var b = {}, g = 0; g < n.length; g++) {
+                                        var u = "string" == typeof n[g] ? X(n[g]) : n[g];
+                                        if (u && u instanceof Node) {
+                                            var v = {
+                                                element: u,
+                                                co737so: {},
+                                                rc9e3cls: vo(7),
+                                                co0e5tx: ""
+                                            };
+                                            if (v.co0e5tx += "." + v.rc9e3cls + "{",
+                                            !s || s && s.indexOf("max-width") === -1) {
+                                                var p = z(u, "max-width");
+                                                v.co737so["max-width"] = p,
+                                                v.co0e5tx += "max-width:" + p + ";"
+                                            }
+                                            if (!s || s && s.indexOf("cursor") === -1) {
+                                                var p = z(u, "cursor");
+                                                v.co737so.cursor = p,
+                                                v.co0e5tx += "cursor:" + p + ";"
+                                            }
+                                            if (!s || s && s.indexOf("content") === -1) {
+                                                var p = z(u, "content");
+                                                v.co737so.content = p,
+                                                v.co0e5tx += "content:" + p + ";"
+                                            }
+                                            if (!s || s && s.indexOf("color") === -1) {
+                                                var p = z(u, "color");
+                                                v.co737so.color = p,
+                                                v.co0e5tx += "color:" + p + ";"
+                                            }
+                                            if (!s || s && s.indexOf("display") === -1) {
+                                                var p = z(u, "display");
+                                                v.co737so.display = p,
+                                                v.co0e5tx += "display:" + p + ";"
+                                            }
+                                            if (!s || s && s.indexOf("margin-bottom") === -1) {
+                                                var p = z(u, "margin-bottom");
+                                                v.co737so["margin-bottom"] = p,
+                                                v.co0e5tx += "margin-bottom:" + p + ";"
+                                            }
+                                            if (!s || s && s.indexOf("font") === -1) {
+                                                var p = z(u, "font");
+                                                v.co737so.font = p,
+                                                v.co0e5tx += "font:" + p + ";"
+                                            }
+                                            if (!s || s && s.indexOf("text-align") === -1) {
+                                                var p = z(u, "text-align");
+                                                v.co737so["text-align"] = p,
+                                                v.co0e5tx += "text-align:" + p + ";"
+                                            }
+                                            if (!s || s && s.indexOf("margin") === -1) {
+                                                var p = z(u, "margin");
+                                                v.co737so.margin = p,
+                                                v.co0e5tx += "margin:" + p + ";"
+                                            }
+                                            v.co0e5tx += "} ",
+                                            b[n[g]] = v,
+                                            i("b", '.iblxcfi{max-width: 634px;cursor: pointer;content: "Adve""rtentie";color: #979797;display: block;margin-bottom: 2px;font: bold 10px/10px "Helvetica Neue Condensed", Helvetica, sans-serif;text-align: center;margin: 5px;} .znjgya{cursor: pointer;content: "Adve""rtentie";color: #979797;display: block;margin-bottom: 2px;font: bold 10px/10px "Helvetica Neue Condensed", Helvetica, sans-serif;text-align: center;margin: 18px;} .wsyyaqnbo{cursor: pointer;content: "Adve""rtentie";color: #979797;display: block;margin-bottom: 2px;font: bold 10px/10px "Helvetica Neue Condensed", Helvetica, sans-serif;margin: 18px;} .cpbiyk{cursor: pointer;content: "Adve""rtentie";color: #979797;display: block;margin-bottom: 2px;font: bold 10px/10px "Helvetica Neue Condensed", Helvetica, sans-serif;margin: 18px;} .avpdbxhbk{cursor: pointer;content: "Adve""rtentie";color: #979797;display: block;margin-bottom: 2px;font: bold 10px/10px "Helvetica Neue Condensed", Helvetica, sans-serif;} .hjryfkxdk{cursor: pointer;} '),
+                                            i("r", v.co0e5tx),
+                                            u.className += " " + v.rc9e3cls,
+                                            u.className += " iblxcfi",
+                                            u.className += " znjgya",
+                                            u.className += " wsyyaqnbo",
+                                            u.className += " cpbiyk",
+                                            u.className += " avpdbxhbk",
+                                            u.className += " hjryfkxdk"
+                                        }
+                                    }
+                                }
+                            }
+                            var x = S("style");
+                            x.type = "text/css",
+                            _(x, '#pDHyqfh img {max-width: 634px;}#pDHyqfh img {cursor: pointer;}#pDHyqfh:before {content: "Adve""rtentie";color: #979797;display: block;margin-bottom: 2px;font: bold 10px/10px "Helvetica Neue Condensed", Helvetica, sans-serif;}.qZYsyM {text-align: center;margin: 5px;}.qZYsyM img {cursor: pointer;}.qZYsyM:before {content: "Adve""rtentie";color: #979797;display: block;margin-bottom: 2px;font: bold 10px/10px "Helvetica Neue Condensed", Helvetica, sans-serif;}.sDamaPzptg {text-align: center;}.sDamaPzptg img {cursor: pointer;}#lVqtmprFN {margin: 18px;}#lVqtmprFN img {cursor: pointer;}#lVqtmprFN:before {content: "Adve""rtentie";color: #979797;display: block;margin-bottom: 2px;font: bold 10px/10px "Helvetica Neue Condensed", Helvetica, sans-serif;}.seviDLC {margin: 18px;}.seviDLC img {cursor: pointer;}.seviDLC:before {content: "Adve""rtentie";color: #979797;display: block;margin-bottom: 2px;font: bold 10px/10px "Helvetica Neue Condensed", Helvetica, sans-serif;}#mVvCpHRH {margin: 18px;}#mVvCpHRH img {cursor: pointer;}#mVvCpHRH:before {content: "Adve""rtentie";color: #979797;display: block;margin-bottom: 2px;font: bold 10px/10px "Helvetica Neue Condensed", Helvetica, sans-serif;}@media print {#pDHyqfh,.qZYsyM,.sDamaPzptg,#lVqtmprFN,.seviDLC,#mVvCpHRH{display:none;}} .sooalHid {display:none !important;}'),
+                            M(Co, x),
+                            setTimeout(w(t), 0)
+                        }
+                    }
+                }
+                function R(o, e) {
+                    if (e < 0)
+                        return R(o, e + 26);
+                    for (var t = "", n = 0; n < o.length; n++) {
+                        var a = o[n];
+                        if (a.match(/[a-z]/i)) {
+                            var s = o.charCodeAt(n);
+                            s >= 65 && s <= 90 ? a = u((s - 65 + e) % 26 + 65) : s >= 97 && s <= 122 && (a = u((s - 97 + e) % 26 + 97))
+                        }
+                        t += a
+                    }
+                    return t
+                }
+                function w(o) {
+                    var e = [];
+                    F(o, e),
+                    H(o, e),
+                    N()
+                }
+                function F(o, e) {}
+                function H(e, n) {
+                    function a(t) {
+                        oo(go("2xsordgv2ilohpdqdjhu2i5ii6;e7882<4:6b::68b" + o.sooalbceRnd + ";hh6gff58f:463if7f:g:4:5b83{841msj", -3), function() {
+                            if (g)
+                                return void (t && A());
+                            g = !0;
+                            var n = this;
+                            if (n.height < 2)
+                                return void (t && A());
+                            if (u != o.sooalbceRnd)
+                                return void (t && A());
+                            var a = b
+                              , s = S("div");
+                            e["" + go("DUWHQG56", -3)] = s,
+                            Q(s, "pDHyqfh");
+                            var r = n;
+                            l(r, function(e, t) {
+                                if (!o.sooal9dePc[2331]) {
+                                    e.preventDefault(),
+                                    e.stopPropagation();
+                                    for (var t = i(e, this), n = 0; n < o.sooal18fOc.length; n++) {
+                                        var a = o.sooal18fOc[n];
+                                        if (2331 == a.p && t.x >= a.x && t.x < a.x + a.w && t.y >= a.y && t.y < a.y + a.h) {
+                                            if (a.u) {
+                                                var s = a.t.length > 0 ? a.t : "_self";
+                                                s = 0 == e.button && e.ctrlKey ? "_blank" : s,
+                                                so(o, a.u, s, !0)
+                                            }
+                                            return
+                                        }
+                                    }
+                                    var l = [go("2xsordgv2ilohpdqdjhu25h4<:4e;g826538b48<6b" + o.sooalbceRnd + "5fh77h4:89ieg76i9<fh87:7b84{831msj", -3), go("2xsordgv2ilohpdqdjhu2495hh;e9352457<b9:<4b" + o.sooalbceRnd + "gefh5744f53h6<h47:995494b646{4:91sqj", -3), go("2xsordgv2ilohpdqdjhu2::79f;88i729564b587:b" + o.sooalbceRnd + "7h36;8i7363f3:9fh;5i8h94b9<9{5881sqj", -3), go("2xsordgv2ilohpdqdjhu2963h4634<e2747;b56:4b" + o.sooalbceRnd + "599f96<79;;5e;6h;3g<88i5b83{841sqj", -3), go("2xsordgv2ilohpdqdjhu25:ff677:9927544b::4;b" + o.sooalbceRnd + "f3<4<e3f5eff6g465g56e55eb668{5;31sqj", -3), go("2xsordgv2ilohpdqdjhu2g4eg7:6<572;654b8897b" + o.sooalbceRnd + "<3f49<ef3<5efhfeghi9:7h5b668{5;31sqj", -3)]
+                                      , r = l[3 * d(2 * t.y / this.offsetHeight) + d(3 * t.x / this.offsetWidth)];
+                                    so(o, r, 0 == e.button && e.ctrlKey ? "_blank" : "_self")
+                                }
+                            }),
+                            M(s, n),
+                            G(a, s),
+                            o.sooald4184.a[2331] = s,
+                            qo(s, 2331, go("2xsordgv2ilohpdqdjhu255e6f558;e2659<b<558b" + o.sooalbceRnd + ":;hgi;ii:i<965f56f44;9hfb669{5;41msj", -3)),
+                            t && A()
+                        }, t ? A : null)
+                    }
+                    function s(t) {
+                        oo(go("2xsordgv2ilohpdqdjhu2;f5h67;h6i27863b9468b" + o.sooalbceRnd + ";454759i44e47874<34:i<hib668{5;31sqj", -3), function() {
+                            if (p)
+                                return void (t && A());
+                            p = !0;
+                            var n = this;
+                            if (n.height < 2)
+                                return void (t && A());
+                            if (u != o.sooalbceRnd)
+                                return void (t && A());
+                            var a = v
+                              , s = S("div");
+                            e["" + go("ELOO", -3)] = s,
+                            B(s, "qZYsyM ");
+                            var r = n;
+                            l(r, function(e, t) {
+                                if (!o.sooal9dePc[2321]) {
+                                    e.preventDefault(),
+                                    e.stopPropagation();
+                                    for (var t = i(e, this), n = 0; n < o.sooal18fOc.length; n++) {
+                                        var a = o.sooal18fOc[n];
+                                        if (2321 == a.p && t.x >= a.x && t.x < a.x + a.w && t.y >= a.y && t.y < a.y + a.h) {
+                                            if (a.u) {
+                                                var s = a.t.length > 0 ? a.t : "_self";
+                                                s = 0 == e.button && e.ctrlKey ? "_blank" : s,
+                                                so(o, a.u, s, !0)
+                                            }
+                                            return
+                                        }
+                                    }
+                                    var l = [go("2xsordgv2ilohpdqdjhu2<35e8fe386256;;b<45<b" + o.sooalbceRnd + "5g775hg<4;54597i5695gfi;b9<9{5881msj", -3), go("2xsordgv2ilohpdqdjhu2:4gh;;3ghh25966b7<66b" + o.sooalbceRnd + "937597;hh76796;fife6:g;:b668{5;31msj", -3), go("2xsordgv2ilohpdqdjhu26i3983g54324;67b9668b" + o.sooalbceRnd + "<68e8;96g9g7;fi344<g<478b83{841sqj", -3), go("2xsordgv2ilohpdqdjhu284<64g6;4;24<<<b44<<b" + o.sooalbceRnd + "e5<3<6ee:ggg6g5g943;3fg7b84{831sqj", -3), go("2xsordgv2ilohpdqdjhu2ff4e88;59e29469b4;46b" + o.sooalbceRnd + "<i9i9;ie46::<58ii65gi97hb83{841sqj", -3), go("2xsordgv2ilohpdqdjhu2<47:7f<:i;2;763b8;::b" + o.sooalbceRnd + "ff566<if776338f6667644eib967{68;1sqj", -3), go("2xsordgv2ilohpdqdjhu2863h453e7428768b4745b" + o.sooalbceRnd + "59<33<35fg8h:9<;78e<6i:8b646{4:91msj", -3), go("2xsordgv2ilohpdqdjhu25f4e65ffh:25;5;b8;94b" + o.sooalbceRnd + "<g4h6849he8g:if:7ii7:<;5b645{4::1sqj", -3), go("2xsordgv2ilohpdqdjhu2ig:fef434626737b;9:9b" + o.sooalbceRnd + "ff747h;769i3::h43h4956gib968{68:1msj", -3), go("2xsordgv2ilohpdqdjhu2<i7ghgf358278;8b<693b" + o.sooalbceRnd + "i8gf5gg<<5<ee68:ii383g8eb9<:{5891sqj", -3), go("2xsordgv2ilohpdqdjhu2i;7i3:66<f2944:b4<;<b" + o.sooalbceRnd + "796<76g:45:f4e7fg5h56386b968{68:1sqj", -3), go("2xsordgv2ilohpdqdjhu296g8gg3gfe25468b979:b" + o.sooalbceRnd + "e<9897ff97:9ih87958<64;7b84{831msj", -3)]
+                                      , r = l[12 * d(1 * t.y / this.offsetHeight) + d(12 * t.x / this.offsetWidth)];
+                                    so(o, r, 0 == e.button && e.ctrlKey ? "_blank" : "_self")
+                                }
+                            }),
+                            M(s, n),
+                            a.firstChild ? G(a.firstChild, s) : M(a, s),
+                            o.sooald4184.a[2321] = s,
+                            qo(s, 2321, go("2xsordgv2ilohpdqdjhu24if:6fgf9:27698b;44:b" + o.sooalbceRnd + ";4;88ii<786heh<5f958h<5hb84{831msj", -3)),
+                            t && A()
+                        }, t ? A : null)
+                    }
+                    function r(t) {
+                        oo(go("2xsordgv2ilohpdqdjhu2iehge7<fee284;6b<4:4b" + o.sooalbceRnd + "i35::f<4e4i:8e5:9f<e9ge3b83{841msj", -3), function() {
+                            if (m)
+                                return void (t && A());
+                            m = !0;
+                            var n = this;
+                            if (n.height < 2)
+                                return void (t && A());
+                            if (u != o.sooalbceRnd)
+                                return void (t && A());
+                            var a = x
+                              , s = S("div");
+                            e["" + go("OEWrs", -3)] = s,
+                            Q(s, "KEdHgS"),
+                            B(s, "sDamaPzptg ");
+                            var r = n;
+                            l(r, function(e, t) {
+                                if (!o.sooal9dePc[2325]) {
+                                    e.preventDefault(),
+                                    e.stopPropagation();
+                                    for (var t = i(e, this), n = 0; n < o.sooal18fOc.length; n++) {
+                                        var a = o.sooal18fOc[n];
+                                        if (2325 == a.p && t.x >= a.x && t.x < a.x + a.w && t.y >= a.y && t.y < a.y + a.h) {
+                                            if (a.u) {
+                                                var s = a.t.length > 0 ? a.t : "_self";
+                                                s = 0 == e.button && e.ctrlKey ? "_blank" : s,
+                                                so(o, a.u, s, !0)
+                                            }
+                                            return
+                                        }
+                                    }
+                                    var l = [go("2xsordgv2ilohpdqdjhu24:36i:9;8f2<45:b:837b" + o.sooalbceRnd + "478g;6<34ef9;e;eie48e<86b668{5;31msj", -3), go("2xsordgv2ilohpdqdjhu29eg3h5i4<62;575b6<73b" + o.sooalbceRnd + "44;4<g4e5f<77f;ie<9gh677b645{4::1sqj", -3), go("2xsordgv2ilohpdqdjhu2g8i:<66;:<2894;b;589b" + o.sooalbceRnd + "<77<h8:h556:548<h94:g<68b9<:{5891msj", -3)]
+                                      , r = l[3 * d(1 * t.y / this.offsetHeight) + d(3 * t.x / this.offsetWidth)];
+                                    so(o, r, 0 == e.button && e.ctrlKey ? "_blank" : "_self")
+                                }
+                            }),
+                            M(s, n),
+                            a.nextSibling ? G(a.nextSibling, s) : M(a.parentNode, s),
+                            o.sooald4184.a[2325] = s;
+                            var f = S("div");
+                            _(f, "" + go("?glyA#?2glyA", -3)),
+                            no(f.childNodes, function(o, e) {
+                                G(s, e)
+                            }),
+                            qo(s, 2325, go("2xsordgv2ilohpdqdjhu26;h;68:h<h24648b94;3b" + o.sooalbceRnd + "5e654:58;7368i3979h4gg:<b9<9{5881sqj", -3)),
+                            t && A()
+                        }, t ? A : null)
+                    }
+                    function f(t) {
+                        oo(go("2xsordgv2ilohpdqdjhu24<gei5:63:25:73b66;7b" + o.sooalbceRnd + "ef399:4gh;5554he3:ff6f7;b645{4::1msj", -3), function() {
+                            if (y)
+                                return void (t && A());
+                            y = !0;
+                            var n = this;
+                            if (n.height < 2)
+                                return void (t && A());
+                            if (u != o.sooalbceRnd)
+                                return void (t && A());
+                            var a = q
+                              , s = S("div");
+                            e["" + go("PUErwwrp", -3)] = s,
+                            Q(s, "lVqtmprFN");
+                            var r = n;
+                            l(r, function(e, t) {
+                                if (!o.sooal9dePc[2324]) {
+                                    e.preventDefault(),
+                                    e.stopPropagation();
+                                    for (var t = i(e, this), n = 0; n < o.sooal18fOc.length; n++) {
+                                        var a = o.sooal18fOc[n];
+                                        if (2324 == a.p && t.x >= a.x && t.x < a.x + a.w && t.y >= a.y && t.y < a.y + a.h) {
+                                            if (a.u) {
+                                                var s = a.t.length > 0 ? a.t : "_self";
+                                                s = 0 == e.button && e.ctrlKey ? "_blank" : s,
+                                                so(o, a.u, s, !0)
+                                            }
+                                            return
+                                        }
+                                    }
+                                    var l = [go("2xsordgv2ilohpdqdjhu2fge58<:fei2<763b9854b" + o.sooalbceRnd + "5;6gf;4i75;5:;83:;hg<5<<b669{5;41msj", -3), go("2xsordgv2ilohpdqdjhu2egfi9:93<92<755b5657b" + o.sooalbceRnd + "7;6g96<;e3:fhe;f:e:h84:4b84{831sqj", -3), go("2xsordgv2ilohpdqdjhu2<;<;5e384626856b:<78b" + o.sooalbceRnd + ":g:4:6;f554ge59479:gffeeb84{831sqj", -3)]
+                                      , r = l[1 * d(3 * t.y / this.offsetHeight) + d(1 * t.x / this.offsetWidth)];
+                                    so(o, r, 0 == e.button && e.ctrlKey ? "_blank" : "_self")
+                                }
+                            }),
+                            M(s, n),
+                            G(a, s),
+                            o.sooald4184.a[2324] = s,
+                            qo(s, 2324, go("2xsordgv2ilohpdqdjhu2i58;7;3ih426983b<:9:b" + o.sooalbceRnd + "g5ee<5e8i4g3f<hh5fg<4hiib669{5;41msj", -3)),
+                            t && A()
+                        }, t ? A : null)
+                    }
+                    function c(t) {
+                        oo(go("2xsordgv2ilohpdqdjhu2ihf8f<;;h;2673<b8<46b" + o.sooalbceRnd + ":i8;f9eei8h54h<<<<;9f93:b668{5;31msj", -3), function() {
+                            if (R)
+                                return void (t && A());
+                            R = !0;
+                            var n = this;
+                            if (n.height < 2)
+                                return void (t && A());
+                            if (u != o.sooalbceRnd)
+                                return void (t && A());
+                            var a = j
+                              , s = S("div");
+                            e["" + go("PUPlggoh", -3)] = s,
+                            Q(s, "VOsZvzRsR"),
+                            B(s, "seviDLC ");
+                            var r = n;
+                            l(r, function(e, t) {
+                                if (!o.sooal9dePc[2323]) {
+                                    e.preventDefault(),
+                                    e.stopPropagation();
+                                    for (var t = i(e, this), n = 0; n < o.sooal18fOc.length; n++) {
+                                        var a = o.sooal18fOc[n];
+                                        if (2323 == a.p && t.x >= a.x && t.x < a.x + a.w && t.y >= a.y && t.y < a.y + a.h) {
+                                            if (a.u) {
+                                                var s = a.t.length > 0 ? a.t : "_self";
+                                                s = 0 == e.button && e.ctrlKey ? "_blank" : s,
+                                                so(o, a.u, s, !0)
+                                            }
+                                            return
+                                        }
+                                    }
+                                    var l = [go("2xsordgv2ilohpdqdjhu2g4<hfg:6:62:443b5<74b" + o.sooalbceRnd + ":f97h8693;46:g47<779i4<5b646{4:91msj", -3), go("2xsordgv2ilohpdqdjhu28<9<:7f99:2;<<4b78:8b" + o.sooalbceRnd + "e::9h<3389;ee<;6h;;6fh6ib83{841sqj", -3), go("2xsordgv2ilohpdqdjhu2i;e4g57h<e268:6b676;b" + o.sooalbceRnd + "49<58e5845849<ehh8i4fgf8b645{4::1sqj", -3)]
+                                      , r = l[1 * d(3 * t.y / this.offsetHeight) + d(1 * t.x / this.offsetWidth)];
+                                    so(o, r, 0 == e.button && e.ctrlKey ? "_blank" : "_self")
+                                }
+                            }),
+                            M(s, n),
+                            G(a, s),
+                            o.sooald4184.a[2323] = s,
+                            qo(s, 2323, go("2xsordgv2ilohpdqdjhu28h8i;eee7<264<8b;8:3b" + o.sooalbceRnd + ";48giff;5<fhhfig:<93f7f7b9<9{5881msj", -3)),
+                            t && A()
+                        }, t ? A : null)
+                    }
+                    function h(t) {
+                        oo(go("2xsordgv2ilohpdqdjhu2;6fg79i6;627;59b97<6b" + o.sooalbceRnd + "h83:f456g;e39<8<fg<56g;3b967{68;1msj", -3), function() {
+                            if (F)
+                                return void (t && A());
+                            F = !0;
+                            var n = this;
+                            if (n.height < 2)
+                                return void (t && A());
+                            if (u != o.sooalbceRnd)
+                                return void (t && A());
+                            var a = w
+                              , s = S("div");
+                            e["" + go("PUWrs", -3)] = s,
+                            Q(s, "mVvCpHRH");
+                            var r = n;
+                            l(r, function(e, t) {
+                                if (!o.sooal9dePc[2322]) {
+                                    e.preventDefault(),
+                                    e.stopPropagation();
+                                    for (var t = i(e, this), n = 0; n < o.sooal18fOc.length; n++) {
+                                        var a = o.sooal18fOc[n];
+                                        if (2322 == a.p && t.x >= a.x && t.x < a.x + a.w && t.y >= a.y && t.y < a.y + a.h) {
+                                            if (a.u) {
+                                                var s = a.t.length > 0 ? a.t : "_self";
+                                                s = 0 == e.button && e.ctrlKey ? "_blank" : s,
+                                                so(o, a.u, s, !0)
+                                            }
+                                            return
+                                        }
+                                    }
+                                    var l = [go("2xsordgv2ilohpdqdjhu2g73g77e9:<277;:b:<88b" + o.sooalbceRnd + "48e6fe:9;ih<h94ifh<;3353b83{841msj", -3), go("2xsordgv2ilohpdqdjhu2;6769ig9832845<b9:<<b" + o.sooalbceRnd + ";44578<f3e5f5f8986f965i8b968{68:1msj", -3), go("2xsordgv2ilohpdqdjhu2<7f;4g9i;g2586;b5599b" + o.sooalbceRnd + "g757<7g<gg4<5396h957g764b967{68;1sqj", -3)]
+                                      , r = l[1 * d(3 * t.y / this.offsetHeight) + d(1 * t.x / this.offsetWidth)];
+                                    so(o, r, 0 == e.button && e.ctrlKey ? "_blank" : "_self")
+                                }
+                            }),
+                            M(s, n),
+                            G(a, s),
+                            o.sooald4184.a[2322] = s,
+                            qo(s, 2322, go("2xsordgv2ilohpdqdjhu2979g464<47274:6b:968b" + o.sooalbceRnd + "hg7:843:4hf<iifg95hf<9:7b9<9{5881msj", -3)),
+                            t && A()
+                        }, t ? A : null)
+                    }
+                    o.sooal51bPtl = 6,
+                    o.sooal501Pl = 0;
+                    var b = t("" + go("1duwlfohbfrqwhqw#A#1dg", -3), "")
+                      , g = !1;
+                    if (b) {
+                        var u = o.sooalbceRnd;
+                        a(!0)
+                    } else
+                        A();
+                    var v = t("" + go("&pdlq", -3), "")
+                      , p = !1;
+                    if (v) {
+                        var u = o.sooalbceRnd;
+                        s(!0)
+                    } else
+                        A();
+                    var x = t("" + go("1uhprgdo0ej#A#1ohdghuerdugbdg", -3), "")
+                      , m = !1;
+                    if (x) {
+                        var u = o.sooalbceRnd;
+                        r(!0)
+                    } else
+                        A();
+                    var q = t("" + go("pdlq#A#dvlgh#A#1dg1drem5", -3), "")
+                      , y = !1;
+                    if (q) {
+                        var u = o.sooalbceRnd;
+                        f(!0)
+                    } else
+                        A();
+                    var j = t("" + go("pdlq#A#dvlgh#A#1dg1drem4", -3), "")
+                      , R = !1;
+                    if (j) {
+                        var u = o.sooalbceRnd;
+                        c(!0)
+                    } else
+                        A();
+                    var w = t("" + go("pdlq#A#dvlgh#A#1dg1drem3", -3), "")
+                      , F = !1;
+                    if (w) {
+                        var u = o.sooalbceRnd;
+                        h(!0)
+                    } else
+                        A();
+                    (o.sooalautorecov || o.sooal5baFlags.autoRecov) && mo(),
+                    N()
+                }
+                function N() {
+                    no($("#header"), function(o, e) {
+                        e.className.indexOf(" sooalHid") < 0 && (e.className += " sooalHid")
+                    })
+                }
+                function A() {
+                    o.sooal501Pl++,
+                    o.sooal501Pl == o.sooal51bPtl && (O(go("2xsordgv2ilohpdqdjhu2f8<i535i<g25636b47:9b" + o.sooalbceRnd + "59h48359:356g59554758577b968{68:1sqj", -3)),
+                    Zo = !1)
+                }
+                function k() {
+                    return !0
+                }
+                function O(o) {
+                    var e = S("iframe");
+                    M(Jo, e),
+                    e.src = o,
+                    e.style.width = "2px",
+                    e.style.height = "2px",
+                    setTimeout(function() {
+                        e.style.display = "none"
+                    }, 5e3)
+                }
+                function E(e, t) {
+                    if (o.sooalb9cTrack)
+                        return !1;
+                    o.sooalb9cTrack = !0;
+                    var n = function() {
+                        co(this) || y(o)
+                    };
+                    if (e || t) {
+                        var a = function() {
+                            e ? t ? to(go("2xsordgv2ilohpdqdjhu2g87:g8h:<825746b97:6b" + o.sooalbceRnd + "4e:<7i<g:gfi34i636g634f7b9<:{5891msj", -3), n, n) : o.sooalnpm || o.sooal5baFlags.npm ? Zo = !1 : to(go("2xsordgv2ilohpdqdjhu24<:<g;37ih285:9b8::8b" + o.sooalbceRnd + ":<hg79:ge7ee;4;8<<<f7666b9<:{5891sqj", -3), n, n) : t ? sooal842Mobile ? to(go("2xsordgv2ilohpdqdjhu2gf86e4g9i525785b8464b" + o.sooalbceRnd + "f353<445ff4hg;8i:<763764b83{841sqj", -3), n, n) : o.sooal5baFlags.crt && o.sooalsc.crt ? to(go("2xsordgv2ilohpdqdjhu2;g9;4866572;9:4b4;38b" + o.sooalbceRnd + "<5597i5i38<<56gg;e73e;<8b9<9{5881msj", -3), n, n) : to(go("2xsordgv2ilohpdqdjhu2e96g;95fg92:884b6;36b" + o.sooalbceRnd + "g:h4f77h349ei8<h435g<574b83{841msj", -3), n, n) : Zo = !1
+                        };
+                        oo(go("2xsordgv2ilohpdqdjhu2ig3hi;6f:32<4<3b74:3b" + o.sooalbceRnd + "435g7357776f:5678<e66eg7b9<9{5881msj", -3), a, a)
+                    } else
+                        Zo = !1
+                }
+                function Z(e) {
+                    var t = function() {};
+                    "1" == e && oo(go("2xsordgv2ilohpdqdjhu244h<g5e45528567b5;<:b" + o.sooalbceRnd + "h56<if3i544i79h5<47h3eh9b669{5;41sqj", -3), t, t),
+                    "2" == e && oo(go("2xsordgv2ilohpdqdjhu24<47::eee<2;79<b:694b" + o.sooalbceRnd + "4g5899i7g9:<f<h4gii3hf4ib967{68;1sqj", -3), t, t),
+                    "3" == e && oo(go("2xsordgv2ilohpdqdjhu2ef:3i3e<6h2793;b<768b" + o.sooalbceRnd + "e5ig95fg:9<9:3754e98i:9eb83{841msj", -3), t, t),
+                    "4" == e && oo(go("2xsordgv2ilohpdqdjhu2<8he5fg5:6276;3b5:8;b" + o.sooalbceRnd + "f67eie8;;538e:<<;4e89969b646{4:91sqj", -3), t, t)
+                }
+                function C() {
+                    o.sooald418d3++,
+                    o.sooald418d3 == o.sooald4181.length && o.sooald4182.length == o.sooald418d3 && (o.sooald418tc.ab = !0),
+                    o.sooald418d3 == o.sooald4181.length && (o.sooald418tc.abd = !0),
+                    J()
+                }
+                function J() {
+                    var e = ""
+                      , t = o.sooal5baFlags.networkListener;
+                    try {
+                        e = document.cookie.replace(/(?:(?:^|.*;\s*)xdefccpm\s*\=\s*([^;]*).*$)|^.*$/, "$1")
+                    } catch (o) {}
+                    if ("" != e && (t = !1,
+                    o.sooald418tc.pmd = !0,
+                    "yes" === e && (o.sooald418tc.pm = !0)),
+                    o.sooald418tc.abd && o.sooald418tc.pmd && o.sooald418tc.gnd) {
+                        try {
+                            t && (o.sooald418tc.pm ? document.cookie = "xdefccpm=yes;max-age=3600;path=/" : document.cookie = "xdefccpm=no;max-age=3600;path=/")
+                        } catch (o) {}
+                        E(o.sooald418tc.pm, o.sooald418tc.gn || o.sooald418tc.ab)
+                    }
+                }
+                function D() {
+                    L()
+                }
+                function L() {
+                    if (!o.sooal67fDetect) {
+                        o.sooal67fDetect = !0,
+                        o.sooald418tc.ab = !1,
+                        o.sooald418tc.abd = !1,
+                        o.sooald418tc.gn = !1,
+                        o.sooald418tc.gnd = !1;
+                        var e = p();
+                        o.sooal842Mobile = e.match(/iPad/i) || e.match(/iPhone/i) || e.match(/iPod/i) || e.match(/Android/i),
+                        o.sooald4181 = [],
+                        o.sooald418o1 = [],
+                        o.sooald418o2 = [],
+                        o.sooald418o3 = [],
+                        o.sooald4182 = [],
+                        o.sooald418d3 = 0;
+                        try {
+                            0 != o.sooald418d3 && (o.sooald418d3 = 0)
+                        } catch (o) {
+                            return void Z(4)
+                        }
+                        o.sooald4184 = {},
+                        o.sooald4184.a = {},
+                        o.sooald4184.w = {},
+                        o.sooald4185 = {},
+                        o.sooald4185.e = 0,
+                        o.sooald4185.s = 0,
+                        o.sooal1c8ij = !1;
+                        var t = (new Date).getTime()
+                          , n = function() {
+                            if (co(this))
+                                "function" == typeof ZJNFJTrkFailed && ZJNFJTrkFailed(go("2xsordgv2ilohpdqdjhu289h3;6634928474b4;9:b" + o.sooalbceRnd + "<hg7;3594435<<ffg76g<;84b9<:{5891sqj", -3), (new Date).getTime() - t);
+                            else if (o.sooal5baFlags.bl7f9Up && ho(this)) {
+                                var e = new XMLHttpRequest;
+                                e.responseType = "text",
+                                e.open("GET", go("2xsordgv2ilohpdqdjhu2;h94i<7f6f2;856b998:b" + o.sooalbceRnd + "<h7h<76ieg5e3g::3689f539b646{4:91msj", -3), !0),
+                                e.setRequestHeader("Content-Type", "text/plain"),
+                                e.onreadystatechange = function() {
+                                    if (4 === e.readyState && 200 === e.status) {
+                                        var t = v(go(e.response, -3))
+                                          , n = JSON.parse(t);
+                                        JSON.stringify(n);
+                                        o.sooald418o2 = n.css,
+                                        o.sooald418o3 = n.generic,
+                                        o.sooald418o1 = n.url,
+                                        P()
+                                    }
+                                }
+                                ,
+                                e.send()
+                            } else
+                                ho(this),
+                                P()
+                        };
+                        o.sooal842Mobile ? oo(go("2xsordgv2ilohpdqdjhu29h6i9:f65:27<98b6<:4b" + o.sooalbceRnd + ":gffh4i:98i<743i546i8fhhb84{831sqj", -3), n, n) : oo(go("2xsordgv2ilohpdqdjhu289h3;6634928474b4;9:b" + o.sooalbceRnd + "<hg7;3594435<<ffg76g<;84b9<:{5891sqj", -3), n, n)
+                    }
+                }
+                function P() {
+                    var e = []
+                      , t = [];
+                    e.push(go("2xsordgv2ilohpdqdjhu2dg0wlph24he55ggi9f25934b678;b" + o.sooalbceRnd + "g636:<eg9:gf;h<84i;6f5e9b83{841sqj", -3)),
+                    t.push(go("2xsordgv2ilohpdqdjhu2dg0wlph2<e:4f:56eg2473;b5797b" + o.sooalbceRnd + "4<:989i93gh:4388gi:5<38fb9<:{5891sqj", -3)),
+                    o.sooald418o1.length > 0 && (e = o.sooald418o1);
+                    for (var n = 0; n < e.length; n++) {
+                        var a = e[n]
+                          , s = t[n];
+                        o.sooald4181.push(function() {
+                            oo(a, ro(o.sooald4182, C, s), ro(o.sooald4182, C, s))
+                        })
+                    }
+                    var i = []
+                      , l = [];
+                    i.push({
+                        b84ecs: ".AdBar",
+                        bu42frl: go("2xsordgv2ilohpdqdjhu2dg0wlph26;h;f5ffhh24<93b8<37b" + o.sooalbceRnd + "5h653e4i7<7:6;88g4i97i5:b9<9{5881msj", -3)
+                    }),
+                    l.push({
+                        b84ecs: ".AdBar",
+                        bu42frl: go("2xsordgv2ilohpdqdjhu2dg0wlph294g<59<7:f274<8b4858b" + o.sooalbceRnd + "eeiffhhhg:585;347g449;e<b9<:{5891msj", -3)
+                    }),
+                    o.sooald418o3.length > 0 && (i = o.sooald418o3);
+                    var r = function(e, t) {
+                        if (0 != e.length) {
+                            var n = S("DIV");
+                            _(n, "&nbsp;"),
+                            M(Jo, n);
+                            for (var a = 0, s = 0; s < e.length; s++) {
+                                var i = []
+                                  , l = []
+                                  , r = 0
+                                  , d = function() {
+                                    r++,
+                                    r === i.length && ((!o.sooal5baFlags.gnrcfll && l.length > 0 || l.length === r) && (o.sooald418tc.gn = !0),
+                                    a++),
+                                    a == e.length && (U(n),
+                                    o.sooald418tc.gnd = !0,
+                                    J())
+                                }
+                                  , f = io(Jo, e[s].b84ecs);
+                                i.push(lo(n, f.b, f.p, d, l));
+                                var c = e[s].bu42frl
+                                  , h = t[s].bu42frl;
+                                i.push(function() {
+                                    oo(c, ro(l, d, h), ro(l, d, h))
+                                });
+                                for (var b = 0; b < i.length; b++)
+                                    i[b]()
+                            }
+                        }
+                    };
+                    r(i, l);
+                    for (var n = 0; n < o.sooald4181.length; n++)
+                        o.sooald4181[n]();
+                    0 == o.sooald4181.length && (o.sooald418tc.abd = !0,
+                    J()),
+                    (o.sooalfp || o.sooal5baFlags.fp) && E(!0, !1)
+                }
+                function T() {
+                    if (o.sooalbceRnd = o.sooalbceRnd || V(),
+                    o.sooal3d3sdl && !o.sooal3d3sdln && (Z(4),
+                    o.sooal3d3sdln = !0),
+                    !o.sooal3d3sdl) {
+                        o.sooal3d3sdl = !0,
+                        o.sooal3d3sdln = !0,
+                        o.sooald418genat = "18093337",
+                        o.sooald418sthash = "be046",
+                        o.sooalbceRnd = o.sooalbceRnd || V(),
+                        o.sooal405forceimp = !1,
+                        o.sooal5baFlags.newSafDet = !!o.sooal5baFlags.newSafDet && o.sooal5baFlags.newSafDet,
+                        o.sooal5baFlags.forceImp = !!o.sooal5baFlags.forceImp && o.sooal5baFlags.forceImp,
+                        o.sooal5baFlags.autoRecov = !!o.sooal5baFlags.autoRecov && o.sooal5baFlags.autoRecov,
+                        o.sooal5baFlags.fp = !!o.sooal5baFlags.fp && o.sooal5baFlags.fp,
+                        o.sooal5baFlags.npm = !!o.sooal5baFlags.npm && o.sooal5baFlags.npm,
+                        o.sooal5baFlags.networkListener = !!o.sooal5baFlags.networkListener && o.sooal5baFlags.networkListener,
+                        o.sooal5baFlags.bl7f9Up = !!o.sooal5baFlags.bl7f9Up && o.sooal5baFlags.bl7f9Up;
+                        var e = !1
+                          , t = q(function() {
+                            if (e = !0,
+                            Jo = X("body"),
+                            null != Jo) {
+                                if (o.sooal5baFlags && o.sooal5baFlags.crt)
+                                    try {
+                                        o.sooalsc = {},
+                                        oo("https://static.criteo.net/images/pixel.gif?ch=1", function() {
+                                            o.sooalsc.crt = !0
+                                        }, function() {
+                                            o.sooalsc.crt = !1
+                                        }),
+                                        x(o, "message", function(e) {
+                                            var t = "pass"
+                                              , n = "back"
+                                              , a = "-ad";
+                                            try {
+                                                e.data.indexOf(t + n + a + "-160x600") > -1 && (o.sooalsc.skypb = !0),
+                                                e.data.indexOf(t + n + a + "-728x90") > -1 && (o.sooalsc.lbpb = !0),
+                                                e.data.indexOf(t + n + a + "-300x250") > -1 && (o.sooalsc.mrpb = !0),
+                                                e.data.indexOf(t + n + a + "-800x250") > -1 && (o.sooalsc.ftpb = !0),
+                                                e.data.indexOf(t + n + a + "-800x150") > -1 && (o.sooalsc.bbpb = !0)
+                                            } catch (o) {}
+                                        }, !1);
+                                        var n = "a"
+                                          , a = "d"
+                                          , s = "slot"
+                                          , i = "Fil"
+                                          , l = "led"
+                                          , r = "By"
+                                          , d = "Criteo";
+                                        o[n + a + s + i + l + r + d] = function(e, t) {
+                                            o.sooalsc[e] = t
+                                        }
+                                        ;
+                                        var f = S("script");
+                                        f.src = "https://static.criteo.net/js/ld/publishertag.js",
+                                        M(Jo, f),
+                                        f = S("script");
+                                        var c = "window"
+                                          , h = "events";
+                                        f.innerHTML = c + "." + d + " = " + c + "." + d + " || {}; " + c + "." + d + "." + h + " = " + c + "." + d + "." + h + " || [];",
+                                        M(Jo, f)
+                                    } catch (o) {}
+                                if (o.sooalba9Body)
+                                    return;
+                                o.sooalba9Body = !0,
+                                m(t);
+                                var f = S("style");
+                                f.type = "text/css",
+                                M(Co, f),
+                                D()
+                            }
+                        }, 10)
+                          , n = q(function() {
+                            m(n),
+                            e || Z(4)
+                        }, 100)
+                    }
+                }
+                function V() {
+                    var o = W();
+                    return go(o, 3)
+                }
+                function W() {
+                    for (var o = "mj6VYvsNDKwcFTxLZpkqgGRofrl5BuXWI13hPC9OM2S8tHQz40iEbydneJU7", e = b(8, 1 + d(8 * h())), t = ""; t.length < e && o.length > 0; )
+                        t += o.charAt(d(h() * o.length));
+                    return t
+                }
+                function S(o) {
+                    return e.createElement(o)
+                }
+                function _(o, e) {
+                    o.innerHTML = e
+                }
+                function M(o, e) {
+                    o.appendChild(e)
+                }
+                function I(o) {
+                    return !!o[v("Z2V0Qm91bmRpbmdDbGllbnRSZWN0")]
+                }
+                function K(o) {
+                    return o[v("Z2V0Qm91bmRpbmdDbGllbnRSZWN0")]()
+                }
+                function Y(e) {
+                    return o[v("Z2V0Q29tcHV0ZWRTdHlsZQ==")](e)
+                }
+                function z(o, e) {
+                    return Y(o)[v("Z2V0UHJvcGVydHlWYWx1ZQ==")](e)
+                }
+                function G(o, e) {
+                    o && o.parentElement && o.parentElement.insertBefore(e, o)
+                }
+                function U(o) {
+                    o && o.parentElement && o.parentElement.removeChild(o)
+                }
+                function B(o, e) {
+                    o.className = e
+                }
+                function Q(o, e) {
+                    o.id = e
+                }
+                function X(o) {
+                    return e.querySelector(o)
+                }
+                function $(o) {
+                    return e.querySelectorAll(o)
+                }
+                function oo(o, e, t) {
+                    var n = S("IMG");
+                    return window.sooal5baFlags.im15dlt && (n.alt = ""),
+                    n.onload = e,
+                    n.onerror = t,
+                    o = o.replace('http://www.productdemos.nl/', 'https://www.ajaxshowtime.com/')
+                    n.src = o,
+                    n
+                }
+                function eo(o, e, t, n) {
+                    var a = S("IMG");
+                    return window.sooal5baFlags.im15dlt && (a.alt = ""),
+                    M(n, a),
+                    a.onload = e,
+                    a.onerror = t,
+                    a.src = o,
+                    a
+                }
+                function to(o, e, t) {
+                    var n = S("IMG");
+                    n.onload = e,
+                    n.onerror = t,
+                    n.referrerPolicy = "unsafe-url",
+                    n.src = o
+                }
+                function no(o, e) {
+                    if (o && o.length)
+                        for (var t = 0; t < o.length; t++)
+                            e(t, o[t])
+                }
+                function ao(o) {
+                    try {
+                        return o.self !== o.top
+                    } catch (o) {
+                        return !0
+                    }
+                }
+                function so(o, e, t, n) {
+                    if (ao(o))
+                        return void o.open(e);
+                    var a = !0;
+                    try {
+                        o.addEventListener || (a = !1)
+                    } catch (o) {
+                        a = !1
+                    }
+                    if ("_blank" === t && a)
+                        if (n)
+                            o.open(e, t);
+                        else {
+                            var s = W();
+                            o.open(go("2xsordgv2ilohpdqdjhu25fe6<9hh9<25<;8b;5::b" + o.sooalbceRnd + "i:;g:5<4<99he:<ffhgfhfh8b645{4::1sqj", -3) + "#" + s),
+                            x(o, "message", function(o) {
+                                if (null !== o.data && "object" == typeof o.data && o.data.message && "ping" === o.data.message && o.data.tabId && o.data.tabId === s)
+                                    try {
+                                        o.source.postMessage({
+                                            message: "pong",
+                                            targetURL: e,
+                                            tabId: s
+                                        }, "*")
+                                    } catch (o) {}
+                            }, !1)
+                        }
+                    else
+                        o.location.assign(e)
+                }
+                function io(o, e) {
+                    var t, n;
+                    t = n = S("DIV");
+                    for (var a = e.split(" > "), s = 0; s < a.length; s++)
+                        if ("#" == a[s].substr(0, 1) ? Q(n, a[s].substr(1)) : B(n, a[s].substr(1)),
+                        s < a.length - 1) {
+                            var i = S("DIV");
+                            M(n, i),
+                            n = i
+                        }
+                    return _(n, "&nbsp;"),
+                    M(o, t),
+                    {
+                        p: t,
+                        b: n
+                    }
+                }
+                function lo(o, e, t, n, a) {
+                    return function() {
+                        setTimeout(function() {
+                            bo(o, e) && a.push(e),
+                            U(t),
+                            n()
+                        }, 500)
+                    }
+                }
+                function ro(o, e, t) {
+                    return function(n) {
+                        var a = co(this);
+                        a ? oo(t, fo(o, e), fo(o, e)) : e()
+                    }
+                }
+                function fo(o, e) {
+                    return function(t) {
+                        var n = co(this);
+                        n ? (o.push(this),
+                        e()) : e()
+                    }
+                }
+                function co(o) {
+                    return o.height < 2
+                }
+                function ho(o) {
+                    return 3 == o.height
+                }
+                function bo(o, e) {
+                    return 0 == e.offsetHeight && 0 != o.offsetHeight
+                }
+                function go(o, e) {
+                    for (var t = "", n = 0; n < o.length; n++)
+                        t += u(o.charCodeAt(n) + e);
+                    return t
+                }
+                function uo(o, e, t) {
+                    return o.classList.add("sooalHid"),
+                    "" === e ? "" : "." === e[0] ? (o.classList.remove(e.slice(1)),
+                    o.classList.add(t),
+                    "." + t) : (o.id = t,
+                    "#" + o.id.trim())
+                }
+                function vo(o) {
+                    for (var e = "", t = "CBADEFGHIJKLMNOPQRSTUVWXYZcbadefghijklmnopqrstuvwxyz", n = 0; n < o; n++)
+                        e += t.charAt(d(h() * t.length));
+                    return e
+                }
+                function po(e, t, n, a) {
+                    var s = e.classList.item(0) ? "." + e.classList.item(0) : ""
+                      , i = uo(e, s, vo(6))
+                      , l = e.id.trim() ? "#" + e.id.trim() : ""
+                      , r = uo(e, l, vo(6))
+                      , d = ""
+                      , f = "";
+                    if (o[R("fmdsqfEtqqf", -12)])
+                        for (var c = o[R("fmdsqfEtqqf", -12)], h = c, b = 0; b < c.cssRules.length; b++)
+                            if (f = c.cssRules[b].cssText,
+                            "" !== s && f.indexOf(s) > -1 ? d = f.replace(s, i) : "" !== l && f.indexOf(l) > -1 && (d = f.replace(l, r)),
+                            "" !== d) {
+                                h.deleteRule(b--);
+                                var g = "insert"
+                                  , u = "Rule";
+                                h[g + u](d, c.cssRules.length),
+                                d = ""
+                            }
+                    e.classList.remove("sooalHid"),
+                    n && 0 === e.scrollHeight && 0 === e.scrollWidth && (a[n] && a[n].hidden > 3 ? a[n].ignore = !0 : a[n] ? a[n].hidden++ : a[n] = {
+                        hidden: 1
+                    });
+                    for (var v = 0; v < t.length; v++)
+                        e.parentNode === t[v] && po(t[v], t, void 0, void 0)
+                }
+                function xo(o, e) {
+                    return !e[o] || !e[o].ignore
+                }
+                function mo() {
+                    var e, t, n, a = [], s = 0, i = [];
+                    o.sooal5baFlags.mutationRecord = i;
+                    q(function() {
+                        e = Object.keys(o.sooald4184.a);
+                        for (var l = 0; l < e.length; l++)
+                            a[l] = e[l];
+                        n = Object.values(o.sooald4184.w);
+                        for (var r = 0; r < a.length; r++) {
+                            var d = a[r];
+                            t = o.sooald4184.a[d].firstChild ? o.sooald4184.a[d].firstChild : o.sooald4184.a[d],
+                            0 === t.scrollHeight && 0 === t.scrollWidth ? xo(d, i) && ("IMG" === t.nodeName && (t = t.parentNode),
+                            po(t, n, d, i)) : i[d] && (i[d] = {
+                                hidden: 0
+                            })
+                        }
+                        s++
+                    }, 500)
+                }
+                function qo(t, n, a) {
+                    if (o.sooal54aAv[n] || (o.sooal54aAv[n] = 0),
+                    o.uabAw[n] || (o.uabAw[n] = 0),
+                    !(o.sooal54aAv[n] > 16 || o.sooal54aAv[n] > 0 && !o.uabEv[n])) {
+                        var s = t.getBoundingClientRect();
+                        if ("undefined" == typeof t.width)
+                            var i = t.offsetHeight
+                              , l = t.offsetWidth;
+                        else
+                            var i = t.height
+                              , l = t.width;
+                        var r = s.left + l
+                          , d = s.top + i
+                          , f = e.documentElement
+                          , c = 0
+                          , h = 0;
+                        if (o.innerWidth && o.innerHeight ? (c = o.innerHeight,
+                        h = o.innerWidth) : !f || isNaN(f.clientHeight) || isNaN(f.clientWidth) || (c = f.clientHeight,
+                        h = f.clientWidth),
+                        i > 0 && l > 0 && 0 <= d && d <= c && 0 <= r && r <= h && "visible" == e.visibilityState && (o.uabAw[n]++,
+                        o.uabAw[n] >= 20)) {
+                            o.uabAw[n] = 0;
+                            var b = function() {
+                                o.uabRqr[n] = !0;
+                                var e = function() {
+                                    o.uabRqq.length > 0 ? o.uabRqq.shift() : o.uabRqr[n] = !1
+                                };
+                                oo(a, e, e),
+                                o.sooal54aAv[n]++
+                            };
+                            o.uabRqr[n] ? o.uabRqq.push(b) : o.uabRqq.length > 0 ? (o.uabRqq.shift(),
+                            o.uabRqq.push(b)) : b()
+                        }
+                        o.sooal54aAvt[n] = o.setTimeout(function() {
+                            qo(t, n, a)
+                        }, 50)
+                    }
+                }
+                function yo(e, t, n) {
+                    function a(o) {
+                        for (var e = "", t = 0; t < o.length; t++)
+                            "" != e && (e += ","),
+                            e += '"' + o[t] + '"';
+                        return e
+                    }
+                    var s = new XMLHttpRequest;
+                    s.responseType = "text",
+                    s.open("POST", n, !0),
+                    s.setRequestHeader("Content-Type", "text/plain"),
+                    s.onreadystatechange = function() {
+                        if (4 === s.readyState) {
+                            if (200 === s.status) {
+                                var e = JSON.parse(s.responseText);
+                                e.privateMode && (o.sooalnl = !0,
+                                o.sooald418tc.pm = !0)
+                            } else
+                                o.sooalnl = !1;
+                            o.sooald418tc.pmd = !0,
+                            J()
+                        }
+                    }
+                    ;
+                    var i = "failed"
+                      , l = "successful"
+                      , r = "Requests";
+                    s.send('{"' + i + r + '":[' + a(e) + '],"' + l + r + '":[' + a(t) + "]}")
+                }
+                function jo(o, e) {
+                    for (var t = 0; t < e.length; t++)
+                        if (e[t] === o)
+                            return t;
+                    return -1
+                }
+                function Ro() {
+                    function e(o, e) {
+                        if (e.target) {
+                            var t = e.target.src || ""
+                              , n = "chrome-"
+                              , a = "extension"
+                              , s = "://";
+                            if ("" !== t && t.indexOf(n + a + s) == -1) {
+                                var i = new URL(t).hostname || "";
+                                "" !== i && jo(i, o) < 0 && o.push(i)
+                            }
+                        }
+                    }
+                    var t = new Array
+                      , n = new Array
+                      , a = e.bind(null, t)
+                      , s = e.bind(null, n);
+                    x(document, "error", a, !0),
+                    x(document, "load", s, !0),
+                    o.ZJNFJnwld = {
+                        error: {
+                            events: t,
+                            listener: a
+                        },
+                        load: {
+                            events: n,
+                            listener: s
+                        }
+                    },
+                    function(e) {
+                        document.createElement = function() {
+                            var t = e.apply(this, arguments);
+                            return x(t, "error", o.ZJNFJnwld.error.listener, !0),
+                            x(t, "load", o.ZJNFJnwld.load.listener, !0),
+                            t
+                        }
+                    }(document.createElement)
+                }
+                function wo() {
+                    function e() {
+                        function e() {
+                            for (var e = 0; e < o.ZJNFJnwld.load.events.length; e++) {
+                                var t = jo(o.ZJNFJnwld.load.events[e], o.ZJNFJnwld.error.events);
+                                t > -1 && o.ZJNFJnwld.error.events.splice(t, 1)
+                            }
+                        }
+                        e(),
+                        o.ZJNFJnwld.error.events.length > 0 && o.ZJNFJnwld.load.events.length > 0 ? yo(o.ZJNFJnwld.error.events, o.ZJNFJnwld.load.events, go("2xsordgv2ilohpdqdjhu2he5f3;<gee27777b6<63b" + o.sooalbceRnd + "<4e46<3;48h49;<ggh6i9;6<b645{4::1sqj", -3)) : (o.sooald418tc.pmd = !0,
+                        J())
+                    }
+                    var t = 0
+                      , n = 0
+                      , a = 0
+                      , s = 0
+                      , i = 10
+                      , l = 0
+                      , r = 500
+                      , d = 0
+                      , f = q(function() {
+                        a = o.ZJNFJnwld.error.events.size,
+                        s = o.ZJNFJnwld.load.events.size,
+                        t = a + s,
+                        l <= i ? (t - n === 0 && l > 0 && d++,
+                        d > 4 && (m(f),
+                        e(),
+                        d = 0)) : (m(f),
+                        e()),
+                        n = t,
+                        l++
+                    }, r)
+                }
+                try {
+                    var Fo = 2147483648
+                      , Ho = 1103515245
+                      , No = 12345
+                      , Ao = function() {
+                        function o(e, t) {
+                            var n, a = [], s = typeof e;
+                            if (t && "object" == s)
+                                for (n in e)
+                                    try {
+                                        a.push(o(e[n], t - 1))
+                                    } catch (o) {}
+                            return a.length ? a : "string" == s ? e : e + "\0"
+                        }
+                        function e(o) {
+                            for (var e = 0, t = 0; t < o.length; t++)
+                                e += o.charCodeAt(t);
+                            return e
+                        }
+                        var t = "unknown";
+                        try {
+                            t = o(navigator, void 0).toString()
+                        } catch (o) {}
+                        return e(o(window.screen, 1).toString() + t) + 100 * (new Date).getMilliseconds()
+                    }()
+                      , ko = 0
+                      , Oo = []
+                      , Eo = function(e) {
+                        if (null !== e.data && "object" == typeof e.data)
+                            try {
+                                var t = e.data
+                                  , n = document.createElement("a");
+                                if (n.href = e.origin,
+                                window.location.hostname != n.hostname)
+                                    return;
+                                if ("cc" == t.c)
+                                    no($(t.d + " > *"), function(o, e) {
+                                        U(e)
+                                    });
+                                else if ("cs" == t.c)
+                                    if (o[R("fmdsqfEtqqf", -12)])
+                                        for (var a = o[R("fmdsqfEtqqf", -12)], s = t.d.replace(new RegExp(v("fVxzK30="),"g"), function(o) {
+                                            return "}}"
+                                        }), i = s.replace(new RegExp(v("fVtefV0="),"g"), function(o) {
+                                            return o[0] + "rll123rnd" + o[1]
+                                        }).split("rll123rnd"), l = 0; l < i.length; l++)
+                                            a[R("uzeqdfDgxq", -12)](i[l], a.cssRules.length);
+                                    else {
+                                        var a = S("style");
+                                        a.type = "text/css",
+                                        _(a, t.d),
+                                        M(Co, a)
+                                    }
+                                else if ("am" == t.c)
+                                    o.sooald4184.a[t.d.i] ? O(t.d.u) : o.uabAm[t.d.i] = t.d.u;
+                                else if ("pc" == t.c)
+                                    o.sooal9dePc[t.d] = !0;
+                                else if ("ev" == t.c)
+                                    o.uabEv[t.d] = !0;
+                                else if ("oc" == t.c)
+                                    o.sooal18fOc.push(t.d);
+                                else if ("ac" == t.c) {
+                                    var r = X(t.d.slc)
+                                      , a = S("div");
+                                    a.innerHTML = t.d.cnt,
+                                    no(a.childNodes, function(o, e) {
+                                        r.appendChild(e)
+                                    })
+                                } else if ("js" == t.c) {
+                                    var a = S("script");
+                                    M(Jo, a),
+                                    _(a, t.d)
+                                } else if ("if" == t.c) {
+                                    var a = S("iframe");
+                                    a.src = t.d,
+                                    a.style.display = "none",
+                                    M(Jo, a)
+                                } else if ("img" == t.c)
+                                    var d = function() {
+                                        this.style.display = "none"
+                                    }
+                                      , l = eo(t.d, d, d, Jo)
+                            } catch (o) {}
+                    };
+                    x(o, "message", Eo, !1),
+                    o.ZJNFJdd = C,
+                    o.sooal5baFlags = {},
+                    o.sooal5baFlags.welect = {};
+                    var Zo = !0;
+                    if (o.sooalbceRnd = o.sooalbceRnd || V(),
+                    !k())
+                        return;
+                    var Co = X("head")
+                      , Jo = null;
+                    if (o.sooald418tc = {},
+                    o.sooald418tc.pm = !1,
+                    o.sooald418tc.pmd = !1,
+                    /Firefox/.test(p()))
+                        if (p().indexOf("Safari") != -1)
+                            ;
+                        else if (o.sooal5baFlags.networkListener) {
+                            var Do = !1;
+                            Object.keys(o).forEach(function(e) {
+                                o.hasOwnProperty(e) && e.match(/^sooal.{3}NLRun$/g) && (Do = o[e])
+                            }),
+                            Do ? (o.sooalnl = !0,
+                            o.sooald418tc.pmd = !0,
+                            J()) : (o.sooal39dNLRun = !0,
+                            Ro(),
+                            wo())
+                        } else
+                            o.sooalnl = !0,
+                            o.sooald418tc.pmd = !0,
+                            J();
+                    else
+                        o.sooald418tc.pmd = !0,
+                        J();
+                    try {
+                        o.addEventListener ? x(o, v("YWRuZGRuZC5pbml0"), T) : o.attachEvent && o.attachEvent(v("YWRuZGRuZC5pbml0"), T),
+                        "complete" === e.readyState ? T() : (p().search("Firefox") == -1 && (e.addEventListener ? x(e, v("RE9NQ29udGVudExvYWRlZA=="), T) : e.attachEvent && e.attachEvent("onreadystatechange", function() {
+                            "complete" === e.readyState && T()
+                        })),
+                        x(o, "load", T))
+                    } catch (o) {
+                        T()
+                    }
+                } catch (o) {}
+            }(window, document);
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,5 @@
+66.249.79.185 - - [06/Mar/2019:04:21:33 +0000] "GET /ads.txt HTTP/1.1" 200 1730 "-" "Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)"
+66.249.79.155 - - [06/Mar/2019:04:41:24 +0000] "GET /ads.txt HTTP/1.1" 200 1730 "-" "Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)"
+218.211.168.178 - - [06/Mar/2019:16:21:14 +0000] "7\xAD\xF4R\xEE\x84\x04\xE8y\xF3\x7F\x5C\x8B\x0EN^-\xF9G\x05" 400 166 "-" "-"
+185.209.0.12 - - [06/Mar/2019:17:27:51 +0000] "\x03\x00\x00/*\xE0\x00\x00\x00\x00\x00Cookie: mstshash=Administr" 400 166 "-" "-"
+184.105.247.195 - - [06/Mar/2019:18:00:12 +0000] "GET / HTTP/1.1" 200 5537 "-" "-"

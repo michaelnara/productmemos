@@ -1,0 +1,1202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>
+        YIELDONOMICS
+    </title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.31.1/js/jquery.tablesorter.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+
+    <style>
+
+
+body {
+    font-size: 14px;
+    font-family: Calibri;
+}
+
+h1 {
+    font-size: 20px;
+    font-family: Calibri;
+}
+
+h2 {
+    font-size: 16px;
+    font-family: Calibri;
+}
+
+#top {
+    padding: 2px;
+    margin: 2px;
+    display: flex;
+    flex-direction: row;
+}
+
+#top div {
+    margin: 5px;
+    margin-right: 10px;
+
+}
+
+#info {
+    margin-left: 50px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#alert-specs {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+}
+
+#calculation-details {
+    font-size: 12pt;
+    margin-left: 20px;
+    margin-bottom: 40px;
+}
+
+#calculation-details div {
+    margin-left: 50px;
+}
+
+.table-tooltip {
+    position: relative;
+    display: inline-block;
+    font-size:18px;
+    font-family: Calibri;
+}
+
+.table-tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+    position: absolute;
+    z-index: 1;
+}
+
+.table-tooltiptext.tt-right {
+    width: 120px;
+    bottom: 100%;
+    left: 55px;
+    margin-left: -60px;
+}
+
+.table-tooltiptext.tt-top {
+    width: 160px;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -80px;
+}
+
+.table-tooltiptext.tt-top.tt-sl {
+    width: 120px;
+    bottom: 100%;
+    margin-left: -60px;
+    color: #000;
+    background-color: #eee;
+}
+
+#tt-sl-i::before {
+    content: "▔ ";
+    position: relative;
+    top: 15px;
+    font-size: 18pt;
+    font-weight: 600;
+    color: #4F2683;
+}
+
+#tt-sl-r::before {
+    content: "▆ ";
+    font-size: 18pt;
+    font-weight: 600;
+    color: #bfdaec;
+}
+
+.table-tooltip:hover .table-tooltiptext {
+    visibility: visible;
+}
+
+.table-tooltiptext.tt-top::after {
+    content: " ";
+    position: absolute;
+    top: 100%;
+    /* At the bottom of the tooltip */
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: black transparent transparent transparent;
+}
+
+.table-tooltiptext.tt-top.tt-sl::after {
+    content: " ";
+    position: absolute;
+    top: 100%;
+    /* At the bottom of the tooltip */
+    left: 60%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #eee transparent transparent transparent;
+}
+
+.table-tooltiptext.tt-right::after {
+    content: " ";
+    position: absolute;
+    top: 100%;
+    /* At the bottom of the tooltip */
+    left: 10%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: black transparent transparent transparent;
+}
+
+table.tableizer {
+    border: 0px;
+    font-size: 12px;
+    font-family: Calibri;
+    border: 1px solid #CCC;
+}
+
+.tableizer td {
+    padding: 0 6px;
+    margin: 1px;
+    /* border: 1px solid #CCC; */
+    text-align: right;
+    font-size: 16px;
+}
+
+.tableizer th {
+    background-color: #6898ba;
+    color: #FFF;
+    font-weight: bold;
+    /* border: 1px solid #CCC; */
+    text-align: right;
+}
+
+.tableizer tr:nth-child(odd) {
+    background-color: #eee;
+}
+
+.tableizer tr:nth-child(even) {
+    background-color: #fff;
+}
+
+.tableizer tr:hover {
+    background-color: #b0bed9;
+}
+
+.tablesorter-default .header,
+.tablesorter-default .tablesorter-header {
+    background-image: url(data:image/gif;base64,R0lGODlhFQAJAIAAACMtMP///yH5BAEAAAEALAAAAAAVAAkAAAIXjI+AywnaYnhUMoqt3gZXPmVg94yJVQAAOw==);
+    background-position: center right;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    white-space: normal;
+    /* padding 20 for showing the sorting arrows */
+    padding: 4px 20px 4px 4px;
+    font-size: 18px;
+    font-family: Calibri;
+}
+
+.tablesorter-default thead .headerSortUp,
+.tablesorter-default thead .tablesorter-headerSortUp,
+.tablesorter-default thead .tablesorter-headerAsc {
+    background-image: url(data:image/gif;base64,R0lGODlhFQAEAIAAACMtMP///yH5BAEAAAEALAAAAAAVAAQAAAINjI8Bya2wnINUMopZAQA7);
+    border-bottom: #000 2px solid;
+}
+
+.tablesorter-default thead .headerSortDown,
+.tablesorter-default thead .tablesorter-headerSortDown,
+.tablesorter-default thead .tablesorter-headerDesc {
+    background-image: url(data:image/gif;base64,R0lGODlhFQAEAIAAACMtMP///yH5BAEAAAEALAAAAAAVAAQAAAINjB+gC+jP2ptn0WskLQA7);
+    border-bottom: #000 2px solid;
+}
+
+.thumbnail {
+    position: relative;
+    z-index: 0;
+}
+
+.thumbnail:hover {
+    z-index: 100;
+}
+
+.thumbnail span {
+    /*CSS for enlarged image*/
+    position: absolute;
+    padding: 15px;
+    left: -800px;
+    border: 0px dashed gray;
+    visibility: hidden;
+    color: black;
+    text-decoration: none;
+}
+
+.thumbnail span img {
+    /*CSS for enlarged image*/
+    border-width: 0;
+    padding: 2px;
+}
+
+.thumbnail:hover span {
+    /*CSS for enlarged image on hover*/
+    visibility: visible;
+    top: -200px;
+    right: 400px;
+    /*position where enlarged image should offset horizontally */
+}
+
+[gray] {
+    color: gray;
+}
+
+[left-align] {
+    text-align: left !important;
+}
+
+*[hidden] {
+    display: none;
+}
+
+.sparkline.impressions {
+    position: relative;
+    stroke-width: 2;
+    stroke: rgba(79, 38, 131, 1);
+    fill: none;
+}
+
+.sparkline.impressions.only {
+    fill: rgba(121, 189, 232, .4) !important;
+}
+
+.sparkline.revenue {
+    top: 2;
+    left: 2;
+    position: absolute;
+    stroke-width: 2;
+    stroke: none;
+    fill: rgba(110,152,188, 0.4);
+}
+
+.sparkline_cell {
+    padding: 0 !important;
+}
+
+.tooltip {
+    position: absolute;
+    background: rgba(0, 0, 0, .7);
+    color: #fff;
+    padding: 2px 5px;
+    font-size: 12px;
+    white-space: nowrap;
+    z-index: 9999;
+}
+
+.sparkline--cursor {
+    stroke: orange;
+}
+
+.sparkline--spot {
+    fill: red;
+    stroke: red;
+}
+
+.big-chart {
+    display: none;
+}
+
+.big-chart.show {
+    display: block;
+}
+
+#chart-overlay {
+    /* max-height: 500px;
+    max-width: 500px; */
+    height: 100vh;
+    width: 100vw;
+    display: none;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, .7);
+}
+
+#chart-overlay.show {
+    display: block;
+    position: fixed;
+}
+
+#chart-container {
+    /* background-color: #fff; */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 400px;
+    width: 400px;
+    position: absolute;
+    background-color: white;
+    padding: 30px;
+}
+
+#overlay-close {
+    position: absolute;
+    right: 0;
+    top: 0;
+    color: #000;
+    font-size: 20px;
+    padding: 5px 10px;
+    transition: all .1s linear;
+}
+
+#overlay-close:hover {
+    cursor: pointer;
+    color: rgb(189, 10, 10);
+    transition: all .1s linear;
+}
+
+    </style>
+
+    <script>
+        let theLineChart;
+        const all_placement_data = []
+        function setDates(dates) {
+            window.dates = dates
+        }
+function getY(max, height, diff, value) {
+    return parseFloat((height - (value * height / max) + diff).toFixed(2));
+}
+
+function removeChildren(svg) {
+
+    [...svg.querySelectorAll("*")].forEach(element => svg.removeChild(element));
+}
+
+function defaultFetch(entry) {
+    return entry.value;
+}
+
+function buildElement(tag, attrs) {
+    const element = document.createElementNS("http://www.w3.org/2000/svg", tag);
+
+    for (let name in attrs) {
+        element.setAttribute(name, attrs[name]);
+    }
+
+    return element;
+}
+
+function sparkline(svg, entries, options, metric_name_1, metric_name_2) {
+    removeChildren(svg);
+
+    if (entries.length <= 1) {
+        return;
+    }
+   
+    options = options || {};
+    if (typeof (entries[0]) === "number") {
+        entries = entries.map(entry => {
+            return {
+                value: entry
+            };
+        });
+    }
+    const onmousemove = options.onmousemove;
+    const onmouseout = options.onmouseout;
+    const interactive = ("interactive" in options) ? options.interactive : !!onmousemove;
+    const spotRadius = options.spotRadius || 2;
+    const spotDiameter = spotRadius * 2;
+    const cursorWidth = options.cursorWidth || 2;
+    const strokeWidth = 2;
+    const fetch = options.fetch || defaultFetch;
+    const values = entries.map(entry => fetch(entry));
+    const width = parseFloat(svg.attributes.width.value) - spotDiameter * 2;
+    const fullHeight = parseFloat(svg.attributes.height.value);
+    const height = fullHeight - (strokeWidth * 2.5); //- spotDiameter;
+    const max = Math.max(...values);
+    const offscreen = -1000;
+    const lastItemIndex = values.length - 1;
+    const offset = width / lastItemIndex;
+    const datapoints = [];
+    const pathY = getY(max, height, strokeWidth + spotRadius, values[0]);
+    let pathCoords = `M${spotDiameter} ${pathY}`;
+   
+    values.forEach((value, index) => {
+        const x = index * offset + spotDiameter;
+        const y = getY(max, height, strokeWidth + spotRadius, value);
+
+        datapoints.push(Object.assign({}, entries[index], {
+            index: index,
+            x: x,
+            y: y,
+        }));
+
+        pathCoords += ` L ${x} ${y}`;
+    });
+
+    const path = buildElement("path", {
+        class: "sparkline--line",
+        d: pathCoords,
+        fill: "none"
+    });
+
+    let fillCoords = `${pathCoords} V ${fullHeight} L ${spotDiameter} ${fullHeight} Z`;
+
+    const fill = buildElement("path", {
+        class: "sparkline--fill",
+        d: fillCoords,
+        stroke: "none"
+    });
+
+    svg.appendChild(fill);
+    svg.appendChild(path);
+    if (!interactive) {
+        return;
+    }
+
+    const cursor = buildElement("line", {
+        class: "sparkline--cursor",
+        x1: offscreen,
+        x2: offscreen,
+        y1: 0,
+        y2: fullHeight,
+        "stroke-width": cursorWidth
+    });
+
+    const spot = buildElement("circle", {
+        class: "sparkline--spot",
+        cx: offscreen,
+        cy: offscreen,
+        r: spotRadius
+    });
+
+    svg.appendChild(cursor);
+    svg.appendChild(spot);
+
+    const interactionLayer = buildElement("rect", {
+        width: svg.attributes.width.value,
+        height: svg.attributes.height.value,
+        style: "fill: transparent; stroke: transparent",
+        class: "sparkline--interaction-layer",
+    });
+    svg.appendChild(interactionLayer);
+
+    interactionLayer.addEventListener("mouseout", event => {
+        cursor.setAttribute("x1", offscreen);
+        cursor.setAttribute("x2", offscreen);
+
+        spot.setAttribute("cx", offscreen);
+
+        if (onmouseout) {
+            onmouseout(event);
+        }
+    });
+    console.log("tes")
+    console.log(event)
+    interactionLayer.addEventListener("mousemove", event => {
+        const mouseX = event.offsetX;
+
+        let nextDataPoint = datapoints.find(entry => {
+            return entry.x >= mouseX;
+        });
+        console.log(nextDataPoint)
+        if (!nextDataPoint) {
+            nextDataPoint = datapoints[lastItemIndex];
+        }
+
+        let previousDataPoint = datapoints[datapoints.indexOf(nextDataPoint) - 1];
+        let currentDataPoint;
+        let halfway;
+
+        if (previousDataPoint) {
+            halfway = previousDataPoint.x + ((nextDataPoint.x - previousDataPoint.x) / 2);
+            currentDataPoint = mouseX >= halfway ? nextDataPoint : previousDataPoint;
+        } else {
+            currentDataPoint = nextDataPoint;
+        }
+
+        const x = currentDataPoint.x;
+        const y = currentDataPoint.y;
+
+        spot.setAttribute("cx", x);
+        spot.setAttribute("cy", y);
+
+        cursor.setAttribute("x1", x);
+        cursor.setAttribute("x2", x);
+
+        if (onmousemove) {
+            onmousemove(event, currentDataPoint, metric_name_1, metric_name_2);
+        }
+    });
+}
+
+
+        function showDetails() {
+            var x = document.getElementById("calculation-details");
+            if (x.style.display === "none") {
+                x.style.display = "block";
+            } else {
+                x.style.display = "none";
+            }
+        }
+
+        Chart.plugins.register({
+            beforeDraw: function (chartInstance, easing) {
+                var ctx = chartInstance.chart.ctx
+
+                ctx.fillStyle = 'white';
+
+                ctx.fillRect(0, 0, chartInstance.width, chartInstance.height);
+            }
+        });
+
+        const options = {
+            onmousemove(event, datapoint, metric_name_1, metric_name_2) {
+                let svg = findClosest(event.target, "svg");
+                console.log(svg)
+                let tooltip = svg.nextElementSibling;
+                let date = (new Date(datapoint.date)).toUTCString().replace(
+                    /^.*?, (.*?) \d{4} \d{2}:\d{2}:\d{2}.*?$/, "$1");
+                let num_impressions;
+                if (datapoint.value > 1000) {
+                    num_impressions = (intelli_round(datapoint.value) / 1000) + 'k';
+                } else {
+                    num_impressions = Math.round(datapoint.value * 1e3)/1e3
+                }
+
+                if (metric_name_1.includes("viewability")) {
+                    unit1 = '%'
+                } else if (metric_name_1.includes("revenue")) {
+                    unit1 = 'EUR'
+                } else {
+                    unit1 = ''
+                }
+
+                if (metric_name_2.includes("viewability")) {
+                    unit2 = '%'
+                } else if (metric_name_2.includes("revenue")) {
+                    unit2 = 'EUR'
+                } else {
+                    unit2 = ''
+                }
+
+                tooltip.hidden = false;
+                tooltip.textContent = `${date} | ${num_impressions} ${unit1} | ${datapoint.revenue.toFixed(2)} ${unit2}`;
+                tooltip.style.top = `${event.pageY + 25}px`;
+                tooltip.style.left = `${event.pageX - 140}px`;
+            },
+
+            onmouseout() {
+                var svg = findClosest(event.target, "svg");
+                var tooltip = svg.nextElementSibling;
+
+                tooltip.hidden = true;
+            }
+        };
+
+        $(function () {
+
+            $("#tableizer").tablesorter({
+                sortList: [[4, 0], [5, 0]]
+            });
+
+            $('.sparkline_cell').click(function () {
+
+                const id_value = parseInt($(this).data("col_id"))
+
+                const chart_data = all_placement_data.filter(function (data) {
+                    return data.id == id_value
+                })[0]
+                const graph_title = $(this).data("sl_title")
+
+                const target = document.getElementById('chart-display')
+                renderInteractiveChart(target, chart_data['data'], graph_title, $(this).data("sl_metric1"), $(this).data("sl_metric2"))
+
+                $('#chart-overlay').addClass('show')
+            })
+
+            $('#overlay-close, #chart-overlay').click(function () {
+                clearChart()
+            })
+
+            $('#chart-container').click(function (e) {
+                e.stopPropagation()
+            })
+        });
+
+
+        function clearChart() {
+            $('#chart-overlay').removeClass('show')
+
+
+            theLineChart.destroy()
+        }
+
+        function findClosest(target, tagName) {
+            if (target.tagName === tagName) {
+                return target;
+            }
+
+            while ((target = target.parentNode)) {
+                if (target.tagName === tagName) {
+                    break;
+                }
+            }
+
+            return target;
+        };
+
+        function intelli_round(num) {
+            var len = (num + '').length;
+            var fac = Math.pow(10, len - 1);
+            return Math.floor(num / fac) * fac;
+        }
+        
+        function process_data(placement_id, placement_title, impressions, revenues, metric_name_1, metric_name_2) {
+
+
+            let data = window.dates.map((e, i) => ({
+                date: e,
+                value: impressions[i],
+                revenue: revenues[i],
+                placeholder: "dasf"
+            }));
+
+
+            create_sparklines(placement_id, data, metric_name_1, metric_name_2)
+
+
+            var single_pl_data = {
+                id: placement_id,
+                placement_title: placement_title,
+                data: data
+            }
+            all_placement_data.push(single_pl_data)
+        }
+
+        function create_sparklines(placement_id, data, metric_name_1, metric_name_2) {
+            svg_i = document.querySelector(`#sli_${placement_id}`);
+            svg_r = document.querySelector(`#slr_${placement_id}`); 
+
+            sparkline(svg_i, data, options, metric_name_1, metric_name_2);
+            sparkline(svg_r, data.map(x => x.revenue));
+        }
+
+        function renderInteractiveChart(target, dataset, chart_title, sl_metric1, sl_metric2) {
+            theLineChart = new Chart(target, {
+                type: 'line',
+                data: {
+                    labels: dataset.map(x => x.date),
+                    datasets: [{
+                            label: sl_metric1,
+                            data: dataset.map(x => x.value),
+                            fill: false,
+                            yAxisID: 'y-axis-1',
+                            borderColor: '#4c72b0',
+                            backgroundColor: '#4c72b0'
+                        },
+                        {
+                            label: sl_metric2,
+                            data: dataset.map(x => x.revenue),
+                            fill: false,
+                            yAxisID: 'y-axis-2',
+                            borderColor: '#56a869',
+                            backgroundColor: '#56a869'
+                        }
+                    ]
+                },
+                options: {
+                    title: {
+                        display: true,
+                        text: chart_title,
+                    },
+                    tooltips: {
+                        callbacks: {
+                            label: function (tooltipItem, data) {
+
+                                if (tooltipItem.datasetIndex == 0) {
+                                    return parseInt(tooltipItem.value).toLocaleString()
+                                } else if (tooltipItem.datasetIndex == 1){
+                                    return parseInt(tooltipItem.value).toLocaleString()
+    
+                                }
+                            }
+                        }
+                    },
+                    scales: {
+                        yAxes: [{
+                                type: 'linear',
+                                display: true,
+                                position: 'left',
+                                id: 'y-axis-1',
+                                ticks: {
+                                    beginAtZero: true,
+                                    callback: function (value, index, values) {
+                                        return value.toLocaleString()
+                                    }
+                                }
+                            },
+                            {
+                                type: 'linear',
+                                display: true,
+                                label: 'reeeeeee',
+                                position: 'right',
+                                id: 'y-axis-2',
+                                ticks: {
+                                    beginAtZero: true,
+                                    callback: function (value, index, values) {
+                                        return value.toLocaleString()
+                                    }
+                                },
+                                gridLines: {
+                                    drawOnChartArea: false
+                                }
+                            }
+                        ]
+                    }
+                }
+            })
+        }
+    </script>
+</head><body>
+    <div id="top">
+        <div id="logo_column_guide">
+            <img id="logo" src="https://massariuscdn.com/cdn/YIELDONOMICS_LOGO.png" height="35" width="385">
+            <div id="collapse-details", style="font-size:18px; text-align: center">
+                <button onclick="showDetails()">
+                    <b>Column Guide</b>
+                </button>
+            </div>
+        </div>
+        <div id="info">
+
+            <style>
+                table {
+                font-family: Calibri;
+                border-collapse: collapse;
+                }
+
+                th {
+                border: 1px solid #CCC;
+                text-align: center;
+                color:#FFF;
+                font-size:18px;
+                
+                }
+                
+                td {
+                border: 1px solid #CCC;
+                text-align: center;
+                color:black;
+                font-size:16px;
+                padding: 1px 10px
+                }
+
+                tr:nth-child(even) {background: #FFF}
+                tr:nth-child(odd) {background: #6898ba}
+            </style>
+
+            <table>
+                <tr>
+                    <th>TYPE</th>
+                    <th>ON</th>
+                    <th>FROM</th>
+                    <th>DATE</th>
+                </tr>
+                <tr>
+                    <td>
+                        <span> DROPS IN PAID_IMPRESSIONS</span>
+                    </td>
+                    <td>
+                        <span> AD_UNITS_HOURLY</span>
+                    </td>
+                    <td>
+                        <span> MS-DATA</span>
+                    </td>
+                    <td>
+                        <span> 2022-11-11 16:00:00</span>
+                    </td>
+                </tr>
+            </table>
+        
+        </div>
+    </div>
+    <div>
+        <b>State of Impressions:</b>
+        <div>
+            Showing the state of impressions and whether drops in <b>expected</b> volume occured.
+        </div>
+    </div>
+    <br>
+    <div id="chart-overlay">
+        <div id="chart-container">
+            <div id="overlay-close">X</div>
+            <canvas id="chart-display" width="100%" height="100%"></canvas>
+        </div>
+    </div>
+
+    <script>
+        setDates(
+            [15, 16, 17, 18, 19, 20, 21, 22, 23, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
+        ); 
+    </script>
+
+    <table id=tableizer class=tableizer>
+        <thead>
+            <tr>
+                <th left-align>
+                    <div class="table-tooltip"> # <span class="table-tooltiptext tt-right"> total: 9
+                        </span> </div>
+                </th>
+                <th left-align>
+                    GAM ad unit
+                </th>
+                <th left-align>
+                    ID
+                </th>
+                <th left-align>
+                    Network
+                </th>
+                <th left-align>
+                    <div class="table-tooltip"> Volume <span class="table-tooltiptext tt-top">
+                            low < 5000 imp. < high </span> </div>
+                </th>
+                <th >
+                    <div class="table-tooltip"> Ratio <span class="table-tooltiptext tt-top">
+                            actual / average </span> </div>
+                </th>
+                <th left-align>
+                    State
+                </th>
+                <th >
+                    <div class="table-tooltip">
+                        Volume/ Mean Volume<span class="table-tooltiptext tt-top tt-sl">
+                            <span id="tt-sl-i">paid_impressions</span><br><span id="tt-sl-r">mean_impressions</span>
+                        </span>
+                    </div>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td left-align>
+                    1
+                </td>
+                <td left-align>
+                    FrFans_Verslag_BTF (21744351739)
+                </td>
+                <td left-align>
+                    21744351739
+                </td>
+                <td left-align>
+                    Massarius
+                </td>
+                <td left-align>
+                    LOW
+                </td>
+                <td >
+                    0.06
+                </td>
+                <td left-align>
+                    1-DROP
+                </td>
+                <td class="sparkline_cell" data-col_id="52" data-sl_title="Volume/ Mean Volume" data-sl_metric1="paid_impressions" data-sl_metric2="mean_impressions">
+                    <div>
+                        <svg class="sparkline revenue" id="slr_52" width="150" height="36"></svg>
+                        <svg class="sparkline impressions" id="sli_52" width="150" height="36"></svg>
+                        
+                        <span class="tooltip" hidden="true"></span>
+                    </div>
+                    <script>
+                        process_data(52, "", [251, 215, 198, 454, 836, 1556, 1806, 227, 76, 14, 7, 6, 2, 6, 5, 14, 33, 21, 18, 13, 10, 10, 7, 6, 7], [51.8, 160.8, 49.0, 97.8, 171.4, 314.6, 363.8, 47.4, 17.2, 3.4, 1.4, 1.2, 0.4, 1.4, 1.0, 3.2, 7.6, 5.0, 5.6, 3.0, 3.4, 2.6, 2.0, 34.8, 51.8], "paid_impressions", "mean_impressions");
+                    </script>
+                </td>
+            </tr>
+            <tr>
+                <td left-align>
+                    2
+                </td>
+                <td left-align>
+                    Markanda_ROS_Middle2 (22262023085)
+                </td>
+                <td left-align>
+                    22262023085
+                </td>
+                <td left-align>
+                    Massarius
+                </td>
+                <td left-align>
+                    LOW
+                </td>
+                <td >
+                    0.11
+                </td>
+                <td left-align>
+                    1-DROP
+                </td>
+                <td class="sparkline_cell" data-col_id="257" data-sl_title="Volume/ Mean Volume" data-sl_metric1="paid_impressions" data-sl_metric2="mean_impressions">
+                    <div>
+                        <svg class="sparkline revenue" id="slr_257" width="150" height="36"></svg>
+                        <svg class="sparkline impressions" id="sli_257" width="150" height="36"></svg>
+                        
+                        <span class="tooltip" hidden="true"></span>
+                    </div>
+                    <script>
+                        process_data(257, "", [8, 3, 23, 12, 18, 12, 1, 3, 12, 0, 0, 0, 0, 1, 0, 9, 7, 4, 15, 0, 0, 2, 11, 5, 1], [23.4, 20.4, 10.4, 16.4, 11.8, 16.0, 5.2, 6.4, 7.0, 2.4, 4.6, 1.2, 0.0, 2.4, 0.6, 3.0, 9.2, 4.6, 16.4, 18.0, 7.2, 3.0, 12.6, 14.2, 23.4], "paid_impressions", "mean_impressions");
+                    </script>
+                </td>
+            </tr>
+            <tr>
+                <td left-align>
+                    3
+                </td>
+                <td left-align>
+                    VoetbalpoulesApp_ROS_Bottom (22313007121)
+                </td>
+                <td left-align>
+                    22313007121
+                </td>
+                <td left-align>
+                    Massarius
+                </td>
+                <td left-align>
+                    LOW
+                </td>
+                <td >
+                    0.10
+                </td>
+                <td left-align>
+                    1-DROP
+                </td>
+                <td class="sparkline_cell" data-col_id="291" data-sl_title="Volume/ Mean Volume" data-sl_metric1="paid_impressions" data-sl_metric2="mean_impressions">
+                    <div>
+                        <svg class="sparkline revenue" id="slr_291" width="150" height="36"></svg>
+                        <svg class="sparkline impressions" id="sli_291" width="150" height="36"></svg>
+                        
+                        <span class="tooltip" hidden="true"></span>
+                    </div>
+                    <script>
+                        process_data(291, "", [57, 11, 3, 3, 34, 8, 0, 0, 4, 2, 0, 0, 0, 0, 0, 0, 0, 0, 17, 7, 17, 7, 34, 0, 4], [34.4, 10.6, 2.0, 4.4, 18.0, 6.4, 6.4, 1.6, 4.6, 1.8, 1.8, 0.0, 0.0, 0.0, 0.0, 0.0, 0.4, 3.8, 7.0, 10.2, 10.8, 9.6, 10.0, 5.6, 34.4], "paid_impressions", "mean_impressions");
+                    </script>
+                </td>
+            </tr>
+            <tr>
+                <td left-align>
+                    4
+                </td>
+                <td left-align>
+                    at5 (22539936451) » at5_web_desktop_article_leaderboard_atf (22539793392)
+                </td>
+                <td left-align>
+                    22539793392
+                </td>
+                <td left-align>
+                    Massarius
+                </td>
+                <td left-align>
+                    LOW
+                </td>
+                <td >
+                    0.00
+                </td>
+                <td left-align>
+                    1-DROP
+                </td>
+                <td class="sparkline_cell" data-col_id="411" data-sl_title="Volume/ Mean Volume" data-sl_metric1="paid_impressions" data-sl_metric2="mean_impressions">
+                    <div>
+                        <svg class="sparkline revenue" id="slr_411" width="150" height="36"></svg>
+                        <svg class="sparkline impressions" id="sli_411" width="150" height="36"></svg>
+                        
+                        <span class="tooltip" hidden="true"></span>
+                    </div>
+                    <script>
+                        process_data(411, "", [0, 0, 7, 42, 47, 65, 79, 53, 61, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 3, 0, 0], [0.6, 119.2, 183.6, 158.0, 149.6, 123.2, 145.4, 114.8, 65.6, 0.2, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.2, 0.0, 0.4, 0.0, 0.2, 0.2, 1.0, 0.0, 0.6], "paid_impressions", "mean_impressions");
+                    </script>
+                </td>
+            </tr>
+            <tr>
+                <td left-align>
+                    5
+                </td>
+                <td left-align>
+                    at5 (22539936451) » at5_web_desktop_home_leaderboard_atf (22539936667)
+                </td>
+                <td left-align>
+                    22539936667
+                </td>
+                <td left-align>
+                    Massarius
+                </td>
+                <td left-align>
+                    LOW
+                </td>
+                <td >
+                    0.00
+                </td>
+                <td left-align>
+                    1-DROP
+                </td>
+                <td class="sparkline_cell" data-col_id="414" data-sl_title="Volume/ Mean Volume" data-sl_metric1="paid_impressions" data-sl_metric2="mean_impressions">
+                    <div>
+                        <svg class="sparkline revenue" id="slr_414" width="150" height="36"></svg>
+                        <svg class="sparkline impressions" id="sli_414" width="150" height="36"></svg>
+                        
+                        <span class="tooltip" hidden="true"></span>
+                    </div>
+                    <script>
+                        process_data(414, "", [0, 0, 0, 80, 106, 166, 199, 259, 161, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0], [0.2, 285.2, 429.6, 369.6, 375.4, 376.6, 358.8, 324.2, 169.2, 0.4, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.6, 0.4, 0.0, 0.4, 0.2, 0.0, 0.0, 0.0, 0.2], "paid_impressions", "mean_impressions");
+                    </script>
+                </td>
+            </tr>
+            <tr>
+                <td left-align>
+                    6
+                </td>
+                <td left-align>
+                    at5 (22539936451) » at5_app_tablet_article_leaderboard_btf1 (22539936889)
+                </td>
+                <td left-align>
+                    22539936889
+                </td>
+                <td left-align>
+                    Massarius
+                </td>
+                <td left-align>
+                    LOW
+                </td>
+                <td >
+                    0.00
+                </td>
+                <td left-align>
+                    1-DROP
+                </td>
+                <td class="sparkline_cell" data-col_id="415" data-sl_title="Volume/ Mean Volume" data-sl_metric1="paid_impressions" data-sl_metric2="mean_impressions">
+                    <div>
+                        <svg class="sparkline revenue" id="slr_415" width="150" height="36"></svg>
+                        <svg class="sparkline impressions" id="sli_415" width="150" height="36"></svg>
+                        
+                        <span class="tooltip" hidden="true"></span>
+                    </div>
+                    <script>
+                        process_data(415, "", [1, 1, 9, 49, 60, 85, 73, 88, 58, 1, 0, 0, 1, 0, 0, 2, 5, 2, 1, 3, 1, 5, 0, 1, 0], [1.2, 76.2, 125.6, 103.0, 113.0, 105.4, 94.2, 98.0, 63.6, 1.0, 0.2, 0.4, 0.4, 0.2, 0.2, 0.4, 1.8, 1.2, 2.8, 1.4, 2.0, 1.8, 1.0, 1.8, 1.2], "paid_impressions", "mean_impressions");
+                    </script>
+                </td>
+            </tr>
+            <tr>
+                <td left-align>
+                    7
+                </td>
+                <td left-align>
+                    at5 (22539936451) » at5_app_tablet_article_leaderboard_atf (22539937273)
+                </td>
+                <td left-align>
+                    22539937273
+                </td>
+                <td left-align>
+                    Massarius
+                </td>
+                <td left-align>
+                    LOW
+                </td>
+                <td >
+                    0.00
+                </td>
+                <td left-align>
+                    1-DROP
+                </td>
+                <td class="sparkline_cell" data-col_id="418" data-sl_title="Volume/ Mean Volume" data-sl_metric1="paid_impressions" data-sl_metric2="mean_impressions">
+                    <div>
+                        <svg class="sparkline revenue" id="slr_418" width="150" height="36"></svg>
+                        <svg class="sparkline impressions" id="sli_418" width="150" height="36"></svg>
+                        
+                        <span class="tooltip" hidden="true"></span>
+                    </div>
+                    <script>
+                        process_data(418, "", [0, 0, 3, 19, 38, 48, 45, 61, 50, 0, 0, 0, 0, 0, 0, 1, 3, 1, 0, 2, 1, 4, 1, 1, 0], [0.8, 88.0, 149.4, 111.4, 119.4, 107.0, 99.8, 107.6, 60.2, 0.6, 0.2, 0.4, 0.2, 0.0, 0.2, 0.2, 1.6, 0.6, 2.2, 0.8, 0.8, 1.2, 1.4, 1.6, 0.8], "paid_impressions", "mean_impressions");
+                    </script>
+                </td>
+            </tr>
+            <tr>
+                <td left-align>
+                    8
+                </td>
+                <td left-align>
+                    at5 (22539936451) » at5_web_desktop_article_leaderboard_btf1 (22540279772)
+                </td>
+                <td left-align>
+                    22540279772
+                </td>
+                <td left-align>
+                    Massarius
+                </td>
+                <td left-align>
+                    LOW
+                </td>
+                <td >
+                    0.00
+                </td>
+                <td left-align>
+                    1-DROP
+                </td>
+                <td class="sparkline_cell" data-col_id="419" data-sl_title="Volume/ Mean Volume" data-sl_metric1="paid_impressions" data-sl_metric2="mean_impressions">
+                    <div>
+                        <svg class="sparkline revenue" id="slr_419" width="150" height="36"></svg>
+                        <svg class="sparkline impressions" id="sli_419" width="150" height="36"></svg>
+                        
+                        <span class="tooltip" hidden="true"></span>
+                    </div>
+                    <script>
+                        process_data(419, "", [0, 1, 14, 109, 85, 123, 109, 101, 90, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0], [1.0, 167.8, 218.6, 199.8, 182.2, 180.0, 189.0, 155.0, 84.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.2, 0.4, 0.2, 0.4, 0.0, 0.2, 0.4, 0.0, 0.0, 1.0], "paid_impressions", "mean_impressions");
+                    </script>
+                </td>
+            </tr>
+            <tr>
+                <td left-align>
+                    9
+                </td>
+                <td left-align>
+                    FR12_Article_Comments (22840308689)
+                </td>
+                <td left-align>
+                    22840308689
+                </td>
+                <td left-align>
+                    Massarius
+                </td>
+                <td left-align>
+                    LOW
+                </td>
+                <td >
+                    0.00
+                </td>
+                <td left-align>
+                    1-DROP
+                </td>
+                <td class="sparkline_cell" data-col_id="868" data-sl_title="Volume/ Mean Volume" data-sl_metric1="paid_impressions" data-sl_metric2="mean_impressions">
+                    <div>
+                        <svg class="sparkline revenue" id="slr_868" width="150" height="36"></svg>
+                        <svg class="sparkline impressions" id="sli_868" width="150" height="36"></svg>
+                        
+                        <span class="tooltip" hidden="true"></span>
+                    </div>
+                    <script>
+                        process_data(868, "", [171, 1158, 1306, 4143, 405, 2, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0], [35.4, 233.2, 263.0, 829.8, 81.8, 1.8, 1.6, 1.2, 0.2, 0.2, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.6, 1.0, 0.4, 1.0, 1.2, 1.0, 0.6, 0.8, 35.4], "paid_impressions", "mean_impressions");
+                    </script>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+
+</html>

@@ -1,0 +1,1692 @@
+<!doctype html>
+    <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.consentmanager.mgr.consensu.org/delivery/cmp.min.css" />
+    <script>window.gdprAppliesGlobally=true;if(!("cmp_id" in window)){window.cmp_id=25193}if(!("cmp_params" in window)){window.cmp_params=""}if(!("cmp_host" in window)){window.cmp_host="consentmanager.mgr.consensu.org"}if(!("cmp_cdn" in window)){window.cmp_cdn="cdn.consentmanager.mgr.consensu.org"}window.cmp_getsupportedLangs=function(){return["DE","EN","FR","IT","NO","DA","FI","ES","PT","RO","BG","ET","EL","GA","HR","LV","LT","MT","NL","PL","SV","SK","SL","CS","HU","RU","SR","ZH","TR","UK","AR","BS"]};window.cmp_getRTLLangs=function(){return["AR"]};window.cmp_getlang=function(j){if(typeof(j)!="boolean"){j=true}if(j&&typeof(cmp_getlang.usedlang)=="string"&&cmp_getlang.usedlang!==""){return cmp_getlang.usedlang}var g=window.cmp_getsupportedLangs();var c=[];var f=location.hash;var e=location.search;var a="languages" in navigator?navigator.languages:[];if(f.indexOf("cmplang=")!=-1){c.push(f.substr(f.indexOf("cmplang=")+8,2))}else{if(e.indexOf("cmplang=")!=-1){c.push(e.substr(e.indexOf("cmplang=")+8,2))}else{if("cmp_setlang" in window&&window.cmp_setlang!=""){c.push(window.cmp_setlang.toUpperCase())}else{if(a.length>0){for(var d=0;d<a.length;d++){c.push(a[d])}}}}}if("language" in navigator){c.push(navigator.language)}if("userLanguage" in navigator){c.push(navigator.userLanguage)}var h="";for(var d=0;d<c.length;d++){var b=c[d].toUpperCase();if(b.indexOf("-")!=-1){b=b.substr(0,2)}if(g.indexOf(b)!=-1){h=b;break}}if(h==""&&typeof(cmp_getlang.defaultlang)=="string"&&cmp_getlang.defaultlang!==""){return cmp_getlang.defaultlang}else{if(h==""){h="EN"}}h=h.toUpperCase();return h};(function(){var a="";var d="_en";if("cmp_getlang" in window){a=window.cmp_getlang().toLowerCase();d="_"+a}var c=("cmp_proto" in window)?window.cmp_proto:"https:";var g=("cmp_ref" in window)?window.cmp_ref:location.href;var b=document.createElement("script");b.setAttribute("data-cmp-ab","1");b.src=c+"//"+window.cmp_host+"/delivery/cmp.php?id="+window.cmp_id+"&h="+encodeURIComponent(g)+"&"+window.cmp_params+(document.cookie.length>0?"&__cmpfcc=1":"")+"&l="+a+"&o="+(new Date()).getTime();b.type="text/javascript";b.async=true;if(document.body){document.body.appendChild(b)}else{if(document.currentScript){document.currentScript.parentElement.appendChild(b)}else{var f=document.getElementsByTagName("body");if(f.length==0){f=document.getElementsByTagName("div")}if(f.length==0){f=document.getElementsByTagName("span")}if(f.length==0){f=document.getElementsByTagName("ins")}if(f.length>0){f[0].appendChild(b)}}}var b=document.createElement("script");b.src=c+"//"+window.cmp_cdn+"/delivery/cmp"+d+".min.js";b.type="text/javascript";b.setAttribute("data-cmp-ab","1");b.async=true;if(document.body){document.body.appendChild(b)}else{if(document.currentScript){document.currentScript.parentElement.appendChild(b)}else{var f=document.getElementsByTagName("body");if(f.length==0){f=document.getElementsByTagName("div")}if(f.length==0){f=document.getElementsByTagName("span")}if(f.length==0){f=document.getElementsByTagName("ins")}if(f.length>0){f[0].appendChild(b)}}}})();window.cmp_addFrame=function(b){if(!window.frames[b]){if(document.body){var a=document.createElement("iframe");a.style.cssText="display:none";a.name=b;document.body.appendChild(a)}else{window.setTimeout('window.cmp_addFrame("'+b+'")',10)}}};window.cmp_rc=function(h){var b=document.cookie;var f="";var d=0;while(b!=""&&d<100){d++;while(b.substr(0,1)==" "){b=b.substr(1,b.length)}var g=b.substring(0,b.indexOf("="));if(b.indexOf(";")!=-1){var c=b.substring(b.indexOf("=")+1,b.indexOf(";"))}else{var c=b.substr(b.indexOf("=")+1,b.length)}if(h==g){f=c}var e=b.indexOf(";")+1;if(e==0){e=b.length}b=b.substring(e,b.length)}return(f)};window.cmp_stub=function(){var a=arguments;__cmapi.a=__cmapi.a||[];if(!a.length){return __cmapi.a}else{if(a[0]==="ping"){if(a[1]===2){a[2]({gdprApplies:gdprAppliesGlobally,cmpLoaded:false,cmpStatus:"stub",displayStatus:"hidden",apiVersion:"2.0",cmpId:31},true)}else{a[2]({gdprAppliesGlobally:gdprAppliesGlobally,cmpLoaded:false},true)}}else{if(a[0]==="getUSPData"){a[2]({version:1,uspString:window.cmp_rc("")},true)}else{if(a[0]==="getTCData"){__cmapi.a.push([].slice.apply(a))}else{if(a[0]==="addEventListener"||a[0]==="removeEventListener"){__cmapi.a.push([].slice.apply(a))}else{if(a.length==4&&a[3]===false){a[2]({},false)}else{__cmapi.a.push([].slice.apply(a))}}}}}}};window.cmp_msghandler=function(d){var a=typeof d.data==="string";try{var c=a?JSON.parse(d.data):d.data}catch(f){var c=null}if(typeof(c)==="object"&&c!==null&&"__cmpCall" in c){var b=c.__cmpCall;window.__cmp(b.command,b.parameter,function(h,g){var e={__cmpReturn:{returnValue:h,success:g,callId:b.callId}};d.source.postMessage(a?JSON.stringify(e):e,"*")})}if(typeof(c)==="object"&&c!==null&&"__cmapiCall" in c){var b=c.__cmapiCall;window.__cmapi(b.command,b.parameter,function(h,g){var e={__cmapiReturn:{returnValue:h,success:g,callId:b.callId}};d.source.postMessage(a?JSON.stringify(e):e,"*")})}if(typeof(c)==="object"&&c!==null&&"__uspapiCall" in c){var b=c.__uspapiCall;window.__uspapi(b.command,b.version,function(h,g){var e={__uspapiReturn:{returnValue:h,success:g,callId:b.callId}};d.source.postMessage(a?JSON.stringify(e):e,"*")})}if(typeof(c)==="object"&&c!==null&&"__tcfapiCall" in c){var b=c.__tcfapiCall;window.__tcfapi(b.command,b.version,function(h,g){var e={__tcfapiReturn:{returnValue:h,success:g,callId:b.callId}};d.source.postMessage(a?JSON.stringify(e):e,"*")},b.parameter)}};window.cmp_setStub=function(a){if(!(a in window)||(typeof(window[a])!=="function"&&typeof(window[a])!=="object"&&(typeof(window[a])==="undefined"||window[a]!==null))){window[a]=window.cmp_stub;window[a].msgHandler=window.cmp_msghandler;if(window.addEventListener){window.addEventListener("message",window.cmp_msghandler,false)}else{window.attachEvent("onmessage",window.cmp_msghandler)}}};window.cmp_addFrame("__cmapiLocator");window.cmp_addFrame("__cmpLocator");window.cmp_addFrame("__uspapiLocator");window.cmp_addFrame("__tcfapiLocator");window.cmp_setStub("__cmapi");window.cmp_setStub("__cmp");window.cmp_setStub("__tcfapi");window.cmp_setStub("__uspapi");</script>
+    <script async  data-cmp-purpose="c52" type="text/plain" data-cmp-src="https://www.googletagmanager.com/gtag/js?id=G-VLP83V245R"></script>
+    <script async  data-cmp-purpose="c52" type="text/plain" data-cmp-src="https://www.googletagmanager.com/gtag/js?id=G-MDVT22SSVY"></script>
+    <script async  data-cmp-purpose="c53" data-cmp-src="https://kit.fontawesome.com/74595898d3.js" crossorigin="anonymous" type="text/plain"></script>
+
+
+
+        <script>
+            var ms_debug = false;
+if (window.location.href.includes("ms_debug")) {
+  ms_debug = true;
+}
+
+  var _seedTagId = '1755-4695-01';
+var browserName = navigator.appName;
+var nAgt = navigator.userAgent;
+// In MSIE, the true version is after "MSIE" in userAgent
+if ((verOffset = nAgt.indexOf("MSIE")) != -1) {
+  browserName = "IE";
+}
+// In Chrome, the true version is after "Chrome"
+else if ((verOffset = nAgt.indexOf("Chrome")) != -1) {
+  browserName = "Chrome";
+}
+// In Safari, the true version is after "Safari" or after "Version"
+else if ((verOffset = nAgt.indexOf("Safari")) != -1) {
+  browserName = "Safari";
+}
+// In Firefox, the true version is after "Firefox"
+else if ((verOffset = nAgt.indexOf("Firefox")) != -1) {
+  browserName = "Firefox";
+}
+// In most other browsers, "name/version" is at the end of userAgent
+else {
+  browserName = "N/A";
+}
+
+var massariusData =  {
+      rubiconId: 359876,
+    gamId: 13436254,
+    get allDesktopSizes() {
+    var sizes = [];
+    Object.keys(this.positions).forEach(function (position) {
+      var adUnit = massariusData.positions[position.toString()];
+      adUnit.sizes.desktopSizes.forEach(function (size) {
+        var copySize = JSON.stringify(size);
+        var copySizes = JSON.stringify(sizes);
+        copySizes.indexOf(copySize) == -1 ? sizes.push(size) : null;
+      });
+    });
+    return sizes;
+  },
+  get allPhoneSizes() {
+    var sizes = [];
+    Object.keys(this.positions).forEach(function (position) {
+      var adUnit = massariusData.positions[position.toString()];
+      adUnit.sizes.phoneSizes.forEach(function (size) {
+        var copySize = JSON.stringify(size);
+        var copySizes = JSON.stringify(sizes);
+        copySizes.indexOf(copySize) == -1 ? sizes.push(size) : null;
+      });
+    });
+    return sizes;
+  },
+    msTagArray: ['home', 'category', 'article', 'longarticle'],
+    positions : {
+    _4gamers_ROS_Header: {
+      id: 'div-gpt-ad-4gamers_ros_header',
+        gamName: "4gamers_ROS_Header",
+        inPrebid: true,
+        isInterstitial: false, 
+        isVideo: false,  
+        msTag: {
+          phone: ['home', 'category', 'article', 'longarticle'],
+          desktop: ['home', 'category', 'article', 'longarticle']
+      },
+      sizes: {
+          desktopSizes: [[728, 90], [970, 90], [970, 250]],
+          phoneSizes: [[300, 50], [300, 100], [320, 50], [320, 100]],
+          get allSizes() {
+              return this.desktopSizes.concat(this.phoneSizes);
+          },
+          get deviceSizesGam() {
+              var filters = [[1800, 1000], [1800, 200], [970, 1000]];
+              return window.screen.availWidth >= 769 ? this.desktopSizes.filter(size => JSON.stringify(filters).indexOf(JSON.stringify(size)) == -1) : this.phoneSizes.filter(size => JSON.stringify(filters).indexOf(JSON.stringify(size)) == -1);
+          },
+        get deviceSizes() {
+          var filters = [["fluid"]];
+          return window.screen.availWidth >= 769
+            ? this.desktopSizes.filter(
+                (size) =>
+                  JSON.stringify(filters).indexOf(JSON.stringify(size)) == -1
+              )
+            : this.phoneSizes.filter(
+                (size) =>
+                  JSON.stringify(filters).indexOf(JSON.stringify(size)) == -1
+              );
+        }
+      },
+      placementIds: {
+        openx: {
+                desktop: 543855236,
+                phone: 543855237,
+        },
+        improvedigital: {
+                desktop: 22422481,
+                phone: 22422482,
+        },
+        rubicon: {
+                desktop: 1939670,
+                phone: 1939672,
+        },
+        appnexus: {
+                desktop: 20845620,
+                phone: 20845621,
+        },
+        pubmatic: {
+                desktop: 3425417,
+                phone: 3425418,
+        },
+        tmp: {
+        },
+        weborama: {
+                desktop: 22442529,
+                phone: 22442535,
+        },
+        richaudience: {
+        },
+        smartadserver: {
+        },
+        teads: {
+        },
+        justpremium: {
+                desktop: 117076,
+                phone: 117073,
+        },
+        invibes: {
+        }
+      }
+    },
+    _4gamers_ROS_MPU1: {
+      id: 'div-gpt-ad-4gamers_ros_mpu1',
+        gamName: "4gamers_ROS_MPU1",
+        inPrebid: true,
+        isInterstitial: false, 
+        isVideo: false,  
+        msTag: {
+          phone: ['home'],
+          desktop: ['home']
+      },
+      sizes: {
+          desktopSizes: [[300, 250]],
+          phoneSizes: [[300, 250], [320, 240]],
+          get allSizes() {
+              return this.desktopSizes.concat(this.phoneSizes);
+          },
+          get deviceSizesGam() {
+              var filters = [[1800, 1000], [1800, 200], [970, 1000]];
+              return window.screen.availWidth >= 769 ? this.desktopSizes.filter(size => JSON.stringify(filters).indexOf(JSON.stringify(size)) == -1) : this.phoneSizes.filter(size => JSON.stringify(filters).indexOf(JSON.stringify(size)) == -1);
+          },
+        get deviceSizes() {
+          var filters = [["fluid"]];
+          return window.screen.availWidth >= 769
+            ? this.desktopSizes.filter(
+                (size) =>
+                  JSON.stringify(filters).indexOf(JSON.stringify(size)) == -1
+              )
+            : this.phoneSizes.filter(
+                (size) =>
+                  JSON.stringify(filters).indexOf(JSON.stringify(size)) == -1
+              );
+        }
+      },
+      placementIds: {
+        openx: {
+                desktop: 543875097,
+                phone: 543875098,
+        },
+        improvedigital: {
+                desktop: 22433634,
+                phone: 22433635,
+        },
+        rubicon: {
+                desktop: 1952072,
+                phone: 1952074,
+        },
+        appnexus: {
+                desktop: 20924606,
+                phone: 20924610,
+        },
+        pubmatic: {
+                desktop: 3445315,
+                phone: 3445316,
+        },
+        tmp: {
+        },
+        weborama: {
+        },
+        richaudience: {
+        },
+        smartadserver: {
+        },
+        teads: {
+        },
+        justpremium: {
+        },
+        invibes: {
+        }
+      }
+    },
+    _4gamers_ROS_MPU2: {
+      id: 'div-gpt-ad-4gamers_ros_mpu2',
+        gamName: "4gamers_ROS_MPU2",
+        inPrebid: true,
+        isInterstitial: false, 
+        isVideo: false,  
+        msTag: {
+          phone: ['home', 'longarticle', 'article'],
+          desktop: ['home', 'longarticle', 'article']
+      },
+      sizes: {
+          desktopSizes: [[300, 250]],
+          phoneSizes: [[300, 250], [320, 240]],
+          get allSizes() {
+              return this.desktopSizes.concat(this.phoneSizes);
+          },
+          get deviceSizesGam() {
+              var filters = [[1800, 1000], [1800, 200], [970, 1000]];
+              return window.screen.availWidth >= 769 ? this.desktopSizes.filter(size => JSON.stringify(filters).indexOf(JSON.stringify(size)) == -1) : this.phoneSizes.filter(size => JSON.stringify(filters).indexOf(JSON.stringify(size)) == -1);
+          },
+        get deviceSizes() {
+          var filters = [["fluid"]];
+          return window.screen.availWidth >= 769
+            ? this.desktopSizes.filter(
+                (size) =>
+                  JSON.stringify(filters).indexOf(JSON.stringify(size)) == -1
+              )
+            : this.phoneSizes.filter(
+                (size) =>
+                  JSON.stringify(filters).indexOf(JSON.stringify(size)) == -1
+              );
+        }
+      },
+      placementIds: {
+        openx: {
+                desktop: 543875099,
+                phone: 543875100,
+        },
+        improvedigital: {
+                desktop: 22433636,
+                phone: 22433637,
+        },
+        rubicon: {
+                desktop: 1952076,
+                phone: 1952078,
+        },
+        appnexus: {
+                desktop: 20924612,
+                phone: 20924613,
+        },
+        pubmatic: {
+                desktop: 3445317,
+                phone: 3445318,
+        },
+        tmp: {
+        },
+        weborama: {
+                desktop: 22442533,
+                phone: 22442537,
+        },
+        richaudience: {
+        },
+        smartadserver: {
+        },
+        teads: {
+        },
+        justpremium: {
+        },
+        invibes: {
+        }
+      }
+    },
+    _4gamers_ROS_HPA: {
+      id: 'div-gpt-ad-4gamers_ros_hpa',
+        gamName: "4gamers_ROS_HPA",
+        inPrebid: true,
+        isInterstitial: false, 
+        isVideo: false,  
+        msTag: {
+          phone: ['home', 'article', 'longarticle'],
+          desktop: ['home', 'article', 'longarticle']
+      },
+      sizes: {
+          desktopSizes: [[120, 600], [160, 600], [300, 600]],
+          phoneSizes: [[300, 50], [300, 100], [320, 50], [320, 100], [320, 240], [300, 250], [336, 280], [300, 600]],
+          get allSizes() {
+              return this.desktopSizes.concat(this.phoneSizes);
+          },
+          get deviceSizesGam() {
+              var filters = [[1800, 1000], [1800, 200], [970, 1000]];
+              return window.screen.availWidth >= 769 ? this.desktopSizes.filter(size => JSON.stringify(filters).indexOf(JSON.stringify(size)) == -1) : this.phoneSizes.filter(size => JSON.stringify(filters).indexOf(JSON.stringify(size)) == -1);
+          },
+        get deviceSizes() {
+          var filters = [["fluid"]];
+          return window.screen.availWidth >= 769
+            ? this.desktopSizes.filter(
+                (size) =>
+                  JSON.stringify(filters).indexOf(JSON.stringify(size)) == -1
+              )
+            : this.phoneSizes.filter(
+                (size) =>
+                  JSON.stringify(filters).indexOf(JSON.stringify(size)) == -1
+              );
+        }
+      },
+      placementIds: {
+        openx: {
+                desktop: 543875101,
+                phone: 543875102,
+        },
+        improvedigital: {
+                desktop: 22433638,
+                phone: 22433639,
+        },
+        rubicon: {
+                desktop: 1952080,
+                phone: 1952082,
+        },
+        appnexus: {
+                desktop: 20924614,
+                phone: 20924615,
+        },
+        pubmatic: {
+                desktop: 3445320,
+                phone: 3445321,
+        },
+        tmp: {
+        },
+        weborama: {
+                desktop: 22442530,
+                phone: 22442602,
+        },
+        richaudience: {
+        },
+        smartadserver: {
+        },
+        teads: {
+        },
+        justpremium: {
+        },
+        invibes: {
+        }
+      }
+    },
+    _4gamers_ROS_HPA2: {
+      id: 'div-gpt-ad-4gamers_ros_hpa2',
+        gamName: "4gamers_ROS_HPA2",
+        inPrebid: true,
+        isInterstitial: false, 
+        isVideo: false,  
+        msTag: {
+          phone: ['home'],
+          desktop: ['home']
+      },
+      sizes: {
+          desktopSizes: [[120, 600], [160, 600], [300, 600]],
+          phoneSizes: [[300, 50], [300, 100], [320, 50], [320, 100], [320, 240], [300, 250], [336, 280], [300, 600]],
+          get allSizes() {
+              return this.desktopSizes.concat(this.phoneSizes);
+          },
+          get deviceSizesGam() {
+              var filters = [[1800, 1000], [1800, 200], [970, 1000]];
+              return window.screen.availWidth >= 769 ? this.desktopSizes.filter(size => JSON.stringify(filters).indexOf(JSON.stringify(size)) == -1) : this.phoneSizes.filter(size => JSON.stringify(filters).indexOf(JSON.stringify(size)) == -1);
+          },
+        get deviceSizes() {
+          var filters = [["fluid"]];
+          return window.screen.availWidth >= 769
+            ? this.desktopSizes.filter(
+                (size) =>
+                  JSON.stringify(filters).indexOf(JSON.stringify(size)) == -1
+              )
+            : this.phoneSizes.filter(
+                (size) =>
+                  JSON.stringify(filters).indexOf(JSON.stringify(size)) == -1
+              );
+        }
+      },
+      placementIds: {
+        openx: {
+                desktop: 543875103,
+                phone: 543981234,
+        },
+        improvedigital: {
+                desktop: 22433640,
+                phone: 22456027,
+        },
+        rubicon: {
+                desktop: 1952084,
+                phone: 1993048,
+        },
+        appnexus: {
+                desktop: 20924616,
+                phone: 21151247,
+        },
+        pubmatic: {
+                desktop: 3445322,
+                phone: 3507897,
+        },
+        tmp: {
+        },
+        weborama: {
+                desktop: 22442531,
+        },
+        richaudience: {
+        },
+        smartadserver: {
+        },
+        teads: {
+        },
+        justpremium: {
+        },
+        invibes: {
+        }
+      }
+    },
+    _4gamers_ROS_Right: {
+      id: 'div-gpt-ad-4gamers_ros_right',
+        gamName: "4gamers_ROS_Right",
+        inPrebid: true,
+        isInterstitial: false, 
+        isVideo: false,  
+        msTag: {
+          phone: ['category', 'article', 'longarticle'],
+          desktop: ['category', 'article', 'longarticle']
+      },
+      sizes: {
+          desktopSizes: [[300, 250]],
+          phoneSizes: [[300, 50], [300, 100], [320, 50], [320, 100], [320, 240], [300, 250], [336, 280]],
+          get allSizes() {
+              return this.desktopSizes.concat(this.phoneSizes);
+          },
+          get deviceSizesGam() {
+              var filters = [[1800, 1000], [1800, 200], [970, 1000]];
+              return window.screen.availWidth >= 769 ? this.desktopSizes.filter(size => JSON.stringify(filters).indexOf(JSON.stringify(size)) == -1) : this.phoneSizes.filter(size => JSON.stringify(filters).indexOf(JSON.stringify(size)) == -1);
+          },
+        get deviceSizes() {
+          var filters = [["fluid"]];
+          return window.screen.availWidth >= 769
+            ? this.desktopSizes.filter(
+                (size) =>
+                  JSON.stringify(filters).indexOf(JSON.stringify(size)) == -1
+              )
+            : this.phoneSizes.filter(
+                (size) =>
+                  JSON.stringify(filters).indexOf(JSON.stringify(size)) == -1
+              );
+        }
+      },
+      placementIds: {
+        openx: {
+                desktop: 543875104,
+                phone: 543875105,
+        },
+        improvedigital: {
+                desktop: 22433642,
+                phone: 22433643,
+        },
+        rubicon: {
+                desktop: 1952086,
+                phone: 1952088,
+        },
+        appnexus: {
+                desktop: 20924617,
+                phone: 20924618,
+        },
+        pubmatic: {
+                desktop: 3585584,
+                phone: 3445324,
+        },
+        tmp: {
+        },
+        weborama: {
+        },
+        richaudience: {
+        },
+        smartadserver: {
+        },
+        teads: {
+        },
+        justpremium: {
+        },
+        invibes: {
+        }
+      }
+    }
+}
+};
+
+var PREBID_TIMEOUT = 1000;
+var pbjs = pbjs || {};
+pbjs.que = pbjs.que || [];
+var desktopMultiple = 1.25;
+var phoneMultiple = 1.25;
+
+if (window.screen.availWidth >= 769) {
+//Desktop
+  DefM = desktopMultiple;
+} else {
+  DefM = phoneMultiple;
+}
+var bidCap = 20;
+var adUnits = [];
+
+// load Google
+(function () {
+  var gads = document.createElement("script");
+  gads.async = true;
+  gads.type = "text/javascript";
+  var useSSL = "https:" == document.location.protocol;
+  gads.src =
+    (useSSL ? "https:" : "http:") + 
+    "//securepubads.g.doubleclick.net/tag/js/gpt.js";
+  var node = document.getElementsByTagName("script")[0];
+  node.parentNode.insertBefore(gads, node);
+})();
+
+var googletag = googletag || {};
+googletag.cmd = googletag.cmd || [];
+googletag.cmd.push(function() {
+  googletag.pubads().disableInitialLoad();
+});
+
+// load prebid
+var pbjs = pbjs || {};
+pbjs.que = pbjs.que || [];
+gptadslots = [];
+
+(function () {
+  var mspb = document.createElement("script");
+  mspb.async = true;
+  mspb.type = "text/javascript";
+  var useSSL = "https:" == document.location.protocol;
+  mspb.src =
+  (useSSL ? "https:" : "http:") + "//massariuscdn.com/prod/prebid4.32.js";
+  var node = document.getElementsByTagName("script")[0];
+  node.parentNode.insertBefore(mspb, node);
+})();
+
+  // load neustar
+
+  var gdpr;
+  var iab_string;
+  var iab_category = 'VIDEO GAMING';
+
+  loadNeustar = function () {
+    setTimeout(function () {
+      var nst = document.createElement("script");
+      nst.type = "text/javascript";
+      nst.innerHTML = function setUpAgknTag(tag) {
+        tag.setBpId("massarius");
+        tag.setCat(iab_category);
+        tag.setGdpr(gdpr);
+        tag.setGdprConsent(iab_string);
+      };
+      var tagjs = document.createElement("script");
+      tagjs.async = true;
+      tagjs.type = "text/javascript";
+      var useSSL = "https:" == document.location.protocol;
+      tagjs.src = (useSSL ? "https:" : "http:") + "//js.agkn.com/prod/v0/tag.js";
+      document.body.appendChild(nst);
+      document.body.appendChild(tagjs);
+    }, 1500);
+  };
+
+    // // load faktor (CMP)
+    // (function () {
+    //   var fakt = document.createElement('script');
+    //   var firstScript = document.getElementsByTagName('script')[0];
+    //   var useSSL = "https:" == document.location.protocol;
+    //   fakt.src =
+    //     (useSSL ? "https:" : "http:") + "//gdpr-wrapper.privacymanager.io/gdpr/301deb35-c14f-4fc3-b0ba-ff23864277b7/gdpr-liveramp.js";
+    //   fakt.onload = function () {
+    //     window.__tcfapi('addEventListener', 2, checkConsent);
+    //   };
+    //   firstScript.parentNode.insertBefore(fakt, firstScript);
+    // })();
+
+// load faktor (CMP)
+// (function () {
+//   var fakt = document.createElement("script");
+//   var firstScript = document.getElementsByTagName("script")[0];
+//   var useSSL = "https:" == document.location.protocol;
+//   fakt.src =
+//     (useSSL ? "https:" : "http:") +
+//     "//massariuscdn.com/pubs/4gamers/consent.js";
+//   fakt.onload = function () {
+//     // window.__tcfapi("addEventListener", 2, checkConsent);
+//     window.__cmp("addEventListener", ["consent", checkConsent, false], null);
+//   };
+//   firstScript.parentNode.insertBefore(fakt, firstScript);
+// })();
+
+pbjs.bidderSettings = {
+    openx: {
+      bidCpmAdjustment: function (bidCpm) {
+        if (bidCpm >= bidCap) {
+          return bidCpm;
+        } else {
+          return Math.min(bidCpm * DefM * 1, bidCap + (bidCpm / 100));
+        }
+      }
+    },
+    improvedigital: {
+      bidCpmAdjustment: function (bidCpm) {
+        if (bidCpm >= bidCap) {
+          return bidCpm;
+        } else {
+          return Math.min(bidCpm * DefM * 1, bidCap + (bidCpm / 100));
+        }
+      }
+    },
+    rubicon: {
+      bidCpmAdjustment: function (bidCpm) {
+        if (bidCpm >= bidCap) {
+          return bidCpm;
+        } else {
+          return Math.min(bidCpm * DefM * 1, bidCap + (bidCpm / 100));
+        }
+      }
+    },
+    appnexus: {
+      bidCpmAdjustment: function (bidCpm) {
+        if (bidCpm >= bidCap) {
+          return bidCpm;
+        } else {
+          return Math.min(bidCpm * DefM * 1, bidCap + (bidCpm / 100));
+        }
+      }
+    },
+    pubmatic: {
+      bidCpmAdjustment: function (bidCpm) {
+        if (bidCpm >= bidCap) {
+          return bidCpm;
+        } else {
+          return Math.min(bidCpm * DefM * 1, bidCap + (bidCpm / 100));
+        }
+      }
+    },
+    tmp: {
+      bidCpmAdjustment: function (bidCpm) {
+        if (bidCpm >= bidCap) {
+          return bidCpm;
+        } else {
+          return Math.min(bidCpm * DefM * 1.1, bidCap + (bidCpm / 100));
+        }
+      }
+    },
+    weborama: {
+      bidCpmAdjustment: function (bidCpm) {
+        if (bidCpm >= bidCap) {
+          return bidCpm;
+        } else {
+          return Math.min(bidCpm * DefM * 1, bidCap + (bidCpm / 100));
+        }
+      }
+    },
+    smartadserver: {
+      bidCpmAdjustment: function (bidCpm) {
+        if (bidCpm >= bidCap) {
+          return bidCpm;
+        } else {
+          return Math.min(bidCpm * DefM * 1, bidCap + (bidCpm / 100));
+        }
+      }
+    },
+    richaudience: {
+      bidCpmAdjustment: function (bidCpm) {
+        if (bidCpm >= bidCap) {
+          return bidCpm;
+        } else {
+          return Math.min(bidCpm * DefM * 1, bidCap + (bidCpm / 100));
+        }
+      }
+    },
+    justpremium: {
+      bidCpmAdjustment: function (bidCpm) {
+        if (bidCpm >= bidCap) {
+          return bidCpm;
+        } else {
+          return Math.min(bidCpm * DefM * 1, bidCap + (bidCpm / 100));
+        }
+      }
+    },
+};
+
+// create bids
+
+// create bids
+
+Object.keys(massariusData.positions).forEach(function (position) {
+  adUnit = massariusData.positions[position];
+  if (adUnit.inPrebid) {
+    if (adUnit.isVideo) {
+      window[
+        "_" +
+          adUnit.gamName
+            .split("//")
+            .join("_")
+            .replace(".", "_")
+            .replace("-", "_")
+      ] = {
+        code: adUnit.id,
+        mediaTypes: {
+          video: {
+            context: "outstream",
+            playerSize: [1, 1],
+          },
+          banner: {
+            sizes: [
+              [300, 250],
+              [300, 600],
+              [1, 1],
+            ],
+          },
+        },
+        bids: [],
+      };
+      adUnit.placementIds.spotx &&
+        window[
+          "_" +
+            adUnit.gamName
+              .split("//")
+              .join("_")
+              .replace(".", "_")
+              .replace("-", "_")
+        ].bids.push({
+          bidder: "spotx",
+          params: {
+            channel_id: adUnit.placementIds.spotx,
+            ad_unit: "outstream",
+            outstream_options: {
+              slot: adUnit.id,
+              custom_override:
+                window.screen.width < 768
+                  ? {
+                      content_width: 300,
+                      content_height: 250,
+                    }
+                  : {
+                      content_width: 640,
+                      content_height: 360,
+                    },
+            },
+          },
+        });
+      adUnit.placementIds.teads != null &&
+        adUnit.placementIds.teads.pageId &&
+        window[
+          "_" +
+            adUnit.gamName
+              .split("//")
+              .join("_")
+              .replace(".", "_")
+              .replace("-", "_")
+        ].bids.push({
+          bidder: "teads",
+          params: {
+            placementId: adUnit.placementIds.teads.placementId,
+            pageId: adUnit.placementIds.teads.pageId,
+          },
+        });
+    } else {
+      window[
+        "_" +
+          adUnit.gamName
+            .split("//")
+            .join("_")
+            .replace(".", "_")
+            .replace("-", "_")
+      ] = {
+        code: adUnit.hasOwnProperty("overarchingAdunit")
+          ? massariusData.gamId +
+            "/" +
+            adUnit.overarchingAdunit +
+            "/" +
+            adUnit.gamName
+          : massariusData.gamId + "/" + adUnit.gamName,
+        mediaTypes: {
+          banner: {
+            sizes: adUnit.sizes.deviceSizes,
+          },
+        },
+        bids: [],
+      };
+      adUnit.placementIds.openx &&
+        adUnit.placementIds.openx.desktop &&
+        window[
+          "_" +
+            adUnit.gamName
+              .split("//")
+              .join("_")
+              .replace(".", "_")
+              .replace("-", "_")
+        ].bids.push({
+          bidder: "openx",
+          labelAny: ["desktop", "tablet"],
+          params: {
+            delDomain: "massarius-d.openx.net",
+            unit: adUnit.placementIds.openx.desktop.toString(),
+            customParams: {
+              iab_category: iab_category,
+            }
+          },
+        });
+      adUnit.placementIds.openx &&
+        adUnit.placementIds.openx.phone &&
+        window[
+          "_" +
+            adUnit.gamName
+              .split("//")
+              .join("_")
+              .replace(".", "_")
+              .replace("-", "_")
+        ].bids.push({
+          bidder: "openx",
+          labelAny: ["phone"],
+          params: {
+            delDomain: "massarius-d.openx.net",
+            unit: adUnit.placementIds.openx.phone.toString(),
+            customParams: {
+              iab_category: iab_category,
+            }
+          },
+        });
+      adUnit.placementIds.improvedigital &&
+        adUnit.placementIds.improvedigital.desktop &&
+        window[
+          "_" +
+            adUnit.gamName
+              .split("//")
+              .join("_")
+              .replace(".", "_")
+              .replace("-", "_")
+        ].bids.push({
+          bidder: "improvedigital",
+          labelAny: ["desktop", "tablet"],
+          params: {
+            placementId: adUnit.placementIds.improvedigital.desktop.toString(),
+            keyValues:
+              typeof msTag !== "undefined" &&
+              msTag.data &&
+              msTag.data.nsc == true
+                ? {
+                    hb: ["true"],
+                    Page: ["NSC"],
+                    iab_category: [iab_category]
+                  }
+                : {
+                    hb: ["true"],
+                    iab_category: [iab_category]
+                  },
+          },
+        });
+      adUnit.placementIds.improvedigital &&
+        adUnit.placementIds.improvedigital.phone &&
+        window[
+          "_" +
+            adUnit.gamName
+              .split("//")
+              .join("_")
+              .replace(".", "_")
+              .replace("-", "_")
+        ].bids.push({
+          bidder: "improvedigital",
+          labelAny: ["phone"],
+          params: {
+            placementId: adUnit.placementIds.improvedigital.phone.toString(),
+            keyValues:
+              typeof msTag !== "undefined" &&
+              msTag.data &&
+              msTag.data.nsc == true
+                ? {
+                    hb: ["true"],
+                    Page: ["NSC"],
+                    iab_category: [iab_category]
+                  }
+                : {
+                    hb: ["true"],
+                    iab_category: [iab_category]
+                  },
+          },
+        });
+      adUnit.placementIds.rubicon &&
+        adUnit.placementIds.rubicon.desktop &&
+        window[
+          "_" +
+            adUnit.gamName
+              .split("//")
+              .join("_")
+              .replace(".", "_")
+              .replace("-", "_")
+        ].bids.push({
+          bidder: "rubicon",
+          labelAny: ["desktop", "tablet"],
+          params: {
+            accountId: "20952",
+            siteId: massariusData.rubiconId.toString(),
+            zoneId: adUnit.placementIds.rubicon.desktop.toString(),
+            inventory: {
+              iab_category: iab_category,
+            }
+          },
+        });
+      adUnit.placementIds.rubicon &&
+        adUnit.placementIds.rubicon.phone &&
+        window[
+          "_" +
+            adUnit.gamName
+              .split("//")
+              .join("_")
+              .replace(".", "_")
+              .replace("-", "_")
+        ].bids.push({
+          bidder: "rubicon",
+          labelAny: ["phone"],
+          params: {
+            accountId: "20952",
+            siteId: massariusData.rubiconId.toString(),
+            zoneId: adUnit.placementIds.rubicon.phone.toString(),
+            inventory: {
+              iab_category: iab_category,
+            }
+          },
+        });
+      adUnit.placementIds.appnexus &&
+        adUnit.placementIds.appnexus.desktop &&
+        window[
+          "_" +
+            adUnit.gamName
+              .split("//")
+              .join("_")
+              .replace(".", "_")
+              .replace("-", "_")
+        ].bids.push({
+          bidder: "appnexus",
+          labelAny: ["desktop", "tablet"],
+          params: {
+            placementId: adUnit.placementIds.appnexus.desktop,
+          },
+          keywords: {
+            iab_category: iab_category,
+          }
+        });
+      adUnit.placementIds.appnexus &&
+        adUnit.placementIds.appnexus.phone &&
+        window[
+          "_" +
+            adUnit.gamName
+              .split("//")
+              .join("_")
+              .replace(".", "_")
+              .replace("-", "_")
+        ].bids.push({
+          bidder: "appnexus",
+          labelAny: ["phone"],
+          params: {
+            placementId: adUnit.placementIds.appnexus.phone,
+          },
+          keywords: {
+            iab_category: iab_category,
+          }
+        });
+      adUnit.placementIds.pubmatic &&
+        adUnit.placementIds.pubmatic.desktop &&
+        window[
+          "_" +
+            adUnit.gamName
+              .split("//")
+              .join("_")
+              .replace(".", "_")
+              .replace("-", "_")
+        ].bids.push({
+          bidder: "pubmatic",
+          labelAny: ["desktop", "tablet"],
+          params: {
+            publisherId: "156546",
+            adSlot: adUnit.placementIds.pubmatic.desktop.toString(),
+            dctr: `iab_category=${iab_category}`
+          },
+        });
+      adUnit.placementIds.pubmatic &&
+        adUnit.placementIds.pubmatic.phone &&
+        window[
+          "_" +
+            adUnit.gamName
+              .split("//")
+              .join("_")
+              .replace(".", "_")
+              .replace("-", "_")
+        ].bids.push({
+          bidder: "pubmatic",
+          labelAny: ["phone"],
+          params: {
+            publisherId: "156546",
+            adSlot: adUnit.placementIds.pubmatic.phone.toString(),
+            dctr: `iab_category=${iab_category}`
+          },
+        });
+      adUnit.placementIds.tmp &&
+        adUnit.placementIds.tmp.desktop &&
+        window[
+          "_" +
+            adUnit.gamName
+              .split("//")
+              .join("_")
+              .replace(".", "_")
+              .replace("-", "_")
+        ].bids.push({
+          bidder: "tmp",
+          labelAny: ["desktop", "tablet"],
+          params: {
+            placementId: adUnit.placementIds.tmp.desktop,
+          },
+          keywords: {
+            iab_category: iab_category,
+          }
+        });
+      adUnit.placementIds.tmp &&
+        adUnit.placementIds.tmp.phone &&
+        window[
+          "_" +
+            adUnit.gamName
+              .split("//")
+              .join("_")
+              .replace(".", "_")
+              .replace("-", "_")
+        ].bids.push({
+          bidder: "tmp",
+          labelAny: ["phone"],
+          params: {
+            placementId: adUnit.placementIds.tmp.phone,
+          },
+          keywords: {
+            iab_category: iab_category,
+          }
+        });
+      adUnit.placementIds.weborama &&
+        adUnit.placementIds.weborama.desktop &&
+        window[
+          "_" +
+            adUnit.gamName
+              .split("//")
+              .join("_")
+              .replace(".", "_")
+              .replace("-", "_")
+        ].bids.push({
+          bidder: "weborama",
+          labelAny: ["desktop", "tablet"],
+          params: {
+            placementId: adUnit.placementIds.weborama.desktop,
+          },
+          keyValues: {
+            iab_category: [iab_category]
+          },
+        });
+      adUnit.placementIds.weborama &&
+        adUnit.placementIds.weborama.phone &&
+        window[
+          "_" +
+            adUnit.gamName
+              .split("//")
+              .join("_")
+              .replace(".", "_")
+              .replace("-", "_")
+        ].bids.push({
+          bidder: "weborama",
+          labelAny: ["phone"],
+          params: {
+            placementId: adUnit.placementIds.weborama.phone,
+          },
+          keyValues: {
+            iab_category: [iab_category]
+          },
+        });
+      adUnit.placementIds.teads &&
+        adUnit.placementIds.teads.desktop &&
+        window[
+          "_" +
+            adUnit.gamName
+              .split("//")
+              .join("_")
+              .replace(".", "_")
+              .replace("-", "_")
+        ].bids.push({
+          bidder: "teads",
+          labelAny: ["desktop", "tablet"],
+          params: {
+            placementId: adUnit.placementIds.teads.desktop.placementId,
+            pageId: adUnit.placementIds.teads.desktop.pageId,
+          },
+        });
+      adUnit.placementIds.teads &&
+        adUnit.placementIds.teads.phone &&
+        window[
+          "_" +
+            adUnit.gamName
+              .split("//")
+              .join("_")
+              .replace(".", "_")
+              .replace("-", "_")
+        ].bids.push({
+          bidder: "teads",
+          labelAny: ["phone"],
+          params: {
+            placementId: adUnit.placementIds.teads.phone.placementId,
+            pageId: adUnit.placementIds.teads.phone.pageId,
+          },
+        });
+      adUnit.placementIds.smartadserver &&
+        adUnit.placementIds.smartadserver.desktop &&
+        window[
+          "_" +
+            adUnit.gamName
+              .split("//")
+              .join("_")
+              .replace(".", "_")
+              .replace("-", "_")
+        ].bids.push({
+          bidder: "smartadserver",
+          labelAny: ["desktop", "tablet"],
+          params: {
+            siteId: massariusData.smartadserverSiteId.toString(),
+            pageId: massariusData.smartadserverPageId.toString(),
+            formatId: adUnit.placementIds.smartadserver.desktop.toString(),
+          },
+        });
+      adUnit.placementIds.smartadserver &&
+        adUnit.placementIds.smartadserver.phone &&
+        window[
+          "_" +
+            adUnit.gamName
+              .split("//")
+              .join("_")
+              .replace(".", "_")
+              .replace("-", "_")
+        ].bids.push({
+          bidder: "smartadserver",
+          labelAny: ["phone"],
+          params: {
+            siteId: massariusData.smartadserverSiteId.toString(),
+            pageId: massariusData.smartadserverPageId.toString(),
+            formatId: adUnit.placementIds.smartadserver.phone.toString(),
+          },
+        });
+      adUnit.placementIds.richaudience &&
+        adUnit.placementIds.richaudience.desktop &&
+        window[
+          "_" +
+            adUnit.gamName
+              .split("//")
+              .join("_")
+              .replace(".", "_")
+              .replace("-", "_")
+        ].bids.push({
+          bidder: "richaudience",
+          labelAny: ["desktop", "tablet"],
+          params: {
+            pid: adUnit.placementIds.richaudience.desktop,
+            supplyType: "site",
+          },
+        });
+      adUnit.placementIds.richaudience &&
+        adUnit.placementIds.richaudience.phone &&
+        window[
+          "_" +
+            adUnit.gamName
+              .split("//")
+              .join("_")
+              .replace(".", "_")
+              .replace("-", "_")
+        ].bids.push({
+          bidder: "richaudience",
+          labelAny: ["phone"],
+          params: {
+            pid: adUnit.placementIds.richaudience.phone,
+            supplyType: "site",
+          },
+        });
+      adUnit.placementIds.justpremium &&
+        adUnit.placementIds.justpremium.desktop &&
+        window[
+          "_" +
+            adUnit.gamName
+              .split("//")
+              .join("_")
+              .replace(".", "_")
+              .replace("-", "_")
+        ].bids.push({
+          bidder: "justpremium",
+          labelAny: ["desktop", "tablet"],
+          params: {
+            zone: adUnit.placementIds.justpremium.desktop.toString(),
+            allow: ["wp"],
+          },
+        });
+      adUnit.placementIds.justpremium &&
+        adUnit.placementIds.justpremium.phone &&
+        window[
+          "_" +
+            adUnit.gamName
+              .split("//")
+              .join("_")
+              .replace(".", "_")
+              .replace("-", "_")
+        ].bids.push({
+          bidder: "justpremium",
+          labelAny: ["phone"],
+          params: {
+            zone: adUnit.placementIds.justpremium.phone.toString(),
+            allow: ["is", "mt"],
+          },
+        });
+      adUnit.placementIds.invibes &&
+        adUnit.placementIds.invibes.desktop &&
+        window[
+          "_" +
+            adUnit.gamName
+              .split("//")
+              .join("_")
+              .replace(".", "_")
+              .replace("-", "_")
+        ].bids.push({
+          bidder: "invibes",
+          labelAny: ["desktop", "tablet"],
+          params: {
+            placementId: adUnit.placementIds.invibes.desktop,
+            adContainerId: adUnit.id,
+            customEndpoint: "https://bid3.videostep.com/Bid/VideoAdContent",
+          },
+        });
+      adUnit.placementIds.invibes &&
+        adUnit.placementIds.invibes.phone &&
+        window[
+          "_" +
+            adUnit.gamName
+              .split("//")
+              .join("_")
+              .replace(".", "_")
+              .replace("-", "_")
+        ].bids.push({
+          bidder: "invibes",
+          labelAny: ["phone"],
+          params: {
+            placementId: adUnit.placementIds.invibes.phone,
+            adContainerId: adUnit.id,
+            customEndpoint: "https://bid3.videostep.com/Bid/VideoAdContent",
+          },
+        });
+    }
+  }
+});
+
+
+var gamPositions = [];
+
+if (
+  typeof msTag !== "undefined" &&
+  massariusData.msTagArray.indexOf(msTag.page) != -1
+) {
+  var device = window.screen.availWidth >= 769 ? "desktop" : "phone";
+  Object.keys(massariusData.positions).forEach(function (position) {
+    adUnit = massariusData.positions[position];
+    if (adUnit.msTag[device].indexOf(msTag.page) != -1) {
+        gamPositions.push(adUnit);
+      if (adUnit.inPrebid) {
+        adUnits.push(window[position]);
+      }
+    }
+  });
+} else {
+  Object.keys(massariusData.positions).forEach(function (position) {
+    adUnit = massariusData.positions[position];
+      gamPositions.push(adUnit);
+    if (adUnit.inPrebid) {
+      adUnits.push(window[position]);
+    }
+  });
+}
+
+var buckets = {
+  buckets: [
+      {
+        precision: 2,
+        min: 0,
+        max: 2.5,
+        increment: 0.01
+      },
+      {
+        precision: 2,
+        min: 2.5,
+        max: 10,
+        increment: 0.1
+      },
+      {
+        precision: 2,
+        min: 10,
+        max: 20,
+        increment: 0.2
+      },
+      {
+        precision: 2,
+        min: 20,
+        max: 50,
+        increment: 0.5
+      },
+  ]
+};
+
+pbjs.que.push(function() {
+  pbjs.aliasBidder("appnexus", "tmp");
+  pbjs.aliasBidder("improvedigital", "weborama");
+  pbjs.addAdUnits(adUnits);
+  pbjs.setConfig({
+    pubcid: {
+      enable: true
+    },
+    bidderSequence: "random",
+    bidderTimeout: PREBID_TIMEOUT,
+    userSync: {
+      userIds: [
+        {
+          name: "criteo",
+        },
+        {
+          name: "id5Id",
+          params: {
+            partner: 320,
+          },
+          storage: {
+            type: "html5",
+            name: "id5id",
+            expires: 90,
+            refreshInSeconds: 8 * 3600,
+          },
+        },
+        {
+          name: "unifiedId",
+          params: {
+            partner: "gafv5rj",
+          },
+          storage: {
+            type: "cookie",
+            name: "unifiedid",
+            expires: 60,
+          },
+        },
+      ],
+      syncDelay: 3000,
+      syncEnabled: true,
+      syncsPerBidder: 5,
+      iframeEnabled: true
+    },
+    currency: {
+      adServerCurrency: "EUR"
+    },
+    sizeConfig: [
+      {
+        mediaQuery: "(min-width: 1024px) ",
+        sizesSupported: massariusData.allDesktopSizes,
+        labels: ["desktop"]
+      },
+      {
+        mediaQuery: "(min-width: 769px) and (max-width: 1024px)",
+        sizesSupported: massariusData.allDesktopSizes,
+        labels: ["tablet"]
+      },
+      {
+        mediaQuery: "(min-width: 0px) and (max-width: 768px)",
+        sizesSupported: massariusData.allPhoneSizes,
+        labels: ["phone"]
+      }
+    ],
+    improvedigital: {
+      usePrebidSizes: true,
+      singleRequest: false
+    },
+    enableSendAllBids: false,
+    priceGranularity: buckets,
+    schain: {
+      "config": {
+        "ver": "1.0",
+        "complete": 1,
+        "nodes": [
+          {
+            "asi": "massarius.com",
+            "sid": "00407",
+            "hp": 1
+          }
+        ]
+      }
+    },
+      consentManagement: {
+        cmpApi: "iab"
+      }
+  });
+});
+
+// init adserver
+function initAdserver(bids) {
+  var slots = Object.keys(bids);
+  slots.forEach(function (slot) {
+    var slotbids = bids[slot].bids;
+    slotbids.forEach(function (bid) {
+      bid.adserverTargeting.hbBid = true;
+      if (bid.width == 1800 && bid.height == 1000) {
+        bid.width = 728;
+        bid.height = 90;
+      } else if (bid.width == 970 && bid.height == 1000) {
+        bid.width = 970;
+        bid.height = 250;
+      }
+    });
+  });
+    if (pbjs.initAdserverSet) return;
+    pbjs.initAdserverSet = true;
+    googletag.cmd.push(function () {
+      pbjs.que.push(function() {
+        pbjs.setTargetingForGPTAsync();
+            googletag.pubads().refresh(gptadslots);
+      });
+    });
+}
+
+// google tag
+googletag.cmd.push(function() {
+  gamPositions.forEach(function (position) {
+    var name = position.hasOwnProperty("overarchingAdunit")
+      ? massariusData.gamId +
+        "/" +
+        position.overarchingAdunit +
+        "/" +
+        position.gamName
+      : massariusData.gamId + "/" + position.gamName;
+    if (position.isInterstitial == true) {
+      interstitialSlot = googletag.defineOutOfPageSlot(
+        name,
+        googletag.enums.OutOfPageFormat.INTERSTITIAL
+      );
+      if (interstitialSlot) {
+        setTimeout(() => {
+          interstitialSlot.addService(googletag.pubads());
+          googletag.display(interstitialSlot);
+          console.log("interstitial called");
+          googletag.pubads().refresh([interstitialSlot]);
+          console.log("interstitial refreshed");
+        }, 1000);
+      }
+    } else {
+      gptadslots.push(
+        googletag
+          .defineSlot(name, position.sizes.deviceSizesGam, position.id)
+          .addService(googletag.pubads())
+      );
+    }
+  });
+
+  googletag.pubads().setTargeting("hb", ["true"]);
+  googletag.pubads().collapseEmptyDivs();
+  googletag.pubads().setCentering(true);
+  googletag.pubads().enableLazyLoad({
+    fetchMarginPercent: 100,
+    renderMarginPercent: 50,
+    mobileScaling: 1.0
+  });
+  if (ms_debug) {
+    googletag.pubads().setTargeting("native", ["true"]);
+  }
+  if (typeof msTag !== "undefined" && msTag.data && msTag.data.nsc && msTag.data.nsc == true) {
+    googletag.pubads().setTargeting("Page", ["NSC"]);
+  }
+  googletag.pubads().setTargeting("iab_category", [iab_category]);
+  googletag.enableServices();
+});
+
+  // CMP logic
+//   var consentForAds;
+//   var adsLoaded = false;
+//   var limitedAds = false;
+//   var checkConsent = function () {
+//     try {
+//       window.__tcfapi('getTCData', 2, (tcData, success) => {
+//         if (tcData.eventStatus == "useractioncomplete" || tcData.eventStatus === 'tcloaded') {
+//           if (tcData.vendor.consents["755"] == false && tcData.purpose.consents["1"] == true) {
+//             limitedAds = true;
+//           } else if (tcData.vendor.consents["755"] == false && tcData.purpose.consents["1"] == false) {
+//             limitedAds = true;
+//           }
+//         }
+//       }, [755]);
+//     } catch (e) { }
+//     window.__tcfapi('getTCData', 0, (tcData, success) => {
+//       if (success) {
+//         if (tcData.eventStatus == "useractioncomplete" || tcData.eventStatus === 'tcloaded') {
+//           var newConsentForAds;
+
+//           newConsentForAds = true;
+//           if (Object.keys(tcData.purpose.consents).length === 0) {
+//             newConsentForAds = false;
+//           }
+//           var i = 0;
+//           for (c in tcData.purpose.consents) {
+//             if (i >= 10) break;
+//             //console.log(c + " = " + tcData.purpose.consents[c]);
+//             newConsentForAds = newConsentForAds && tcData.purpose.consents[c];
+//             i++;
+//           }
+//           console.log("newConsentForAds = " + newConsentForAds);
+
+//           if (consentForAds !== newConsentForAds) {
+//             consentForAds = newConsentForAds;
+//             if (adsLoaded) return;
+//             adsLoaded = true;
+//             googletag.cmd.push(function () {
+//             if (consentForAds == true) {
+//                 gdpr = consentForAds ? "1" : "0";
+//                 iab_string = gdpr == "1" ? tcData.tcString : "";
+//                 loadNeustar();
+//             }
+//               googletag.pubads().setTargeting("iab_string", [tcData.tcString]);
+//               googletag
+//                 .pubads()
+//                 .setTargeting("consent", [limitedAds ? "0" : "1"]);
+//               googletag
+//                 .pubads()
+//                 .setTargeting("rev_consent", [limitedAds ? "1" : "0"]);
+//               pbjs.que.push(function() {
+//                 pbjs.requestBids({
+//                   bidsBackHandler: initAdserver,
+//                   timeout: PREBID_TIMEOUT
+//                 });
+//               });
+//             });
+//           }
+//         }
+//       }
+//     });
+//   };
+
+  let loadPG = function() {
+      console.log("PG")
+  }
+
+  // CMP logic
+  var consentForAds;
+  var adsLoaded = false;
+  var limitedAds = false;
+  var checkConsent = function (e, o) {
+    console.log(e);
+    console.log(o);
+    console.log("Checking consent");
+    try {
+      window.__tcfapi(
+        "getTCData",
+        2,
+        (tcData, success) => {
+          if (
+            tcData.eventStatus == "useractioncomplete" ||
+            tcData.eventStatus === "tcloaded"
+          ) {
+            if (
+              tcData.vendor.consents["755"] == false &&
+              tcData.purpose.consents["1"] == true
+            ) {
+              limitedAds = true;
+            } else if (
+              tcData.vendor.consents["755"] == false &&
+              tcData.purpose.consents["1"] == false
+            ) {
+              limitedAds = true;
+            }
+          }
+        },
+        [755]
+      );
+    } catch (e) {}
+    window.__tcfapi("getTCData", 0, (tcData, success) => {
+      if (success) {
+        if (
+          tcData.eventStatus == "useractioncomplete" ||
+          tcData.eventStatus === "tcloaded"
+        ) {
+          var newConsentForAds;
+
+          newConsentForAds = true;
+          if (Object.keys(tcData.purpose.consents).length === 0) {
+            newConsentForAds = false;
+          }
+          var i = 0;
+          for (c in tcData.purpose.consents) {
+            if (i >= 10) break;
+            //console.log(c + " = " + tcData.purpose.consents[c]);
+            newConsentForAds = newConsentForAds && tcData.purpose.consents[c];
+            i++;
+          }
+          console.log("newConsentForAds = " + newConsentForAds);
+
+          if (consentForAds !== newConsentForAds) {
+            consentForAds = newConsentForAds;
+            if (adsLoaded) return;
+            adsLoaded = true;
+            googletag.cmd.push(function () {
+              gdpr = consentForAds ? "1" : "0";
+              iab_string = gdpr == "1" ? tcData.tcString : "";
+              if (consentForAds == true) {
+                loadPG();
+              }
+              googletag.pubads().setTargeting("iab_string", [tcData.tcString]);
+              googletag
+                .pubads()
+                .setTargeting("consent", [limitedAds ? "0" : "1"]);
+              googletag
+                .pubads()
+                .setTargeting("rev_consent", [limitedAds ? "1" : "0"]);
+              pbjs.que.push(function () {
+                pbjs.requestBids({
+                  bidsBackHandler: initAdserver,
+                  timeout: PREBID_TIMEOUT,
+                });
+              });
+              //Load adhese
+              if (window.FourG && window.FourG.adheseHelper) {
+                FourG.adheseHelper.showInit();
+              }
+            });
+          }
+        }
+      }
+    });
+  };
+
+function showConsentManager() {
+  window.__cmapi('showScreenAdvanced',null,null); 
+  return false
+}
+
+  
+
+        </script>
+    </head>
+    <body>
+            <!-- 13436254/4gamers_ROS_Header -->
+            <div id="div-gpt-ad-4gamers_ros_header" style="display:block";>
+                <script>
+                    googletag.cmd.push(function() { googletag.display('div-gpt-ad-4gamers_ros_header'); });
+                </script>
+            </div>
+            <!-- 13436254/4gamers_ROS_MPU1 -->
+            <div id="div-gpt-ad-4gamers_ros_mpu1" style="display:block";>
+                <script>
+                    googletag.cmd.push(function() { googletag.display('div-gpt-ad-4gamers_ros_mpu1'); });
+                </script>
+            </div>
+            <!-- 13436254/4gamers_ROS_MPU2 -->
+            <div id="div-gpt-ad-4gamers_ros_mpu2" style="display:block";>
+                <script>
+                    googletag.cmd.push(function() { googletag.display('div-gpt-ad-4gamers_ros_mpu2'); });
+                </script>
+            </div>
+            <!-- 13436254/4gamers_ROS_HPA -->
+            <div id="div-gpt-ad-4gamers_ros_hpa" style="display:block";>
+                <script>
+                    googletag.cmd.push(function() { googletag.display('div-gpt-ad-4gamers_ros_hpa'); });
+                </script>
+            </div>
+            <!-- 13436254/4gamers_ROS_HPA2 -->
+            <div id="div-gpt-ad-4gamers_ros_hpa2" style="display:block";>
+                <script>
+                    googletag.cmd.push(function() { googletag.display('div-gpt-ad-4gamers_ros_hpa2'); });
+                </script>
+            </div>
+            <!-- 13436254/4gamers_ROS_Right -->
+            <div id="div-gpt-ad-4gamers_ros_right" style="display:block";>
+                <script>
+                    googletag.cmd.push(function() { googletag.display('div-gpt-ad-4gamers_ros_right'); });
+                </script>
+            </div>
+    </body>
+</html>

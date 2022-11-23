@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>    
+        var msQueue = []
+
+
+        var eventify = function(arr, callback) {
+            arr.push = function(e) {
+                Array.prototype.push.call(arr, e);
+                callback(arr);
+            };
+        };
+
+        eventify(msQueue, function(newArray) {
+            console.log(msQueue.length)
+        });
+        
+    </script>
+</head>
+<body>
+    <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae quibusdam autem ut officiis fuga maxime ex consequuntur ipsum, nisi delectus omnis dolorem soluta quia provident ullam explicabo consectetur quidem fugit!
+    </p>
+    <div>
+        <script>
+            msQueue.push(function(){
+                googletag.display('hallo')
+            })
+        </script>
+        <script>
+            msQueue.push(function(){
+                googletag.display('xd')
+            })
+        </script>
+    </div>
+    <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam, fugiat eius dolores enim delectus, voluptatum laudantium a nobis deleniti sequi unde reiciendis quaerat, alias accusamus sunt voluptatem id doloribus corporis?
+    </p>
+
+
+    <script>
+        console.log(msQueue)
+    </script>
+</body>
+</html>
